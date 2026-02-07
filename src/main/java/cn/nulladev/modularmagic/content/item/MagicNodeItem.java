@@ -1,15 +1,14 @@
 package cn.nulladev.modularmagic.content.item;
 
-import cn.nulladev.modularmagic.content.magictree.Node;
-import cn.nulladev.modularmagic.content.magictree.Nodes;
+import cn.nulladev.modularmagic.content.magictree.NodeProperty;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 public class MagicNodeItem extends Item {
-    public final Node relateNode;
-    public MagicNodeItem(Properties p, Node node) {
+    public final NodeProperty relateNodeProperty;
+    public MagicNodeItem(Properties p, NodeProperty property) {
         super(p);
-        this.relateNode = node;
-        Nodes.itemRelateMap.put(node, new ItemStack(this));
+        this.relateNodeProperty = property;
+        NodeProperty.itemRelateMap.put(property, new ItemStack(this));
     }
 }

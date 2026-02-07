@@ -2,8 +2,7 @@ package cn.nulladev.modularmagic.content.init.reg;
 
 import cn.nulladev.modularmagic.content.init.ModularMagic;
 import cn.nulladev.modularmagic.content.item.MagicNodeItem;
-import cn.nulladev.modularmagic.content.magictree.Node;
-import cn.nulladev.modularmagic.content.magictree.Nodes;
+import cn.nulladev.modularmagic.content.magictree.NodeProperty;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.l2core.init.reg.registrate.SimpleEntry;
 import net.minecraft.world.item.CreativeModeTab;
@@ -17,12 +16,12 @@ public class ModItems {
     public static final ItemEntry<MagicNodeItem> NODE_SELECTOR_BALL, NODE_SELECTOR_CYLINDER;
 
     static {
-        NODE_SELECTOR_BALL = node("selector_ball", Nodes.SELECTOR_BALL);
-        NODE_SELECTOR_CYLINDER = node("selector_cylinder", Nodes.SELECTOR_CYLINDER);
+        NODE_SELECTOR_BALL = node("selector_ball", NodeProperty.SELECTOR_BALL);
+        NODE_SELECTOR_CYLINDER = node("selector_cylinder", NodeProperty.SELECTOR_CYLINDER);
     }
 
-    private static ItemEntry<MagicNodeItem> node(String id, Node node) {
-        return ModularMagic.REGISTRATE.item(id, p -> new MagicNodeItem(p, node))
+    private static ItemEntry<MagicNodeItem> node(String id, NodeProperty property) {
+        return ModularMagic.REGISTRATE.item(id, p -> new MagicNodeItem(p, property))
                 .model((ctx, pvd) -> {
                     pvd.generated(ctx, pvd.modLoc("item/node/" + ctx.getName()));
                     pvd.getBuilder(ctx.getName() + "_node").parent(
