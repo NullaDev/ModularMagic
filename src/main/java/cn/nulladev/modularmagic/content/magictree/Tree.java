@@ -21,4 +21,16 @@ public class Tree {
         DataResult<SpellAction> result = SpellAction.CODEC.parse(JsonOps.INSTANCE, json);
         return result.result().orElse(null);
     }
+
+    public record TreeRecord(Node.NodeRecord root) {}
+
+    public TreeRecord toRecord() {
+        return new TreeRecord(root.toRecord());
+    }
+
+    public static Tree fromRecord(TreeRecord record) {
+        Tree tree = new Tree();
+        tree.root = Node.fromRecord(record.root());
+        return tree;
+    }
 }

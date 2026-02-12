@@ -55,4 +55,23 @@ public abstract class NodeProperty {
             """.formatted(variable.get(0), variable.get(1));
         }
     };
+
+    public enum NodeType {
+        LOGIC,
+        MODIFIER,
+        PREDICATE,
+        SELECTOR,
+        PROCESSOR,
+        MOTION,
+        RENDER_PARTICLE,
+        RENDER_ENTITY,
+        EMPTY
+    }
+
+    public enum NodeVariableType {
+        BOOLEAN,
+        INT,
+        DOUBLE,
+        COLOR
+    }
 }
