@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：移到施法者",
+    "icon":  "modularmagic:gem_modifier_move_to_caster",
+    "category":  "modularmagic:nodes",
+    "sortnum":  311,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_modifier_move_to_caster",
+                      "link_recipe":  true,
+                      "text":  "将法术位置移回施法者当前所在位置，用于让后续效果跟随施法者。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "此节点没有文本参数，通过子节点或节点种类确定行为。"
+                  }
+              ]
+}

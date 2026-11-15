@@ -1,0 +1,34 @@
+{
+    "name":  "法术节点：弹体配置",
+    "icon":  "modularmagic:gem_projectile_config",
+    "category":  "modularmagic:nodes",
+    "sortnum":  899,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_projectile_config",
+                      "link_recipe":  true,
+                      "text":  "定义自定义弹体的运动、命中处理、外观及生命周期动作；由自定义弹体动作节点使用，不可直接作为主动作。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)运动$(br)运动 / 可选，0 或 1 个$(br2)$(li)每刻动作$(br)动作 / 可选，0 或 1 个"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)命中效果$(br)实体处理 / 列表，0~64 项$(br2)$(li)外观$(br)弹体渲染 / 可选，0 或 1 个"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)落地动作$(br)动作 / 可选，0 或 1 个$(br2)$(li)消散动作$(br)动作 / 可选，0 或 1 个"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)自定义参数 / 可留空$(br)$(o)params$()$(br2)$(li)目标过滤 / 可留空$(br)$(o)filter$()$(br2)$(li)尺寸 / 可留空$(br)$(o)size$()"
+                  }
+              ]
+}

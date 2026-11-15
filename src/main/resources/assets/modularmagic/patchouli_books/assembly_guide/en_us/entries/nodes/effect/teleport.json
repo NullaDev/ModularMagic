@@ -1,0 +1,24 @@
+{
+    "name":  "Spell Node: Teleport",
+    "icon":  "modularmagic:gem_effect_teleport",
+    "category":  "modularmagic:nodes",
+    "sortnum":  772,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_effect_teleport",
+                      "link_recipe":  true,
+                      "text":  "Teleport selected entities to absolute world coordinates rather than applying a relative offset."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "This node has no child slots. Select it to edit its parameters. Right-click a leaf on the canvas to remove it; take a root using Take core."
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)x / Required$(br)$(o)x$()$(br2)$(li)y / Required$(br)$(o)y$()$(br2)$(li)z / Required$(br)$(o)z$()"
+                  }
+              ]
+}

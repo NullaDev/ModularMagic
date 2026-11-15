@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：同步动作",
+    "icon":  "modularmagic:gem_action_synced_logic",
+    "category":  "modularmagic:nodes",
+    "sortnum":  220,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_synced_logic",
+                      "link_recipe":  true,
+                      "text":  "执行需要服务端与客户端配合的子动作。在 MM 自定义法术中由法术同步机制协调视觉与实际效果。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)子节点$(br)动作 / 必填，1 个"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "此节点没有文本参数，通过子节点或节点种类确定行为。"
+                  }
+              ]
+}

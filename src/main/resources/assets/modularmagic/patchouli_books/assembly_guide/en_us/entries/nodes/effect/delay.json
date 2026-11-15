@@ -1,0 +1,24 @@
+{
+    "name":  "Spell Node: Delay",
+    "icon":  "modularmagic:gem_effect_delay",
+    "category":  "modularmagic:nodes",
+    "sortnum":  765,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_effect_delay",
+                      "link_recipe":  true,
+                      "text":  "Schedule the child processor for the selected entities after the specified tick delay."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)child$(br)Effect / Required: 1 node"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)time / Required$(br)$(o)time$()"
+                  }
+              ]
+}

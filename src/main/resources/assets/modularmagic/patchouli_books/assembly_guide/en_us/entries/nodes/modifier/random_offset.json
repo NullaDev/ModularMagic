@@ -1,0 +1,29 @@
+{
+    "name":  "Spell Node: Random Offset",
+    "icon":  "modularmagic:gem_modifier_random_offset",
+    "category":  "modularmagic:nodes",
+    "sortnum":  306,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_modifier_random_offset",
+                      "link_recipe":  true,
+                      "text":  "Randomly offset the spell position within the selected shape and dimensions, creating scattered effects."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "This node has no child slots. Select it to edit its parameters. Right-click a leaf on the canvas to remove it; take a root using Take core."
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)shape / Required$(br)$(o)shape$()$(br2)$(li)x / Optional$(br)$(o)x$()$(br2)$(li)y / Optional$(br)$(o)y$()"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)z / Optional$(br)$(o)z$()"
+                  }
+              ]
+}

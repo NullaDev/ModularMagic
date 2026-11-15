@@ -1,0 +1,34 @@
+{
+    "name":  "法术核心：瞬发",
+    "icon":  "modularmagic:root_instant",
+    "category":  "modularmagic:nodes",
+    "sortnum":  89,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:root_instant",
+                      "link_recipe":  true,
+                      "text":  "整棵法术的瞬发入口。装入编写台后提供起点、主动作与可选施放条件；在装配法杖中右键施放。"
+                  },
+                  {
+                      "title":  "核心的取放",
+                      "type":  "patchouli:text",
+                      "text":  "法术核心可直接放入编写台。画布左侧的核心不能右键取出，须点击取出核心按钮整体取走。$(br2)没有任何子节点时，取出仍为对应类型的法术核心；只要已有子节点但结构尚未完整，就会保存为未成形法术核心。核心参数在空结构下也会保留。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)施法起点$(br)起点 / 必填，1 个$(br2)$(li)主法术$(br)动作 / 必填，1 个"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)施放条件$(br)条件 / 可选，0 或 1 个"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)图标物品 ID / 必填$(br)$(o)icon$()$(br2)$(li)排序值 / 必填$(br)$(o)order$()"
+                  }
+              ]
+}

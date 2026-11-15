@@ -1,0 +1,29 @@
+{
+    "name":  "法术节点：自定义弹体",
+    "icon":  "modularmagic:gem_action_custom_projectile",
+    "category":  "modularmagic:nodes",
+    "sortnum":  243,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_custom_projectile",
+                      "link_recipe":  true,
+                      "text":  "发射由弹体配置节点定义的弹体，设置初速、寿命、穿透选项与传入配置的变量。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)弹体配置$(br)弹体配置 / 必填，1 个"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)速度 / 可留空$(br)$(o)speed$()$(br2)$(li)存在刻数 / 必填$(br)$(o)life$()$(br2)$(li)穿透方块 / 可留空$(br)$(o)bypassWall$()"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)穿透实体 / 可留空$(br)$(o)bypassEntity$()$(br2)$(li)自定义参数 / 可留空$(br)$(o)params$()"
+                  }
+              ]
+}

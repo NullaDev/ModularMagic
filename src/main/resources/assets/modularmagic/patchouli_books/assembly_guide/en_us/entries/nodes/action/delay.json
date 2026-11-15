@@ -1,0 +1,24 @@
+{
+    "name":  "Spell Node: Delay",
+    "icon":  "modularmagic:gem_action_delay",
+    "category":  "modularmagic:nodes",
+    "sortnum":  215,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_delay",
+                      "link_recipe":  true,
+                      "text":  "Schedule the child action after a delay measured in game ticks. Normally, 20 ticks equal one second."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)child$(br)Action / Required: 1 node"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)tick / Required$(br)$(o)tick$()"
+                  }
+              ]
+}

@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：控制位置轨迹",
+    "icon":  "modularmagic:gem_motion_control_position",
+    "category":  "modularmagic:nodes",
+    "sortnum":  978,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_motion_control_position",
+                      "link_recipe":  true,
+                      "text":  "将空间修饰的结果作为每次更新的目标位置，用于直接编写运动轨迹。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)空间修饰$(br)空间修饰 / 列表，0~64 项"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "此节点没有文本参数，通过子节点或节点种类确定行为。"
+                  }
+              ]
+}

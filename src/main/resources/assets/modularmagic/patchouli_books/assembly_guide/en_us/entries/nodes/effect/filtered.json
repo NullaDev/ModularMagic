@@ -1,0 +1,29 @@
+{
+    "name":  "Spell Node: Filtered",
+    "icon":  "modularmagic:gem_effect_filtered",
+    "category":  "modularmagic:nodes",
+    "sortnum":  774,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_effect_filtered",
+                      "link_recipe":  true,
+                      "text":  "Partition entities with an entity filter, then run the corresponding accepted or fallback processor list."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)filter$(br)Filter / Required: 1 node$(br2)$(li)Accepted targets$(br)Effect / List: 0-64 nodes"
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)Rejected targets$(br)Effect / List: 0-64 nodes"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "This node has no text parameters. Its kind and child nodes determine its behavior."
+                  }
+              ]
+}

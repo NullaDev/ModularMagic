@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：下方支撑面",
+    "icon":  "modularmagic:gem_predicate_surface_below",
+    "category":  "modularmagic:nodes",
+    "sortnum":  557,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_predicate_surface_below",
+                      "link_recipe":  true,
+                      "text":  "按所选支撑面类型检查当前位置下方是否有合适表面。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)支撑面类型 / 必填$(br)$(o)face$()"
+                  }
+              ]
+}

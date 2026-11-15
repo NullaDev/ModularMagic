@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：局部变量",
+    "icon":  "modularmagic:gem_action_variable",
+    "category":  "modularmagic:nodes",
+    "sortnum":  217,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_variable",
+                      "link_recipe":  true,
+                      "text":  "计算表达式并保存为命名变量，供子动作及其后代使用。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)子节点$(br)动作 / 必填，1 个"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)变量名 / 必填$(br)$(o)name$()$(br2)$(li)变量值 / 名称 / 必填$(br)$(o)variable$()"
+                  }
+              ]
+}

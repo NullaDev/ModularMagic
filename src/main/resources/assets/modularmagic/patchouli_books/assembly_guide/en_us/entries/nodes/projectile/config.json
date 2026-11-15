@@ -1,0 +1,34 @@
+{
+    "name":  "Spell Node: Config",
+    "icon":  "modularmagic:gem_projectile_config",
+    "category":  "modularmagic:nodes",
+    "sortnum":  899,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_projectile_config",
+                      "link_recipe":  true,
+                      "text":  "Define a custom projectile\u0027s motion, hit processors, appearance and lifecycle actions. Used by Custom Projectile, not directly as an action."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)motion$(br)Motion / Optional: 0 or 1 node$(br2)$(li)tick$(br)Action / Optional: 0 or 1 node"
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)hit$(br)Effect / List: 0-64 nodes$(br2)$(li)renderer$(br)Projectile renderer / Optional: 0 or 1 node"
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)land$(br)Action / Optional: 0 or 1 node$(br2)$(li)expire$(br)Action / Optional: 0 or 1 node"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)params / Optional$(br)$(o)params$()$(br2)$(li)filter / Optional$(br)$(o)filter$()$(br2)$(li)size / Optional$(br)$(o)size$()"
+                  }
+              ]
+}

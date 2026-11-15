@@ -1,0 +1,29 @@
+{
+    "name":  "法术节点：彩色尘埃",
+    "icon":  "modularmagic:gem_action_dust_particle",
+    "category":  "modularmagic:nodes",
+    "sortnum":  232,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_dust_particle",
+                      "link_recipe":  true,
+                      "text":  "产生指定颜色的尘埃粒子，可调整大小、速度与寿命。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)颜色 / 必填$(br)$(o)color$()$(br2)$(li)缩放 / 必填$(br)$(o)scale$()$(br2)$(li)速度 / 必填$(br)$(o)speed$()"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)存在刻数 / 必填$(br)$(o)life$()"
+                  }
+              ]
+}

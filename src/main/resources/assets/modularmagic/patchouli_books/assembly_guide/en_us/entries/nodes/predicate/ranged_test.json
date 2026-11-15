@@ -1,0 +1,29 @@
+{
+    "name":  "Spell Node: Ranged Test",
+    "icon":  "modularmagic:gem_predicate_ranged_test",
+    "category":  "modularmagic:nodes",
+    "sortnum":  560,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_predicate_ranged_test",
+                      "link_recipe":  true,
+                      "text":  "Test the child condition at block positions in range, succeeding once the number of matching positions reaches the minimum."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)child$(br)Predicate / Required: 1 node"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)range / Required$(br)$(o)range$()$(br2)$(li)height / Optional$(br)$(o)height$()$(br2)$(li)min count / Optional$(br)$(o)min_count$()"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)variable / Optional$(br)$(o)variable$()"
+                  }
+              ]
+}

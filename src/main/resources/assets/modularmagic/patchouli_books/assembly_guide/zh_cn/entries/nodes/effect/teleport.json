@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：传送实体",
+    "icon":  "modularmagic:gem_effect_teleport",
+    "category":  "modularmagic:nodes",
+    "sortnum":  772,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_effect_teleport",
+                      "link_recipe":  true,
+                      "text":  "把选中的实体传送到指定的绝对世界坐标；不是相对位移。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)X 分量 / 必填$(br)$(o)x$()$(br2)$(li)Y 分量 / 必填$(br)$(o)y$()$(br2)$(li)Z 分量 / 必填$(br)$(o)z$()"
+                  }
+              ]
+}

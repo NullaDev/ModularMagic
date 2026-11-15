@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：随机变量",
+    "icon":  "modularmagic:gem_action_random",
+    "category":  "modularmagic:nodes",
+    "sortnum":  216,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_random",
+                      "link_recipe":  true,
+                      "text":  "生成 count 个 0 到 1 之间的随机数，变量名为 name0、name1 等，只在子动作作用域内提供。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)子节点$(br)动作 / 必填，1 个"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)变量名 / 必填$(br)$(o)name$()$(br2)$(li)数量 / 必填$(br)$(o)count$()"
+                  }
+              ]
+}

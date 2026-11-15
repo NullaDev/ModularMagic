@@ -1,0 +1,29 @@
+{
+    "name":  "Spell Node: If",
+    "icon":  "modularmagic:gem_action_if",
+    "category":  "modularmagic:nodes",
+    "sortnum":  213,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_if",
+                      "link_recipe":  true,
+                      "text":  "Test a condition, running the action when true and the fallback when false. Either branch may be empty."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)predicate$(br)Predicate / Required: 1 node$(br2)$(li)If true$(br)Action / Optional: 0 or 1 node"
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)fallback$(br)Action / Optional: 0 or 1 node"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "This node has no text parameters. Its kind and child nodes determine its behavior."
+                  }
+              ]
+}

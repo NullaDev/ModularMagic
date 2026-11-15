@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：实体全满足",
+    "icon":  "modularmagic:gem_filter_and",
+    "category":  "modularmagic:nodes",
+    "sortnum":  661,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_filter_and",
+                      "link_recipe":  true,
+                      "text":  "只让满足全部子过滤条件的实体通过。此类节点用于实体分流，不是空间条件。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)条件项$(br)实体过滤 / 列表，0~64 项"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "此节点没有文本参数，通过子节点或节点种类确定行为。"
+                  }
+              ]
+}

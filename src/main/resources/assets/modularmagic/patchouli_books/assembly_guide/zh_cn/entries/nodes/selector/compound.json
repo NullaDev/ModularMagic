@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：集合组合",
+    "icon":  "modularmagic:gem_selector_compound",
+    "category":  "modularmagic:nodes",
+    "sortnum":  447,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_selector_compound",
+                      "link_recipe":  true,
+                      "text":  "用集合运算组合多个子选区，结果由 function 指定的组合方式决定。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)选区项$(br)选区 / 列表，0~64 项"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)集合运算 / 必填$(br)$(o)function$()"
+                  }
+              ]
+}

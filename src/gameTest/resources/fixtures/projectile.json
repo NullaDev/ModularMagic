@@ -1,0 +1,87 @@
+{
+  "format": 1,
+  "root": {
+    "id": "arcane_missile-0",
+    "template": "root/instant",
+    "parameters": {
+      "icon": "minecraft:arrow",
+      "order": "0"
+    },
+    "children": {
+      "trigger_type": [
+        {
+          "id": "arcane_missile-1",
+          "template": "trigger/facing_front",
+          "parameters": {},
+          "children": {}
+        }
+      ],
+      "action": [
+        {
+          "id": "arcane_missile-2",
+          "template": "action/custom_projectile",
+          "parameters": {
+            "speed": "1.2",
+            "life": "60",
+            "bypassWall": "",
+            "bypassEntity": "",
+            "params": ""
+          },
+          "children": {
+            "config": [
+              {
+                "id": "arcane_missile-3",
+                "template": "projectile/config",
+                "parameters": {
+                  "params": "",
+                  "filter": "ENEMY",
+                  "size": "{\"size\":\"0.25\",\"fullBlockCollision\":false}"
+                },
+                "children": {
+                  "motion": [
+                    {
+                      "id": "arcane_missile-4",
+                      "template": "motion/simple",
+                      "parameters": {
+                        "friction": "0.01",
+                        "gravity": "0"
+                      },
+                      "children": {}
+                    }
+                  ],
+                  "tick": [],
+                  "hit": [
+                    {
+                      "id": "arcane_missile-5",
+                      "template": "effect/damage",
+                      "parameters": {
+                        "damage_type": "minecraft:magic",
+                        "damage": "6",
+                        "indirect": "true",
+                        "positioned": ""
+                      },
+                      "children": {}
+                    }
+                  ],
+                  "renderer": [
+                    {
+                      "id": "arcane_missile-6",
+                      "template": "projectile_renderer/simple",
+                      "parameters": {
+                        "texture": "minecraft:textures/entity/projectiles/arrow.png"
+                      },
+                      "children": {}
+                    }
+                  ],
+                  "land": [],
+                  "expire": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "condition": []
+    }
+  }
+}

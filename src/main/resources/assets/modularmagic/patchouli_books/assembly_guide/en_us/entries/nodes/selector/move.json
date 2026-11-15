@@ -1,0 +1,24 @@
+{
+    "name":  "Spell Node: Move",
+    "icon":  "modularmagic:gem_selector_move",
+    "category":  "modularmagic:nodes",
+    "sortnum":  445,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_selector_move",
+                      "link_recipe":  true,
+                      "text":  "Apply spatial modifiers, then evaluate the child selector in the resulting spatial frame."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)modifiers$(br)Modifier / List: 0-64 nodes$(br2)$(li)child$(br)Selector / Required: 1 node"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "This node has no text parameters. Its kind and child nodes determine its behavior."
+                  }
+              ]
+}

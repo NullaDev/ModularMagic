@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：球内随机",
+    "icon":  "modularmagic:gem_action_random_pos_sphere",
+    "category":  "modularmagic:nodes",
+    "sortnum":  227,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_random_pos_sphere",
+                      "link_recipe":  true,
+                      "text":  "在指定球形范围内随机取点，并在各点执行子动作。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)子节点$(br)动作 / 必填，1 个"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)半径 / 必填$(br)$(o)radius$()$(br2)$(li)数量 / 必填$(br)$(o)count$()$(br2)$(li)循环变量名 / 可留空$(br)$(o)index$()"
+                  }
+              ]
+}

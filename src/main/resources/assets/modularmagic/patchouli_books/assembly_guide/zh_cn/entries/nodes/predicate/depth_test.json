@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：向下逐层判断",
+    "icon":  "modularmagic:gem_predicate_depth_test",
+    "category":  "modularmagic:nodes",
+    "sortnum":  559,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_predicate_depth_test",
+                      "link_recipe":  true,
+                      "text":  "从当前位置向下逐层测试子条件；在最大深度内任一层成立即通过。可提供深度索引。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)子节点$(br)条件 / 必填，1 个"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)最大深度 / 必填$(br)$(o)max_depth$()$(br2)$(li)循环变量名 / 可留空$(br)$(o)index$()"
+                  }
+              ]
+}

@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：循环",
+    "icon":  "modularmagic:gem_action_iterate",
+    "category":  "modularmagic:nodes",
+    "sortnum":  221,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_iterate",
+                      "link_recipe":  true,
+                      "text":  "重复执行子动作，可指定循环次数与索引变量。索引从 0 开始。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)子节点$(br)动作 / 必填，1 个"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)循环次数 / 必填$(br)$(o)step$()$(br2)$(li)循环变量名 / 可留空$(br)$(o)index$()"
+                  }
+              ]
+}

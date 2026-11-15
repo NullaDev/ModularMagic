@@ -1,0 +1,29 @@
+{
+    "name":  "法术节点：物品碎屑",
+    "icon":  "modularmagic:gem_action_item_particle",
+    "category":  "modularmagic:nodes",
+    "sortnum":  231,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_item_particle",
+                      "link_recipe":  true,
+                      "text":  "产生使用指定物品纹理的碎屑粒子，可调整速度、大小与寿命。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)物品 ID / 必填$(br)$(o)item$()$(br2)$(li)速度 / 必填$(br)$(o)speed$()$(br2)$(li)缩放 / 必填$(br)$(o)scale$()"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)存在刻数 / 必填$(br)$(o)life$()$(br2)$(li)破碎效果 / 必填$(br)$(o)breaking$()"
+                  }
+              ]
+}

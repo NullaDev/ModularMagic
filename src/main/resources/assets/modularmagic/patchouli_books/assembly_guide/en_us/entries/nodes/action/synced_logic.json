@@ -1,0 +1,24 @@
+{
+    "name":  "Spell Node: Synced Logic",
+    "icon":  "modularmagic:gem_action_synced_logic",
+    "category":  "modularmagic:nodes",
+    "sortnum":  220,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_synced_logic",
+                      "link_recipe":  true,
+                      "text":  "Execute a child action requiring server and client coordination. MM coordinates its visuals and actual effects through spell synchronization."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)child$(br)Action / Required: 1 node"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "This node has no text parameters. Its kind and child nodes determine its behavior."
+                  }
+              ]
+}

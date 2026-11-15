@@ -1,0 +1,24 @@
+{
+    "name":  "Spell Node: Not",
+    "icon":  "modularmagic:gem_predicate_not",
+    "category":  "modularmagic:nodes",
+    "sortnum":  554,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_predicate_not",
+                      "link_recipe":  true,
+                      "text":  "Invert the child condition\u0027s result."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)child$(br)Predicate / Required: 1 node"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "This node has no text parameters. Its kind and child nodes determine its behavior."
+                  }
+              ]
+}

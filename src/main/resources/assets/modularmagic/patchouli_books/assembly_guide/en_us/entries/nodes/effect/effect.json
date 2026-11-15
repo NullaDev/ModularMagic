@@ -1,0 +1,29 @@
+{
+    "name":  "Spell Node: Effect",
+    "icon":  "modularmagic:gem_effect_effect",
+    "category":  "modularmagic:nodes",
+    "sortnum":  769,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_effect_effect",
+                      "link_recipe":  true,
+                      "text":  "Apply a status effect with a duration, amplifier and display options. The reference slot samples a potion\u0027s first effect."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "This node has no child slots. Select it to edit its parameters. Right-click a leaf on the canvas to remove it; take a root using Take core."
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)effect / Required$(br)$(o)effect$()$(br2)$(li)duration / Required$(br)$(o)duration$()$(br2)$(li)amplifier / Optional$(br)$(o)amplifier$()"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)ambient / Optional$(br)$(o)ambient$()$(br2)$(li)visible / Optional$(br)$(o)visible$()"
+                  }
+              ]
+}

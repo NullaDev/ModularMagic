@@ -1,0 +1,19 @@
+{
+    "name":  "Formed Spell Core",
+    "icon":  "modularmagic:formed_spell_core",
+    "category":  "modularmagic:equipment",
+    "sortnum":  2,
+    "pages":  [
+                  {
+                      "link_recipe":  true,
+                      "item":  "modularmagic:formed_spell_core",
+                      "type":  "patchouli:spotlight",
+                      "text":  "A spell that passed structure, parameter and engine validation. It stores the root, every node and all parameters, and can be cast from an Assembly Wand."
+                  },
+                  {
+                      "title":  "Editing and examples",
+                      "type":  "patchouli:text",
+                      "text":  "Return it to a table to edit. Changes may make it unformed again without losing its structure.$(br2)The Built-in Spells creative tab supplies 28 editable L2Magic examples for casting or studying."
+                  }
+              ]
+}

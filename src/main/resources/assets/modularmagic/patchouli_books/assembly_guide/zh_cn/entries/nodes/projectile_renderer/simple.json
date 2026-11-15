@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：定向弹体外观",
+    "icon":  "modularmagic:gem_projectile_renderer_simple",
+    "category":  "modularmagic:nodes",
+    "sortnum":  1187,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_projectile_renderer_simple",
+                      "link_recipe":  true,
+                      "text":  "使用指定贴图绘制定向弹体。它只控制外观，命中效果由弹体配置另行指定。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)贴图路径 / 必填$(br)$(o)texture$()"
+                  }
+              ]
+}

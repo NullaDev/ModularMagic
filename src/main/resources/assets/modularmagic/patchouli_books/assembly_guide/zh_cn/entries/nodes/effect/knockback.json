@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：击退",
+    "icon":  "modularmagic:gem_effect_knockback",
+    "category":  "modularmagic:nodes",
+    "sortnum":  767,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_effect_knockback",
+                      "link_recipe":  true,
+                      "text":  "对已选中的实体施加击退，强度、水平角度与俯仰角度共同决定击退方向。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)击退强度 / 必填$(br)$(o)knockback$()$(br2)$(li)水平角度 / 可留空$(br)$(o)angle$()$(br2)$(li)俯仰角度 / 可留空$(br)$(o)tilt$()"
+                  }
+              ]
+}

@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：预约方块更新",
+    "icon":  "modularmagic:gem_action_schedule_tick",
+    "category":  "modularmagic:nodes",
+    "sortnum":  240,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_schedule_tick",
+                      "link_recipe":  true,
+                      "text":  "为指定方块安排一次延迟更新；这不是让整棵法术树等待。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)等待刻数 / 必填$(br)$(o)tick$()$(br2)$(li)方块 ID / 必填$(br)$(o)block$()"
+                  }
+              ]
+}

@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：方块性质",
+    "icon":  "modularmagic:gem_predicate_block_test",
+    "category":  "modularmagic:nodes",
+    "sortnum":  558,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_predicate_block_test",
+                      "link_recipe":  true,
+                      "text":  "检查当前位置方块是否具有所选性质，例如是否符合引擎提供的方块测试。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)方块性质 / 必填$(br)$(o)test$()"
+                  }
+              ]
+}

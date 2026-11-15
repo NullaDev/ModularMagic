@@ -1,0 +1,29 @@
+{
+    "name":  "法术节点：直线展开",
+    "icon":  "modularmagic:gem_action_iterate_linear",
+    "category":  "modularmagic:nodes",
+    "sortnum":  224,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_iterate_linear",
+                      "link_recipe":  true,
+                      "text":  "沿直线逐步改变位置并执行子动作。前向步进、额外偏移与起点设置共同决定采样位置。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)子节点$(br)动作 / 必填，1 个"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)沿朝向步进 / 可留空$(br)$(o)alongDir$()$(br2)$(li)偏移向量 / 可留空$(br)$(o)offset$()$(br2)$(li)沿偏移步进 / 可留空$(br)$(o)alongOffset$()"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)循环次数 / 必填$(br)$(o)step$()$(br2)$(li)从原点开始 / 可留空$(br)$(o)startFromOrigin$()$(br2)$(li)循环变量名 / 可留空$(br)$(o)index$()"
+                  }
+              ]
+}

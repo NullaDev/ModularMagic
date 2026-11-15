@@ -1,380 +1,135 @@
-# L2Magic
-
-# Concepts
-
-## Direction and Normal
-
-# Root Types and Parameters
-
-<details>
-<summary>All parameters</summary>
-
-## Default Parameters
-For all cases:
-- PosX: current cursor position
-- PosY: current cursor position
-- PosZ: current cursor position
-- CasterX: current caster position
-- CasterY: current caster position
-- CasterZ: current caster position
-
-With Scheduler:
-- Time: current scheduler time
-
-## Spell Action
-Parameters:
-- TickUsing: ticks player is using this spell
-- Power: The power factor of this spell
-- MobCastDelay: ticks to delay if it's casted by hostile mob
-- CastX: Position where this spell is casted
-- CastY: Position where this spell is casted
-- CastZ: Position where this spell is casted
-
-## Projectile
-Parameters:
-- TickCount: Ticks this projectile has existed
-- ProjectileX: Position of this projectile (when root block is initiated)
-- ProjectileY: Position of this projectile (when root block is initiated)
-- ProjectileZ: Position of this projectile (when root block is initiated)
-
-## Custom Particle
-Parameters:
-- TickCount: Ticks this particle has existed
-
-</details>
-
-# Block Types
-
-## Action Blocks (20)
-
-<details>
-<summary>All logic action block types</summary>
-
-### if
-
-Executes either one of the 2 action blocks based on a condition
-
-- param `predicate` (bool expression): condition
-- param `action` (action block, default empty): action block to execute when predicate results in true
-- param `fallback` (action block, default empty): action block to execute when predicate results in false
-
-### list
-
-Executes multiple action blocks at the same time, with the same context
-
-- param `children` (list of action blocks): action blocks to execute
-
-### delay
-
-Delays execution of an action block
-
-- param `tick` (int expression): tick to delay
-- param `child` (action block): action block to be executed later
-
-### move
-
-Move the position and orientation of execution context
-
-- param `modifiers` (list of modifier): a list of modifiers to move
-- param `child` (action block): subsequent action block using new position and orientation
-
-### processor
-
-Selects entity using entity selectors, and process them using entity processors
-
-- param `selector` (entity selector): selector to determine a list of entities to process
-- param `processors` (list of entity processor): a list of processors to run over for the entities selected
-- param `target` (enum):
-  - `ENEMY`: all entities that are not allied with spell caster
-  - `ENEMY_NO_FAMILY` all entities that are not allied with spell caster, except the ones that are the same type and
-    don't hate spell caster
-  - `ALLY`: all entities that are allied with spell caster
-  - `ALLY_OR_FAMILY` all entities that are allied with spell caster, or the ones that are the same type and don't hate
-    spell caster
-
-Note:
-
-- Using `ENEMY_NO_FAMILY` can help to prevent friendly fire without needing to setup team system
-- Using `ALLY_OR_FAMILY` can help to give positive effects to other players without needing to setup team system
-
-</details>
-
-<hr>
-
-<details>
-<summary>All iterator action block types</summary>
-
-All iterators have an optional param called `index`. It for specifying the name of iterating index as variable.
-It starts from 0, and ends at `step-1`. You can use it to do calculation for subsequent blocks.
-
-### iterate
-Execute an action block for multiple times
-- param `step` (int expression): step to iterate
-- param `child` (action block): action block to execute repeatedly
-- param `index` (optional string): variable name for index. If you don't need index as variable, just don't add this to the block to improve efficiency.
-
-Note that most iterators are actually simplification of an `iterate` block with another commonly used block. 
-
-### iterate_delayed
-Execute an action block for multiple times, with delays between them.
-- param `step` (int expression): step to iterate
-- param `delay` (int expression): delay in ticks between steps
-- param `child` (action block): action block to execute repeatedly
-- param `index` (optional string): variable name for index. If you don't need index as variable, just don't add this to the block to improve efficiency.
-
-Note that first step (`index` = 0) will be executed immediately.
-
-### iterate_delayed TODO
-
-### iterate_linear
-Execute an action block for multuple times over a sequence of points on a straight line
-- param `step` (int expression): step to iterate
-- param `child` (action block): action block to execute repeatedly
-- param `index` (optional string): variable name for index. If you don't need index as variable, just don't add this to the block to improve efficiency.
-
-Other optional parameters:
-- param `aloneDir` (double expression, default 0): step size along `dir`
-- param `offset` (static vector, default (0,0,0)): alternative direction to move toward
-- param `aloneOffset` (double expression, default 0): step size along alternative direction
-- param `startFromOrigin` (static bool, default true): whether to start from `pos` or `pos+dir*alongDir+offset*alongOffset`.
-Note that in either case, `index` will start from 0.
-
-### iterate_arc
-Execute an action block for multuple times over a sequence of points on an arc
-- param `count` (int expression): total number of times to iterate
-- param `child` (action block): action block to execute repeatedly
-- param `index` (optional string): variable name for index. If you don't need index as variable, just don't add this to the block to improve efficiency.
-- param `radius` (float expression): radius of the arc
-- param `minAngle` (float expression, default -180): starting angle in degree
-- param `maxAngle` (float expression, default 180): ending angle in degree
-- param `maxInclusive` (static bool, default false):
-  - If true, `index = 0` will be at `minAngle`, and `index = count - 1` will be at `maxAngle`
-  - If false, `index = 0` will be at `minAngle`, and `index = count - 1` will ba 1 step away from `maxAngle`
-
-If angle between `minAngle` and `maxAngle` is 360 degree, using `maxInclusive = false` yields uniform distribution over a circle.
-However, if the angle in between is smaller, it's recommended to set `maxInclusive` to true.
-
-Note that if you set `maxInclusive = true` while having `count = 1`, game will crash
-
-### random_pos_fan
-Select several random points on a fan with specified angle range and radius range. The chance of selecting at any point is the same regardless of the distance to origin.
-
-Can also be used to select points on a ring (maxAngle-minAngle=360), on a pie (minRadius = 0), or on a circle (intersection of previous 2 special cases).
-
-- param `count` (int expression): total number of times to iterate
-- param `child` (action block): action block to execute repeatedly
-- param `index` (optional string): variable name for index. If you don't need index as variable, just don't add this to the block to improve efficiency.
-- param `minRadiuss` (float expression): minimum radius to select a point
-- param `maxRadiuss` (float expression): maximum radius to select a point
-- param `minAngle` (float expression, default -180): starting angle in degree
-- param `maxAngle` (float expression, default 180): ending angle in degree
-
-Extra variables: Normally iterators gives one variable defined by `index`, but this block gives 2 extra variables if you hve `index` defined:
-- `<index>_radius`: the actual radius selected
-- `<index>_angle`: the actual angle selected
-If you use `index="i"`, then `"i_radius"` and `"i_angle"` will also be added to variable list.
-
-</details>
-<hr>
-<details>
-<summary>All particle / sound action block types</summary>
-
-### particle TODO
-### block_particle TODO
-### item_particle TODO
-### dust_particle TODO
-### transition_particle TODO
-### sound TODO
-
-</details>
-
-<hr>
-<details>
-<summary>All block action block types</summary>
-
-### set_block TODO
-### set_block_facing TODO
-### remove_block TODO
-### knock_block TODO
-
-</details>
-
-<hr>
-
-## ContextPredicates (6)
-<details>
-<summary>All context predicates</summary>
-
-### and TODO
-### or TODO
-### move TODO
-### block TODO
-### top_surface TODO
-### replaceable TODO
-
-</details>
-<hr>
-
-## Modifiers (10)
-
-<details>
-<summary>All modifier types</summary>
-
-### forward
-Move `pos` in the direction of `dir` by `distance`
-- param `distance` (float expression)
-
-
-### rotate
-Rotate `dir` with normal vector of `normal`
-- param `degree` (float expression): degree to rotate for Y-Rot
-- param `vertical` (float expression, default 0): degree to rotate for X-Rot (positive means closer to normal)
-
-### offset
-Move `pos` with absolute offset
-- param `x` (float expression, default 0)
-- param `y` (float expression, default 0)
-- param `z` (float expression, default 0)
-
-### direction
-Set `dir` to an absolute value. Will be normalized if it's not unit vector
-- param `x` (float expression, default 0)
-- param `y` (float expression, default 0)
-- param `z` (float expression, default 0)
-
-### random_offset
-Move `pos` with a random offset
-- param `shape` (enum), specifies the shape of the random distribution.
-- param `x` (float expression, default 0): scales x-axis of the random vector
-- param `y` (float expression, default 0): scales y-axis of the random vector
-- param `z` (float expression, default 0): scales z-axis of the random vector
-
-Shapes:
-- `RECT`: uniform distribution of a `[-1,1]^3` unit cube. Same as using `offset` with `rand(-x,x)`, `rand(-y,y)`, `rand(-z-z)`
-- `SPHERE`: uniform distribution on surface of a unit sphere. 
-- `GAUSSIAN`: uniform Gaussian distribution.
-
-### set_normal
-Set `normal` to an absolute value. Will be normalized if it's not unit vector
-- param `x` (float expression, default 0)
-- param `y` (float expression, default 0)
-- param `z` (float expression, default 0)
-- 
-### direction_to_normal
-Let `dir` = `normal`
-
-### normal_to_direction
-Let `normal` = `dir`
-
-### move_to_caster
-Set `pos` to current caster position
-
-### align_with_caster
-Set `dir` to current caster facing
-
-</details>
-
-<hr>
-
-## EntitySelectors (8)
-<details>
-<summary>All selector types</summary>
-
-### self
-Selects the caster itself
-
-### move
-Moves the position and orientation of the selector using modifiers, then invoke subsequent selectors
-- param `modifiers`: a list of modifiers to move
-- param `child`: subsequent selectors using new position and orientation
-
-### box
-Selects with a single bounding box of shape `[-size/2, size/2]x[0, y]x[-size/2, size/2]`.
-- param `size` (float expression): width of the box
-- param `y` (float expression): height of the box
-- param `center` (static bool, default false):
-  - If true, use `pos` as the center of the box
-  - If false, use `pos` as the center bottom of the box
-
-### compound
-Merges results of multiple selectors
-- param `function` (enum): `UNION` for merging
-- param `selectors`: a list of selectors to merge
-
-### line
-A series of box selectors in a line
-- param `step` (int expression): number of steps to move forward
-- param `size` (float expression): size of the bounding box, also the step size to move forward
-
-Note that there will be `step+1` boxes, from `pos` to `pos+dir*size*step`
-
-### arc
-A series of box selectors in an arc
-- param `step` (int expression): number of steps to divide the arc
-- param `radius` (float expression): radius of the arc
-- param `size` (float expression): size of the bounding box
-- param `minAngle` (float expression, default -180): starting angle in degree
-- param `maxAngle` (float expression, default 180): ending angle in degree
-
-Note that there will be `step+1` boxes, from `minAngle` to `maxAngle`
-
-### cylinder
-Approximated Cylinder selector with 5 boxes, from bottom center of the cylinder
-- param `r` (float expression): radius of the cylinder
-- param `y` (float expression): height of the cylinder
-
-### ball
-Approximated Ball selector with 7 boxes, from center of the ball
-- param `r` (float expression): radius of the ball
-
-</details>
-
-<hr>
-
-## EntityProcessors (5)
-<details>
-<summary>All processor types</summary>
-
-### damage
-- param `damage_type`: damage type id, vanilla or modded
-- param `damage` (float expression) damage to deal
-- param `indirect` (static bool, default false) make the damage indirect
-- param `positioned` (static bool, default true) supply damage origin. 
-Vanilla use it to calculate shield blocking, default damange knockback, etc
-
-### knockback
-Knock back target, facing from damage position to target.
-Triggers knockback events.
-Exact effect affected by knockback resistance.
-- param `knockback` (float expression), knockback strength
-- param `angle` (float expression, default 0), angle to shift the knockback direction in Y-Rot
-- param `tilt` (float expression, default 0), angle to shift the knockback direction in X-Rot
-
-Note that y-axis component in knockback vector will be discarded. Use `push` if you want y-axis movement.
-
-### push
-Push target, facing depending on parameter. Unaffected by knockback resistance.
-- param `speed` (float expression), push strength
-- param `angle` (float expression, default 0), angle to shift the push direction in Y-Rot
-- param `tilt` (float expression, default 0), angle to shift the push direction in X-Rot
-- param `vector`: enum that determines push direction:
-  - `UNIFORM`: push direction aligns with `dir`
-  - `TO_CENTER`: push direction is a factor from `pos` to entity center
-  - `TO_BOTTOM`: push direction is a factor from `pos` to entity position
-
-### effect
-- param `effect`: mob effect ID
-- param `duration` (int expression): duration of effect in ticks
-- param `amplifier` (int expression, default 0): level of effect, Lv.I is 0
-- param `ambient` (static bool, default false): if the effect is ambient (constantly refreshed)
-- param `visible` (static bool, default true): if the effect shows effect particles
-
-### property
-- param `duration` (int expression)
-- param `property`: enum that determines which property to set
-  - `IGNITE` set entity to be ignited for x ticks
-  - `FREEZE` set entity to be frozen for x ticks already 
-(note that entity unfroze at double rate, so it's x/2 ticks to continue freezing)
-
-
-</details>
+# ModularMagic / 魔法装配
+
+nulladev 开发的 Minecraft 1.21.1 / NeoForge 模组。Java 包名与 Maven group 为
+`cn.nulladev.modularmagic`，游戏内注册 ID 使用 `modularmagic:`。
+L2Magic 3.0.6 与 Patchouli 是必需前置，GlimmeringTales 不参与编译或运行。
+
+当前实现的是可实际操作的法术装配原型：节点物品、法术编写台、树形编辑 GUI、
+成型法术核心与未成形法术核心，以及可容纳九颗核心并实际施法的装配法杖。
+研究、能量和世界观流程尚未实现，施法资源接口默认不扣除资源。
+
+## 在游戏里使用
+
+1. 从“模块化魔法”创造模式分页取得法术编写台、一颗法术核心和节点宝石。
+2. 放置并右键打开编写台，将“法术核心：瞬发 / 蓄力 / 持续”放入右上角核心槽。
+3. 拿起背包里的宝石，左键点击画布上同类型的空槽。每次只装入一枚真实物品。
+4. 左键选择已有节点，在右侧编辑参数，点击“应用参数”。滚动右侧面板查看其余字段。
+5. 点击“取出核心”。通过引擎校验会获得成型法术核心；缺少节点或参数有误时获得
+   未成形法术核心。将任一种核心放回输入槽即可继续编辑，结构、参数与节点物品全部保留。
+
+最小示例：**法术核心：瞬发 → 法术节点：自身位置 + 法术节点：声音**。默认参数即可通过校验。
+把成型核心装入装配法杖，右键即可执行该法术。
+
+- 左键选择节点；持有宝石时左键匹配空槽装入；右键取出叶节点。
+- 有子节点的节点必须先取出全部子节点，悬停可查看锁定说明。
+- 画布中的根核心始终不能右键取出，只能整体取走。内部没有任何子节点时仍为对应类型的
+  法术核心，保留图标等参数；只有非空但不完整的结构才保存为未成形法术核心。
+- 拖动画布空白或按住鼠标中键平移；滚轮以鼠标位置为中心缩放。
+- 列表保持“已占用节点 + 一个尾部空入口”，移除成员后顺序压紧，其他节点身份不变。
+- 取出核心和关闭界面都会应用尚未提交的文本。关闭后核心留在编写台内，重新打开可继续编辑，
+  区块卸载和存档重载也会保留。只有主动取出或拆除编写台才会移出核心；拆台时掉落完整核心。
+- 同一张编写台同一时间仅供一人编辑，避免多人重复取走同一份节点。
+- 节点宝石本身不保存参数，取出后恢复为可堆叠的普通物品。
+- 右侧优先展示主要参数，点击“⋯”展开更多参数。可选字段留空采用引擎默认值。
+  表达式直接输入文本；布尔值为 `true` / `false`，枚举使用大写，复合字段输入原生 JSON。
+  错误详情悬停核心旁的状态按钮查看。左侧全高画布默认缩放 65%，最低可缩至 20%。
+- 图标、物品、方块与状态效果字段提供参考槽：拿起相应物品后左键点击取样，不消耗物品。
+  药水读取首个状态效果；右键清空参考值，旁边仍可手填 ID 或方块状态 JSON。
+- 操作说明位于右上角 `i` 图标的悬停提示中；颜色和 tooltip 说明节点分类，名称使用
+  “法术节点：循环”等道具名称。引擎类型 ID 仅在 F3+H 高级提示中显示。
+
+## 装配法杖
+
+从创造分页取得装配法杖，**潜行＋右键**打开九格核心仓，像普通背包一样放入或取出核心。
+关闭仓库后核心保存在法杖内，选中状态和内容均随物品存档。仓库打开期间不能移动法杖本身。
+核心仓总文档数据上限为 512 KiB。
+
+持杖时沿用 L2ItemSelector 的切换方式和选择显示（默认方向键上／下，具体以控制设置为准），
+切换只改变当前核心，不替换或消耗法杖中的其他核心。显示图标使用各法术根设置的图标。
+普通右键施放瞬发法术；持续型按住施放；蓄力型松开时施放，`TickUsing` 记录蓄力刻数。
+未成形核心可以收纳，但必须通过校验才能施放。
+
+`CastCosts.setHandler(...)` 提供服务端资源接口，在法术效果发生前调用，返回 false 可以拒绝施法。
+当前默认返回 true，不扣魔力、专注或其他资源。法术核心本身不会因施法而消耗。
+自定义程序通过独立的运行时编译缓存和视觉数据包执行；弹体附带分段程序数据以支持网络与存档。
+少量兼容 Mixin 仅为 MM 自定义程序解析弹体、同步节点和动态贴图，L2Magic 原源码未修改。
+
+目前节点从创造模式取得，未加入研究或节点合成流程。编写台可用工作台与书与笔无序合成。
+Patchouli 的“装配指南”只介绍当前操作，不包含虚构层内容。
+手册首页分为入门教程、工具与核心、节点图鉴三个分类。全部 100 种装配物品集中在节点图鉴中，
+每种介绍用途、子节点类型与数量、必填或可选状态，以及可编辑参数。
+从零教程用声音法术逐步演示装配、校验和法杖施放；编写台、法杖、成型与未成形核心另有独立页面。
+将装配指南放在快捷栏，悬停对应物品并长按 Ctrl，可通过帕秋莉原生功能打开其介绍；
+若帕秋莉设置改用 Shift，则遵循该设置。物品 tooltip 保留状态信息，操作说明集中在手册。
+中英文条目均由节点模板与用途说明生成，
+运行 `./scripts/generate-node-assets.ps1` 会同时更新节点名称、模型与手册目录。
+
+另有“模块化魔法：内置法术”创造分页，提供 L2Magic 全部 **28 个示例法术**的成型核心，
+可直接放进编写台查看、拆装与修改。通过引擎 Codec 从当前注册表导入，保留原法术参数和效果，
+并将引用的弹体配置展开为可编辑节点；兼容数据包对原法术的覆盖。
+`BuiltinSpells.create(id, registries)` 供创造分页和未来战利品生成共用，ID 与 L2Magic 示例一致。
+名称使用 MM 独立的完整中英文词条。L2Magic 创造分页隐藏由 MM 内部入口自动生成的法杖，
+装配法杖只放在 MM 分页。本次尚未修改野生宝箱战利品表。
+
+## 节点覆盖与数据
+
+共 **100 种装配物品**，包括 97 种法术节点和 3 种施法类型的法术核心：L2Magic 的
+9 类、88 种注册节点，另加表达式条件、7 种起点和弹体配置。显式模板是
+`src/main/resources/data/modularmagic/node_templates.json`。
+同类同色，种类通过不同刻纹区别；初稿模型使用原版方块贴图，可运行
+`./scripts/generate-node-assets.ps1` 重新生成物品模型与中英文名称。
+
+核心通过 1.21 的 `minecraft:custom_data` 组件保存有版本号的 MM 草稿，允许必需槽缺失、
+表达式未写完等情况。成型时额外保存 L2Magic 原生法术 JSON 和本地弹体配置 JSON。
+校验使用 L2Magic 的 Codec、注册表与表达式作用域规则，收集其子节点错误诊断，并补充
+其遗漏的表达式操作数检查。
+弹体配置在编译期间使用独立的临时注册表，不修改前置或世界注册表。
+
+服务端负责物品转移、类型和父节点锁定检查。请求携带文档版本；过期请求拒绝并重新同步。
+草稿限制为 256 个节点、24 层、每列表 64 个成员，单个参数 2048 字符。
+随机变量节点最多声明 64 个变量，避免编辑时展开过大的变量集合。
+
+## 开发与验证
+
+使用 **JDK 21**、项目自带的 **Gradle 8.8 Wrapper**。IDEA 中重新加载 Gradle，并将
+Gradle JVM 设为 JDK 21。
+
+```powershell
+.\gradlew.bat build
+.\gradlew.bat runGameTestServer
+.\gradlew.bat runClient
+```
+
+输出为 `build/libs/modularmagic-0.1.0.jar`。安装时需另外安装 L2Magic、Patchouli 及所需的
+L2 库，它们均未打入本模组。代理保留为 `127.0.0.1:7890`，Curios 使用 IllusiveC4 Maven。
+已有有效的 1.21.1 缓存时，构建配置优先复用 Minecraft 元数据、游戏 JAR 和映射，避免
+IDE 每次启动都重下 Mojang 版本清单；Maven 依赖仍正常联网。首次下载或缓存缺失时走
+正常下载流程。需要主动更新元数据时使用 `-PrefreshMinecraftMetadata=true`，或
+`--refresh-dependencies`。Gradle 的代理由 `gradle.properties` 控制，与 IDEA HTTP 代理独立。
+Sodium / Iris 默认关闭，可使用 `-PenableRenderingMods=true` 在开发客户端启用。
+
+已验证：13 项文档单元测试、12 项游戏内集成测试（含全部 100 个模板的真实 Codec 编译、
+28 个示例与原版逐字段对比，以及创造分类隔离），
+以及客户端实际参考槽点击与不消耗物品、法杖仓库、原选择器网络切换、真实施法与弹体显示。
+测试还覆盖大于 32767 字符的弹体程序分段序列化、核心持久化及资源接口拒绝施法。
+新增回归覆盖三种空核心的原型保留、参数保存、最后一个子节点取出及根节点服务端保护，
+客户端覆盖网络快照在绘制前切换或清空的时序，以及画布根核心的右键保护。
+本轮构建与集成测试日志为 `.gradle/final-examples-validation.log`，客户端检查日志为
+`.gradle/all-presets-client.log`，截图位于 `runs/client/screenshots/`。
+测试驱动仅在 `-PclientSmoke=true` 时启用，并需要独立测试存档
+`runs/client/saves/modularmagic-ui-smoke`；该驱动会改动此测试存档中的背包和方块，然后自动退出。
+
+## 工程目录
+
+- `src/main/java/cn/nulladev/modularmagic/`：本模组代码。
+- `spell/`：节点模板、草稿、L2Magic 编译与校验适配。
+- `menu/`、`network/`、`client/`：服务端装配会话、同步协议、实际编辑界面。
+- `src/main/resources/`：独立资源、模板、语言与操作手册。
+- `src/test/`：文档与约束单元测试。
+- `src/gameTest/`：游戏内集成测试与客户端检查驱动；不进入发布 JAR。
+- `libs/`：固定版本的本地开发依赖及源码附件。
+- `reference/l2magic/`：原始上游项目参考快照，不参与构建；README、构建配置、Wrapper 等均已恢复到仓库原始版本。
+- `private-design/`：Git 忽略的历史设计文档。
+
+L2Magic 上游：<https://github.com/Minecraft-LightLand/L2Magic>。
+引擎源码和授权保留于参考快照，未修改其实现。仓库保留原有 LGPL-2.1 授权。

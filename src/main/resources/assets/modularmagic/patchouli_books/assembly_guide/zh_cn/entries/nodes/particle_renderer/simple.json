@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：基础粒子外观",
+    "icon":  "modularmagic:gem_particle_renderer_simple",
+    "category":  "modularmagic:nodes",
+    "sortnum":  1080,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_particle_renderer_simple",
+                      "link_recipe":  true,
+                      "text":  "使用指定粒子的外观与渲染方式，为自定义粒子提供基础贴图。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)渲染方式 / 必填$(br)$(o)renderType$()$(br2)$(li)粒子 ID / 必填$(br)$(o)particle$()"
+                  }
+              ]
+}

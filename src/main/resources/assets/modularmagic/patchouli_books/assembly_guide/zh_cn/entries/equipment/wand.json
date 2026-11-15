@@ -1,0 +1,24 @@
+{
+    "name":  "装配法杖",
+    "icon":  "modularmagic:core_wand",
+    "category":  "modularmagic:equipment",
+    "sortnum":  1,
+    "pages":  [
+                  {
+                      "link_recipe":  true,
+                      "item":  "modularmagic:core_wand",
+                      "type":  "patchouli:spotlight",
+                      "text":  "容纳九颗法术核心，施放当前选中的法术。潜行右键打开核心仓，像背包一样装入或取出核心；关闭后内容保存在法杖内。"
+                  },
+                  {
+                      "title":  "施放与切换",
+                      "type":  "patchouli:text",
+                      "text":  "普通右键施放瞬发法术；蓄力型按住后松开施放；持续型按住使用。未成形或空核心不能施法。$(br2)沿用 L2ItemSelector 的切换按键，默认方向键上、下，以控制设置为准。tooltip 只保留装入数量与当前选择。"
+                  },
+                  {
+                      "title":  "当前限制",
+                      "type":  "patchouli:text",
+                      "text":  "当前原型施法不消耗魔力等资源。法杖不会消耗核心。核心仓总文档上限为 512 KiB，装入过多复杂法术时可能无法继续放入。"
+                  }
+              ]
+}

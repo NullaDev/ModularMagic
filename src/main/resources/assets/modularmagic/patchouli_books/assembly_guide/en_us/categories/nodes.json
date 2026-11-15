@@ -1,0 +1,6 @@
+{
+    "name":  "Node Reference",
+    "description":  "All nodes and the three typed cores, searchable by name. Entries describe their purpose, child slots and parameters.",
+    "icon":  "modularmagic:gem_action_iterate",
+    "sortnum":  2
+}

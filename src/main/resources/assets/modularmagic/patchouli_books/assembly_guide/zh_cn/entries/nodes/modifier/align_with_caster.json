@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：对齐施法者视线",
+    "icon":  "modularmagic:gem_modifier_align_with_caster",
+    "category":  "modularmagic:nodes",
+    "sortnum":  312,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_modifier_align_with_caster",
+                      "link_recipe":  true,
+                      "text":  "将法术前向对齐施法者当前视线，可用于延迟后的重新瞄准。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "此节点没有文本参数，通过子节点或节点种类确定行为。"
+                  }
+              ]
+}

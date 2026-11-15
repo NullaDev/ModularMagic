@@ -1,0 +1,29 @@
+{
+    "name":  "Spell Node: Custom Particle",
+    "icon":  "modularmagic:gem_action_custom_particle",
+    "category":  "modularmagic:nodes",
+    "sortnum":  234,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_custom_particle",
+                      "link_recipe":  true,
+                      "text":  "Spawn a particle with a custom appearance and optional motion. An appearance node is required."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)motion$(br)Motion / Optional: 0 or 1 node$(br2)$(li)renderer$(br)Particle renderer / Required: 1 node"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)speed / Required$(br)$(o)speed$()$(br2)$(li)scale / Optional$(br)$(o)scale$()$(br2)$(li)life / Optional$(br)$(o)life$()"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)collide / Optional$(br)$(o)collide$()"
+                  }
+              ]
+}

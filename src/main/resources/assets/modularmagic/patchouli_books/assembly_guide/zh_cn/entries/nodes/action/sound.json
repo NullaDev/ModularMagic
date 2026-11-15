@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：声音",
+    "icon":  "modularmagic:gem_action_sound",
+    "category":  "modularmagic:nodes",
+    "sortnum":  235,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_sound",
+                      "link_recipe":  true,
+                      "text":  "在法术位置播放声音，可设置声音 ID、音量与音调。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)声音 ID / 必填$(br)$(o)sound$()$(br2)$(li)音量 / 可留空$(br)$(o)volume$()$(br2)$(li)音调 / 可留空$(br)$(o)pitch$()"
+                  }
+              ]
+}

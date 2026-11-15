@@ -1,0 +1,29 @@
+{
+    "name":  "法术节点：随机偏移",
+    "icon":  "modularmagic:gem_modifier_random_offset",
+    "category":  "modularmagic:nodes",
+    "sortnum":  306,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_modifier_random_offset",
+                      "link_recipe":  true,
+                      "text":  "在指定形状与尺寸内随机偏移法术位置，可用来制作散布效果。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)随机形状 / 必填$(br)$(o)shape$()$(br2)$(li)X 分量 / 可留空$(br)$(o)x$()$(br2)$(li)Y 分量 / 可留空$(br)$(o)y$()"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)Z 分量 / 可留空$(br)$(o)z$()"
+                  }
+              ]
+}

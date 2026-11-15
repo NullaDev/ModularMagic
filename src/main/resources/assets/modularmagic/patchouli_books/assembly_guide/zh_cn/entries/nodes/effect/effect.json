@@ -1,0 +1,29 @@
+{
+    "name":  "法术节点：施加状态",
+    "icon":  "modularmagic:gem_effect_effect",
+    "category":  "modularmagic:nodes",
+    "sortnum":  769,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_effect_effect",
+                      "link_recipe":  true,
+                      "text":  "为已选中的实体施加状态效果，设置持续时间、等级及显示选项。参考槽可读取药水的首个效果。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)状态效果 ID / 必填$(br)$(o)effect$()$(br2)$(li)持续刻数 / 必填$(br)$(o)duration$()$(br2)$(li)效果等级 / 可留空$(br)$(o)amplifier$()"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)环境效果 / 可留空$(br)$(o)ambient$()$(br2)$(li)显示效果 / 可留空$(br)$(o)visible$()"
+                  }
+              ]
+}

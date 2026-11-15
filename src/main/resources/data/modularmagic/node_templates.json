@@ -1,0 +1,2554 @@
+{
+  "format": 1,
+  "categories": {
+    "action": {
+      "color": "#a66bff",
+      "code": "A"
+    },
+    "modifier": {
+      "color": "#38c9d6",
+      "code": "M"
+    },
+    "selector": {
+      "color": "#5b8def",
+      "code": "S"
+    },
+    "predicate": {
+      "color": "#e9b949",
+      "code": "P"
+    },
+    "filter": {
+      "color": "#5ac27c",
+      "code": "F"
+    },
+    "effect": {
+      "color": "#ef6a72",
+      "code": "E"
+    },
+    "motion": {
+      "color": "#f39b48",
+      "code": "V"
+    },
+    "particle_renderer": {
+      "color": "#d77ac5",
+      "code": "R"
+    },
+    "projectile_renderer": {
+      "color": "#8fa8c2",
+      "code": "O"
+    },
+    "root": {
+      "color": "#e6dcff",
+      "code": "C"
+    },
+    "trigger": {
+      "color": "#b5b5b5",
+      "code": "T"
+    },
+    "projectile": {
+      "color": "#88b3bb",
+      "code": "Q"
+    }
+  },
+  "templates": [
+    {
+      "id": "modifier/forward",
+      "category": "modifier",
+      "nativeType": "l2magic:forward",
+      "item": "gem_modifier_forward",
+      "name": "前向偏移",
+      "fields": [
+        {
+          "key": "distance",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "modifier/normal_offset",
+      "category": "modifier",
+      "nativeType": "l2magic:normal_offset",
+      "item": "gem_modifier_normal_offset",
+      "name": "法向偏移",
+      "fields": [
+        {
+          "key": "distance",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "modifier/rotate",
+      "category": "modifier",
+      "nativeType": "l2magic:rotate",
+      "item": "gem_modifier_rotate",
+      "name": "旋转",
+      "fields": [
+        {
+          "key": "degree",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        },
+        {
+          "key": "vertical",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "modifier/offset",
+      "category": "modifier",
+      "nativeType": "l2magic:offset",
+      "item": "gem_modifier_offset",
+      "name": "世界轴偏移",
+      "fields": [
+        {
+          "key": "x",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "y",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "z",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "modifier/set_position",
+      "category": "modifier",
+      "nativeType": "l2magic:set_position",
+      "item": "gem_modifier_set_position",
+      "name": "设置位置",
+      "fields": [
+        {
+          "key": "x",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "y",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "z",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "modifier/direction",
+      "category": "modifier",
+      "nativeType": "l2magic:direction",
+      "item": "gem_modifier_direction",
+      "name": "设置前向",
+      "fields": [
+        {
+          "key": "x",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "y",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "z",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "modifier/random_offset",
+      "category": "modifier",
+      "nativeType": "l2magic:random_offset",
+      "item": "gem_modifier_random_offset",
+      "name": "随机偏移",
+      "fields": [
+        {
+          "key": "shape",
+          "kind": "string",
+          "optional": false,
+          "initial": "RECT"
+        },
+        {
+          "key": "x",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "y",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "z",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "modifier/set_normal",
+      "category": "modifier",
+      "nativeType": "l2magic:set_normal",
+      "item": "gem_modifier_set_normal",
+      "name": "设置法向",
+      "fields": [
+        {
+          "key": "x",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "y",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "z",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "modifier/direction_to_normal",
+      "category": "modifier",
+      "nativeType": "l2magic:direction_to_normal",
+      "item": "gem_modifier_direction_to_normal",
+      "name": "前向转法向",
+      "fields": [],
+      "slots": []
+    },
+    {
+      "id": "modifier/normal_to_direction",
+      "category": "modifier",
+      "nativeType": "l2magic:normal_to_direction",
+      "item": "gem_modifier_normal_to_direction",
+      "name": "法向转前向",
+      "fields": [],
+      "slots": []
+    },
+    {
+      "id": "modifier/random_direction",
+      "category": "modifier",
+      "nativeType": "l2magic:random_direction",
+      "item": "gem_modifier_random_direction",
+      "name": "随机前向",
+      "fields": [],
+      "slots": []
+    },
+    {
+      "id": "modifier/move_to_caster",
+      "category": "modifier",
+      "nativeType": "l2magic:move_to_caster",
+      "item": "gem_modifier_move_to_caster",
+      "name": "移到施法者",
+      "fields": [],
+      "slots": []
+    },
+    {
+      "id": "modifier/align_with_caster",
+      "category": "modifier",
+      "nativeType": "l2magic:align_with_caster",
+      "item": "gem_modifier_align_with_caster",
+      "name": "对齐施法者视线",
+      "fields": [],
+      "slots": []
+    },
+    {
+      "id": "action/if",
+      "category": "action",
+      "nativeType": "l2magic:if",
+      "item": "gem_action_if",
+      "name": "条件分支",
+      "fields": [],
+      "slots": [
+        {
+          "key": "predicate",
+          "category": "predicate",
+          "list": false,
+          "optional": false
+        },
+        {
+          "key": "action",
+          "category": "action",
+          "list": false,
+          "optional": true
+        },
+        {
+          "key": "fallback",
+          "category": "action",
+          "list": false,
+          "optional": true
+        }
+      ]
+    },
+    {
+      "id": "action/list",
+      "category": "action",
+      "nativeType": "l2magic:list",
+      "item": "gem_action_list",
+      "name": "序列",
+      "fields": [],
+      "slots": [
+        {
+          "key": "children",
+          "category": "action",
+          "list": true,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "action/delay",
+      "category": "action",
+      "nativeType": "l2magic:delay",
+      "item": "gem_action_delay",
+      "name": "等待",
+      "fields": [
+        {
+          "key": "tick",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        }
+      ],
+      "slots": [
+        {
+          "key": "child",
+          "category": "action",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "action/random",
+      "category": "action",
+      "nativeType": "l2magic:random",
+      "item": "gem_action_random",
+      "name": "随机变量",
+      "fields": [
+        {
+          "key": "name",
+          "kind": "string",
+          "optional": false,
+          "initial": "v"
+        },
+        {
+          "key": "count",
+          "kind": "integer",
+          "optional": false,
+          "initial": "1"
+        }
+      ],
+      "slots": [
+        {
+          "key": "child",
+          "category": "action",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "action/variable",
+      "category": "action",
+      "nativeType": "l2magic:variable",
+      "item": "gem_action_variable",
+      "name": "局部变量",
+      "fields": [
+        {
+          "key": "name",
+          "kind": "string",
+          "optional": false,
+          "initial": "v"
+        },
+        {
+          "key": "variable",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        }
+      ],
+      "slots": [
+        {
+          "key": "child",
+          "category": "action",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "action/move",
+      "category": "action",
+      "nativeType": "l2magic:move",
+      "item": "gem_action_move",
+      "name": "变换空间",
+      "fields": [],
+      "slots": [
+        {
+          "key": "modifiers",
+          "category": "modifier",
+          "list": true,
+          "optional": false
+        },
+        {
+          "key": "child",
+          "category": "action",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "action/processor",
+      "category": "action",
+      "nativeType": "l2magic:processor",
+      "item": "gem_action_processor",
+      "name": "区域处理",
+      "fields": [
+        {
+          "key": "target",
+          "kind": "string",
+          "optional": false,
+          "initial": "ENEMY"
+        }
+      ],
+      "slots": [
+        {
+          "key": "selector",
+          "category": "selector",
+          "list": false,
+          "optional": false
+        },
+        {
+          "key": "processors",
+          "category": "effect",
+          "list": true,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "action/synced_logic",
+      "category": "action",
+      "nativeType": "l2magic:synced_logic",
+      "item": "gem_action_synced_logic",
+      "name": "同步动作",
+      "fields": [],
+      "slots": [
+        {
+          "key": "child",
+          "category": "action",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "action/iterate",
+      "category": "action",
+      "nativeType": "l2magic:iterate",
+      "item": "gem_action_iterate",
+      "name": "循环",
+      "fields": [
+        {
+          "key": "step",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        },
+        {
+          "key": "index",
+          "kind": "string",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": [
+        {
+          "key": "child",
+          "category": "action",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "action/iterate_delayed",
+      "category": "action",
+      "nativeType": "l2magic:iterate_delayed",
+      "item": "gem_action_iterate_delayed",
+      "name": "间隔循环",
+      "fields": [
+        {
+          "key": "step",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        },
+        {
+          "key": "delay",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        },
+        {
+          "key": "index",
+          "kind": "string",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": [
+        {
+          "key": "child",
+          "category": "action",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "action/while_delayed",
+      "category": "action",
+      "nativeType": "l2magic:while_delayed",
+      "item": "gem_action_while_delayed",
+      "name": "条件间隔循环",
+      "fields": [
+        {
+          "key": "step",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        },
+        {
+          "key": "delay",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        },
+        {
+          "key": "index",
+          "kind": "string",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": [
+        {
+          "key": "condition",
+          "category": "predicate",
+          "list": false,
+          "optional": false
+        },
+        {
+          "key": "child",
+          "category": "action",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "action/iterate_linear",
+      "category": "action",
+      "nativeType": "l2magic:iterate_linear",
+      "item": "gem_action_iterate_linear",
+      "name": "直线展开",
+      "fields": [
+        {
+          "key": "alongDir",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "offset",
+          "kind": "json",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "alongOffset",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "step",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        },
+        {
+          "key": "startFromOrigin",
+          "kind": "boolean",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "index",
+          "kind": "string",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": [
+        {
+          "key": "child",
+          "category": "action",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "action/iterate_arc",
+      "category": "action",
+      "nativeType": "l2magic:iterate_arc",
+      "item": "gem_action_iterate_arc",
+      "name": "圆弧展开",
+      "fields": [
+        {
+          "key": "radius",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        },
+        {
+          "key": "minAngle",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "maxAngle",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "count",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        },
+        {
+          "key": "maxInclusive",
+          "kind": "boolean",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "index",
+          "kind": "string",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": [
+        {
+          "key": "child",
+          "category": "action",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "action/random_pos_fan",
+      "category": "action",
+      "nativeType": "l2magic:random_pos_fan",
+      "item": "gem_action_random_pos_fan",
+      "name": "扇面随机",
+      "fields": [
+        {
+          "key": "minRadius",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "maxRadius",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        },
+        {
+          "key": "minAngle",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "maxAngle",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "count",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        },
+        {
+          "key": "index",
+          "kind": "string",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": [
+        {
+          "key": "child",
+          "category": "action",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "action/random_pos_sphere",
+      "category": "action",
+      "nativeType": "l2magic:random_pos_sphere",
+      "item": "gem_action_random_pos_sphere",
+      "name": "球内随机",
+      "fields": [
+        {
+          "key": "radius",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        },
+        {
+          "key": "count",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        },
+        {
+          "key": "index",
+          "kind": "string",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": [
+        {
+          "key": "child",
+          "category": "action",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "action/block_in_range",
+      "category": "action",
+      "nativeType": "l2magic:block_in_range",
+      "item": "gem_action_block_in_range",
+      "name": "方块遍历",
+      "fields": [
+        {
+          "key": "range",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        },
+        {
+          "key": "height",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "delayPerBlock",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "variable",
+          "kind": "string",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": [
+        {
+          "key": "child",
+          "category": "action",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "action/particle",
+      "category": "action",
+      "nativeType": "l2magic:particle",
+      "item": "gem_action_particle",
+      "name": "基础粒子",
+      "fields": [
+        {
+          "key": "particle",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:flame"
+        },
+        {
+          "key": "speed",
+          "kind": "expression",
+          "optional": false,
+          "initial": "0.1"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/block_particle",
+      "category": "action",
+      "nativeType": "l2magic:block_particle",
+      "item": "gem_action_block_particle",
+      "name": "方块碎屑",
+      "fields": [
+        {
+          "key": "block",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:stone"
+        },
+        {
+          "key": "speed",
+          "kind": "expression",
+          "optional": false,
+          "initial": "0.1"
+        },
+        {
+          "key": "scale",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        },
+        {
+          "key": "life",
+          "kind": "expression",
+          "optional": false,
+          "initial": "20"
+        },
+        {
+          "key": "breaking",
+          "kind": "boolean",
+          "optional": false,
+          "initial": "false"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/item_particle",
+      "category": "action",
+      "nativeType": "l2magic:item_particle",
+      "item": "gem_action_item_particle",
+      "name": "物品碎屑",
+      "fields": [
+        {
+          "key": "item",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:amethyst_shard"
+        },
+        {
+          "key": "speed",
+          "kind": "expression",
+          "optional": false,
+          "initial": "0.1"
+        },
+        {
+          "key": "scale",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        },
+        {
+          "key": "life",
+          "kind": "expression",
+          "optional": false,
+          "initial": "20"
+        },
+        {
+          "key": "breaking",
+          "kind": "boolean",
+          "optional": false,
+          "initial": "false"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/dust_particle",
+      "category": "action",
+      "nativeType": "l2magic:dust_particle",
+      "item": "gem_action_dust_particle",
+      "name": "彩色尘埃",
+      "fields": [
+        {
+          "key": "color",
+          "kind": "json_or_string",
+          "optional": false,
+          "initial": "ffffff"
+        },
+        {
+          "key": "scale",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        },
+        {
+          "key": "speed",
+          "kind": "expression",
+          "optional": false,
+          "initial": "0.1"
+        },
+        {
+          "key": "life",
+          "kind": "expression",
+          "optional": false,
+          "initial": "20"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/transition_particle",
+      "category": "action",
+      "nativeType": "l2magic:transition_particle",
+      "item": "gem_action_transition_particle",
+      "name": "渐变尘埃",
+      "fields": [
+        {
+          "key": "start",
+          "kind": "json_or_string",
+          "optional": false,
+          "initial": "ffffff"
+        },
+        {
+          "key": "end",
+          "kind": "json_or_string",
+          "optional": false,
+          "initial": "a66bff"
+        },
+        {
+          "key": "scale",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        },
+        {
+          "key": "speed",
+          "kind": "expression",
+          "optional": false,
+          "initial": "0.1"
+        },
+        {
+          "key": "life",
+          "kind": "expression",
+          "optional": false,
+          "initial": "20"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/custom_particle",
+      "category": "action",
+      "nativeType": "l2magic:custom_particle",
+      "item": "gem_action_custom_particle",
+      "name": "自定义粒子",
+      "fields": [
+        {
+          "key": "speed",
+          "kind": "expression",
+          "optional": false,
+          "initial": "0.1"
+        },
+        {
+          "key": "scale",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "life",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "collide",
+          "kind": "boolean",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": [
+        {
+          "key": "motion",
+          "category": "motion",
+          "list": false,
+          "optional": true
+        },
+        {
+          "key": "renderer",
+          "category": "particle_renderer",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "action/sound",
+      "category": "action",
+      "nativeType": "l2magic:sound",
+      "item": "gem_action_sound",
+      "name": "声音",
+      "fields": [
+        {
+          "key": "sound",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:block.amethyst_block.chime"
+        },
+        {
+          "key": "volume",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "pitch",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/set_block",
+      "category": "action",
+      "nativeType": "l2magic:set_block",
+      "item": "gem_action_set_block",
+      "name": "放置方块",
+      "fields": [
+        {
+          "key": "state",
+          "kind": "json_or_string",
+          "optional": false,
+          "initial": "minecraft:stone"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/set_block_facing",
+      "category": "action",
+      "nativeType": "l2magic:set_block_facing",
+      "item": "gem_action_set_block_facing",
+      "name": "定向放置",
+      "fields": [
+        {
+          "key": "state",
+          "kind": "json_or_string",
+          "optional": false,
+          "initial": "minecraft:stone"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/remove_block",
+      "category": "action",
+      "nativeType": "l2magic:remove_block",
+      "item": "gem_action_remove_block",
+      "name": "移除方块",
+      "fields": [
+        {
+          "key": "method",
+          "kind": "string",
+          "optional": false,
+          "initial": "DROP"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/knock_block",
+      "category": "action",
+      "nativeType": "l2magic:knock_block",
+      "item": "gem_action_knock_block",
+      "name": "击飞方块",
+      "fields": [
+        {
+          "key": "speed",
+          "kind": "expression",
+          "optional": false,
+          "initial": "0.1"
+        },
+        {
+          "key": "damagePerBlock",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "maxDamage",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/schedule_tick",
+      "category": "action",
+      "nativeType": "l2magic:schedule_tick",
+      "item": "gem_action_schedule_tick",
+      "name": "预约方块更新",
+      "fields": [
+        {
+          "key": "tick",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        },
+        {
+          "key": "block",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:stone"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/arrow",
+      "category": "action",
+      "nativeType": "l2magic:arrow",
+      "item": "gem_action_arrow",
+      "name": "发射箭",
+      "fields": [
+        {
+          "key": "speed",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "effects",
+          "kind": "json",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/trident",
+      "category": "action",
+      "nativeType": "l2magic:trident",
+      "item": "gem_action_trident",
+      "name": "发射三叉戟",
+      "fields": [
+        {
+          "key": "speed",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/custom_projectile",
+      "category": "action",
+      "nativeType": "l2magic:custom_projectile",
+      "item": "gem_action_custom_projectile",
+      "name": "自定义弹体",
+      "fields": [
+        {
+          "key": "speed",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "life",
+          "kind": "expression",
+          "optional": false,
+          "initial": "20"
+        },
+        {
+          "key": "bypassWall",
+          "kind": "boolean",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "bypassEntity",
+          "kind": "boolean",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "params",
+          "kind": "json",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": [
+        {
+          "key": "config",
+          "category": "projectile",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "selector/self",
+      "category": "selector",
+      "nativeType": "l2magic:self",
+      "item": "gem_selector_self",
+      "name": "施法者自身",
+      "fields": [],
+      "slots": []
+    },
+    {
+      "id": "selector/move",
+      "category": "selector",
+      "nativeType": "l2magic:move",
+      "item": "gem_selector_move",
+      "name": "变换选区",
+      "fields": [],
+      "slots": [
+        {
+          "key": "modifiers",
+          "category": "modifier",
+          "list": true,
+          "optional": false
+        },
+        {
+          "key": "child",
+          "category": "selector",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "selector/box",
+      "category": "selector",
+      "nativeType": "l2magic:box",
+      "item": "gem_selector_box",
+      "name": "盒体选区",
+      "fields": [
+        {
+          "key": "size",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        },
+        {
+          "key": "y",
+          "kind": "expression",
+          "optional": false,
+          "initial": "2"
+        },
+        {
+          "key": "center",
+          "kind": "boolean",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "selector/compound",
+      "category": "selector",
+      "nativeType": "l2magic:compound",
+      "item": "gem_selector_compound",
+      "name": "集合组合",
+      "fields": [
+        {
+          "key": "function",
+          "kind": "string",
+          "optional": false,
+          "initial": "UNION"
+        }
+      ],
+      "slots": [
+        {
+          "key": "selectors",
+          "category": "selector",
+          "list": true,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "selector/line",
+      "category": "selector",
+      "nativeType": "l2magic:line",
+      "item": "gem_selector_line",
+      "name": "直线选区",
+      "fields": [
+        {
+          "key": "step",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        },
+        {
+          "key": "size",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "selector/arc",
+      "category": "selector",
+      "nativeType": "l2magic:arc",
+      "item": "gem_selector_arc",
+      "name": "圆弧选区",
+      "fields": [
+        {
+          "key": "step",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        },
+        {
+          "key": "radius",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        },
+        {
+          "key": "size",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        },
+        {
+          "key": "minAngle",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "maxAngle",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "selector/cylinder",
+      "category": "selector",
+      "nativeType": "l2magic:cylinder",
+      "item": "gem_selector_cylinder",
+      "name": "圆柱选区",
+      "fields": [
+        {
+          "key": "r",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        },
+        {
+          "key": "y",
+          "kind": "expression",
+          "optional": false,
+          "initial": "2"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "selector/ball",
+      "category": "selector",
+      "nativeType": "l2magic:ball",
+      "item": "gem_selector_ball",
+      "name": "球形选区",
+      "fields": [
+        {
+          "key": "r",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "predicate/and",
+      "category": "predicate",
+      "nativeType": "l2magic:and",
+      "item": "gem_predicate_and",
+      "name": "全部成立",
+      "fields": [],
+      "slots": [
+        {
+          "key": "list",
+          "category": "predicate",
+          "list": true,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "predicate/or",
+      "category": "predicate",
+      "nativeType": "l2magic:or",
+      "item": "gem_predicate_or",
+      "name": "任一成立",
+      "fields": [],
+      "slots": [
+        {
+          "key": "list",
+          "category": "predicate",
+          "list": true,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "predicate/not",
+      "category": "predicate",
+      "nativeType": "l2magic:not",
+      "item": "gem_predicate_not",
+      "name": "条件取反",
+      "fields": [],
+      "slots": [
+        {
+          "key": "child",
+          "category": "predicate",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "predicate/move",
+      "category": "predicate",
+      "nativeType": "l2magic:move",
+      "item": "gem_predicate_move",
+      "name": "换位置判断",
+      "fields": [],
+      "slots": [
+        {
+          "key": "modifiers",
+          "category": "modifier",
+          "list": true,
+          "optional": false
+        },
+        {
+          "key": "child",
+          "category": "predicate",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "predicate/block",
+      "category": "predicate",
+      "nativeType": "l2magic:block",
+      "item": "gem_predicate_block",
+      "name": "方块匹配",
+      "fields": [
+        {
+          "key": "block",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:stone"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "predicate/surface_below",
+      "category": "predicate",
+      "nativeType": "l2magic:surface_below",
+      "item": "gem_predicate_surface_below",
+      "name": "下方支撑面",
+      "fields": [
+        {
+          "key": "face",
+          "kind": "string",
+          "optional": false,
+          "initial": "FULL"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "predicate/block_test",
+      "category": "predicate",
+      "nativeType": "l2magic:block_test",
+      "item": "gem_predicate_block_test",
+      "name": "方块性质",
+      "fields": [
+        {
+          "key": "test",
+          "kind": "string",
+          "optional": false,
+          "initial": "REPLACEABLE"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "predicate/depth_test",
+      "category": "predicate",
+      "nativeType": "l2magic:depth_test",
+      "item": "gem_predicate_depth_test",
+      "name": "向下逐层判断",
+      "fields": [
+        {
+          "key": "max_depth",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        },
+        {
+          "key": "index",
+          "kind": "string",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": [
+        {
+          "key": "child",
+          "category": "predicate",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "predicate/ranged_test",
+      "category": "predicate",
+      "nativeType": "l2magic:ranged_test",
+      "item": "gem_predicate_ranged_test",
+      "name": "范围条件计数",
+      "fields": [
+        {
+          "key": "range",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        },
+        {
+          "key": "height",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "min_count",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "variable",
+          "kind": "string",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": [
+        {
+          "key": "child",
+          "category": "predicate",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "filter/and",
+      "category": "filter",
+      "nativeType": "l2magic:and",
+      "item": "gem_filter_and",
+      "name": "实体全满足",
+      "fields": [],
+      "slots": [
+        {
+          "key": "list",
+          "category": "filter",
+          "list": true,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "filter/or",
+      "category": "filter",
+      "nativeType": "l2magic:or",
+      "item": "gem_filter_or",
+      "name": "实体任满足",
+      "fields": [],
+      "slots": [
+        {
+          "key": "list",
+          "category": "filter",
+          "list": true,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "filter/not",
+      "category": "filter",
+      "nativeType": "l2magic:not",
+      "item": "gem_filter_not",
+      "name": "实体取反",
+      "fields": [],
+      "slots": [
+        {
+          "key": "child",
+          "category": "filter",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "filter/effect",
+      "category": "filter",
+      "nativeType": "l2magic:effect",
+      "item": "gem_filter_effect",
+      "name": "拥有状态",
+      "fields": [
+        {
+          "key": "effect",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:speed"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "effect/delay",
+      "category": "effect",
+      "nativeType": "l2magic:delay",
+      "item": "gem_effect_delay",
+      "name": "延迟处理",
+      "fields": [
+        {
+          "key": "time",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        }
+      ],
+      "slots": [
+        {
+          "key": "child",
+          "category": "effect",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "effect/damage",
+      "category": "effect",
+      "nativeType": "l2magic:damage",
+      "item": "gem_effect_damage",
+      "name": "造成伤害",
+      "fields": [
+        {
+          "key": "damage_type",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:magic"
+        },
+        {
+          "key": "damage",
+          "kind": "expression",
+          "optional": false,
+          "initial": "4"
+        },
+        {
+          "key": "indirect",
+          "kind": "boolean",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "positioned",
+          "kind": "boolean",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "effect/knockback",
+      "category": "effect",
+      "nativeType": "l2magic:knockback",
+      "item": "gem_effect_knockback",
+      "name": "击退",
+      "fields": [
+        {
+          "key": "knockback",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        },
+        {
+          "key": "angle",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "tilt",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "effect/push",
+      "category": "effect",
+      "nativeType": "l2magic:push",
+      "item": "gem_effect_push",
+      "name": "推力",
+      "fields": [
+        {
+          "key": "speed",
+          "kind": "expression",
+          "optional": false,
+          "initial": "0.1"
+        },
+        {
+          "key": "angle",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "tilt",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "from_center",
+          "kind": "string",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "effect/effect",
+      "category": "effect",
+      "nativeType": "l2magic:effect",
+      "item": "gem_effect_effect",
+      "name": "施加状态",
+      "fields": [
+        {
+          "key": "effect",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:speed"
+        },
+        {
+          "key": "duration",
+          "kind": "expression",
+          "optional": false,
+          "initial": "100"
+        },
+        {
+          "key": "amplifier",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "ambient",
+          "kind": "boolean",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "visible",
+          "kind": "boolean",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "effect/property",
+      "category": "effect",
+      "nativeType": "l2magic:property",
+      "item": "gem_effect_property",
+      "name": "延长实体属性",
+      "fields": [
+        {
+          "key": "property",
+          "kind": "string",
+          "optional": false,
+          "initial": "FREEZE"
+        },
+        {
+          "key": "duration",
+          "kind": "expression",
+          "optional": false,
+          "initial": "100"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "effect/set_delta",
+      "category": "effect",
+      "nativeType": "l2magic:set_delta",
+      "item": "gem_effect_set_delta",
+      "name": "设置速度",
+      "fields": [
+        {
+          "key": "x",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        },
+        {
+          "key": "y",
+          "kind": "expression",
+          "optional": false,
+          "initial": "2"
+        },
+        {
+          "key": "z",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "effect/teleport",
+      "category": "effect",
+      "nativeType": "l2magic:teleport",
+      "item": "gem_effect_teleport",
+      "name": "传送实体",
+      "fields": [
+        {
+          "key": "x",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        },
+        {
+          "key": "y",
+          "kind": "expression",
+          "optional": false,
+          "initial": "2"
+        },
+        {
+          "key": "z",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "effect/ignite",
+      "category": "effect",
+      "nativeType": "l2magic:ignite",
+      "item": "gem_effect_ignite",
+      "name": "点燃与燃烧分支",
+      "fields": [
+        {
+          "key": "burnTicks",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        }
+      ],
+      "slots": [
+        {
+          "key": "action",
+          "category": "effect",
+          "list": true,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "effect/filtered",
+      "category": "effect",
+      "nativeType": "l2magic:filtered",
+      "item": "gem_effect_filtered",
+      "name": "按实体分流",
+      "fields": [],
+      "slots": [
+        {
+          "key": "filter",
+          "category": "filter",
+          "list": false,
+          "optional": false
+        },
+        {
+          "key": "action",
+          "category": "effect",
+          "list": true,
+          "optional": false
+        },
+        {
+          "key": "fallback",
+          "category": "effect",
+          "list": true,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "effect/cast_at",
+      "category": "effect",
+      "nativeType": "l2magic:cast_at",
+      "item": "gem_effect_cast_at",
+      "name": "以实体为原点执行",
+      "fields": [
+        {
+          "key": "pos",
+          "kind": "string",
+          "optional": false,
+          "initial": "CENTER"
+        },
+        {
+          "key": "dir",
+          "kind": "string",
+          "optional": false,
+          "initial": "ORIGINAL"
+        }
+      ],
+      "slots": [
+        {
+          "key": "child",
+          "category": "action",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "effect/projectile_hit",
+      "category": "effect",
+      "nativeType": "l2magic:projectile_hit",
+      "item": "gem_effect_projectile_hit",
+      "name": "非生物碰撞触发",
+      "fields": [],
+      "slots": []
+    },
+    {
+      "id": "motion/simple",
+      "category": "motion",
+      "nativeType": "l2magic:simple",
+      "item": "gem_motion_simple",
+      "name": "基础运动",
+      "fields": [
+        {
+          "key": "friction",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "gravity",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "motion/control_position",
+      "category": "motion",
+      "nativeType": "l2magic:control_position",
+      "item": "gem_motion_control_position",
+      "name": "控制位置轨迹",
+      "fields": [],
+      "slots": [
+        {
+          "key": "modifiers",
+          "category": "modifier",
+          "list": true,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "motion/control_velocity",
+      "category": "motion",
+      "nativeType": "l2magic:control_velocity",
+      "item": "gem_motion_control_velocity",
+      "name": "控制速度轨迹",
+      "fields": [],
+      "slots": [
+        {
+          "key": "modifiers",
+          "category": "modifier",
+          "list": true,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "particle_renderer/simple",
+      "category": "particle_renderer",
+      "nativeType": "l2magic:simple",
+      "item": "gem_particle_renderer_simple",
+      "name": "基础粒子外观",
+      "fields": [
+        {
+          "key": "renderType",
+          "kind": "string",
+          "optional": false,
+          "initial": "NORMAL"
+        },
+        {
+          "key": "particle",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:flame"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "particle_renderer/color",
+      "category": "particle_renderer",
+      "nativeType": "l2magic:color",
+      "item": "gem_particle_renderer_color",
+      "name": "单色外观",
+      "fields": [
+        {
+          "key": "renderType",
+          "kind": "string",
+          "optional": false,
+          "initial": "NORMAL"
+        },
+        {
+          "key": "color",
+          "kind": "json_or_string",
+          "optional": false,
+          "initial": "ffffff"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "particle_renderer/transition",
+      "category": "particle_renderer",
+      "nativeType": "l2magic:transition",
+      "item": "gem_particle_renderer_transition",
+      "name": "渐变外观",
+      "fields": [
+        {
+          "key": "renderType",
+          "kind": "string",
+          "optional": false,
+          "initial": "NORMAL"
+        },
+        {
+          "key": "start",
+          "kind": "json_or_string",
+          "optional": false,
+          "initial": "ffffff"
+        },
+        {
+          "key": "end",
+          "kind": "json_or_string",
+          "optional": false,
+          "initial": "a66bff"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "particle_renderer/block",
+      "category": "particle_renderer",
+      "nativeType": "l2magic:block",
+      "item": "gem_particle_renderer_block",
+      "name": "方块纹理",
+      "fields": [
+        {
+          "key": "renderType",
+          "kind": "string",
+          "optional": false,
+          "initial": "NORMAL"
+        },
+        {
+          "key": "block",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:stone"
+        },
+        {
+          "key": "geom",
+          "kind": "json",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "particle_renderer/item",
+      "category": "particle_renderer",
+      "nativeType": "l2magic:item",
+      "item": "gem_particle_renderer_item",
+      "name": "物品纹理",
+      "fields": [
+        {
+          "key": "renderType",
+          "kind": "string",
+          "optional": false,
+          "initial": "NORMAL"
+        },
+        {
+          "key": "item",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:amethyst_shard"
+        },
+        {
+          "key": "geom",
+          "kind": "json",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "particle_renderer/static",
+      "category": "particle_renderer",
+      "nativeType": "l2magic:static",
+      "item": "gem_particle_renderer_static",
+      "name": "固定动画帧",
+      "fields": [
+        {
+          "key": "renderType",
+          "kind": "string",
+          "optional": false,
+          "initial": "NORMAL"
+        },
+        {
+          "key": "particle",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:flame"
+        },
+        {
+          "key": "age",
+          "kind": "integer",
+          "optional": false,
+          "initial": "1"
+        },
+        {
+          "key": "total",
+          "kind": "integer",
+          "optional": false,
+          "initial": "1"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "particle_renderer/oriented",
+      "category": "particle_renderer",
+      "nativeType": "l2magic:oriented",
+      "item": "gem_particle_renderer_oriented",
+      "name": "定向粒子外观",
+      "fields": [
+        {
+          "key": "roll",
+          "kind": "expression",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "fixFacing",
+          "kind": "boolean",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": [
+        {
+          "key": "inner",
+          "category": "particle_renderer",
+          "list": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "projectile_renderer/simple",
+      "category": "projectile_renderer",
+      "nativeType": "l2magic:simple",
+      "item": "gem_projectile_renderer_simple",
+      "name": "定向弹体外观",
+      "fields": [
+        {
+          "key": "texture",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:textures/entity/projectiles/arrow.png"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "predicate/expression",
+      "category": "predicate",
+      "nativeType": "expression",
+      "item": "gem_predicate_expression",
+      "name": "表达式条件",
+      "fields": [
+        {
+          "key": "value",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "root/instant",
+      "category": "root",
+      "nativeType": "INSTANT",
+      "item": "root_instant",
+      "name": "瞬发法术根",
+      "fields": [
+        {
+          "key": "icon",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:amethyst_shard"
+        },
+        {
+          "key": "order",
+          "kind": "integer",
+          "optional": false,
+          "initial": "0"
+        }
+      ],
+      "slots": [
+        {
+          "key": "trigger_type",
+          "category": "trigger",
+          "list": false,
+          "optional": false
+        },
+        {
+          "key": "action",
+          "category": "action",
+          "list": false,
+          "optional": false
+        },
+        {
+          "key": "condition",
+          "category": "predicate",
+          "list": false,
+          "optional": true
+        }
+      ]
+    },
+    {
+      "id": "root/charge",
+      "category": "root",
+      "nativeType": "CHARGE",
+      "item": "root_charge",
+      "name": "蓄力法术根",
+      "fields": [
+        {
+          "key": "icon",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:amethyst_shard"
+        },
+        {
+          "key": "order",
+          "kind": "integer",
+          "optional": false,
+          "initial": "0"
+        }
+      ],
+      "slots": [
+        {
+          "key": "trigger_type",
+          "category": "trigger",
+          "list": false,
+          "optional": false
+        },
+        {
+          "key": "action",
+          "category": "action",
+          "list": false,
+          "optional": false
+        },
+        {
+          "key": "condition",
+          "category": "predicate",
+          "list": false,
+          "optional": true
+        }
+      ]
+    },
+    {
+      "id": "root/continuous",
+      "category": "root",
+      "nativeType": "CONTINUOUS",
+      "item": "root_continuous",
+      "name": "持续法术根",
+      "fields": [
+        {
+          "key": "icon",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:amethyst_shard"
+        },
+        {
+          "key": "order",
+          "kind": "integer",
+          "optional": false,
+          "initial": "0"
+        }
+      ],
+      "slots": [
+        {
+          "key": "trigger_type",
+          "category": "trigger",
+          "list": false,
+          "optional": false
+        },
+        {
+          "key": "action",
+          "category": "action",
+          "list": false,
+          "optional": false
+        },
+        {
+          "key": "condition",
+          "category": "predicate",
+          "list": false,
+          "optional": true
+        }
+      ]
+    },
+    {
+      "id": "trigger/self_pos",
+      "category": "trigger",
+      "nativeType": "SELF_POS",
+      "item": "gem_trigger_self_pos",
+      "name": "自身位置",
+      "fields": [],
+      "slots": []
+    },
+    {
+      "id": "trigger/axis_aligned_facing",
+      "category": "trigger",
+      "nativeType": "AXIS_ALIGNED_FACING",
+      "item": "gem_trigger_axis_aligned_facing",
+      "name": "轴向朝向",
+      "fields": [],
+      "slots": []
+    },
+    {
+      "id": "trigger/horizontal_facing",
+      "category": "trigger",
+      "nativeType": "HORIZONTAL_FACING",
+      "item": "gem_trigger_horizontal_facing",
+      "name": "水平朝向",
+      "fields": [],
+      "slots": []
+    },
+    {
+      "id": "trigger/facing_front",
+      "category": "trigger",
+      "nativeType": "FACING_FRONT",
+      "item": "gem_trigger_facing_front",
+      "name": "前方朝向",
+      "fields": [],
+      "slots": []
+    },
+    {
+      "id": "trigger/facing_back",
+      "category": "trigger",
+      "nativeType": "FACING_BACK",
+      "item": "gem_trigger_facing_back",
+      "name": "后方朝向",
+      "fields": [],
+      "slots": []
+    },
+    {
+      "id": "trigger/target_pos",
+      "category": "trigger",
+      "nativeType": "TARGET_POS",
+      "item": "gem_trigger_target_pos",
+      "name": "目标位置",
+      "fields": [],
+      "slots": []
+    },
+    {
+      "id": "trigger/target_entity",
+      "category": "trigger",
+      "nativeType": "TARGET_ENTITY",
+      "item": "gem_trigger_target_entity",
+      "name": "目标实体",
+      "fields": [],
+      "slots": []
+    },
+    {
+      "id": "projectile/config",
+      "category": "projectile",
+      "nativeType": "config",
+      "item": "gem_projectile_config",
+      "name": "弹体配置",
+      "fields": [
+        {
+          "key": "params",
+          "kind": "json",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "filter",
+          "kind": "string",
+          "optional": true,
+          "initial": ""
+        },
+        {
+          "key": "size",
+          "kind": "json",
+          "optional": true,
+          "initial": ""
+        }
+      ],
+      "slots": [
+        {
+          "key": "motion",
+          "category": "motion",
+          "list": false,
+          "optional": true
+        },
+        {
+          "key": "tick",
+          "category": "action",
+          "list": false,
+          "optional": true
+        },
+        {
+          "key": "hit",
+          "category": "effect",
+          "list": true,
+          "optional": false
+        },
+        {
+          "key": "renderer",
+          "category": "projectile_renderer",
+          "list": false,
+          "optional": true
+        },
+        {
+          "key": "land",
+          "category": "action",
+          "list": false,
+          "optional": true
+        },
+        {
+          "key": "expire",
+          "category": "action",
+          "list": false,
+          "optional": true
+        }
+      ]
+    }
+  ]
+}

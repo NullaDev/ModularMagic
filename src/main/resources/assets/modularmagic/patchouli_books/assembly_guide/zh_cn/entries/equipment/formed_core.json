@@ -1,0 +1,19 @@
+{
+    "name":  "成型法术核心",
+    "icon":  "modularmagic:formed_spell_core",
+    "category":  "modularmagic:equipment",
+    "sortnum":  2,
+    "pages":  [
+                  {
+                      "link_recipe":  true,
+                      "item":  "modularmagic:formed_spell_core",
+                      "type":  "patchouli:spotlight",
+                      "text":  "通过结构、参数与引擎校验的完整法术。保存根核心、全部节点及参数，可放进装配法杖施放。"
+                  },
+                  {
+                      "title":  "修改与示例",
+                      "type":  "patchouli:text",
+                      "text":  "放回编写台即可继续编辑。修改可能使它重新变成未成形核心，但结构会保留。$(br2)内置法术创造分类提供 28 个 L2Magic 示例，可直接装入法杖，或放进编写台研究其结构。"
+                  }
+              ]
+}

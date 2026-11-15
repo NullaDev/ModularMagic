@@ -1,0 +1,24 @@
+{
+    "name":  "Spell Node: Ball",
+    "icon":  "modularmagic:gem_selector_ball",
+    "category":  "modularmagic:nodes",
+    "sortnum":  451,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_selector_ball",
+                      "link_recipe":  true,
+                      "text":  "Select entities inside a sphere with the specified radius."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "This node has no child slots. Select it to edit its parameters. Right-click a leaf on the canvas to remove it; take a root using Take core."
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)r / Required$(br)$(o)r$()"
+                  }
+              ]
+}

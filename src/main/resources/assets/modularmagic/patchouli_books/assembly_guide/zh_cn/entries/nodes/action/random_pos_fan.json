@@ -1,0 +1,29 @@
+{
+    "name":  "法术节点：扇面随机",
+    "icon":  "modularmagic:gem_action_random_pos_fan",
+    "category":  "modularmagic:nodes",
+    "sortnum":  226,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_random_pos_fan",
+                      "link_recipe":  true,
+                      "text":  "在指定半径与角度范围的扇面内随机取点，在每个点执行子动作。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)子节点$(br)动作 / 必填，1 个"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)最小半径 / 可留空$(br)$(o)minRadius$()$(br2)$(li)最大半径 / 必填$(br)$(o)maxRadius$()$(br2)$(li)最小角度 / 可留空$(br)$(o)minAngle$()"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)最大角度 / 可留空$(br)$(o)maxAngle$()$(br2)$(li)数量 / 必填$(br)$(o)count$()$(br2)$(li)循环变量名 / 可留空$(br)$(o)index$()"
+                  }
+              ]
+}

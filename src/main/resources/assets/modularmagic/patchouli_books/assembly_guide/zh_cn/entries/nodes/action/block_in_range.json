@@ -1,0 +1,29 @@
+{
+    "name":  "法术节点：方块遍历",
+    "icon":  "modularmagic:gem_action_block_in_range",
+    "category":  "modularmagic:nodes",
+    "sortnum":  228,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_block_in_range",
+                      "link_recipe":  true,
+                      "text":  "遍历范围内的方块位置并执行子动作，可设置逐方块延迟及位置变量前缀。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)子节点$(br)动作 / 必填，1 个"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)范围 / 必填$(br)$(o)range$()$(br2)$(li)高度 / 可留空$(br)$(o)height$()$(br2)$(li)每方块间隔 / 可留空$(br)$(o)delayPerBlock$()"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)变量值 / 名称 / 可留空$(br)$(o)variable$()"
+                  }
+              ]
+}

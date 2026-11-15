@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：水平朝向",
+    "icon":  "modularmagic:gem_trigger_horizontal_facing",
+    "category":  "modularmagic:nodes",
+    "sortnum":  194,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_trigger_horizontal_facing",
+                      "link_recipe":  true,
+                      "text":  "从施法者位置起法，使用去掉垂直分量后的视线方向；完全垂直看时无法确定该方向。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "此节点没有文本参数，通过子节点或节点种类确定行为。"
+                  }
+              ]
+}

@@ -1,0 +1,24 @@
+{
+    "name":  "Spell Node: Depth Test",
+    "icon":  "modularmagic:gem_predicate_depth_test",
+    "category":  "modularmagic:nodes",
+    "sortnum":  559,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_predicate_depth_test",
+                      "link_recipe":  true,
+                      "text":  "Test the child condition at successive depths below the current position. Any passing depth succeeds; an optional depth index is available."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)child$(br)Predicate / Required: 1 node"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)max depth / Required$(br)$(o)max_depth$()$(br2)$(li)index / Optional$(br)$(o)index$()"
+                  }
+              ]
+}

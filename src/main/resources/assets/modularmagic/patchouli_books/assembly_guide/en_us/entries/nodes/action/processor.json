@@ -1,0 +1,24 @@
+{
+    "name":  "Spell Node: Processor",
+    "icon":  "modularmagic:gem_action_processor",
+    "category":  "modularmagic:nodes",
+    "sortnum":  219,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_processor",
+                      "link_recipe":  true,
+                      "text":  "Find entities using the target type and selector, then apply entity processors in order. Put damage and similar effects here."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)selector$(br)Selector / Required: 1 node$(br2)$(li)processors$(br)Effect / List: 0-64 nodes"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)target / Required$(br)$(o)target$()"
+                  }
+              ]
+}

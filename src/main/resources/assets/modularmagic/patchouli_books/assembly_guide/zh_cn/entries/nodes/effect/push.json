@@ -1,0 +1,29 @@
+{
+    "name":  "法术节点：推力",
+    "icon":  "modularmagic:gem_effect_push",
+    "category":  "modularmagic:nodes",
+    "sortnum":  768,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_effect_push",
+                      "link_recipe":  true,
+                      "text":  "对已选中的实体施加推力，可选择统一方向或相对中心的方向。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)速度 / 必填$(br)$(o)speed$()$(br2)$(li)水平角度 / 可留空$(br)$(o)angle$()$(br2)$(li)俯仰角度 / 可留空$(br)$(o)tilt$()"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)推力方向 / 可留空$(br)$(o)from_center$()"
+                  }
+              ]
+}

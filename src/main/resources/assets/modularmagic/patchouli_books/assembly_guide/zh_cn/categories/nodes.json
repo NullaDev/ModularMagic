@@ -1,0 +1,6 @@
+{
+    "name":  "节点图鉴",
+    "description":  "所有节点与三种法术核心都收录在此。可按名称搜索；条目说明用途、子槽与参数。",
+    "icon":  "modularmagic:gem_action_iterate",
+    "sortnum":  2
+}

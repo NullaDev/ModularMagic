@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：定向粒子外观",
+    "icon":  "modularmagic:gem_particle_renderer_oriented",
+    "category":  "modularmagic:nodes",
+    "sortnum":  1086,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_particle_renderer_oriented",
+                      "link_recipe":  true,
+                      "text":  "包装另一个粒子外观，使其按指定方向和翻滚角度显示。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)内部外观$(br)粒子渲染 / 必填，1 个"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)翻滚角度 / 可留空$(br)$(o)roll$()$(br2)$(li)固定朝向 / 可留空$(br)$(o)fixFacing$()"
+                  }
+              ]
+}

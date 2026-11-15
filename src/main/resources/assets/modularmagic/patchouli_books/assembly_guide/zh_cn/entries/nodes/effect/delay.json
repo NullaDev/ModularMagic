@@ -1,0 +1,24 @@
+{
+    "name":  "法术节点：延迟处理",
+    "icon":  "modularmagic:gem_effect_delay",
+    "category":  "modularmagic:nodes",
+    "sortnum":  765,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_effect_delay",
+                      "link_recipe":  true,
+                      "text":  "等待指定游戏刻数后，对已选中的实体执行子处理节点。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)子节点$(br)实体处理 / 必填，1 个"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)等待刻数 / 必填$(br)$(o)time$()"
+                  }
+              ]
+}

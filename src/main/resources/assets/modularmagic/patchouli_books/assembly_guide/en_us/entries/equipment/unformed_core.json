@@ -1,0 +1,19 @@
+{
+    "name":  "Unformed Spell Core",
+    "icon":  "modularmagic:unformed_spell_core",
+    "category":  "modularmagic:equipment",
+    "sortnum":  3,
+    "pages":  [
+                  {
+                      "link_recipe":  true,
+                      "item":  "modularmagic:unformed_spell_core",
+                      "type":  "patchouli:spotlight",
+                      "text":  "A nonempty assembly that has not passed validation, for example because of missing slots, invalid expressions or IDs. All nodes and entered text are preserved."
+                  },
+                  {
+                      "title":  "Continue editing",
+                      "type":  "patchouli:text",
+                      "text":  "Return it to a table and hover the status button to inspect errors, then fix slots or parameters and apply. A wand can store it but cannot cast it.$(br2)Removing all children restores its typed empty core and retains root parameters."
+                  }
+              ]
+}

@@ -1,0 +1,29 @@
+{
+    "name":  "法术节点：条件分支",
+    "icon":  "modularmagic:gem_action_if",
+    "category":  "modularmagic:nodes",
+    "sortnum":  213,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_if",
+                      "link_recipe":  true,
+                      "text":  "判断条件节点：成立时执行主动作，否则执行备用动作。两个分支均可留空。"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)判断条件$(br)条件 / 必填，1 个$(br2)$(li)条件成立时$(br)动作 / 可选，0 或 1 个"
+                  },
+                  {
+                      "title":  "子节点",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)否则$(br)动作 / 可选，0 或 1 个"
+                  },
+                  {
+                      "title":  "可编辑参数",
+                      "type":  "patchouli:text",
+                      "text":  "此节点没有文本参数，通过子节点或节点种类确定行为。"
+                  }
+              ]
+}

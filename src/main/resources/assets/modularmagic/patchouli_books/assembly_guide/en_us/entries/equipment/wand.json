@@ -1,0 +1,24 @@
+{
+    "name":  "Assembly Wand",
+    "icon":  "modularmagic:core_wand",
+    "category":  "modularmagic:equipment",
+    "sortnum":  1,
+    "pages":  [
+                  {
+                      "link_recipe":  true,
+                      "item":  "modularmagic:core_wand",
+                      "type":  "patchouli:spotlight",
+                      "text":  "Store nine spell cores and cast the selected spell. Sneak-right-click to open its core inventory and transfer cores normally. Contents persist inside the wand."
+                  },
+                  {
+                      "title":  "Casting and selection",
+                      "type":  "patchouli:text",
+                      "text":  "Right-click instant spells, hold and release charged spells, and hold continuous spells. Empty or unformed cores cannot cast.$(br2)Use L2ItemSelector keys to switch, normally Up/Down. The tooltip shows core count and current selection."
+                  },
+                  {
+                      "title":  "Current limits",
+                      "type":  "patchouli:text",
+                      "text":  "Casting currently costs no resources and does not consume cores. Stored document data is limited to 512 KiB, so very large collections may not fit."
+                  }
+              ]
+}

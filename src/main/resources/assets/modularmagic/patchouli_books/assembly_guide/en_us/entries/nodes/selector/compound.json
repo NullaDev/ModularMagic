@@ -1,0 +1,24 @@
+{
+    "name":  "Spell Node: Compound",
+    "icon":  "modularmagic:gem_selector_compound",
+    "category":  "modularmagic:nodes",
+    "sortnum":  447,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_selector_compound",
+                      "link_recipe":  true,
+                      "text":  "Combine multiple child selectors using the set operation specified by function."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)selectors$(br)Selector / List: 0-64 nodes"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)function / Required$(br)$(o)function$()"
+                  }
+              ]
+}

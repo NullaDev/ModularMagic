@@ -1,0 +1,58 @@
+{
+    "name":  "From Zero: Your First Spell",
+    "icon":  "modularmagic:root_instant",
+    "category":  "modularmagic:editor",
+    "sortnum":  0,
+    "pages":  [
+                  {
+                      "title":  "Your goal",
+                      "type":  "patchouli:text",
+                      "text":  "Build a spell that plays a sound, then cast it with a wand. You need only three assembly items.$(br2)This prototype supplies nodes and wands through creative mode. Research, node crafting and casting costs are not implemented."
+                  },
+                  {
+                      "title":  "1. Gather supplies",
+                      "type":  "patchouli:text",
+                      "text":  "From the ModularMagic creative tab, take:$(li)Spell Writing Table$(li)Spell Core: Instant$(li)Spell Node: Self Pos$(li)Spell Node: Sound$(li)Assembly Wand$(br2)Keep this guide in your hotbar for Ctrl lookup."
+                  },
+                  {
+                      "title":  "2. Insert the core",
+                      "type":  "patchouli:text",
+                      "text":  "Place and open the table. Put the Instant core in the top-right slot beside Take core.$(br2)The canvas shows a root with origin, action and optional casting-condition slots. Parameters and inventory are on the right."
+                  },
+                  {
+                      "title":  "3. Choose an origin",
+                      "type":  "patchouli:text",
+                      "text":  "Pick up Self Pos from your inventory and left-click the empty origin slot on the canvas.$(br2)One gem is inserted. This origin starts the spell at your feet and needs no parameters."
+                  },
+                  {
+                      "title":  "4. Add the action",
+                      "type":  "patchouli:text",
+                      "text":  "Insert Sound into the empty action slot. Leave the optional casting condition empty.$(br2)Your tree is now:$(li)Instant core$(li)Origin: Self Pos$(li)Action: Sound$(br2)Sound has no children."
+                  },
+                  {
+                      "title":  "5. Configure and check",
+                      "type":  "patchouli:text",
+                      "text":  "Select Sound. Set sound to minecraft:block.note_block.pling, volume to 1 and pitch to 1. Click Apply.$(br2)The status button beside the core should show success. Hover it to inspect any missing slots or invalid parameters."
+                  },
+                  {
+                      "title":  "6. Take your spell",
+                      "type":  "patchouli:text",
+                      "text":  "Empty your cursor and click Take core. Put the Formed Spell Core in your inventory and close the table.$(br2)It contains the entire tree. The root cannot be removed by right-clicking; only leaf nodes can be removed that way."
+                  },
+                  {
+                      "title":  "7. Load and cast",
+                      "type":  "patchouli:text",
+                      "text":  "Hold the Assembly Wand and sneak-right-click to open its nine core slots. Insert your formed core and close the screen.$(br2)Right-click to hear the note! Multiple cores use L2ItemSelector controls, normally Up/Down; check Key Binds."
+                  },
+                  {
+                      "title":  "8. Try a variation",
+                      "type":  "patchouli:text",
+                      "text":  "Return the core from the wand to the table. Change the sound pitch to 2, apply, extract and listen again.$(br2)You can also remove Sound and try another action. Start small before adding loops, selectors and entity effects."
+                  },
+                  {
+                      "title":  "If something goes wrong",
+                      "type":  "patchouli:text",
+                      "text":  "Closing saves the core inside the table; reopen to continue.$(br2)An empty tree remains a typed core. A nonempty invalid tree becomes an Unformed Spell Core that you can edit again.$(br2)Next: $(l:modularmagic:editor)Controls$(/l) or $(l:modularmagic:nodes)Node Reference$(/l)."
+                  }
+              ]
+}

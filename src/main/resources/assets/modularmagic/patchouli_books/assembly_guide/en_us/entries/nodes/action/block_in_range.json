@@ -1,0 +1,29 @@
+{
+    "name":  "Spell Node: Block In Range",
+    "icon":  "modularmagic:gem_action_block_in_range",
+    "category":  "modularmagic:nodes",
+    "sortnum":  228,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_block_in_range",
+                      "link_recipe":  true,
+                      "text":  "Visit block positions in range and execute the child, optionally delaying between blocks and exposing position variables."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)child$(br)Action / Required: 1 node"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)range / Required$(br)$(o)range$()$(br2)$(li)height / Optional$(br)$(o)height$()$(br2)$(li)delay Per Block / Optional$(br)$(o)delayPerBlock$()"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)variable / Optional$(br)$(o)variable$()"
+                  }
+              ]
+}

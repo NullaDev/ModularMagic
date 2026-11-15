@@ -1,0 +1,24 @@
+{
+    "name":  "Spell Node: Random",
+    "icon":  "modularmagic:gem_action_random",
+    "category":  "modularmagic:nodes",
+    "sortnum":  216,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_random",
+                      "link_recipe":  true,
+                      "text":  "Create count random values in [0, 1), named name0, name1 and so on, for the child action\u0027s scope."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)child$(br)Action / Required: 1 node"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)name / Required$(br)$(o)name$()$(br2)$(li)count / Required$(br)$(o)count$()"
+                  }
+              ]
+}

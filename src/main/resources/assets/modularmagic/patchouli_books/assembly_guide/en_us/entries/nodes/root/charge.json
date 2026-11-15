@@ -1,0 +1,34 @@
+{
+    "name":  "Spell Core: Charge",
+    "icon":  "modularmagic:root_charge",
+    "category":  "modularmagic:nodes",
+    "sortnum":  90,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:root_charge",
+                      "link_recipe":  true,
+                      "text":  "The root of a charged spell. Hold an Assembly Wand and release to cast. Expressions can read charging ticks through TickUsing."
+                  },
+                  {
+                      "title":  "Using this core",
+                      "type":  "patchouli:text",
+                      "text":  "Insert this core directly into the writing table. The canvas root cannot be removed by right-clicking; use Take core to extract the whole assembly.$(br2)With no child nodes, it remains this typed spell core. A nonempty incomplete assembly becomes an Unformed Spell Core. Parameters are retained even when empty."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)trigger type$(br)Origin / Required: 1 node$(br2)$(li)action$(br)Action / Required: 1 node"
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)condition$(br)Predicate / Optional: 0 or 1 node"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)icon / Required$(br)$(o)icon$()$(br2)$(li)order / Required$(br)$(o)order$()"
+                  }
+              ]
+}

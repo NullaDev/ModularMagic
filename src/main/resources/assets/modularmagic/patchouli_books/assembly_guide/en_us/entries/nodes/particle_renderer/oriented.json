@@ -1,0 +1,24 @@
+{
+    "name":  "Spell Node: Oriented",
+    "icon":  "modularmagic:gem_particle_renderer_oriented",
+    "category":  "modularmagic:nodes",
+    "sortnum":  1086,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_particle_renderer_oriented",
+                      "link_recipe":  true,
+                      "text":  "Wrap another particle appearance to display it with a controlled facing and roll."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)inner$(br)Particle renderer / Required: 1 node"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)roll / Optional$(br)$(o)roll$()$(br2)$(li)fix Facing / Optional$(br)$(o)fixFacing$()"
+                  }
+              ]
+}

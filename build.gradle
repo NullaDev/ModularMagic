@@ -1,3 +1,8 @@
+import groovy.json.JsonSlurper
+import net.neoforged.gradle.dsl.common.extensions.MinecraftArtifactCache
+import net.neoforged.gradle.dsl.common.util.CacheFileSelector
+import net.neoforged.gradle.dsl.common.util.DistributionType
+
 plugins {
     id 'java-library'
     id 'eclipse'
@@ -7,10 +12,95 @@ plugins {
 }
 
 version = mod_version
-group = 'dev.kxmc'
+group = mod_group_id
+
+// NeoGradle 7.0.165 otherwise downloads launcher metadata during every configuration,
+// even when launching an already-built, pinned Minecraft version from IntelliJ.
+// Seed its public in-memory cache from existing files, without putting Maven offline.
+if (!gradle.startParameter.refreshDependencies &&
+        !providers.gradleProperty('refreshMinecraftMetadata').getOrElse('false').toBoolean()) {
+    def artifacts = extensions.getByType(MinecraftArtifactCache)
+    def cacheRoot = artifacts.cacheDirectory.get().asFile
+    def cachedFile = { selector -> new File(new File(cacheRoot, selector.cacheDirectory), selector.cacheFileName) }
+    def launcher = cachedFile(CacheFileSelector.launcherMetadata())
+    def version = cachedFile(CacheFileSelector.forVersionJson(minecraft_version))
+    def valid = false
+    if (launcher.isFile() && version.isFile()) {
+        try {
+            def parser = new JsonSlurper()
+            valid = parser.parse(version).id == minecraft_version &&
+                    parser.parse(launcher).versions.any { it.id == minecraft_version }
+        } catch (Exception ignored) {
+            // Missing or invalid metadata follows the normal online bootstrap path.
+        }
+    }
+    if (valid) {
+        def originalOffline = gradle.startParameter.offline
+        try {
+            gradle.startParameter.offline = true
+            artifacts.cacheLauncherMetadata()
+            artifacts.cacheVersionManifest(minecraft_version).get()
+            for (def side : [DistributionType.CLIENT, DistributionType.SERVER]) {
+                if (cachedFile(CacheFileSelector.forVersionJar(minecraft_version, side.name)).isFile())
+                    artifacts.cacheVersionArtifact(minecraft_version, side)
+                if (cachedFile(CacheFileSelector.forVersionMappings(minecraft_version, side.name)).isFile())
+                    artifacts.cacheVersionMappings(minecraft_version, side)
+            }
+        } finally {
+            gradle.startParameter.offline = originalOffline
+        }
+        logger.lifecycle('Using cached Minecraft {} metadata (Maven offline: {}).', minecraft_version, originalOffline)
+    }
+}
 
 repositories {
-    mavenLocal()
+    mavenCentral()
+    // Resolve bundled L2 libraries locally instead of querying every Maven server.
+    exclusiveContent {
+        forRepository {
+            flatDir {
+                name = 'bundledL2Libraries'
+                dirs 'libs'
+            }
+        }
+        filter { includeGroup 'dev.xkmc' }
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = 'Registrate'
+                url = 'https://maven.ithundxr.dev/snapshots'
+            }
+        }
+        filter { includeGroup 'com.tterrag.registrate' }
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = 'Curios'
+                url = 'https://maven.theillusivec4.top/'
+            }
+        }
+        filter { includeGroup 'top.theillusivec4.curios' }
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = 'BlameJared'
+                url = 'https://maven.blamejared.com'
+            }
+        }
+        filter { includeGroup 'mezz.jei'; includeGroup 'vazkii.patchouli' }
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = 'Modrinth'
+                url = 'https://api.modrinth.com/maven'
+            }
+        }
+        filter { includeGroup 'maven.modrinth' }
+    }
 }
 
 base {
@@ -23,8 +113,6 @@ java {
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
-minecraft.accessTransformers.file rootProject.file('src/main/resources/META-INF/accesstransformer.cfg')
-
 runs {
     configureEach {
         systemProperty 'forge.logging.markers', 'REGISTRIES'
@@ -32,21 +120,43 @@ runs {
         modSource project.sourceSets.main
     }
     client {
-        systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
+        systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
     }
     server {
-        systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
-        programArgument '--nogui'
+        systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        arguments.add '--nogui'
     }
     gameTestServer {
-        systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
+        systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
     }
     data {
-        programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        arguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
     }
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+sourceSets {
+    gameTest {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+configurations.gameTestImplementation.extendsFrom(configurations.implementation)
+configurations.gameTestRuntimeOnly.extendsFrom(configurations.runtimeOnly)
+runs.gameTestServer {
+    modSource project.sourceSets.gameTest
+    systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+}
+
+// Test-only client driver; excluded from regular runs and published JARs.
+if (providers.gradleProperty('clientSmoke').getOrElse('false').toBoolean()) {
+    runs.client {
+        modSource project.sourceSets.gameTest
+        systemProperty 'modularmagic.clientSmoke', 'true'
+        arguments.addAll '--quickPlaySingleplayer', 'modularmagic-ui-smoke', '--width', '1280', '--height', '720'
+    }
+}
 
 
 dependencies {
@@ -58,6 +168,8 @@ tasks.withType(ProcessResources).configureEach {
             minecraft_version   : minecraft_version, minecraft_version_range: minecraft_version_range,
             neo_version         : neo_version, neo_version_range: neo_version_range,
             loader_version_range: loader_version_range,
+            l2magic_version_range: l2magic_version_range,
+            patchouli_version_range: patchouli_version_range,
             mod_id              : mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors         : mod_authors, mod_description: mod_description,
     ]
@@ -90,71 +202,18 @@ jar {
     manifest {
         attributes([
                 "Specification-Title"     : "${mod_id}",
-                "Specification-Vendor"    : "xkmc",
+                "Specification-Vendor"    : mod_authors,
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "xkmc",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                'MixinConfigs'            : "${mod_id}.mixins.json"
+                "Implementation-Vendor"   : mod_authors
         ])
     }
 }
 
-if (lljij.toBoolean()) {
-
-    tasks.jarJar.configure {
-        archiveClassifier.set('')
-    }
-
-    jar {
-        archiveClassifier.set('slim')
-    }
-
-}
-
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-    maven { // Registrate
-        url "https://maven.ithundxr.dev/snapshots"
-    }
-    maven {
-        url = "https://maven.theillusivec4.top/"
-    }
-    maven {
-        // Location of the maven for vazkii's mods
-        name 'blamejared'
-        url 'https://maven.blamejared.com'
-    }
-    maven {
-        url 'https://www.cursemaven.com'
-        content {
-            includeGroup "curse.maven"
-        }
-    }
-    maven {
-        // Location of the maven that hosts JEI files (and TiC)
-        name 'Progwml6 maven'
-        url 'https://dvs1.progwml6.com/files/maven'
-    }
-
-    maven {
-        name = "OctoStudios"
-        url = uri("https://maven.octo-studios.com/releases")
-    }
-    maven {
-        name = "Modrinth"
-        url = "https://api.modrinth.com/maven"
-        content {
-            includeGroup "maven.modrinth"
-        }
-    }
-    mavenLocal();
-}
-
 dependencies {
+    // L2Magic is a separate prerequisite mod, never bundled into ModularMagic.
+    implementation "dev.xkmc:l2magic:${l2magic_version}"
     implementation "com.tterrag.registrate:Registrate:${registrate_version}"
 
     implementation "dev.xkmc:l2serial:${l2serial_ver}"
@@ -166,14 +225,18 @@ dependencies {
     implementation "dev.xkmc:l2library:${l2library_ver}"
     implementation "dev.xkmc:l2damagetracker:${l2damagetracker_ver}"
     implementation "dev.xkmc:fast_projectile_api:${fast_projectile_api_ver}"
-    runtimeOnly "dev.xkmc:l2complements:${l2complements_ver}-slim"
-    runtimeOnly "dev.xkmc:l2backpack:${l2backpack_ver}"
-    runtimeOnly "dev.xkmc:l2harvester:${l2harvester_ver}"
-    runtimeOnly "dev.xkmc:glimmeringtales:${glimmeringtales_ver}"
-
-    implementation "mezz.jei:jei-${jei_minecraft_version}:${jei_version}"
-    implementation "top.theillusivec4.curios:curios-neoforge:${curios_version}"
-    compileOnly "curse.maven:mouse-tweaks-60089:5437296"
-    implementation "maven.modrinth:sodium:mc1.21.1-0.6.1-neoforge"
-    implementation "maven.modrinth:iris:1.8.1+1.21.1-neoforge"
+    runtimeOnly "mezz.jei:jei-${jei_minecraft_version}:${jei_version}"
+    runtimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}"
+    runtimeOnly "vazkii.patchouli:Patchouli:${patchouli_version}"
+    if (providers.gradleProperty('enableRenderingMods').getOrElse('false').toBoolean()) {
+        runtimeOnly "maven.modrinth:sodium:mc1.21.1-0.6.1-neoforge"
+        runtimeOnly "maven.modrinth:iris:1.8.1+1.21.1-neoforge"
+    }
 }
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.withType(Test).configureEach { useJUnitPlatform() }

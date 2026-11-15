@@ -1,0 +1,29 @@
+{
+    "name":  "Spell Node: Random Pos Fan",
+    "icon":  "modularmagic:gem_action_random_pos_fan",
+    "category":  "modularmagic:nodes",
+    "sortnum":  226,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:gem_action_random_pos_fan",
+                      "link_recipe":  true,
+                      "text":  "Sample random positions in the specified annular fan and execute the child at each point."
+                  },
+                  {
+                      "title":  "Child slots",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)child$(br)Action / Required: 1 node"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)min Radius / Optional$(br)$(o)minRadius$()$(br2)$(li)max Radius / Required$(br)$(o)maxRadius$()$(br2)$(li)min Angle / Optional$(br)$(o)minAngle$()"
+                  },
+                  {
+                      "title":  "Parameters",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)max Angle / Optional$(br)$(o)maxAngle$()$(br2)$(li)count / Required$(br)$(o)count$()$(br2)$(li)index / Optional$(br)$(o)index$()"
+                  }
+              ]
+}
