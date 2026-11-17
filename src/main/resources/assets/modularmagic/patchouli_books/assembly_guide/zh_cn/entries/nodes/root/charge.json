@@ -8,7 +8,7 @@
                       "type":  "patchouli:spotlight",
                       "item":  "modularmagic:root_charge",
                       "link_recipe":  true,
-                      "text":  "整棵法术的蓄力入口。装配法杖按住使用、松开施放；表达式可读取 TickUsing 蓄力刻数。"
+                      "text":  "整棵法术的蓄力入口。初学者法杖按住使用、松开施放；表达式可读取 TickUsing 蓄力刻数。"
                   },
                   {
                       "title":  "核心的取放",
@@ -16,14 +16,26 @@
                       "text":  "法术核心可直接放入编写台。画布左侧的核心不能右键取出，须点击取出核心按钮整体取走。$(br2)没有任何子节点时，取出仍为对应类型的法术核心；只要已有子节点但结构尚未完整，就会保存为未成形法术核心。核心参数在空结构下也会保留。"
                   },
                   {
-                      "title":  "子节点",
+                      "anchor":  "mana_cost",
+                      "title":  "默认魔力消耗",
                       "type":  "patchouli:text",
-                      "text":  "$(li)施法起点$(br)起点 / 必填，1 个$(br2)$(li)主法术$(br)动作 / 必填，1 个"
+                      "text":  "启动 500，再加整套法术的费用。纯粒子或声音法术启动费为 10。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
                   },
                   {
-                      "title":  "子节点",
+                      "anchor":  "focus_cost",
+                      "title":  "默认专注消耗",
                       "type":  "patchouli:text",
-                      "text":  "$(li)施放条件$(br)条件 / 可选，0 或 1 个"
+                      "text":  "每次施法消耗 5 + 10C + 0.625C² 专注。C 是整套节点的结构复杂度；固定的 5 点不享受装饰折扣。持续施法的每次脉冲分别计算。$(br2)复杂度汇总后，按 5+10C+0.625C² 换算整次专注消耗。详见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
+                  },
+                  {
+                      "title":  "继续装配",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)施法起点$(br)起点 / 需要放入 1 个$(br2)$(li)主法术$(br)动作 / 需要放入 1 个"
+                  },
+                  {
+                      "title":  "继续装配",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)施放条件$(br)条件 / 可以不放，最多 1 个"
                   },
                   {
                       "title":  "可编辑参数",

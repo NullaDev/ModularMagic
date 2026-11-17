@@ -11,9 +11,21 @@
                       "text":  "Wrap another particle appearance to display it with a controlled facing and roll."
                   },
                   {
-                      "title":  "Child slots",
+                      "anchor":  "mana_cost",
+                      "title":  "Default Mana Cost",
                       "type":  "patchouli:text",
-                      "text":  "$(li)inner$(br)Particle renderer / Required: 1 node"
+                      "text":  "0. The particle emission is priced separately.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
+                  },
+                  {
+                      "anchor":  "focus_cost",
+                      "title":  "Structural Complexity",
+                      "type":  "patchouli:text",
+                      "text":  "0, including wrappers around another appearance.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
+                  },
+                  {
+                      "title":  "What to Attach",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)inner$(br)Particle renderer / Insert one node"
                   },
                   {
                       "title":  "Parameters",

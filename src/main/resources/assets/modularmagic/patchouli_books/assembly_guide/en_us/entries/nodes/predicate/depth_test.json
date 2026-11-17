@@ -11,9 +11,21 @@
                       "text":  "Test the child condition at successive depths below the current position. Any passing depth succeeds; an optional depth index is available."
                   },
                   {
-                      "title":  "Child slots",
+                      "anchor":  "mana_cost",
+                      "title":  "Default Mana Cost",
                       "type":  "patchouli:text",
-                      "text":  "$(li)child$(br)Predicate / Required: 1 node"
+                      "text":  "1 per position actually checked, plus its condition.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
+                  },
+                  {
+                      "anchor":  "focus_cost",
+                      "title":  "Structural Complexity",
+                      "type":  "patchouli:text",
+                      "text":  "0.1 + L(n)*C, using the maximum position count n and attached condition cost C.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
+                  },
+                  {
+                      "title":  "What to Attach",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)child$(br)Predicate / Insert one node"
                   },
                   {
                       "title":  "Parameters",

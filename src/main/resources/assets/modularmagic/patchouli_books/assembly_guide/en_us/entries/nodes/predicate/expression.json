@@ -11,9 +11,21 @@
                       "text":  "Evaluate a text expression as a condition. Variables must exist in the current scope, such as iteration indices or charging time."
                   },
                   {
-                      "title":  "Child slots",
+                      "anchor":  "mana_cost",
+                      "title":  "Default Mana Cost",
                       "type":  "patchouli:text",
-                      "text":  "This node has no child slots. Select it to edit its parameters. Right-click a leaf on the canvas to remove it; take a root using Take core."
+                      "text":  "0. Any nested spatial searches keep their own costs.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
+                  },
+                  {
+                      "anchor":  "focus_cost",
+                      "title":  "Structural Complexity",
+                      "type":  "patchouli:text",
+                      "text":  "0.1 plus attached conditions and modifiers, counted as structure rather than per test.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
+                  },
+                  {
+                      "title":  "Using This Node",
+                      "type":  "patchouli:text",
+                      "text":  "You do not need to attach any more nodes here. Insert it, then select it to adjust its settings on the right. Right-click it on the canvas to take it back."
                   },
                   {
                       "title":  "Parameters",

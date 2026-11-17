@@ -31,6 +31,7 @@ public final class RuntimeSpells {
     }
 
     public static String source(Holder<ProjectileConfig> config) { return SOURCES.getOrDefault(config, ""); }
+    public static void registerSource(Holder<ProjectileConfig> config,String document) { SOURCES.put(config,document); }
     public static boolean isCustom(EngineContext context) {
         return context.user().root().unwrapKey().map(key -> key.location().equals(ANCHOR)).orElse(false);
     }

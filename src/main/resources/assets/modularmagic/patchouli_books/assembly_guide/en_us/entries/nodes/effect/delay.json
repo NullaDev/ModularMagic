@@ -11,9 +11,21 @@
                       "text":  "Schedule the child processor for the selected entities after the specified tick delay."
                   },
                   {
-                      "title":  "Child slots",
+                      "anchor":  "mana_cost",
+                      "title":  "Default Mana Cost",
                       "type":  "patchouli:text",
-                      "text":  "$(li)child$(br)Effect / Required: 1 node"
+                      "text":  "Only the connected nodes contribute; this node adds no mana fee.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
+                  },
+                  {
+                      "anchor":  "focus_cost",
+                      "title":  "Structural Complexity",
+                      "type":  "patchouli:text",
+                      "text":  "0.15 + H(t) + C, without multiplying by retained targets.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
+                  },
+                  {
+                      "title":  "What to Attach",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)child$(br)Effect / Insert one node"
                   },
                   {
                       "title":  "Parameters",

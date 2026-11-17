@@ -80,6 +80,7 @@ public final class WandGameTests {
     @GameTest(template = "empty")
     public static void wandExecutesSpellAndCostHookCanDenyIt(GameTestHelper helper) {
         var player = player(helper); var level = helper.getLevel();
+        player.getInventory().setItem(12,ModContent.MANA_CONTAINERS.get("mana_container_large").get().filledStack());
         var doc = SpellDocument.create("root/instant");
         doc.insert(doc.root.id, "trigger_type", 0, "trigger/self_pos");
         var block = doc.insert(doc.root.id, "action", 0, "action/set_block");
@@ -102,6 +103,7 @@ public final class WandGameTests {
     @GameTest(template = "empty")
     public static void customProjectileProgramSurvivesNbtAndSpawnPackets(GameTestHelper helper) {
         var player = player(helper); var level = helper.getLevel();
+        player.gameMode.changeGameModeForPlayer(net.minecraft.world.level.GameType.CREATIVE);
         var wand = ModContent.CORE_WAND.toStack(); var cores = WandCores.read(wand);
         var large = SpellCoreItem.read(TestSpells.projectile(level.registryAccess()));
         var shot = large.root.children.get("action").getFirst();

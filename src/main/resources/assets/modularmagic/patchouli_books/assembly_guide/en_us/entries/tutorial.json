@@ -7,12 +7,12 @@
                   {
                       "title":  "Your goal",
                       "type":  "patchouli:text",
-                      "text":  "Build a spell that plays a sound, then cast it with a wand. You need only three assembly items.$(br2)This prototype supplies nodes and wands through creative mode. Research, node crafting and casting costs are not implemented."
+                      "text":  "Build a spell that plays a sound, then cast it with a wand. You need only three assembly items.$(br2)Gather practice supplies from the ModularMagic creative tab. For survival practice, also carry a charged mana container; focus recovers naturally."
                   },
                   {
                       "title":  "1. Gather supplies",
                       "type":  "patchouli:text",
-                      "text":  "From the ModularMagic creative tab, take:$(li)Spell Writing Table$(li)Spell Core: Instant$(li)Spell Node: Self Pos$(li)Spell Node: Sound$(li)Assembly Wand$(br2)Keep this guide in your hotbar for Ctrl lookup."
+                      "text":  "From the ModularMagic creative tab, take:$(li)Spell Writing Table$(li)Spell Core: Instant$(li)Spell Node: Self Pos$(li)Spell Node: Sound$(li)Beginner Wand$(li)Charged Small Mana Container (survival)$(br2)Keep this guide in your hotbar for Ctrl lookup."
                   },
                   {
                       "title":  "2. Insert the core",
@@ -42,7 +42,7 @@
                   {
                       "title":  "7. Load and cast",
                       "type":  "patchouli:text",
-                      "text":  "Hold the Assembly Wand and sneak-right-click to open its nine core slots. Insert your formed core and close the screen.$(br2)Right-click to hear the note! Multiple cores use L2ItemSelector controls, normally Up/Down; check Key Binds."
+                      "text":  "Hold the Beginner Wand and sneak-right-click to open its nine core slots. Insert your formed core and close the screen.$(br2)Right-click to hear the note! In survival, this simple spell defaults to 11 mana and 5 focus. Multiple cores use L2ItemSelector controls, normally Up/Down; check Key Binds."
                   },
                   {
                       "title":  "8. Try a variation",

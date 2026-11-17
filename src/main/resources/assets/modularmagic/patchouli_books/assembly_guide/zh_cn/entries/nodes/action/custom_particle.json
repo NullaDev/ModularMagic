@@ -11,9 +11,21 @@
                       "text":  "生成可自定义运动与外观的粒子。运动可以省略，外观节点必须提供。"
                   },
                   {
-                      "title":  "子节点",
+                      "anchor":  "mana_cost",
+                      "title":  "默认魔力消耗",
                       "type":  "patchouli:text",
-                      "text":  "$(li)运动$(br)运动 / 可选，0 或 1 个$(br2)$(li)外观$(br)粒子渲染 / 必填，1 个"
+                      "text":  "每个粒子 0.2。纯装饰粒子的运动和外观不另收费。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
+                  },
+                  {
+                      "anchor":  "focus_cost",
+                      "title":  "结构复杂度",
+                      "type":  "patchouli:text",
+                      "text":  "0。纯粒子展开的控制结构按通常复杂度的 2% 计算。$(br2)复杂度汇总后，按 5+10C+0.625C² 换算整次专注消耗。详见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
+                  },
+                  {
+                      "title":  "继续装配",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)运动$(br)运动 / 可以不放，最多 1 个$(br2)$(li)外观$(br)粒子渲染 / 需要放入 1 个"
                   },
                   {
                       "title":  "可编辑参数",

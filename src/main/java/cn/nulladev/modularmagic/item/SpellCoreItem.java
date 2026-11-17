@@ -58,6 +58,11 @@ public final class SpellCoreItem extends Item {
             var document = read(stack);
             tooltip.add(Component.translatable(document.root.schema().translationKey()).withStyle(ChatFormatting.LIGHT_PURPLE));
             tooltip.add(Component.translatable("tooltip.modularmagic.nodes", document.nodes().size()));
+            if (formed) {
+                var cost = cn.nulladev.modularmagic.spell.CostPreview.estimate(document);
+                tooltip.add(Component.translatable("tooltip.modularmagic.mana_quote", cn.nulladev.modularmagic.spell.CostPreview.manaNumber(cost.mana())));
+                tooltip.add(Component.translatable("tooltip.modularmagic.focus_quote", cn.nulladev.modularmagic.spell.CostPreview.number(cost.focus())));
+            }
         } catch (RuntimeException e) {
             tooltip.add(Component.translatable("tooltip.modularmagic.invalid").withStyle(ChatFormatting.RED));
         }

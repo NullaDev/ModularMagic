@@ -11,9 +11,21 @@
                       "text":  "Create count random values in [0, 1), named name0, name1 and so on, for the child action\u0027s scope."
                   },
                   {
-                      "title":  "Child slots",
+                      "anchor":  "mana_cost",
+                      "title":  "Default Mana Cost",
                       "type":  "patchouli:text",
-                      "text":  "$(li)child$(br)Action / Required: 1 node"
+                      "text":  "Only the connected nodes contribute; this node adds no mana fee.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
+                  },
+                  {
+                      "anchor":  "focus_cost",
+                      "title":  "Structural Complexity",
+                      "type":  "patchouli:text",
+                      "text":  "0.1 + 0.02*q plus the attached action, for q declared variables.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
+                  },
+                  {
+                      "title":  "What to Attach",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)child$(br)Action / Insert one node"
                   },
                   {
                       "title":  "Parameters",

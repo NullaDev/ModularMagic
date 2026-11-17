@@ -8,7 +8,7 @@
                       "link_recipe":  true,
                       "item":  "modularmagic:formed_spell_core",
                       "type":  "patchouli:spotlight",
-                      "text":  "A spell that passed structure, parameter and engine validation. It stores the root, every node and all parameters, and can be cast from an Assembly Wand."
+                      "text":  "A spell that passed structure, parameter and engine validation. It stores the root, every node and all parameters, and can be cast from a Beginner Wand."
                   },
                   {
                       "title":  "Editing and examples",

@@ -1,0 +1,19 @@
+{
+    "name":  "创造法杖",
+    "icon":  "modularmagic:creative_wand",
+    "category":  "modularmagic:equipment",
+    "sortnum":  4,
+    "pages":  [
+                  {
+                      "link_recipe":  true,
+                      "item":  "modularmagic:creative_wand",
+                      "type":  "patchouli:spotlight",
+                      "text":  "与初学者法杖使用相同的核心仓和切换方式，法力与专注消耗倍率固定为 0，便于独立测试法术效果。"
+                  },
+                  {
+                      "title":  "倍率与计费",
+                      "type":  "patchouli:text",
+                      "text":  "初学者法杖的两种倍率默认均为 1，由 NeoForge 服务端配置控制。把成型核心的基础费用乘以对应倍率，可以比较法杖的消耗。创造法杖也能在专注熔断时施法。"
+                  }
+              ]
+}

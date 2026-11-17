@@ -11,9 +11,21 @@
                       "text":  "Combine multiple child selectors using the set operation specified by function."
                   },
                   {
-                      "title":  "Child slots",
+                      "anchor":  "mana_cost",
+                      "title":  "Default Mana Cost",
                       "type":  "patchouli:text",
-                      "text":  "$(li)selectors$(br)Selector / List: 0-64 nodes"
+                      "text":  "Add the query costs of its selectors.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
+                  },
+                  {
+                      "anchor":  "focus_cost",
+                      "title":  "Structural Complexity",
+                      "type":  "patchouli:text",
+                      "text":  "0.1 plus the complexity of each selector.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
+                  },
+                  {
+                      "title":  "What to Attach",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)selectors$(br)Selector / Add up to 64 nodes"
                   },
                   {
                       "title":  "Parameters",

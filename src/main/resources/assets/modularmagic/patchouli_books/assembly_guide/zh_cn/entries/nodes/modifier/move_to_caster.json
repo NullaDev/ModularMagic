@@ -11,14 +11,21 @@
                       "text":  "将法术位置移回施法者当前所在位置，用于让后续效果跟随施法者。"
                   },
                   {
-                      "title":  "子节点",
+                      "anchor":  "mana_cost",
+                      "title":  "默认魔力消耗",
                       "type":  "patchouli:text",
-                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                      "text":  "0。后续效果照常计算。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
                   },
                   {
-                      "title":  "可编辑参数",
+                      "anchor":  "focus_cost",
+                      "title":  "结构复杂度",
                       "type":  "patchouli:text",
-                      "text":  "此节点没有文本参数，通过子节点或节点种类确定行为。"
+                      "text":  "0.05；偏移距离和角度不改变复杂度。$(br2)复杂度汇总后，按 5+10C+0.625C² 换算整次专注消耗。详见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
+                  },
+                  {
+                      "title":  "使用方法",
+                      "type":  "patchouli:text",
+                      "text":  "这里不需要再接其他节点，也没有要填写的数值。把宝石放进对应位置即可；想换成别的节点时，在画布上右键取回。"
                   }
               ]
 }

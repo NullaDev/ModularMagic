@@ -33,6 +33,8 @@ public final class EditorClientSmoke {
     private static String loopId, listId;
     private static String blockId, effectId;
     private static boolean iconReferenceSent;
+    private static double fieldLastFocus=Double.NaN;
+    private static int fieldStarted;
 
     @SubscribeEvent
     public static void tick(ClientTickEvent.Post event) {
@@ -76,17 +78,53 @@ public final class EditorClientSmoke {
             if (!(mc.screen instanceof WritingScreen screen)) {
                 if (stage == 34) {
                     screenshot(mc, "modularmagic-node-guide.png");
-                    ModularMagic.LOGGER.info("MODULARMAGIC_NODE_GUIDE_SUCCESS: Patchouli loaded all 100 node entries and rendered the loop entry");
-                    stage = 99; mc.stop();
+                    ModularMagic.LOGGER.info("MODULARMAGIC_NODE_GUIDE_SUCCESS: Patchouli loaded all 100 priced node entries and rendered the resource chapter");
+                    mc.setScreen(null);var uuid=mc.player.getUUID();
+                    mc.getSingleplayerServer().execute(()->{
+                        var player=mc.getSingleplayerServer().getPlayerList().getPlayer(uuid);
+                        player.setGameMode(GameType.SURVIVAL);cn.nulladev.modularmagic.mana.PlayerFocus.set(player,100);
+                        player.getInventory().setItem(15,ModContent.MANA_CONTAINERS.get("creative_mana_container").toStack());
+                        var wand=ModContent.CORE_WAND.toStack();var cores=cn.nulladev.modularmagic.item.WandCores.read(wand);
+                        cores.set(0,cn.nulladev.modularmagic.spell.BuiltinSpells.create("earth_spike_field",player.level().registryAccess()));
+                        cn.nulladev.modularmagic.item.WandCores.write(wand,cores);player.setItemInHand(InteractionHand.MAIN_HAND,wand);player.inventoryMenu.broadcastChanges();
+                    });next();
+                } else if(stage==35&&!mc.player.getAbilities().instabuild){
+                    mc.player.setXRot(30);mc.gameMode.useItem(mc.player,InteractionHand.MAIN_HAND);fieldStarted=ticks;next();
+                } else if(stage==36){
+                    double focus=cn.nulladev.modularmagic.mana.PlayerFocus.value(mc.player);
+                    if(focus>=0)return;
+                    require(mc.player.getData(cn.nulladev.modularmagic.mana.PlayerFocus.TRIPPED),"Earth spike field overdraw must latch focus lockout");
+                    fieldLastFocus=focus;screenshot(mc,"modularmagic-focus-debt.png");next();
+                } else if(stage==37){
+                    double focus=cn.nulladev.modularmagic.mana.PlayerFocus.value(mc.player);
+                    require(focus+1e-6>=fieldLastFocus,"Delayed earth spikes must not repeatedly deduct focus");fieldLastFocus=focus;
+                    if(ticks-fieldStarted<300||focus<100)return;
+                    require(!mc.player.getData(cn.nulladev.modularmagic.mana.PlayerFocus.TRIPPED),"Full recovery must clear focus lockout");
+                    screenshot(mc,"modularmagic-focus-recovered.png");ModularMagic.LOGGER.info("MODULARMAGIC_FOCUS_SMOKE_SUCCESS: real earth spike field overdraw, monotonic recovery, client visuals and full recovery");
+                    stage=99;mc.stop();
                 } else if (stage == 15 && mc.player != null) {
                     require(mc.player.getInventory().items.stream().noneMatch(item -> item.getItem() instanceof SpellCoreItem), "Closing must not return the table's core to the player");
                     mc.gameMode.useItemOn(mc.player, InteractionHand.MAIN_HAND, new BlockHitResult(Vec3.atCenterOf(table), Direction.UP, table, false));
                     stage = 16; changedAt = ticks;
                 } else if (stage == 18) { prepareWand(mc); next(); }
                 else if (stage == 23) {
+                    var mana = cn.nulladev.modularmagic.mana.InventoryMana.total(mc.player);
+                    require(cn.nulladev.modularmagic.client.ResourceHud.visible() && mana.stored() == 350000 && mana.capacity() == 11100000,
+                            "Held-wand HUD must show the sum of all inventory batteries");
+                    screenshot(mc, "modularmagic-resource-hud.png");
                     require(cn.nulladev.modularmagic.item.WandCores.read(mc.player.getMainHandItem()).stream().filter(s -> !s.isEmpty()).count() == 3, "Real core transfers must persist inside the wand");
+                    var uuid=mc.player.getUUID();
+                    mc.getSingleplayerServer().execute(()->{
+                        var player=mc.getSingleplayerServer().getPlayerList().getPlayer(uuid);player.setGameMode(GameType.SURVIVAL);
+                        var d=SpellDocument.create("root/instant");d.insert(d.root.id,"trigger_type",0,"trigger/self_pos");
+                        var loop=d.insert(d.root.id,"action",0,"action/iterate_delayed");d.setParameters(loop.id,java.util.Map.of("step","10","delay","1"));d.insert(loop.id,"child",0,"action/particle");
+                        var sample=ModContent.CORE_WAND.toStack();var cores=cn.nulladev.modularmagic.item.WandCores.read(sample);
+                        cores.set(0,SpellCoreItem.write(d,cn.nulladev.modularmagic.spell.SpellCompiler.compile(d,player.level().registryAccess())));
+                        cn.nulladev.modularmagic.item.WandCores.write(sample,cores);
+                        require(ModContent.CORE_WAND.get().cast(sample,player,0),"Paid visual subtree must cast and send its client payload");
+                    });
                     switchCore(1); next();
-                } else if (stage == 24 && cn.nulladev.modularmagic.item.WandCores.selected(mc.player.getMainHandItem()) == 1) {
+                } else if (stage == 24 && !mc.player.getAbilities().instabuild && cn.nulladev.modularmagic.item.WandCores.selected(mc.player.getMainHandItem()) == 1) {
                     mc.player.setXRot(-20);
                     mc.gameMode.useItem(mc.player, InteractionHand.MAIN_HAND); next();
                 } else if (stage == 25) {
@@ -94,7 +132,14 @@ public final class EditorClientSmoke {
                     for (var entity : mc.level.entitiesForRendering()) if (entity instanceof dev.xkmc.l2magic.content.entity.core.LMProjectile projectile) {
                         require(projectile.getRenderer() != null, "Real client spawn data must resolve the local projectile renderer"); found = true;
                     }
-                    if (found) { screenshot(mc, "modularmagic-wand-cast.png"); openWand(mc); stage = 27; changedAt = ticks; }
+                    if (found) {
+                        require(cn.nulladev.modularmagic.mana.InventoryMana.total(mc.player).stored()<350000,"Survival client cast must synchronize its mana debit");
+                        var balance=cn.nulladev.modularmagic.mana.InventoryMana.total(mc.player);
+                        require(balance.units()%cn.nulladev.modularmagic.mana.ManaStorage.SCALE==0,"Survival mana debits must remain whole numbers");
+                        screenshot(mc, "modularmagic-wand-cast.png");
+                        var uuid=mc.player.getUUID();mc.getSingleplayerServer().execute(()->mc.getSingleplayerServer().getPlayerList().getPlayer(uuid).setGameMode(GameType.CREATIVE));
+                        openWand(mc); stage = 27; changedAt = ticks;
+                    }
                 } else if (stage == 29) {
                     mc.getSingleplayerServer().execute(() -> {
                         var player = mc.getSingleplayerServer().getPlayerList().getPlayer(mc.player.getUUID());
@@ -217,6 +262,9 @@ public final class EditorClientSmoke {
             require(entry != null, "Missing Patchouli node entry: " + template.id());
             var pages = (java.util.List<?>) entry.getClass().getMethod("getPages").invoke(entry);
             require(pages.size() >= 3, "Every node needs purpose, child slots and parameter pages");
+            int manaPage = (int) entry.getClass().getMethod("getPageFromAnchor", String.class).invoke(entry, "mana_cost");
+            int focusPage = (int) entry.getClass().getMethod("getPageFromAnchor", String.class).invoke(entry, "focus_cost");
+            require(manaPage > 0 && focusPage > manaPage, "Every node must expose separate mana and focus reference pages: " + template.id());
             var mapping = (com.mojang.datafixers.util.Pair<?, ?>) lookup.invoke(contents, new ItemStack(ModContent.NODES.get(template.id()).get()));
             require(mapping != null && mapping.getFirst() == entry, "Patchouli Ctrl lookup must map node to its own entry: " + template.id());
         }
@@ -228,8 +276,18 @@ public final class EditorClientSmoke {
             require(mapping != null && mapping.getFirst() == entries.get(ModularMagic.id("equipment/" + articles[i])), "Equipment must link to its dedicated page: " + items[i]);
         }
         var tutorial = entries.get(ModularMagic.id("tutorial"));
+        var costs = entries.get(ModularMagic.id("resource_costs"));
+        require(costs != null && ((java.util.List<?>) costs.getClass().getMethod("getPages").invoke(costs)).size() >= 12,
+                "Resource chapter must explain structure, formulas and settlement");
+        for (var item : ModContent.MANA_CONTAINERS.values()) {
+            var mapping = (com.mojang.datafixers.util.Pair<?, ?>) lookup.invoke(contents, item.toStack());
+            require(mapping != null && mapping.getFirst() == entries.get(ModularMagic.id("equipment/mana_containers")), "Mana containers must link to their guide");
+        }
         require(tutorial != null && ((java.util.List<?>) tutorial.getClass().getMethod("getPages").invoke(tutorial)).size() >= 10,
                 "A complete walkthrough must cover assembly, validation, storage and casting");
+        registryType.getMethod("displayBookGui", net.minecraft.resources.ResourceLocation.class,
+                net.minecraft.resources.ResourceLocation.class, int.class).invoke(registryType.getField("INSTANCE").get(null),
+                ModularMagic.id("assembly_guide"), ModularMagic.id("resource_costs"), 6);
     }
 
     private static void next() { stage++; changedAt = ticks; }
@@ -282,6 +340,11 @@ public final class EditorClientSmoke {
             doc.insert(process.id, "selector", 0, "selector/self");
             effectId = doc.insert(process.id, "processors", 0, "effect/effect").id;
             player.getInventory().setItem(11, SpellCoreItem.write(doc, cn.nulladev.modularmagic.spell.SpellCompiler.compile(doc, player.level().registryAccess())));
+            player.getInventory().setItem(12, ModContent.MANA_CONTAINERS.get("mana_container_small").get().filledStack());
+            var medium = ModContent.MANA_CONTAINERS.get("mana_container_medium").toStack();
+            ModContent.MANA_CONTAINERS.get("mana_container_medium").get().receive(medium, 250000, false);
+            player.getInventory().setItem(13, medium);
+            player.getInventory().setItem(14, ModContent.MANA_CONTAINERS.get("mana_container_large").toStack());
             player.inventoryMenu.broadcastChanges();
             player.setShiftKeyDown(true); ModContent.CORE_WAND.get().use(player.level(), player, InteractionHand.MAIN_HAND); player.setShiftKeyDown(false);
         });

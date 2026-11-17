@@ -4,6 +4,8 @@ import cn.nulladev.modularmagic.ModularMagic;
 import cn.nulladev.modularmagic.item.NodeItem;
 import cn.nulladev.modularmagic.item.SpellCoreItem;
 import cn.nulladev.modularmagic.item.CoreWandItem;
+import cn.nulladev.modularmagic.item.ManaContainerItem;
+import cn.nulladev.modularmagic.config.ResourceConfig;
 import cn.nulladev.modularmagic.menu.WandMenu;
 import cn.nulladev.modularmagic.menu.WritingMenu;
 import cn.nulladev.modularmagic.spell.NodeCatalog;
@@ -43,12 +45,27 @@ public final class ModContent {
     public static final DeferredItem<SpellCoreItem> UNFORMED_CORE = ITEMS.register("unformed_spell_core",
             () -> new SpellCoreItem(new Item.Properties().stacksTo(1), false));
     public static final DeferredItem<CoreWandItem> CORE_WAND = ITEMS.register("core_wand", () -> new CoreWandItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CoreWandItem> CREATIVE_WAND = ITEMS.register("creative_wand", () -> new CoreWandItem(new Item.Properties().stacksTo(1), true));
+    public static final Map<String, DeferredItem<ManaContainerItem>> MANA_CONTAINERS = new LinkedHashMap<>();
     public static final DeferredHolder<MenuType<?>, MenuType<WandMenu>> WAND_MENU = MENUS.register("wand_cores",
             () -> IMenuTypeExtension.create((id, inventory, buf) -> new WandMenu(id, inventory, buf.readEnum(net.minecraft.world.InteractionHand.class))));
     public static final DeferredHolder<MenuType<?>, MenuType<WritingMenu>> WRITING_MENU = MENUS.register("spell_writing",
             () -> IMenuTypeExtension.create((id, inventory, buf) -> new WritingMenu(id, inventory, buf.readBlockPos())));
 
     static {
+        var capacities = java.util.List.of(ResourceConfig.SMALL, ResourceConfig.MEDIUM, ResourceConfig.LARGE);
+        String[] tiers = {"small", "medium", "large"};
+        for (int i = 0; i < tiers.length; i++) {
+            var capacity = capacities.get(i);
+            String id = "mana_container_" + tiers[i];
+            var canonical = ITEMS.register(id, () -> new ManaContainerItem(new Item.Properties(), capacity::get, false));
+            MANA_CONTAINERS.put(id, canonical);
+            // Hidden migration items retain old saves; carried stacks convert to the single battery item.
+            for (boolean full : new boolean[]{false, true}) ITEMS.register(id + (full ? "_full" : "_empty"),
+                    () -> ManaContainerItem.legacy(new Item.Properties(), capacity::get, full, canonical));
+        }
+        MANA_CONTAINERS.put("creative_mana_container", ITEMS.register("creative_mana_container",
+                () -> new ManaContainerItem(new Item.Properties(), () -> Long.MAX_VALUE, true)));
         for (var template : NodeCatalog.all()) NODES.put(template.id(), ITEMS.register(template.item(),
                 () -> new NodeItem(new Item.Properties(), template.id())));
         TABS.register("main", () -> CreativeModeTab.builder()
@@ -57,6 +74,11 @@ public final class ModContent {
                 .displayItems((parameters, output) -> {
                     output.accept(WRITING_TABLE_ITEM.get());
                     output.accept(CORE_WAND.get());
+                    output.accept(CREATIVE_WAND.get());
+                    MANA_CONTAINERS.values().forEach(item -> {
+                        if (!item.get().infinite(item.toStack())) output.accept(item.get());
+                        output.accept(item.get().filledStack());
+                    });
                     NODES.values().forEach(item -> output.accept(item.get()));
                     // Cores are assembled from a root and its node items, never generated empty.
                 }).build());

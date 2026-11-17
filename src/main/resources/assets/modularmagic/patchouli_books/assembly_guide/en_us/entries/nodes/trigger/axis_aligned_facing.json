@@ -11,14 +11,21 @@
                       "text":  "Start at the center of the block containing the caster\u0027s eyes, snapping the facing to the nearest world axis."
                   },
                   {
-                      "title":  "Child slots",
+                      "anchor":  "mana_cost",
+                      "title":  "Default Mana Cost",
                       "type":  "patchouli:text",
-                      "text":  "This node has no child slots. Select it to edit its parameters. Right-click a leaf on the canvas to remove it; take a root using Take core."
+                      "text":  "0. This only chooses where the spell starts.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
                   },
                   {
-                      "title":  "Parameters",
+                      "anchor":  "focus_cost",
+                      "title":  "Structural Complexity",
                       "type":  "patchouli:text",
-                      "text":  "This node has no text parameters. Its kind and child nodes determine its behavior."
+                      "text":  "0. Choosing an origin adds no structural cost.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
+                  },
+                  {
+                      "title":  "Using This Node",
+                      "type":  "patchouli:text",
+                      "text":  "No more nodes or values are needed here. Insert the gem in its matching slot. Right-click it on the canvas when you want to replace it."
                   }
               ]
 }

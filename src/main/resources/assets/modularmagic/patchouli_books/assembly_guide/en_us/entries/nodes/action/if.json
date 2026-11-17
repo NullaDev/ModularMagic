@@ -11,19 +11,26 @@
                       "text":  "Test a condition, running the action when true and the fallback when false. Either branch may be empty."
                   },
                   {
-                      "title":  "Child slots",
+                      "anchor":  "mana_cost",
+                      "title":  "Default Mana Cost",
                       "type":  "patchouli:text",
-                      "text":  "$(li)predicate$(br)Predicate / Required: 1 node$(br2)$(li)If true$(br)Action / Optional: 0 or 1 node"
+                      "text":  "Pay for the test and chosen branch. Reserve for the more expensive branch.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
                   },
                   {
-                      "title":  "Child slots",
+                      "anchor":  "focus_cost",
+                      "title":  "Structural Complexity",
                       "type":  "patchouli:text",
-                      "text":  "$(li)fallback$(br)Action / Optional: 0 or 1 node"
+                      "text":  "0.1 + P + max(A,B) + 0.25*min(A,B), for condition P and branches A and B.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
                   },
                   {
-                      "title":  "Parameters",
+                      "title":  "What to Attach",
                       "type":  "patchouli:text",
-                      "text":  "This node has no text parameters. Its kind and child nodes determine its behavior."
+                      "text":  "$(li)predicate$(br)Predicate / Insert one node$(br2)$(li)If true$(br)Action / Optional; one node at most"
+                  },
+                  {
+                      "title":  "What to Attach",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)fallback$(br)Action / Optional; one node at most"
                   }
               ]
 }

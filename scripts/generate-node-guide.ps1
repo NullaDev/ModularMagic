@@ -1,4 +1,5 @@
 ﻿# Invoked by generate-node-assets.ps1. Template metadata stays the source of truth for slots and fields.
+. (Join-Path $PSScriptRoot 'node-cost-reference.ps1')
 $guideDescriptions = @{}
 @'
 modifier/forward|沿当前前向移动法术位置。正数向前，负数向后；不会移动施法者。|Offset the spell position along its current forward direction. Negative distances move backward. This does not move the caster.
@@ -17,7 +18,7 @@ modifier/align_with_caster|将法术前向对齐施法者当前视线，可用�
 action/if|判断条件节点：成立时执行主动作，否则执行备用动作。两个分支均可留空。|Test a condition, running the action when true and the fallback when false. Either branch may be empty.
 action/list|按装配顺序依次启动动作。各动作自身的延迟不会让后面的动作自动等待。|Start actions in assembly order. A child's scheduled delay does not automatically make later actions wait.
 action/delay|等待指定游戏刻数后执行子动作。通常 20 游戏刻为 1 秒。|Schedule the child action after a delay measured in game ticks. Normally, 20 ticks equal one second.
-action/random|生成 count 个 0 到 1 之间的随机数，变量名为 name0、name1 等，只在子动作作用域内提供。|Create count random values in [0, 1), named name0, name1 and so on, for the child action's scope.
+action/random|生成 count 个 0 到 1 之间的随机数，变量名为 name0、name1 等，只供连接在后面的动作使用。|Create count random values in [0, 1), named name0, name1 and so on, for the child action's scope.
 action/variable|计算表达式并保存为命名变量，供子动作及其后代使用。|Evaluate an expression and bind its result to a named variable for the child action and its descendants.
 action/move|依次应用空间修饰，再在变换后的位置和朝向执行子动作。|Apply spatial modifiers in order, then execute the child action at the resulting position and orientation.
 action/processor|按目标类型与选区寻找实体，再对选中实体依次执行实体处理节点。伤害等效果应装在这里。|Find entities using the target type and selector, then apply entity processors in order. Put damage and similar effects here.
@@ -62,14 +63,14 @@ predicate/surface_below|按所选支撑面类型检查当前位置下方是否�
 predicate/block_test|检查当前位置方块是否具有所选性质，例如是否符合引擎提供的方块测试。|Test the block at the current position using the selected built-in block property test.
 predicate/depth_test|从当前位置向下逐层测试子条件；在最大深度内任一层成立即通过。可提供深度索引。|Test the child condition at successive depths below the current position. Any passing depth succeeds; an optional depth index is available.
 predicate/ranged_test|在范围内逐方块测试子条件，满足条件的位置数量达到最小数量时通过。|Test the child condition at block positions in range, succeeding once the number of matching positions reaches the minimum.
-filter/and|只让满足全部子过滤条件的实体通过。此类节点用于实体分流，不是空间条件。|Accept entities that satisfy every child filter. These are entity filters rather than spatial conditions.
+filter/and|只让满足全部子过滤条件的实体通过。它筛选的是目标本身的状态，不是所在位置。|Accept entities that satisfy every child filter. These are entity filters rather than spatial conditions.
 filter/or|让满足任意子过滤条件的实体通过。|Accept entities that satisfy any child filter.
 filter/not|反转子实体过滤器，保留不满足该过滤条件的实体。|Invert the child entity filter, accepting entities it would reject.
 filter/effect|检查实体是否拥有指定的状态效果，可用于只处理带有某种状态的目标。|Check whether an entity has the specified status effect, allowing effects to target affected entities.
-effect/delay|等待指定游戏刻数后，对已选中的实体执行子处理节点。|Schedule the child processor for the selected entities after the specified tick delay.
-effect/damage|对已选中的实体造成指定类型与数值的伤害，受伤害类型及原版伤害机制影响。|Deal the specified amount and type of damage to selected entities, subject to damage type and vanilla damage rules.
-effect/knockback|对已选中的实体施加击退，强度、水平角度与俯仰角度共同决定击退方向。|Knock selected entities back using the configured strength, angle and tilt.
-effect/push|对已选中的实体施加推力，可选择统一方向或相对中心的方向。|Push selected entities using either a uniform direction or a direction relative to the spell center.
+effect/delay|等待指定游戏刻数后，对选中的目标执行子处理节点。|Schedule the child processor for the selected entities after the specified tick delay.
+effect/damage|对选中的目标造成指定类型与数值的伤害，受伤害类型及原版伤害机制影响。|Deal the specified amount and type of damage to selected entities, subject to damage type and vanilla damage rules.
+effect/knockback|对选中的目标施加击退，强度、水平角度与俯仰角度共同决定击退方向。|Knock selected entities back using the configured strength, angle and tilt.
+effect/push|对选中的目标施加推力，可选择统一方向或相对中心的方向。|Push selected entities using either a uniform direction or a direction relative to the spell center.
 effect/effect|为已选中的实体施加状态效果，设置持续时间、等级及显示选项。参考槽可读取药水的首个效果。|Apply a status effect with a duration, amplifier and display options. The reference slot samples a potion's first effect.
 effect/property|将实体的燃烧或冻结计时至少延长至指定值；不会把更长的现有计时缩短。|Extend an entity's fire or freezing timer to at least the specified duration without shortening a longer existing timer.
 effect/set_delta|直接设置实体的速度向量，而不是在当前速度上叠加推力。|Set selected entities' velocity vectors directly rather than adding a push to their existing velocity.
@@ -90,9 +91,9 @@ particle_renderer/static|从粒子动画中选择固定帧，制作不会自动�
 particle_renderer/oriented|包装另一个粒子外观，使其按指定方向和翻滚角度显示。|Wrap another particle appearance to display it with a controlled facing and roll.
 projectile_renderer/simple|使用指定贴图绘制定向弹体。它只控制外观，命中效果由弹体配置另行指定。|Render an oriented projectile using the specified texture. Hit effects are configured separately in the projectile configuration.
 predicate/expression|将文本表达式作为条件求值。变量必须在当前作用域内有效，可用于按循环索引、蓄力时间等分支。|Evaluate a text expression as a condition. Variables must exist in the current scope, such as iteration indices or charging time.
-root/instant|整棵法术的瞬发入口。装入编写台后提供起点、主动作与可选施放条件；在装配法杖中右键施放。|The root of an instant spell. Provides origin, action and optional casting-condition slots. Right-click an Assembly Wand to cast.
-root/charge|整棵法术的蓄力入口。装配法杖按住使用、松开施放；表达式可读取 TickUsing 蓄力刻数。|The root of a charged spell. Hold an Assembly Wand and release to cast. Expressions can read charging ticks through TickUsing.
-root/continuous|整棵法术的持续入口。装配法杖按住使用时持续执行，适合引导效果；注意重复执行的频率。|The root of a continuous spell. An Assembly Wand executes it while held in use; account for repeated execution when designing effects.
+root/instant|整棵法术的瞬发入口。装入编写台后提供起点、主动作与可选施放条件；在初学者法杖中右键施放。|The root of an instant spell. Provides origin, action and optional casting-condition slots. Right-click an Beginner Wand to cast.
+root/charge|整棵法术的蓄力入口。初学者法杖按住使用、松开施放；表达式可读取 TickUsing 蓄力刻数。|The root of a charged spell. Hold an Beginner Wand and release to cast. Expressions can read charging ticks through TickUsing.
+root/continuous|整棵法术的持续入口。初学者法杖按住使用时持续执行，适合引导效果；注意重复执行的频率。|The root of a continuous spell. An Beginner Wand executes it while held in use; account for repeated execution when designing effects.
 trigger/self_pos|从施法者脚下位置起法，不直接使用其视线作为前向。随后可用空间修饰改变朝向。|Start at the caster's feet using the engine's regular orientation rather than their view direction. Modifiers can change it afterward.
 trigger/axis_aligned_facing|从施法者眼部所在方块中心起法，朝向吸附到最近的世界轴方向。|Start at the center of the block containing the caster's eyes, snapping the facing to the nearest world axis.
 trigger/horizontal_facing|从施法者位置起法，使用去掉垂直分量后的视线方向；完全垂直看时无法确定该方向。|Start at the caster's position using their horizontal view direction. A fully vertical view cannot supply this direction.
@@ -136,9 +137,18 @@ foreach ($locale in @('zh_cn','en_us')) {
             $pages.Add(@{type='patchouli:text';title=if ($isChinese) {'核心的取放'} else {'Using this core'}
                 text=if ($isChinese) {'法术核心可直接放入编写台。画布左侧的核心不能右键取出，须点击取出核心按钮整体取走。$(br2)没有任何子节点时，取出仍为对应类型的法术核心；只要已有子节点但结构尚未完整，就会保存为未成形法术核心。核心参数在空结构下也会保留。'} else {'Insert this core directly into the writing table. The canvas root cannot be removed by right-clicking; use Take core to extract the whole assembly.$(br2)With no child nodes, it remains this typed spell core. A nonempty incomplete assembly becomes an Unformed Spell Core. Parameters are retained even when empty.'}})
         }
+        $cost = @(Get-NodeCostReference $template)
+        if ($cost.Count -ne 4) { throw "Incomplete documented costs: $($template.id)" }
+        $pages.Add(@{type='patchouli:text';title=if ($isChinese) {'默认魔力消耗'} else {'Default Mana Cost'};anchor='mana_cost'
+            text=if ($isChinese) {$cost[0] + '$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。'} else {$cost[1] + '$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules.'}})
+        $isRoot = $template.category -eq 'root'
+        $pages.Add(@{type='patchouli:text';title=if ($isChinese) {if ($isRoot) {'默认专注消耗'} else {'结构复杂度'}} else {if ($isRoot) {'Default Focus Cost'} else {'Structural Complexity'}};anchor='focus_cost'
+            text=if ($isChinese) {$cost[2] + '$(br2)复杂度汇总后，按 5+10C+0.625C² 换算整次专注消耗。详见$(l:modularmagic:resource_costs)专注与魔力$(/l)。'} else {$cost[3] + '$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l).'}})
         if ($template.slots.Count -eq 0) {
-            $pages.Add(@{type='patchouli:text';title=if ($isChinese) {'子节点'} else {'Child slots'}
-                text=if ($isChinese) {'没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。'} else {'This node has no child slots. Select it to edit its parameters. Right-click a leaf on the canvas to remove it; take a root using Take core.'}})
+            $usageZh = if ($template.fields.Count -eq 0) {'这里不需要再接其他节点，也没有要填写的数值。把宝石放进对应位置即可；想换成别的节点时，在画布上右键取回。'} else {'这里不需要再接其他节点。装入后，左键选中它，就能在右侧调整设置。想换成别的节点时，在画布上右键取回即可。'}
+            $usageEn = if ($template.fields.Count -eq 0) {'No more nodes or values are needed here. Insert the gem in its matching slot. Right-click it on the canvas when you want to replace it.'} else {'You do not need to attach any more nodes here. Insert it, then select it to adjust its settings on the right. Right-click it on the canvas to take it back.'}
+            $pages.Add(@{type='patchouli:text';title=if ($isChinese) {'使用方法'} else {'Using This Node'}
+                text=if ($isChinese) {$usageZh} else {$usageEn}})
         } else {
             for ($offset=0; $offset -lt $template.slots.Count; $offset+=2) {
                 $lines = @()
@@ -149,12 +159,12 @@ foreach ($locale in @('zh_cn','en_us')) {
                     if ($template.id -eq 'effect/filtered' -and $slot.key -eq 'action') { $slotName = if ($isChinese) {'通过过滤时'} else {'Accepted targets'} }
                     if ($template.id -eq 'effect/filtered' -and $slot.key -eq 'fallback') { $slotName = if ($isChinese) {'未通过过滤时'} else {'Rejected targets'} }
                     if ($template.id -eq 'action/if' -and $slot.key -eq 'action') { $slotName = if ($isChinese) {'条件成立时'} else {'If true'} }
-                    $count = if ($slot.list) { if ($isChinese) {'列表，0~64 项'} else {'List: 0-64 nodes'} }
-                        elseif ($slot.optional) { if ($isChinese) {'可选，0 或 1 个'} else {'Optional: 0 or 1 node'} }
-                        else { if ($isChinese) {'必填，1 个'} else {'Required: 1 node'} }
+                    $count = if ($slot.list) { if ($isChinese) {'可放多个，最多 64 个'} else {'Add up to 64 nodes'} }
+                        elseif ($slot.optional) { if ($isChinese) {'可以不放，最多 1 个'} else {'Optional; one node at most'} }
+                        else { if ($isChinese) {'需要放入 1 个'} else {'Insert one node'} }
                     $lines += '$(li)' + $slotName + '$(br)' + $categoryNames[$slot.category] + ' / ' + $count
                 }
-                $pages.Add(@{type='patchouli:text';title=if ($isChinese) {'子节点'} else {'Child slots'};text=$lines -join '$(br2)'})
+                $pages.Add(@{type='patchouli:text';title=if ($isChinese) {'继续装配'} else {'What to Attach'};text=$lines -join '$(br2)'})
             }
         }
         for ($offset=0; $offset -lt $template.fields.Count; $offset+=3) {
@@ -165,10 +175,6 @@ foreach ($locale in @('zh_cn','en_us')) {
                 $lines += '$(li)' + $label + ' / ' + $optional + '$(br)$(o)' + $field.key + '$()'
             }
             $pages.Add(@{type='patchouli:text';title=if ($isChinese) {'可编辑参数'} else {'Parameters'};text=$lines -join '$(br2)'})
-        }
-        if ($template.fields.Count -eq 0) {
-            $pages.Add(@{type='patchouli:text';title=if ($isChinese) {'可编辑参数'} else {'Parameters'}
-                text=if ($isChinese) {'此节点没有文本参数，通过子节点或节点种类确定行为。'} else {'This node has no text parameters. Its kind and child nodes determine its behavior.'}})
         }
         Write-JsonFile ($base + '/entries/nodes/' + $template.id + '.json') ([ordered]@{
             name=$language[('item.modularmagic.' + $template.item)]

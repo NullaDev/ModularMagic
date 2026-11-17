@@ -11,14 +11,21 @@
                       "text":  "Start actions in assembly order. A child\u0027s scheduled delay does not automatically make later actions wait."
                   },
                   {
-                      "title":  "Child slots",
+                      "anchor":  "mana_cost",
+                      "title":  "Default Mana Cost",
                       "type":  "patchouli:text",
-                      "text":  "$(li)children$(br)Action / List: 0-64 nodes"
+                      "text":  "Only the connected nodes contribute; this node adds no mana fee.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
                   },
                   {
-                      "title":  "Parameters",
+                      "anchor":  "focus_cost",
+                      "title":  "Structural Complexity",
                       "type":  "patchouli:text",
-                      "text":  "This node has no text parameters. Its kind and child nodes determine its behavior."
+                      "text":  "Add the complexity costs of the connected nodes.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
+                  },
+                  {
+                      "title":  "What to Attach",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)children$(br)Action / Add up to 64 nodes"
                   }
               ]
 }

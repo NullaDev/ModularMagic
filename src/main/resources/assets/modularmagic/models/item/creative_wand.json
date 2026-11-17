@@ -1,0 +1,6 @@
+{
+    "textures":  {
+                     "layer0":  "l2magic:item/creative_wand"
+                 },
+    "parent":  "minecraft:item/handheld"
+}

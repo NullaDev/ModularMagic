@@ -11,14 +11,21 @@
                       "text":  "从施法者眼部所在方块中心起法，朝向吸附到最近的世界轴方向。"
                   },
                   {
-                      "title":  "子节点",
+                      "anchor":  "mana_cost",
+                      "title":  "默认魔力消耗",
                       "type":  "patchouli:text",
-                      "text":  "没有子节点槽。这是叶节点；选中它可编辑参数。右键画布上的节点可取出宝石，根节点须通过取出核心按钮取走。"
+                      "text":  "0。只决定从哪里起法。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
                   },
                   {
-                      "title":  "可编辑参数",
+                      "anchor":  "focus_cost",
+                      "title":  "结构复杂度",
                       "type":  "patchouli:text",
-                      "text":  "此节点没有文本参数，通过子节点或节点种类确定行为。"
+                      "text":  "0。选择起点不额外增加结构负担。$(br2)复杂度汇总后，按 5+10C+0.625C² 换算整次专注消耗。详见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
+                  },
+                  {
+                      "title":  "使用方法",
+                      "type":  "patchouli:text",
+                      "text":  "这里不需要再接其他节点，也没有要填写的数值。把宝石放进对应位置即可；想换成别的节点时，在画布上右键取回。"
                   }
               ]
 }

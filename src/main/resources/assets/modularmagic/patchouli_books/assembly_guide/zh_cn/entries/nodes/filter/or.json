@@ -11,14 +11,21 @@
                       "text":  "让满足任意子过滤条件的实体通过。"
                   },
                   {
-                      "title":  "子节点",
+                      "anchor":  "mana_cost",
+                      "title":  "默认魔力消耗",
                       "type":  "patchouli:text",
-                      "text":  "$(li)条件项$(br)实体过滤 / 列表，0~64 项"
+                      "text":  "0。筛选之后执行的效果另计。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
                   },
                   {
-                      "title":  "可编辑参数",
+                      "anchor":  "focus_cost",
+                      "title":  "结构复杂度",
                       "type":  "patchouli:text",
-                      "text":  "此节点没有文本参数，通过子节点或节点种类确定行为。"
+                      "text":  "0.1，再加装入的过滤条件；不乘被筛选人数。$(br2)复杂度汇总后，按 5+10C+0.625C² 换算整次专注消耗。详见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
+                  },
+                  {
+                      "title":  "继续装配",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)条件项$(br)实体过滤 / 可放多个，最多 64 个"
                   }
               ]
 }

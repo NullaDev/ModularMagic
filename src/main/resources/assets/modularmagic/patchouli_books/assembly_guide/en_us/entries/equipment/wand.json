@@ -1,5 +1,5 @@
 {
-    "name":  "Assembly Wand",
+    "name":  "Beginner Wand",
     "icon":  "modularmagic:core_wand",
     "category":  "modularmagic:equipment",
     "sortnum":  1,
@@ -13,12 +13,12 @@
                   {
                       "title":  "Casting and selection",
                       "type":  "patchouli:text",
-                      "text":  "Right-click instant spells, hold and release charged spells, and hold continuous spells. Empty or unformed cores cannot cast.$(br2)Use L2ItemSelector keys to switch, normally Up/Down. The tooltip shows core count and current selection."
+                      "text":  "Right-click instant spells, hold and release charged spells, and hold continuous spells. Empty or unformed cores cannot cast.$(br2)Use L2ItemSelector keys to switch, normally Up/Down. The tooltip shows core count, current selection and cost multipliers."
                   },
                   {
-                      "title":  "Current limits",
+                      "title":  "Mana and Focus",
                       "type":  "patchouli:text",
-                      "text":  "Casting currently costs no resources and does not consume cores. Stored document data is limited to 512 KiB, so very large collections may not fit."
+                      "text":  "Carry charged mana containers in your inventory or offhand; multiple containers combine automatically. Casting does not consume cores.$(br2)Focus recovers naturally. After overdraw, wait until it is full before casting again. Creative mode needs no resources. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
                   }
               ]
 }

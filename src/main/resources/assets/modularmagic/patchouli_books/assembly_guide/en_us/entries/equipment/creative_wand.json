@@ -1,0 +1,19 @@
+{
+    "name":  "Creative Wand",
+    "icon":  "modularmagic:creative_wand",
+    "category":  "modularmagic:equipment",
+    "sortnum":  4,
+    "pages":  [
+                  {
+                      "link_recipe":  true,
+                      "item":  "modularmagic:creative_wand",
+                      "type":  "patchouli:spotlight",
+                      "text":  "Uses the beginner wand core inventory and selector. Mana and focus multipliers are fixed at zero for testing spell effects."
+                  },
+                  {
+                      "title":  "Multipliers and billing",
+                      "type":  "patchouli:text",
+                      "text":  "Both beginner wand multipliers default to one and use NeoForge server settings. Multiply a core base cost by the corresponding rate to compare wands. The creative wand also works during focus lockout."
+                  }
+              ]
+}

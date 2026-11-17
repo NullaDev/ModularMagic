@@ -8,7 +8,7 @@
                       "type":  "patchouli:spotlight",
                       "item":  "modularmagic:root_continuous",
                       "link_recipe":  true,
-                      "text":  "The root of a continuous spell. An Assembly Wand executes it while held in use; account for repeated execution when designing effects."
+                      "text":  "The root of a continuous spell. An Beginner Wand executes it while held in use; account for repeated execution when designing effects."
                   },
                   {
                       "title":  "Using this core",
@@ -16,14 +16,26 @@
                       "text":  "Insert this core directly into the writing table. The canvas root cannot be removed by right-clicking; use Take core to extract the whole assembly.$(br2)With no child nodes, it remains this typed spell core. A nonempty incomplete assembly becomes an Unformed Spell Core. Parameters are retained even when empty."
                   },
                   {
-                      "title":  "Child slots",
+                      "anchor":  "mana_cost",
+                      "title":  "Default Mana Cost",
                       "type":  "patchouli:text",
-                      "text":  "$(li)trigger type$(br)Origin / Required: 1 node$(br2)$(li)action$(br)Action / Required: 1 node"
+                      "text":  "500 to start, plus the spell. A purely decorative spell starts at 0.01.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
                   },
                   {
-                      "title":  "Child slots",
+                      "anchor":  "focus_cost",
+                      "title":  "Default Focus Cost",
                       "type":  "patchouli:text",
-                      "text":  "$(li)condition$(br)Predicate / Optional: 0 or 1 node"
+                      "text":  "Each cast costs 5 + 10*C + 0.625*C^2 focus. C is total structural complexity. The fixed 5 is never discounted. Each channeling pulse is a separate cast.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
+                  },
+                  {
+                      "title":  "What to Attach",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)trigger type$(br)Origin / Insert one node$(br2)$(li)action$(br)Action / Insert one node"
+                  },
+                  {
+                      "title":  "What to Attach",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)condition$(br)Predicate / Optional; one node at most"
                   },
                   {
                       "title":  "Parameters",

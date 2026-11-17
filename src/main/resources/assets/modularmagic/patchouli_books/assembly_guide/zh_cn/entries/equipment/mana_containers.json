@@ -1,0 +1,32 @@
+{
+    "name":  "魔力容器",
+    "icon":  "modularmagic:mana_container_small",
+    "category":  "modularmagic:equipment",
+    "sortnum":  5,
+    "pages":  [
+                  {
+                      "link_recipe":  true,
+                      "item":  "modularmagic:mana_container_small",
+                      "type":  "patchouli:spotlight",
+                      "text":  "同一物品可以是空、部分充满或全满状态，储量保存在物品中。创造分类提供空、满两种状态。小、中、大型容量默认 100000、1000000、10000000，不会自行回魔。持杖时屏幕显示背包容器的总储量和玩家专注。"
+                  },
+                  {
+                      "link_recipe":  true,
+                      "item":  "modularmagic:mana_container_medium",
+                      "type":  "patchouli:spotlight",
+                      "text":  "同一物品可以是空、部分充满或全满状态，储量保存在物品中。创造分类提供空、满两种状态。小、中、大型容量默认 100000、1000000、10000000，不会自行回魔。持杖时屏幕显示背包容器的总储量和玩家专注。"
+                  },
+                  {
+                      "link_recipe":  true,
+                      "item":  "modularmagic:mana_container_large",
+                      "type":  "patchouli:spotlight",
+                      "text":  "同一物品可以是空、部分充满或全满状态，储量保存在物品中。创造分类提供空、满两种状态。小、中、大型容量默认 100000、1000000、10000000，不会自行回魔。持杖时屏幕显示背包容器的总储量和玩家专注。"
+                  },
+                  {
+                      "link_recipe":  true,
+                      "item":  "modularmagic:creative_mana_container",
+                      "type":  "patchouli:spotlight",
+                      "text":  "只有无限满容器，不会被抽空，也不接收魔力。放在背包或副手即可为法杖提供无限魔力，但不会免除专注消耗。"
+                  }
+              ]
+}

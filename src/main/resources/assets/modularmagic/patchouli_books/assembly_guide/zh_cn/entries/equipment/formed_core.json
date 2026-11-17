@@ -8,7 +8,7 @@
                       "link_recipe":  true,
                       "item":  "modularmagic:formed_spell_core",
                       "type":  "patchouli:spotlight",
-                      "text":  "通过结构、参数与引擎校验的完整法术。保存根核心、全部节点及参数，可放进装配法杖施放。"
+                      "text":  "通过结构、参数与引擎校验的完整法术。保存根核心、全部节点及参数，可放进初学者法杖施放。"
                   },
                   {
                       "title":  "修改与示例",

@@ -14,8 +14,13 @@ public final class ModularMagic {
     public static final String MOD_ID = "modularmagic";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public ModularMagic(IEventBus modBus) {
+    public ModularMagic(IEventBus modBus, net.neoforged.fml.ModContainer container) {
+        container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER, cn.nulladev.modularmagic.config.ResourceConfig.SPEC);
+        container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER, cn.nulladev.modularmagic.spell.billing.CostRules.SPEC, "modularmagic-costs.toml");
+        modBus.addListener((net.neoforged.fml.event.config.ModConfigEvent.Loading event)->migrateCosts(event.getConfig()));
+        modBus.addListener((net.neoforged.fml.event.config.ModConfigEvent.Reloading event)->migrateCosts(event.getConfig()));
         ModContent.register(modBus);
+        cn.nulladev.modularmagic.mana.PlayerFocus.register(modBus);
         modBus.addListener(EditorNetworking::register);
         modBus.addListener(ModularMagic::creativeContents);
         modBus.addListener((net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent event) -> {
@@ -33,6 +38,10 @@ public final class ModularMagic {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
     }
 
+    private static void migrateCosts(net.neoforged.fml.config.ModConfig config){
+        cn.nulladev.modularmagic.config.ResourceConfig.migrate(config);
+        cn.nulladev.modularmagic.spell.billing.CostRules.migrate(config);
+    }
     private static void creativeContents(net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent event) {
         var items = dev.xkmc.l2magic.init.registrate.LMItems.CREATIVE_WAND;
         if (!event.getTabKey().equals(dev.xkmc.l2magic.init.registrate.LMItems.TAB.key())) return;

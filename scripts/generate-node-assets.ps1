@@ -78,8 +78,8 @@ $en['gui.modularmagic.review'] = 'Hover to review issues'
 $zh['gui.modularmagic.review'] = '悬停查看待补全内容'
 $en['gui.modularmagic.lock_mark'] = 'locked'
 $zh['gui.modularmagic.lock_mark'] = '锁定'
-$en['item.modularmagic.core_wand'] = 'Assembly Wand'
-$zh['item.modularmagic.core_wand'] = '装配法杖'
+$en['item.modularmagic.core_wand'] = 'Beginner Wand'
+$zh['item.modularmagic.core_wand'] = '初学者法杖'
 $en['gui.modularmagic.wand_inventory'] = 'Wand Cores'
 $zh['gui.modularmagic.wand_inventory'] = '法杖核心仓'
 $en['gui.modularmagic.wand_invalid'] = 'Load a valid spell core first (sneak + right-click).'
@@ -166,6 +166,60 @@ foreach ($template in $catalog.templates) {
     $en[('node.modularmagic.' + $template.item)] = if ($category -eq 'root') { $title + ' Core' } else { $title }
     $zh[('node.modularmagic.' + $template.item)] = if ($category -eq 'root') { ($template.name -replace '法术根$','') + '核心' } else { $template.name }
 }
+$en['item.modularmagic.core_wand'] = 'Beginner Wand'
+$zh['item.modularmagic.core_wand'] = '初学者法杖'
+$en['item.modularmagic.creative_wand'] = 'Creative Wand'
+$zh['item.modularmagic.creative_wand'] = '创造法杖'
+$en['tooltip.modularmagic.mana_stored'] = 'Mana: %s / %s'
+$zh['tooltip.modularmagic.mana_stored'] = '魔力：%s / %s'
+$en['tooltip.modularmagic.mana_infinite'] = 'Mana: infinite'
+$zh['tooltip.modularmagic.mana_infinite'] = '魔力：无限'
+Write-JsonFile 'models/item/creative_wand.json' @{parent='minecraft:item/handheld';textures=@{layer0='l2magic:item/creative_wand'}}
+$tierNames = @{small=@('Small','小型');medium=@('Medium','中型');large=@('Large','大型')}
+foreach ($tier in @('small','medium','large')) {
+    $id = 'mana_container_' + $tier
+    $en['item.modularmagic.' + $id] = $tierNames[$tier][0] + ' Mana Container'
+    $zh['item.modularmagic.' + $id] = $tierNames[$tier][1] + '魔力容器'
+    Write-JsonFile ('models/item/' + $id + '.json') @{parent='minecraft:item/generated';textures=@{layer0='minecraft:item/amethyst_shard'}}
+    # Old IDs are hidden migration items only.
+    foreach ($state in @('empty','full')) {
+        $id = 'mana_container_' + $tier + '_' + $state
+        $en['item.modularmagic.' + $id] = $tierNames[$tier][0] + ' Mana Container (' + $state + ')'
+        $zh['item.modularmagic.' + $id] = $tierNames[$tier][1] + '魔力容器（' + $(if ($state -eq 'full') {'满'} else {'空'}) + '）'
+        Write-JsonFile ('models/item/' + $id + '.json') @{parent='minecraft:item/generated';textures=@{layer0=$(if ($state -eq 'full') {'minecraft:item/amethyst_shard'} else {'minecraft:item/quartz'})}}
+    }
+}
+$en['item.modularmagic.creative_mana_container'] = 'Creative Mana Container'
+$zh['item.modularmagic.creative_mana_container'] = '创造魔力容器'
+$en['tooltip.modularmagic.wand_multipliers'] = 'Mana x%s | Focus x%s'
+$zh['tooltip.modularmagic.wand_multipliers'] = '魔力消耗 ×%s　专注消耗 ×%s'
+$en['tooltip.modularmagic.mana_quote'] = 'Base mana cost: %s'
+$zh['tooltip.modularmagic.mana_quote'] = '基础魔力消耗：%s'
+$en['tooltip.modularmagic.focus_quote'] = 'Base focus cost: %s'
+$zh['tooltip.modularmagic.focus_quote'] = '基础专注消耗：%s'
+$en['hud.modularmagic.mana'] = 'Mana %s'
+$zh['hud.modularmagic.mana'] = '魔力 %s'
+$en['hud.modularmagic.focus'] = 'Focus %s'
+$zh['hud.modularmagic.focus'] = '专注 %s'
+$en['hud.modularmagic.focus_tripped'] = 'Focus %s (recovering to full)'
+$zh['hud.modularmagic.focus_tripped'] = '专注 %s（回满后解除熔断）'
+$en['hud.modularmagic.focus_debt'] = 'Focus debt %s (recovering)'
+$zh['hud.modularmagic.focus_debt'] = '专注负债 %s（偿还中）'
+$en['gui.modularmagic.not_enough_mana'] = 'Not enough mana to reserve this spell. Carry more charged containers.'
+$zh['gui.modularmagic.not_enough_mana'] = '魔力不足，无法为这次法术预留费用。请携带更多已充能的容器。'
+$en['gui.modularmagic.focus_tripped'] = 'Focus is overdrawn. Wait until it fully recovers.'
+$zh['gui.modularmagic.focus_tripped'] = '专注已熔断，请等待专注完全恢复。'
+$en['gui.modularmagic.invalid_budget'] = 'Cannot budget this spell. Check its expressions, range and repetition counts.'
+$zh['gui.modularmagic.invalid_budget'] = '无法确定这次法术的费用，请检查表达式、范围和重复次数。'
+$en['gui.modularmagic.cast_cancelled'] = 'The spell ended; unused reserved mana will return to its containers.'
+$zh['gui.modularmagic.cast_cancelled'] = '法术已结束，未使用的预留魔力将归还原容器。'
+$en['gui.modularmagic.cast_limit'] = 'The spell exceeded its execution limits and stopped.'
+$zh['gui.modularmagic.cast_limit'] = '法术超出允许的执行范围或次数，已停止。'
+$en['gui.modularmagic.budget_exhausted'] = 'The spell exceeded its reserved mana and stopped.'
+$zh['gui.modularmagic.budget_exhausted'] = '法术所需费用超出预留魔力，已停止。'
+$en['gui.modularmagic.condition_not_met'] = 'The casting condition was not met.'
+$zh['gui.modularmagic.condition_not_met'] = '未满足这个法术的施放条件。'
+Write-JsonFile 'models/item/creative_mana_container.json' @{parent='minecraft:item/generated';textures=@{layer0='minecraft:item/echo_shard'}}
 Write-JsonFile 'lang/en_us.json' $en
 Write-JsonFile 'lang/zh_cn.json' $zh
 . (Join-Path $PSScriptRoot 'generate-node-guide.ps1')

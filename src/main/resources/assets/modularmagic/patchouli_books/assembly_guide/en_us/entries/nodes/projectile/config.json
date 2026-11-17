@@ -11,19 +11,31 @@
                       "text":  "Define a custom projectile\u0027s motion, hit processors, appearance and lifecycle actions. Used by Custom Projectile, not directly as an action."
                   },
                   {
-                      "title":  "Child slots",
+                      "anchor":  "mana_cost",
+                      "title":  "Default Mana Cost",
                       "type":  "patchouli:text",
-                      "text":  "$(li)motion$(br)Motion / Optional: 0 or 1 node$(br2)$(li)tick$(br)Action / Optional: 0 or 1 node"
+                      "text":  "Add motion maintenance, hits and triggered actions. Reserve a bounded number of callbacks.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
                   },
                   {
-                      "title":  "Child slots",
+                      "anchor":  "focus_cost",
+                      "title":  "Structural Complexity",
                       "type":  "patchouli:text",
-                      "text":  "$(li)hit$(br)Effect / List: 0-64 nodes$(br2)$(li)renderer$(br)Projectile renderer / Optional: 0 or 1 node"
+                      "text":  "Add motion, appearance and event structures once, not again on every flight tick.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
                   },
                   {
-                      "title":  "Child slots",
+                      "title":  "What to Attach",
                       "type":  "patchouli:text",
-                      "text":  "$(li)land$(br)Action / Optional: 0 or 1 node$(br2)$(li)expire$(br)Action / Optional: 0 or 1 node"
+                      "text":  "$(li)motion$(br)Motion / Optional; one node at most$(br2)$(li)tick$(br)Action / Optional; one node at most"
+                  },
+                  {
+                      "title":  "What to Attach",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)hit$(br)Effect / Add up to 64 nodes$(br2)$(li)renderer$(br)Projectile renderer / Optional; one node at most"
+                  },
+                  {
+                      "title":  "What to Attach",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)land$(br)Action / Optional; one node at most$(br2)$(li)expire$(br)Action / Optional; one node at most"
                   },
                   {
                       "title":  "Parameters",

@@ -11,14 +11,21 @@
                       "text":  "Accept entities that satisfy any child filter."
                   },
                   {
-                      "title":  "Child slots",
+                      "anchor":  "mana_cost",
+                      "title":  "Default Mana Cost",
                       "type":  "patchouli:text",
-                      "text":  "$(li)list$(br)Filter / List: 0-64 nodes"
+                      "text":  "0. Effects applied after filtering are priced separately.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
                   },
                   {
-                      "title":  "Parameters",
+                      "anchor":  "focus_cost",
+                      "title":  "Structural Complexity",
                       "type":  "patchouli:text",
-                      "text":  "This node has no text parameters. Its kind and child nodes determine its behavior."
+                      "text":  "0.1 plus attached filters, without multiplying by target count.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
+                  },
+                  {
+                      "title":  "What to Attach",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)list$(br)Filter / Add up to 64 nodes"
                   }
               ]
 }

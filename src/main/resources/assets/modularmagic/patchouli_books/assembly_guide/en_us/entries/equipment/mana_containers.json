@@ -1,0 +1,32 @@
+{
+    "name":  "Mana Containers",
+    "icon":  "modularmagic:mana_container_small",
+    "category":  "modularmagic:equipment",
+    "sortnum":  5,
+    "pages":  [
+                  {
+                      "link_recipe":  true,
+                      "item":  "modularmagic:mana_container_small",
+                      "type":  "patchouli:spotlight",
+                      "text":  "One item can be empty, partially charged or full; charge is saved on the stack. Creative mode offers empty and full states. Capacities default to 100000, 1000000 and 10000000 with no regeneration. Holding a wand shows inventory mana and player focus."
+                  },
+                  {
+                      "link_recipe":  true,
+                      "item":  "modularmagic:mana_container_medium",
+                      "type":  "patchouli:spotlight",
+                      "text":  "One item can be empty, partially charged or full; charge is saved on the stack. Creative mode offers empty and full states. Capacities default to 100000, 1000000 and 10000000 with no regeneration. Holding a wand shows inventory mana and player focus."
+                  },
+                  {
+                      "link_recipe":  true,
+                      "item":  "modularmagic:mana_container_large",
+                      "type":  "patchouli:spotlight",
+                      "text":  "One item can be empty, partially charged or full; charge is saved on the stack. Creative mode offers empty and full states. Capacities default to 100000, 1000000 and 10000000 with no regeneration. Holding a wand shows inventory mana and player focus."
+                  },
+                  {
+                      "link_recipe":  true,
+                      "item":  "modularmagic:creative_mana_container",
+                      "type":  "patchouli:spotlight",
+                      "text":  "Only the full infinite variant exists. Extraction never depletes it, and it accepts no mana. Carry it in your inventory or offhand to supply unlimited wand mana. It does not remove focus costs."
+                  }
+              ]
+}

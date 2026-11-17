@@ -19,7 +19,11 @@ import net.neoforged.neoforge.network.PacketDistributor;
 import java.util.List;
 
 public final class CoreWandItem extends WandItem {
-    public CoreWandItem(Properties properties) { super(properties); }
+    private final boolean creative;
+    public CoreWandItem(Properties properties) { this(properties, false); }
+    public CoreWandItem(Properties properties, boolean creative) { super(properties); this.creative = creative; }
+    public double manaMultiplier(ItemStack stack) { return creative ? 0 : cn.nulladev.modularmagic.config.ResourceConfig.WAND_MANA.get(); }
+    public double focusMultiplier(ItemStack stack) { return creative ? 0 : cn.nulladev.modularmagic.config.ResourceConfig.WAND_FOCUS.get(); }
     private static ItemStack core(ItemStack stack) { return WandCores.read(stack).get(WandCores.selected(stack)); }
     private static String document(ItemStack stack) { return SpellCoreItem.read(core(stack)).toJson(); }
 
@@ -38,6 +42,7 @@ public final class CoreWandItem extends WandItem {
                 if (!level.isClientSide()) player.getCooldowns().addCooldown(this, 10);
                 return InteractionResultHolder.consume(stack);
             }
+            return InteractionResultHolder.fail(stack);
         } catch (RuntimeException ignored) {}
         if (!level.isClientSide()) player.displayClientMessage(Component.translatable("gui.modularmagic.wand_invalid"), true);
         return InteractionResultHolder.fail(stack);
@@ -51,10 +56,18 @@ public final class CoreWandItem extends WandItem {
             var context = SpellContext.castSpell(player, runtime.action(), useTicks, 1, getDistance(stack), 0);
             if (context == null) return false;
             var anchor = player.level().registryAccess().registryOrThrow(EngineRegistry.SPELL).getHolder(RuntimeSpells.ANCHOR).orElseThrow();
-            if (!runtime.action().test(anchor, context) || !CastCosts.tryConsume(player, stack, core(stack), context)) return false;
-            RuntimeSpells.execute(player.level(), json, context);
-            PacketDistributor.sendToPlayersTrackingEntityAndSelf(player, CastVisual.of(json, context));
+            if (player.isCreative()) {
+                if(!runtime.action().test(anchor,context))return false;
+                RuntimeSpells.execute(player.level(), json, context);
+                PacketDistributor.sendToPlayersTrackingEntityAndSelf(player, CastVisual.of(json, context));
+            } else {
+                if(!CastCosts.tryConsume(player,stack,core(stack),context))return false;
+                return cn.nulladev.modularmagic.spell.billing.PaidCasting.execute((ServerPlayer)player,stack,json,context,runtime);
+            }
             return true;
+        } catch (cn.nulladev.modularmagic.spell.billing.CastAccount.Stop e) {
+            player.displayClientMessage(Component.translatable(e.getMessage()),true);
+            player.stopUsingItem();return false;
         } catch (RuntimeException e) {
             player.displayClientMessage(Component.translatable("gui.modularmagic.cast_failed", e.getMessage()), true);
             return false;
@@ -65,7 +78,7 @@ public final class CoreWandItem extends WandItem {
         if (level.isClientSide() || !(user instanceof Player player)) return;
         try {
             if (RuntimeSpells.get(level, document(stack)).action().castType() == SpellCastType.CONTINUOUS)
-                cast(stack, player, getUseDuration(stack, user) - remaining);
+                if(!cast(stack, player, getUseDuration(stack, user) - remaining))user.stopUsingItem();
         } catch (RuntimeException ignored) { user.stopUsingItem(); }
     }
     @Override public void releaseUsing(ItemStack stack, Level level, LivingEntity user, int remaining) {
@@ -85,6 +98,7 @@ public final class CoreWandItem extends WandItem {
     @Override public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
         var cores = WandCores.read(stack);
         tooltip.add(Component.translatable("tooltip.modularmagic.wand_count", cores.stream().filter(c -> !c.isEmpty()).count(), WandCores.CAPACITY));
+        tooltip.add(Component.translatable("tooltip.modularmagic.wand_multipliers", manaMultiplier(stack), focusMultiplier(stack)));
         if (!core(stack).isEmpty()) tooltip.add(Component.translatable("tooltip.modularmagic.wand_selected", core(stack).getHoverName()));
     }
 }

@@ -11,9 +11,21 @@
                       "text":  "Find entities using the target type and selector, then apply entity processors in order. Put damage and similar effects here."
                   },
                   {
-                      "title":  "Child slots",
+                      "anchor":  "mana_cost",
+                      "title":  "Default Mana Cost",
                       "type":  "patchouli:text",
-                      "text":  "$(li)selector$(br)Selector / Required: 1 node$(br2)$(li)processors$(br)Effect / List: 0-64 nodes"
+                      "text":  "Selector query costs plus each attempted effect on each target.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
+                  },
+                  {
+                      "anchor":  "focus_cost",
+                      "title":  "Structural Complexity",
+                      "type":  "patchouli:text",
+                      "text":  "0.1 plus selector and effect structures; do not multiply by targets.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
+                  },
+                  {
+                      "title":  "What to Attach",
+                      "type":  "patchouli:text",
+                      "text":  "$(li)selector$(br)Selector / Insert one node$(br2)$(li)processors$(br)Effect / Add up to 64 nodes"
                   },
                   {
                       "title":  "Parameters",
