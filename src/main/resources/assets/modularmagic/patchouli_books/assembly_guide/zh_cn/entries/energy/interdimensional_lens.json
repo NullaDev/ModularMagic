@@ -1,0 +1,23 @@
+{
+  "name": "定界之眼",
+  "icon": "modularmagic:interdimensional_lens",
+  "category": "modularmagic:energy",
+  "sortnum": 18,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:interdimensional_lens",
+      "link_recipe": true,
+      "text": "普通末影之眼只会指向一个去处。让它沾上龙息，再以晶化以太稳住眼中的裂隙，它才敢凝视另一片天地。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "把目光留在锚上",
+      "text": "在末地取得龙息与紫颂材料后制作。手持定界之眼右键自己的个人供能锚，便能跨世界为已绑定的接收器供能。$(br2)不必在远方再造一只锚，但家中的锚与以太来源仍需保持活动。普通末影之眼无法完成这次升级。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:interdimensional_lens"
+    }
+  ]
+}

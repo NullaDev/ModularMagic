@@ -14,7 +14,7 @@
                       "anchor":  "mana_cost",
                       "title":  "默认魔力消耗",
                       "type":  "patchouli:text",
-                      "text":  "持续效果：每目标 20×t×(a+1)²×k。瞬间效果改为 1000×(a+1)²×k，不按时长打折。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
+                      "text":  "持续效果：每目标 20×t×(a+1)²×k。瞬间效果改为 1K×(a+1)²×k，不按时长打折。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
                   },
                   {
                       "anchor":  "focus_cost",

@@ -1,0 +1,28 @@
+{
+  "name": "基础以太储槽",
+  "icon": "modularmagic:aether_tank",
+  "category": "modularmagic:energy",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:aether_tank",
+      "link_recipe": true,
+      "text": "铜制框架把以太约束在池中，液面就是积蓄的多少。这一档通常能容纳 1M，输入与输出各可达到 2K/秒。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "浸入一只容器",
+      "text": "手持魔力容器右键放入，等它充能后潜行空手右键取回。液体中能看见正在充能的罐子。$(br2)两种以太碎片也能右键放回；只收其中封存的以太，结晶时花掉的那部分不会回来。要取出材料，请给凝结器供能。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "搬迁前先排空",
+      "text": "储槽可贴邻给发射器、根共鸣器或供能锚供能。两个储槽仅仅相邻，并不会自动交换积蓄。$(br2)拆掉框架，失去约束的以太就会逸散；先转走存量。里面的充能容器另行掉落，比较器则能读出液面高低。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:aether_tank"
+    }
+  ]
+}

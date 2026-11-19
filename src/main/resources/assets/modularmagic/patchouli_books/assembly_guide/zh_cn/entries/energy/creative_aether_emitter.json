@@ -1,0 +1,19 @@
+{
+  "name": "创造以太发射器",
+  "icon": "modularmagic:creative_aether_emitter",
+  "category": "modularmagic:energy",
+  "sortnum": 13,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:creative_aether_emitter",
+      "link_recipe": true,
+      "text": "紫黑纹路中的射流仿佛没有源头。它不需要相邻储槽，通常能送到 64 格，每束最多 1M。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "选定一个去处",
+      "text": "用调谐器依次点发射器和目标，留出射流的通道即可。它来自创造分类，没有合成配方。"
+    }
+  ]
+}

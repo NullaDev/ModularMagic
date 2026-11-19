@@ -53,19 +53,18 @@ public final class ModContent {
             () -> IMenuTypeExtension.create((id, inventory, buf) -> new WritingMenu(id, inventory, buf.readBlockPos())));
 
     static {
-        var capacities = java.util.List.of(ResourceConfig.SMALL, ResourceConfig.MEDIUM, ResourceConfig.LARGE);
-        String[] tiers = {"small", "medium", "large"};
+        var capacities = java.util.List.of(ResourceConfig.BASIC, ResourceConfig.EXPANDED, ResourceConfig.ULTIMATE);
+        String[] tiers = {"basic", "expanded", "ultimate"};
+        Rarity[] rarities = {Rarity.COMMON,Rarity.UNCOMMON,Rarity.RARE};
         for (int i = 0; i < tiers.length; i++) {
             var capacity = capacities.get(i);
+            var rarity = rarities[i];
             String id = "mana_container_" + tiers[i];
-            var canonical = ITEMS.register(id, () -> new ManaContainerItem(new Item.Properties(), capacity::get, false));
+            var canonical = ITEMS.register(id, () -> new ManaContainerItem(new Item.Properties().rarity(rarity), capacity::get, false));
             MANA_CONTAINERS.put(id, canonical);
-            // Hidden migration items retain old saves; carried stacks convert to the single battery item.
-            for (boolean full : new boolean[]{false, true}) ITEMS.register(id + (full ? "_full" : "_empty"),
-                    () -> ManaContainerItem.legacy(new Item.Properties(), capacity::get, full, canonical));
         }
         MANA_CONTAINERS.put("creative_mana_container", ITEMS.register("creative_mana_container",
-                () -> new ManaContainerItem(new Item.Properties(), () -> Long.MAX_VALUE, true)));
+                () -> new ManaContainerItem(new Item.Properties().rarity(Rarity.EPIC), () -> Long.MAX_VALUE, true)));
         for (var template : NodeCatalog.all()) NODES.put(template.id(), ITEMS.register(template.item(),
                 () -> new NodeItem(new Item.Properties(), template.id())));
         TABS.register("main", () -> CreativeModeTab.builder()
@@ -75,6 +74,11 @@ public final class ModContent {
                     output.accept(WRITING_TABLE_ITEM.get());
                     output.accept(CORE_WAND.get());
                     output.accept(CREATIVE_WAND.get());
+                    cn.nulladev.modularmagic.energy.EnergyContent.ITEMS.values().forEach(item -> output.accept(item.get()));
+                    output.accept(cn.nulladev.modularmagic.energy.EnergyContent.LINK.get());
+                    output.accept(cn.nulladev.modularmagic.energy.EnergyContent.RECEIVER.get());
+                    output.accept(cn.nulladev.modularmagic.energy.EnergyContent.CRYSTAL.get());
+                    output.accept(cn.nulladev.modularmagic.energy.EnergyContent.CROSS_LENS.get());
                     MANA_CONTAINERS.values().forEach(item -> {
                         if (!item.get().infinite(item.toStack())) output.accept(item.get());
                         output.accept(item.get().filledStack());

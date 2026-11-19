@@ -13,7 +13,7 @@
                   {
                       "title":  "Casting and selection",
                       "type":  "patchouli:text",
-                      "text":  "Right-click instant spells, hold and release charged spells, and hold continuous spells. Empty or unformed cores cannot cast.$(br2)Use L2ItemSelector keys to switch, normally Up/Down. The tooltip shows core count, current selection and cost multipliers."
+                      "text":  "Right-click instant spells, hold and release charged spells, and hold continuous spells. Empty or unformed cores cannot cast.$(br2)Switch with Up/Down or your chosen keys. The tooltip shows core count, current selection and cost multipliers."
                   },
                   {
                       "title":  "Mana and Focus",

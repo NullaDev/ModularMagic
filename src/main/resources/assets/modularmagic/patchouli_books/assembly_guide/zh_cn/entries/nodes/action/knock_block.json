@@ -14,7 +14,7 @@
                       "anchor":  "mana_cost",
                       "title":  "默认魔力消耗",
                       "type":  "patchouli:text",
-                      "text":  "每块 2000 + 1000×v²，再预留碰撞伤害 m(d)。v 为初速，d 为允许的最大碰撞伤害；这部分随方块投送扣除。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
+                      "text":  "每块 2K + 1K×v²，再预留碰撞伤害 m(d)。v 为初速，d 为允许的最大碰撞伤害；这部分随方块投送扣除。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
                   },
                   {
                       "anchor":  "focus_cost",

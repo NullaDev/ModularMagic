@@ -1,0 +1,28 @@
+{
+  "name": "以太结晶室",
+  "icon": "modularmagic:aether_crystallization_chamber",
+  "category": "modularmagic:energy",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:aether_crystallization_chamber",
+      "link_recipe": true,
+      "text": "以太靠近下界之星时，不再急于散去，而是在晶核周围长出坚实的晶簇。星不会被每次结晶消耗，微光却终于有了长存的形体。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "给晶体一股以太流",
+      "text": "把结晶室贴在储槽旁，或接入射流、共鸣支路。它会自行凝出晶化碎片，常见速度为每秒最多四枚。$(br2)每枚通常封存 200，另花 200 让它稳定。空手右键取一枚，潜行取全部；漏斗也能接走成品，积满一组时暂时停工。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "挽留将散的碎片",
+      "text": "将尚未消散的普通碎片投到顶部，晶核会把它稳定下来；只需再补足稳定化所用的以太。$(br2)成品仍从同一个收集处取走。这里生长的是晶体，随身容器要到液态储槽中充能。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:aether_crystallization_chamber"
+    }
+  ]
+}

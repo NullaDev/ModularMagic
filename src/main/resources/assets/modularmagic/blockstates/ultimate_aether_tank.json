@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "modularmagic:block/ultimate_aether_tank",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "modularmagic:block/ultimate_aether_tank",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "modularmagic:block/ultimate_aether_tank",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "modularmagic:block/ultimate_aether_tank",
+      "y": 270
+    }
+  }
+}

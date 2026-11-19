@@ -34,6 +34,13 @@ ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
+modId = "jade"
+type = "required"
+versionRange = "${jade_version_range}"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
 modId = "l2magic"
 type = "required"
 versionRange = "${l2magic_version_range}"

@@ -1,26 +1,26 @@
 {
     "name":  "魔力容器",
-    "icon":  "modularmagic:mana_container_small",
+    "icon":  "modularmagic:mana_container_basic",
     "category":  "modularmagic:equipment",
     "sortnum":  5,
     "pages":  [
                   {
                       "link_recipe":  true,
-                      "item":  "modularmagic:mana_container_small",
+                      "item":  "modularmagic:mana_container_basic",
                       "type":  "patchouli:spotlight",
-                      "text":  "同一物品可以是空、部分充满或全满状态，储量保存在物品中。创造分类提供空、满两种状态。小、中、大型容量默认 100000、1000000、10000000，不会自行回魔。持杖时屏幕显示背包容器的总储量和玩家专注。"
+                      "text":  "基础、扩容、终极、创造四档与储槽、发射器使用相同的稀有度颜色。普通三档常见容量为 100K、1M、10M，以手中罐子的读数为准。$(br2)空、部分充满、全满是同一个物品的不同状态，不会自行回魔。持杖时屏幕显示背包容器的总储量和玩家专注。"
                   },
                   {
                       "link_recipe":  true,
-                      "item":  "modularmagic:mana_container_medium",
+                      "item":  "modularmagic:mana_container_expanded",
                       "type":  "patchouli:spotlight",
-                      "text":  "同一物品可以是空、部分充满或全满状态，储量保存在物品中。创造分类提供空、满两种状态。小、中、大型容量默认 100000、1000000、10000000，不会自行回魔。持杖时屏幕显示背包容器的总储量和玩家专注。"
+                      "text":  "基础、扩容、终极、创造四档与储槽、发射器使用相同的稀有度颜色。普通三档常见容量为 100K、1M、10M，以手中罐子的读数为准。$(br2)空、部分充满、全满是同一个物品的不同状态，不会自行回魔。持杖时屏幕显示背包容器的总储量和玩家专注。"
                   },
                   {
                       "link_recipe":  true,
-                      "item":  "modularmagic:mana_container_large",
+                      "item":  "modularmagic:mana_container_ultimate",
                       "type":  "patchouli:spotlight",
-                      "text":  "同一物品可以是空、部分充满或全满状态，储量保存在物品中。创造分类提供空、满两种状态。小、中、大型容量默认 100000、1000000、10000000，不会自行回魔。持杖时屏幕显示背包容器的总储量和玩家专注。"
+                      "text":  "基础、扩容、终极、创造四档与储槽、发射器使用相同的稀有度颜色。普通三档常见容量为 100K、1M、10M，以手中罐子的读数为准。$(br2)空、部分充满、全满是同一个物品的不同状态，不会自行回魔。持杖时屏幕显示背包容器的总储量和玩家专注。"
                   },
                   {
                       "link_recipe":  true,

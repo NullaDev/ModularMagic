@@ -12,7 +12,7 @@
                   {
                       "title":  "1. Gather supplies",
                       "type":  "patchouli:text",
-                      "text":  "From the ModularMagic creative tab, take:$(li)Spell Writing Table$(li)Spell Core: Instant$(li)Spell Node: Self Pos$(li)Spell Node: Sound$(li)Beginner Wand$(li)Charged Small Mana Container (survival)$(br2)Keep this guide in your hotbar for Ctrl lookup."
+                      "text":  "From the ModularMagic creative tab, take:$(li)Spell Writing Table$(li)Spell Core: Instant$(li)Spell Node: Self Pos$(li)Spell Node: Sound$(li)Beginner Wand$(li)Charged Basic Mana Container (survival)$(br2)Keep this guide in your hotbar for Ctrl lookup."
                   },
                   {
                       "title":  "2. Insert the core",
@@ -42,7 +42,7 @@
                   {
                       "title":  "7. Load and cast",
                       "type":  "patchouli:text",
-                      "text":  "Hold the Beginner Wand and sneak-right-click to open its nine core slots. Insert your formed core and close the screen.$(br2)Right-click to hear the note! In survival, this simple spell defaults to 11 mana and 5 focus. Multiple cores use L2ItemSelector controls, normally Up/Down; check Key Binds."
+                      "text":  "Hold the Beginner Wand and sneak-right-click to open its nine core slots. Insert your formed core and close the screen.$(br2)Right-click to hear the note! In survival, this simple spell defaults to 11 mana and 5 focus. Switch cores with Up/Down, or the keys you selected in Key Binds."
                   },
                   {
                       "title":  "8. Try a variation",

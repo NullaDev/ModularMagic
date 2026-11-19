@@ -8,7 +8,7 @@
                       "type":  "patchouli:spotlight",
                       "item":  "modularmagic:gem_action_set_block",
                       "link_recipe":  true,
-                      "text":  "在法术所在方块位置放置指定方块状态，受引擎方块修改规则限制。参考槽可从方块物品取样。"
+                      "text":  "在法术所在方块位置放置指定方块状态，只能在允许改变的地方生效。参考槽可从方块物品取样。"
                   },
                   {
                       "anchor":  "mana_cost",

@@ -8,7 +8,7 @@
                       "type":  "patchouli:spotlight",
                       "item":  "modularmagic:gem_action_synced_logic",
                       "link_recipe":  true,
-                      "text":  "Execute a child action requiring server and client coordination. MM coordinates its visuals and actual effects through spell synchronization."
+                      "text":  "Unfold the attached action in one rhythm, keeping its appearance and actual effects together."
                   },
                   {
                       "anchor":  "mana_cost",
@@ -20,7 +20,7 @@
                       "anchor":  "focus_cost",
                       "title":  "Structural Complexity",
                       "type":  "patchouli:text",
-                      "text":  "0.05 plus the attached action; its client-side replay is not charged again.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
+                      "text":  "0.05 plus the attached action; its accompanying appearance is not charged a second time.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
                   },
                   {
                       "title":  "What to Attach",

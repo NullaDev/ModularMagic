@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "CAC",
+    "ASA",
+    "CAC"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "S": {
+      "tag": "modularmagic:aether_fragments"
+    }
+  },
+  "result": {
+    "id": "modularmagic:aether_receiver",
+    "count": 1
+  }
+}

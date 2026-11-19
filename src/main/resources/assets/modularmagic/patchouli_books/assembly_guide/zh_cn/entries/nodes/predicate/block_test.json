@@ -8,7 +8,7 @@
                       "type":  "patchouli:spotlight",
                       "item":  "modularmagic:gem_predicate_block_test",
                       "link_recipe":  true,
-                      "text":  "检查当前位置方块是否具有所选性质，例如是否符合引擎提供的方块测试。"
+                      "text":  "检查当前位置方块是否具有所选性质，例如是否属于所选的方块性质。"
                   },
                   {
                       "anchor":  "mana_cost",

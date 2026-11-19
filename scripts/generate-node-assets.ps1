@@ -155,7 +155,7 @@ foreach ($template in $catalog.templates) {
     $model = @{
         parent='minecraft:block/block'
         gui_light='front'
-        textures=@{base=('minecraft:block/' + $colors[$category] + '_concrete');mark='minecraft:block/quartz_block_side';particle=('minecraft:block/' + $colors[$category] + '_concrete')}
+        textures=@{base=('modularmagic:block/node/' + $colors[$category]);mark='modularmagic:block/node/engraving';particle=('modularmagic:block/node/' + $colors[$category])}
         elements=$elements.ToArray()
         display=@{gui=@{rotation=@(0,180,0);translation=@(0,0,0);scale=@(1,1,1)};ground=@{translation=@(0,2,0);scale=@(0.4,0.4,0.4)};fixed=@{rotation=@(0,180,0);scale=@(0.8,0.8,0.8)}}
     }
@@ -175,19 +175,12 @@ $zh['tooltip.modularmagic.mana_stored'] = '魔力：%s / %s'
 $en['tooltip.modularmagic.mana_infinite'] = 'Mana: infinite'
 $zh['tooltip.modularmagic.mana_infinite'] = '魔力：无限'
 Write-JsonFile 'models/item/creative_wand.json' @{parent='minecraft:item/handheld';textures=@{layer0='l2magic:item/creative_wand'}}
-$tierNames = @{small=@('Small','小型');medium=@('Medium','中型');large=@('Large','大型')}
-foreach ($tier in @('small','medium','large')) {
+$tierNames = @{basic=@('Basic','基础');expanded=@('Expanded','扩容');ultimate=@('Ultimate','终极')}
+foreach ($tier in @('basic','expanded','ultimate')) {
     $id = 'mana_container_' + $tier
     $en['item.modularmagic.' + $id] = $tierNames[$tier][0] + ' Mana Container'
     $zh['item.modularmagic.' + $id] = $tierNames[$tier][1] + '魔力容器'
     Write-JsonFile ('models/item/' + $id + '.json') @{parent='minecraft:item/generated';textures=@{layer0='minecraft:item/amethyst_shard'}}
-    # Old IDs are hidden migration items only.
-    foreach ($state in @('empty','full')) {
-        $id = 'mana_container_' + $tier + '_' + $state
-        $en['item.modularmagic.' + $id] = $tierNames[$tier][0] + ' Mana Container (' + $state + ')'
-        $zh['item.modularmagic.' + $id] = $tierNames[$tier][1] + '魔力容器（' + $(if ($state -eq 'full') {'满'} else {'空'}) + '）'
-        Write-JsonFile ('models/item/' + $id + '.json') @{parent='minecraft:item/generated';textures=@{layer0=$(if ($state -eq 'full') {'minecraft:item/amethyst_shard'} else {'minecraft:item/quartz'})}}
-    }
 }
 $en['item.modularmagic.creative_mana_container'] = 'Creative Mana Container'
 $zh['item.modularmagic.creative_mana_container'] = '创造魔力容器'
@@ -224,4 +217,5 @@ Write-JsonFile 'lang/en_us.json' $en
 Write-JsonFile 'lang/zh_cn.json' $zh
 . (Join-Path $PSScriptRoot 'generate-node-guide.ps1')
 . (Join-Path $PSScriptRoot 'generate-player-guide.ps1')
+& node (Join-Path $PSScriptRoot 'generate-energy-assets.mjs')
 Write-Output ('Generated {0} node models and both language files.' -f $catalog.templates.Count)

@@ -1,0 +1,43 @@
+{
+  "name": "Your First Aether Flow",
+  "icon": "modularmagic:aether_disruptor",
+  "category": "modularmagic:energy",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Before water appears",
+      "text": "Two flows meet, and a new source appears. I once took that for granted. Then an Ender Pearl disturbed that instant: no water formed, but a pale blue glimmer remained.$(br2)I call it aether. It belongs to neither water nor fire; the world gives it different forms."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "1. Catch that instant",
+      "text": "Make an Aether Disruptor from copper, glass, stone and an Ender Pearl. Place it below a middle water cell with a source on either side at the same height. Scoop out an existing middle source once.$(br2)As the middle flow tries to become a source, the disruptor catches its aether. Look at the device to check collection."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "2. Prepare before extracting",
+      "text": "Keep a crafting table, copper and glass ready. Use the disruptor with an empty hand to extract a fragment, normally holding 200 aether.$(br2)A fragment fades after about 100 ticks, usually five seconds. Craft a Basic Reservoir before it vanishes, then place the reservoir beside the disruptor."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "3. Take a jar with you",
+      "text": "Use a Basic Mana Container on the reservoir to immerse it. When charged, sneak-use with an empty hand to retrieve it.$(br2)Carry the jar and a wand to cast from its reserves. Early collection is slow, so prepare before leaving. An empty jar cannot create its own aether."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "4. Guide it through the workshop",
+      "text": "Place an emitter beside the reservoir and use the tuner on the emitter, then its destination. Keep the pulse route clear.$(br2)To cross walls, craft a resonator shell, install an Amethyst Shard and place it beside the reservoir. Tune the resonator and then a receiving device to join your first branch."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "5. Explore along the branches",
+      "text": "Place another resonator with an Amethyst Shard beside the path. Tune the home resonator and then this new one. Extend the branches toward a mine or woodland.$(br2)Use a portable receiver on any resonator in the main network. It remembers the whole tree and recharges your carried jars within connected coverage."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Preserve the glimmer",
+      "text": "A Nether Star lets aether form lasting crystals. Its chamber produces permanent material; you may wait for this stage if timed crafting is not for you.$(br2)Distant supply requires a personal anchor. Crystalline material preserves your presence in an Ender Chest, preparing the way toward other worlds."
+    }
+  ]
+}

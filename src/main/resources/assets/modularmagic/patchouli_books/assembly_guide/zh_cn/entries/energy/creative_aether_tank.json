@@ -1,0 +1,19 @@
+{
+  "name": "创造以太储槽",
+  "icon": "modularmagic:creative_aether_tank",
+  "category": "modularmagic:energy",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:creative_aether_tank",
+      "link_recipe": true,
+      "text": "紫黑相间的器物仿佛不遵守寻常的约束，里面的以太永远不会耗尽。它可为容器和相邻装置供能。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "创造者的器物",
+      "text": "创造分类中可以取得，没有合成配方。输出仍受到器物吞吐的限制；无线支路仍需装入紫水晶并完成连接。$(br2)本书记下的是常见读数。不同世界的节律或有差别，请以器物上显现的读数为准。"
+    }
+  ]
+}

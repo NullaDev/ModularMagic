@@ -1,0 +1,28 @@
+{
+  "name": "世界锚",
+  "icon": "modularmagic:world_anchor",
+  "category": "modularmagic:energy",
+  "sortnum": 19,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:world_anchor",
+      "link_recipe": true,
+      "text": "出生之处总像被世界多记住了一些。我试着用末影珍珠模仿那道印记，让一小片土地即使离开视线，也仍记得水该流、晶体该生长。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "先给土地一份积蓄",
+      "text": "把锚贴在有以太的储槽旁，攒到至少 100，再空手右键启用。它先照看所在的一个区块；潜行用调谐器可扩展到周围九个。$(br2)每个区块通常每秒花费 2。把生产装置、储槽和共鸣根都放进它照看的范围，才能守住完整的供能源头。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "沉寂与苏醒",
+      "text": "积蓄耗尽，锚就会沉寂。你离开这片天地约一分钟后，它也会收回印记，等待主人归来。$(br2)世界经历漫长静寂、你再次踏入时，远方的锚可能尚未苏醒。回到锚旁，让它重新接住以太流，便会继续照看这片土地。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:world_anchor"
+    }
+  ]
+}

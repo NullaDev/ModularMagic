@@ -1,0 +1,19 @@
+{
+  "name": "Creative Aether Emitter",
+  "icon": "modularmagic:creative_aether_emitter",
+  "category": "modularmagic:energy",
+  "sortnum": 13,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:creative_aether_emitter",
+      "link_recipe": true,
+      "text": "The pulses in its violet-and-black pattern seem to have no beginning. It needs no adjacent reservoir, commonly reaching sixty-four blocks with up to 1M in each pulse."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Choose a destination",
+      "text": "Tune the emitter and then its target, leaving a clear pulse route. It comes from the creative inventory and has no crafting recipe."
+    }
+  ]
+}

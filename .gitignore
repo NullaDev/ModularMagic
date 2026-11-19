@@ -1,33 +1,96 @@
-# Compiled class file
+# Gradle and IDE build output (including upstream reference projects)
+.gradle/
+.kotlin/
+build/
+out/
+bin/
 *.class
-
-# Log file
-*.log
-
-# BlueJ files
 *.ctxt
-
-# Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Package Files #
+# IDE metadata and machine-specific workspace state
+.idea/
+.vscode/
+.fleet/
+.settings/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.factorypath
+
+# Minecraft development runs and local game data
+/run/
+/runs/
+/logs/
+/crash-reports/
+/screenshots/
+/saves/
+/world/
+/world_nether/
+/world_the_end/
+/mods/
+/config/
+/resourcepacks/
+/shaderpacks/
+/backups/
+/debug/
+/repo/
+
+# Runtime logs, crash dumps and profiler recordings
+*.log
+*.log.*
+hs_err_pid*
+replay_pid*
+*.hprof
+*.heapdump
+*.jfr
+
+# Data-generation caches; generated JSON/PNG resources remain versioned
+.cache/
+
+# Packaged output and downloaded archives
+*.jar
 *.war
 *.nar
 *.ear
 *.zip
+*.7z
+*.tar
 *.tar.gz
+*.tgz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+# Keep Wrapper and actual local build dependencies (+ source attachments).
+# build.gradle resolves dev.xkmc exclusively from libs: preserve clone builds.
+!**/gradle/wrapper/gradle-wrapper.jar
+!/libs/fast_projectile_api-*.jar
+!/libs/l2core-*.jar
+!/libs/l2damagetracker-*.jar
+!/libs/l2itemselector-*.jar
+!/libs/l2library-*.jar
+!/libs/l2magic-*.jar
+!/libs/l2menustacker-*.jar
+!/libs/l2modularblocks-*.jar
+!/libs/l2serial-*.jar
+!/libs/l2tabs-*.jar
 
-.idea
-.gradle
-build
-run
-runs
-
+# Local configuration, secrets, backups and operating-system files
+/gradle-local.properties
+/local.properties
+*.local.properties
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.tmp
+*.bak
+*~
 .DS_Store
+Thumbs.db
+[Dd]esktop.ini
 
 # Local design notes for the new magic mod
 /private-design/

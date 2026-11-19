@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "CGC",
+    "GSG",
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "S": {
+      "tag": "modularmagic:aether_fragments"
+    }
+  },
+  "result": {
+    "id": "modularmagic:aether_tank",
+    "count": 1
+  }
+}

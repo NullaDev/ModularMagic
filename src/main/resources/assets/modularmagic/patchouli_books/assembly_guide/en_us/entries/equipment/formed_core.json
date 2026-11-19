@@ -8,7 +8,7 @@
                       "link_recipe":  true,
                       "item":  "modularmagic:formed_spell_core",
                       "type":  "patchouli:spotlight",
-                      "text":  "A spell that passed structure, parameter and engine validation. It stores the root, every node and all parameters, and can be cast from a Beginner Wand."
+                      "text":  "A complete arrangement of gems and values. The core remembers each node and its settings; load it into a Beginner Wand to cast."
                   },
                   {
                       "title":  "Editing and examples",

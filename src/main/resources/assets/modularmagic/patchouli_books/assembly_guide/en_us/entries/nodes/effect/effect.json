@@ -14,7 +14,7 @@
                       "anchor":  "mana_cost",
                       "title":  "Default Mana Cost",
                       "type":  "patchouli:text",
-                      "text":  "Timed effects: 20*t*(a+1)^2*k per target. Instant effects use 1000*(a+1)^2*k instead of duration.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
+                      "text":  "Timed effects: 20*t*(a+1)^2*k per target. Instant effects use 1K*(a+1)^2*k instead of duration.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
                   },
                   {
                       "anchor":  "focus_cost",

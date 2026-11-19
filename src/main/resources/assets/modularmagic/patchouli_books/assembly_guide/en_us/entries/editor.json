@@ -7,7 +7,7 @@
                   {
                       "title":  "Start here",
                       "type":  "patchouli:text",
-                      "text":  "New players should read $(l:modularmagic:tutorial)From Zero: Your First Spell$(/l).$(br2)The three categories cover tutorials, equipment and all nodes. The node index keeps similar types together and supports name searches."
+                      "text":  "New players should read $(l:modularmagic:tutorial)From Zero: Your First Spell$(/l).$(br2)Look up unfamiliar equipment, follow the flow of aether to supply your workshop, or search the node reference by name."
                   },
                   {
                       "title":  "Assembly controls",

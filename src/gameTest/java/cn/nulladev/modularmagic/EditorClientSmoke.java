@@ -255,7 +255,7 @@ public final class EditorClientSmoke {
         require(!(boolean) contents.getClass().getMethod("isErrored").invoke(contents), "Patchouli book must load without errors");
         var entries = (java.util.Map<?, ?>) contents.getClass().getField("entries").get(contents);
         var categories = (java.util.Map<?, ?>) contents.getClass().getField("categories").get(contents);
-        require(categories.size() == 3 && categories.containsKey(ModularMagic.id("nodes")), "Guide must have only three categories with a shared node index");
+        require(categories.size() == 4 && categories.containsKey(ModularMagic.id("nodes")) && categories.containsKey(ModularMagic.id("energy")), "Guide must have a shared node index and a separate energy chapter");
         var lookup = contents.getClass().getMethod("getEntryForStack", ItemStack.class);
         for (var template : cn.nulladev.modularmagic.spell.NodeCatalog.all()) {
             var entry = entries.get(ModularMagic.id("nodes/" + template.id()));
@@ -340,11 +340,11 @@ public final class EditorClientSmoke {
             doc.insert(process.id, "selector", 0, "selector/self");
             effectId = doc.insert(process.id, "processors", 0, "effect/effect").id;
             player.getInventory().setItem(11, SpellCoreItem.write(doc, cn.nulladev.modularmagic.spell.SpellCompiler.compile(doc, player.level().registryAccess())));
-            player.getInventory().setItem(12, ModContent.MANA_CONTAINERS.get("mana_container_small").get().filledStack());
-            var medium = ModContent.MANA_CONTAINERS.get("mana_container_medium").toStack();
-            ModContent.MANA_CONTAINERS.get("mana_container_medium").get().receive(medium, 250000, false);
+            player.getInventory().setItem(12, ModContent.MANA_CONTAINERS.get("mana_container_basic").get().filledStack());
+            var medium = ModContent.MANA_CONTAINERS.get("mana_container_expanded").toStack();
+            ModContent.MANA_CONTAINERS.get("mana_container_expanded").get().receive(medium, 250000, false);
             player.getInventory().setItem(13, medium);
-            player.getInventory().setItem(14, ModContent.MANA_CONTAINERS.get("mana_container_large").toStack());
+            player.getInventory().setItem(14, ModContent.MANA_CONTAINERS.get("mana_container_ultimate").toStack());
             player.inventoryMenu.broadcastChanges();
             player.setShiftKeyDown(true); ModContent.CORE_WAND.get().use(player.level(), player, InteractionHand.MAIN_HAND); player.setShiftKeyDown(false);
         });

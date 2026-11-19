@@ -1,4 +1,5 @@
 ﻿# Documentation defaults, not registered billing rules. Keep formulas independent of item storage/config APIs.
+. (Join-Path $PSScriptRoot 'format-aether-text.ps1')
 function Get-NodeCostReferenceBase($node) {
     # Order: Chinese mana, English mana, Chinese focus, English focus.
     $sum = @('只计算连接在后面的节点，本身不另收。','Only the connected nodes contribute; this node adds no mana fee.','连接在后面的节点专注相加。','Add the focus costs of the connected nodes.')
@@ -28,7 +29,7 @@ function Get-NodeCostReferenceBase($node) {
     $rules = @{
         'action/list'=$sum
         'action/move'=@($sum[0],$sum[1],'所装空间修饰与后续动作的专注相加。','Add the attached modifiers and action focus.')
-        'action/synced_logic'=@($sum[0],$sum[1],'0.05，再加后续动作；客户端显示同一个效果不会再扣一次。','0.05 plus the attached action; its client-side replay is not charged again.')
+        'action/synced_logic'=@($sum[0],$sum[1],'0.05，再加后续动作；同一作用留下的光影不另收一遍。','0.05 plus the attached action; its accompanying appearance is not charged a second time.')
         'action/if'=@('判断所需费用，加上实际执行的那一支。预留时按更贵的一支准备。','Pay for the test and chosen branch. Reserve for the more expensive branch.','0.1 + P + max(A,B) + 0.25×min(A,B)。P 是条件专注，A、B 是两支专注。','0.1 + P + max(A,B) + 0.25*min(A,B), for condition P and branches A and B.')
         'action/delay'=@($sum[0],$sum[1],'0.15 + H(t) + C。t 是等待 tick，C 是后续动作的专注；等待期间不重复扣。','0.15 + H(t) + C, for delay t in ticks and action cost C. No repeated waiting fee.')
         'action/variable'=@($sum[0],$sum[1],'0.1，再加后续动作；变量算出多大的数字不改变专注。','0.1 plus the attached action; the variable value does not affect focus.')
@@ -92,5 +93,7 @@ function Get-NodeCostReference($node) {
         $cost[2]=$cost[2].Replace('专注','复杂度')
         $cost[3]=$cost[3].Replace('focus','complexity').Replace('Focus','Complexity')
     }
+    $cost[0] = Format-AetherText $cost[0]
+    $cost[1] = Format-AetherText $cost[1]
     return $cost
 }

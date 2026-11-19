@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "G G",
+    "DTD",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "T": {
+      "item": "modularmagic:aether_tank"
+    }
+  },
+  "result": {
+    "id": "modularmagic:expanded_aether_tank",
+    "count": 1
+  }
+}

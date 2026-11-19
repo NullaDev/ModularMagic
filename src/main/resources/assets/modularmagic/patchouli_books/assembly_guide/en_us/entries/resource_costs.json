@@ -1,13 +1,13 @@
 {
     "name":  "Understanding Focus and Mana",
-    "icon":  "modularmagic:mana_container_small",
+    "icon":  "modularmagic:mana_container_basic",
     "category":  "modularmagic:editor",
     "sortnum":  2,
     "pages":  [
                   {
                       "title":  "Read This First",
                       "type":  "patchouli:text",
-                      "text":  "Hold a wand to see available inventory mana and your focus. Check the formed core for base costs and the wand for its multipliers.$(br2)This chapter and node entries list default prices; server settings may change them. Creative mode spends neither resource."
+                      "text":  "Hold a wand to see available inventory mana and focus. Check the formed core for base costs and the wand for its multipliers.$(br2)Aether and mana amounts use K (thousand), M (million), and B (billion). This guide records common rules; trust the readings on your core. Creative mode spends no resources."
                   },
                   {
                       "title":  "Two Resources",
@@ -42,7 +42,7 @@
                   {
                       "title":  "Damage Prices",
                       "type":  "patchouli:text",
-                      "text":  "Ordinary damage costs, per target and attempt:$(br2)m(d)=500*d+12.5*d*d$(br2)Damage 4 costs 2200 mana; 20 costs 15000; 100 costs 175000. Stronger single hits cost more per damage point. Damage types share the default price. Focus does not grow with d."
+                      "text":  "Ordinary damage costs, per target and attempt:$(br2)m(d)=500*d+12.5*d*d$(br2)Damage 4 costs 2.2K mana; 20 costs 15K; 100 costs 175000. Stronger single hits cost more per damage point. Damage types share the default price. Focus does not grow with d."
                   },
                   {
                       "title":  "Whole Mana Costs",
@@ -57,7 +57,7 @@
                   {
                       "title":  "Missed Spell Losses",
                       "type":  "patchouli:text",
-                      "text":  "If a spell ends with 1000 unused mana, the default refund is 500 and the other 500 is lost. Startup, queries and effect fees already spent are not refunded.$(br2)Cosmetic spells, block spells and failed casting conditions are exempt by default. Servers may change the ratio or apply it to all unused reserves. Refunds round down to keep consumption whole."
+                      "text":  "If a spell ends with 1K unused mana, the default refund is 500 and the other 500 is lost. Startup, queries and effect fees already spent are not refunded.$(br2)Cosmetic spells, block spells and failed casting conditions are exempt by default. Different worlds may lose different amounts; watch what actually returns to your jars. Refunds round down to keep consumption whole."
                   },
                   {
                       "title":  "When Focus Runs Low",
@@ -72,17 +72,17 @@
                   {
                       "title":  "Debt and Recovery",
                       "type":  "patchouli:text",
-                      "text":  "After overdraw, the red bar shows remaining focus debt. Once it reaches zero, the recovery bar fills until focus is full and lockout ends. Recovery defaults to 10 per second: zero to maximum 100 takes about 10 seconds, with extra time for debt.$(br2)With maximum 100, Earth Spike Field costs about 136.98 and leaves -36.98. Full recovery takes about 13.7 seconds at normal tick speed. Dense effects may display fewer particles without changing damage or billing."
+                      "text":  "After overdraw, the red bar shows remaining focus debt. Once it reaches zero, the recovery bar fills until focus is full and lockout ends. Recovery defaults to 10 per second: zero to maximum 100 takes about 10 seconds, with extra time for debt.$(br2)With maximum 100, Earth Spike Field costs about 136.98 and leaves -36.98. Full recovery takes about 13.7 seconds at normal tick speed. Not every glimmer remains visible in a dense burst, but the spell\u0027s effects and costs remain the same."
                   },
                   {
                       "title":  "Keep Your Effects",
                       "type":  "patchouli:text",
-                      "text":  "A particle costs 0.2 mana and a sound 1; both add zero complexity. Purely decorative controls use 2% of normal complexity; decorative startup costs 10 mana.$(br2)Every separate cast still pays the fixed 5 focus. Adding effects to an existing spell does not add another startup cost.$(br2)Count and concurrency limits still protect performance."
+                      "text":  "A particle costs 0.2 mana and a sound 1; both add zero complexity. Purely decorative controls use 2% of normal complexity; decorative startup costs 10 mana.$(br2)Every separate cast still pays the fixed 5 focus. Adding effects to an existing spell does not add another startup cost.$(br2)A beautiful spell need not be an expensive one."
                   },
                   {
                       "title":  "Symbols in Effect Entries",
                       "type":  "patchouli:text",
-                      "text":  "d: requested damage; v: speed; r: teleport distance; t: ticks; a: amplifier, where zero means level I; k: price factor, default 1.$(br2)Timed effects start at 20*t*(a+1)^2*k. Instant effects use 1000*(a+1)^2*k. Server rules can adjust prices."
+                      "text":  "d: requested damage; v: speed; r: teleport distance; t: ticks; a: amplifier, where zero means level I; k: price factor, default 1.$(br2)Timed effects start at 20*t*(a+1)^2*k. Instant effects use 1K*(a+1)^2*k. Trust the actual readings on your core."
                   },
                   {
                       "title":  "Wands and Creative Mode",

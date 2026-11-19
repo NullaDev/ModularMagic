@@ -1,26 +1,26 @@
 {
     "name":  "Mana Containers",
-    "icon":  "modularmagic:mana_container_small",
+    "icon":  "modularmagic:mana_container_basic",
     "category":  "modularmagic:equipment",
     "sortnum":  5,
     "pages":  [
                   {
                       "link_recipe":  true,
-                      "item":  "modularmagic:mana_container_small",
+                      "item":  "modularmagic:mana_container_basic",
                       "type":  "patchouli:spotlight",
-                      "text":  "One item can be empty, partially charged or full; charge is saved on the stack. Creative mode offers empty and full states. Capacities default to 100000, 1000000 and 10000000 with no regeneration. Holding a wand shows inventory mana and player focus."
+                      "text":  "Basic, Expanded, Ultimate and Creative containers share rarity colors with reservoirs and emitters. Finite capacities commonly hold 100K, 1M and 10M; trust the readings on your jars.$(br2)Empty, partial and full are states of one item. They never recharge themselves. Hold a wand to see inventory mana and focus."
                   },
                   {
                       "link_recipe":  true,
-                      "item":  "modularmagic:mana_container_medium",
+                      "item":  "modularmagic:mana_container_expanded",
                       "type":  "patchouli:spotlight",
-                      "text":  "One item can be empty, partially charged or full; charge is saved on the stack. Creative mode offers empty and full states. Capacities default to 100000, 1000000 and 10000000 with no regeneration. Holding a wand shows inventory mana and player focus."
+                      "text":  "Basic, Expanded, Ultimate and Creative containers share rarity colors with reservoirs and emitters. Finite capacities commonly hold 100K, 1M and 10M; trust the readings on your jars.$(br2)Empty, partial and full are states of one item. They never recharge themselves. Hold a wand to see inventory mana and focus."
                   },
                   {
                       "link_recipe":  true,
-                      "item":  "modularmagic:mana_container_large",
+                      "item":  "modularmagic:mana_container_ultimate",
                       "type":  "patchouli:spotlight",
-                      "text":  "One item can be empty, partially charged or full; charge is saved on the stack. Creative mode offers empty and full states. Capacities default to 100000, 1000000 and 10000000 with no regeneration. Holding a wand shows inventory mana and player focus."
+                      "text":  "Basic, Expanded, Ultimate and Creative containers share rarity colors with reservoirs and emitters. Finite capacities commonly hold 100K, 1M and 10M; trust the readings on your jars.$(br2)Empty, partial and full are states of one item. They never recharge themselves. Hold a wand to see inventory mana and focus."
                   },
                   {
                       "link_recipe":  true,

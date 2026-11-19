@@ -13,7 +13,7 @@
                   {
                       "title":  "Multipliers and billing",
                       "type":  "patchouli:text",
-                      "text":  "Both beginner wand multipliers default to one and use NeoForge server settings. Multiply a core base cost by the corresponding rate to compare wands. The creative wand also works during focus lockout."
+                      "text":  "A beginner wand normally spends the costs recorded by the core. Multiply the base price by the rates on the wand to compare different wands. A violet-and-black creative wand also works while focus is overdrawn."
                   }
               ]
 }

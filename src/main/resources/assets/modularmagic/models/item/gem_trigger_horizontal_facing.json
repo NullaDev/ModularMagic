@@ -499,8 +499,8 @@
                      }
                  ],
     "textures":  {
-                     "mark":  "minecraft:block/quartz_block_side",
-                     "particle":  "minecraft:block/light_gray_concrete",
-                     "base":  "minecraft:block/light_gray_concrete"
+                     "mark":  "modularmagic:block/node/engraving",
+                     "particle":  "modularmagic:block/node/light_gray",
+                     "base":  "modularmagic:block/node/light_gray"
                  }
 }

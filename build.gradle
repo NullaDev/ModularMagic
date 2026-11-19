@@ -150,6 +150,13 @@ runs.gameTestServer {
 }
 
 // Test-only client driver; excluded from regular runs and published JARs.
+if (providers.gradleProperty('energySmoke').getOrElse('false').toBoolean()) {
+    runs.client {
+        modSource project.sourceSets.gameTest
+        systemProperty 'modularmagic.energySmoke', 'true'
+        arguments.addAll '--quickPlaySingleplayer', 'modularmagic-ui-smoke', '--width', '1280', '--height', '720'
+    }
+}
 if (providers.gradleProperty('clientSmoke').getOrElse('false').toBoolean()) {
     runs.client {
         modSource project.sourceSets.gameTest
@@ -170,6 +177,7 @@ tasks.withType(ProcessResources).configureEach {
             loader_version_range: loader_version_range,
             l2magic_version_range: l2magic_version_range,
             patchouli_version_range: patchouli_version_range,
+            jade_version_range: jade_version_range,
             mod_id              : mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors         : mod_authors, mod_description: mod_description,
     ]
@@ -228,6 +236,7 @@ dependencies {
     runtimeOnly "mezz.jei:jei-${jei_minecraft_version}:${jei_version}"
     runtimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}"
     runtimeOnly "vazkii.patchouli:Patchouli:${patchouli_version}"
+    implementation "maven.modrinth:jade:${jade_version}"
     if (providers.gradleProperty('enableRenderingMods').getOrElse('false').toBoolean()) {
         runtimeOnly "maven.modrinth:sodium:mc1.21.1-0.6.1-neoforge"
         runtimeOnly "maven.modrinth:iris:1.8.1+1.21.1-neoforge"

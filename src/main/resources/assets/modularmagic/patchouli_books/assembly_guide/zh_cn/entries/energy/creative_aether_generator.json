@@ -1,0 +1,19 @@
+{
+  "name": "创造以太发生器",
+  "icon": "modularmagic:creative_aether_generator",
+  "category": "modularmagic:energy",
+  "sortnum": 20,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:creative_aether_generator",
+      "link_recipe": true,
+      "text": "紫黑方格深处不断涌出以太，好像那里的规则从未写下终点。它能为相邻装置持续供能。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "观察一条完整的流向",
+      "text": "从创造分类取得，没有合成配方。用它给储槽供能，再接出发射器或共鸣树，就能观察自己的线路在哪里分流、又在哪里停下。$(br2)来源不会枯竭，沿途装置仍有各自能承受的流量。"
+    }
+  ]
+}

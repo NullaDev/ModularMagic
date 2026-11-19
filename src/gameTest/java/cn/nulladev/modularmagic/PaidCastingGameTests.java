@@ -31,7 +31,7 @@ public final class PaidCastingGameTests {
     }
     @GameTest(template="empty")
     public static void survivalPaysAndCreativeNeverPays(GameTestHelper h){
-        var p=player(h);var battery=ModContent.MANA_CONTAINERS.get("mana_container_medium").get().filledStack();var storage=(ManaStorage)battery.getItem();
+        var p=player(h);var battery=ModContent.MANA_CONTAINERS.get("mana_container_expanded").get().filledStack();var storage=(ManaStorage)battery.getItem();
         p.getInventory().setItem(10,battery);var wand=wand(h,p,damage(4,0));double before=PlayerFocus.value(p);
         h.assertTrue(ModContent.CORE_WAND.get().cast(wand,p,0),"Funded survival spell must cast");
         h.assertTrue(storage.storedUnits(battery)==1000000*ManaStorage.SCALE-2700*ManaStorage.SCALE,"Must charge 500 startup and 2200 damage with fractional precision");
@@ -42,14 +42,14 @@ public final class PaidCastingGameTests {
     }
     @GameTest(template="empty")
     public static void insufficientManaHasNoEffectsOrFocusCost(GameTestHelper h){
-        var p=player(h);var battery=ModContent.MANA_CONTAINERS.get("mana_container_small").get().filledStack();p.getInventory().setItem(10,battery);
+        var p=player(h);var battery=ModContent.MANA_CONTAINERS.get("mana_container_basic").get().filledStack();p.getInventory().setItem(10,battery);
         var wand=wand(h,p,damage(1000,0));float hp=p.getHealth();double focus=PlayerFocus.value(p);
         h.assertTrue(!ModContent.CORE_WAND.get().cast(wand,p,0),"Unfundable damage must not start");
         h.assertTrue(p.getHealth()==hp&&PlayerFocus.value(p)==focus&&((ManaStorage)battery.getItem()).stored(battery)==100000,"Rejected cast must not consume anything");h.succeed();
     }
     @GameTest(template="empty",timeoutTicks=80)
     public static void overdrawFinishesDelayedSpellAndBlocksNextCast(GameTestHelper h){
-        var p=player(h);var battery=ModContent.MANA_CONTAINERS.get("mana_container_small").get().filledStack();p.getInventory().setItem(10,battery);
+        var p=player(h);var battery=ModContent.MANA_CONTAINERS.get("mana_container_basic").get().filledStack();p.getInventory().setItem(10,battery);
         var doc=damage(4,10);var process=doc.nodes().stream().filter(n->n.template.equals("action/processor")).findFirst().orElseThrow();
         doc.remove(process.children.get("processors").getFirst().id);
         var freeze=doc.insert(process.id,"processors",0,"effect/property");doc.setParameters(freeze.id,Map.of("property","FREEZE","duration","100"));
@@ -63,7 +63,7 @@ public final class PaidCastingGameTests {
     }
     @GameTest(template="empty")
     public static void fractionalCosmeticsAggregateWithoutRoundingEachNode(GameTestHelper h){
-        var p=player(h);var battery=ModContent.MANA_CONTAINERS.get("mana_container_small").get().filledStack();p.getInventory().setItem(10,battery);
+        var p=player(h);var battery=ModContent.MANA_CONTAINERS.get("mana_container_basic").get().filledStack();p.getInventory().setItem(10,battery);
         var d=SpellDocument.create("root/instant");d.insert(d.root.id,"trigger_type",0,"trigger/self_pos");var loop=d.insert(d.root.id,"action",0,"action/iterate");
         d.setParameters(loop.id,Map.of("step","10"));d.insert(loop.id,"child",0,"action/particle");var w=wand(h,p,d);
         double focusBefore=PlayerFocus.value(p);
@@ -79,7 +79,7 @@ public final class PaidCastingGameTests {
         var selector=doc.insert(process.id,"selector",0,"selector/ball");doc.setParameters(selector.id,Map.of("r","2"));
         var first=h.spawn(net.minecraft.world.entity.EntityType.ZOMBIE,1,2,1);first.setNoAi(true);
         var second=h.spawn(net.minecraft.world.entity.EntityType.ZOMBIE,2,2,1);second.setNoAi(true);
-        var w=wand(h,p,doc);var battery=ModContent.MANA_CONTAINERS.get("mana_container_small").toStack();
+        var w=wand(h,p,doc);var battery=ModContent.MANA_CONTAINERS.get("mana_container_basic").toStack();
         var storage=(ManaStorage)battery.getItem();storage.receive(battery,3000,false);p.getInventory().setItem(10,battery);
         h.assertTrue(!ModContent.CORE_WAND.get().cast(w,p,0)&&first.getHealth()==20&&second.getHealth()==20,"Insufficient funds must not damage only an affordable subset");
         storage.receive(battery,97000,false);
@@ -114,7 +114,7 @@ public final class PaidCastingGameTests {
     }
     @GameTest(template="empty")
     public static void complexSpellsCostMoreFocusAndMatchTheirTooltips(GameTestHelper h){
-        var p=player(h);p.getInventory().setItem(10,ModContent.MANA_CONTAINERS.get("mana_container_large").get().filledStack());
+        var p=player(h);p.getInventory().setItem(10,ModContent.MANA_CONTAINERS.get("mana_container_ultimate").get().filledStack());
         var simple=damage(4,0);var complex=damage(4,0);var action=complex.root.children.get("action").getFirst();
         for(int i=1;i<10;i++)complex.insert(action.id,"processors",i,"effect/damage");
         var small=CostPreview.estimate(simple);var large=CostPreview.estimate(complex);
@@ -172,7 +172,7 @@ public final class PaidCastingGameTests {
     public static void missRefundsFollowTheRatioAndAreSettledOnlyOnce(GameTestHelper h){
         var rule=cn.nulladev.modularmagic.config.ResourceConfig.MISS_REFUND;double original=rule.get();
         try{for(double ratio:new double[]{0,.5,1}){
-            rule.set(ratio);var p=player(h);var battery=ModContent.MANA_CONTAINERS.get("mana_container_small").get().filledStack();p.getInventory().setItem(10,battery);
+            rule.set(ratio);var p=player(h);var battery=ModContent.MANA_CONTAINERS.get("mana_container_basic").get().filledStack();p.getInventory().setItem(10,battery);
             var context=new dev.xkmc.l2magic.content.engine.context.SpellContext(p,p.position(),dev.xkmc.l2magic.content.engine.helper.Orientation.of(p.getLookAngle(),new net.minecraft.world.phys.Vec3(0,1,0)),0,0,1,0);
             var account=cn.nulladev.modularmagic.spell.billing.CastAccount.open(p,ModContent.CORE_WAND.toStack(),context,new cn.nulladev.modularmagic.spell.billing.SpellBudget.Plan(1000,0,100));
             account.begin(true);account.charge(100);rule.set(1D);account.close(false);account.close(false);
@@ -185,7 +185,7 @@ public final class PaidCastingGameTests {
         var mode=cn.nulladev.modularmagic.config.ResourceConfig.REFUND_MISS_ONLY;var rule=cn.nulladev.modularmagic.config.ResourceConfig.MISS_REFUND;
         boolean oldMode=mode.get();double oldRatio=rule.get();
         try{rule.set(.5);for(int scenario=0;scenario<4;scenario++){
-            mode.set(scenario!=3);var p=player(h);var battery=ModContent.MANA_CONTAINERS.get("mana_container_small").get().filledStack();p.getInventory().setItem(10,battery);
+            mode.set(scenario!=3);var p=player(h);var battery=ModContent.MANA_CONTAINERS.get("mana_container_basic").get().filledStack();p.getInventory().setItem(10,battery);
             var context=new dev.xkmc.l2magic.content.engine.context.SpellContext(p,p.position(),dev.xkmc.l2magic.content.engine.helper.Orientation.of(p.getLookAngle(),new net.minecraft.world.phys.Vec3(0,1,0)),0,0,1,0);
             var a=cn.nulladev.modularmagic.spell.billing.CastAccount.open(p,ModContent.CORE_WAND.toStack(),context,new cn.nulladev.modularmagic.spell.billing.SpellBudget.Plan(1000,0,0));
             if(scenario!=2)a.begin(scenario!=1);a.charge(100);if(scenario==0||scenario==3)a.targetAttempt();a.close(false);
@@ -208,7 +208,7 @@ public final class PaidCastingGameTests {
         var refund=cn.nulladev.modularmagic.config.ResourceConfig.MISS_REFUND;double original=refund.get();
         double firstFocus=0;long firstMana=0;
         try{for(double ratio:new double[]{0,1}){
-            refund.set(ratio);var p=player(h);var battery=ModContent.MANA_CONTAINERS.get("mana_container_small").get().filledStack();p.getInventory().setItem(10,battery);
+            refund.set(ratio);var p=player(h);var battery=ModContent.MANA_CONTAINERS.get("mana_container_basic").get().filledStack();p.getInventory().setItem(10,battery);
             var doc=damage(4,0);var process=doc.root.children.get("action").getFirst();doc.remove(process.children.get("selector").getFirst().id);
             var selector=doc.insert(process.id,"selector",0,"selector/ball");doc.setParameters(selector.id,Map.of("r","0.1"));
             var w=wand(h,p,doc);double before=PlayerFocus.value(p);

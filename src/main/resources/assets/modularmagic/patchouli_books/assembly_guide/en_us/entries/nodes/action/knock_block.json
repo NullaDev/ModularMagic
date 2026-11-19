@@ -14,7 +14,7 @@
                       "anchor":  "mana_cost",
                       "title":  "Default Mana Cost",
                       "type":  "patchouli:text",
-                      "text":  "2000 + 1000*v*v per block, plus reserved collision damage m(d), for speed v and maximum damage d; this damage allowance is charged on delivery.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
+                      "text":  "2K + 1K*v*v per block, plus reserved collision damage m(d), for speed v and maximum damage d; this damage allowance is charged on delivery.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
                   },
                   {
                       "anchor":  "focus_cost",

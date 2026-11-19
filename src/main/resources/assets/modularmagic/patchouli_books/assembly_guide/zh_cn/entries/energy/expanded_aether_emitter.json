@@ -1,0 +1,23 @@
+{
+  "name": "扩容以太发射器",
+  "icon": "modularmagic:expanded_aether_emitter",
+  "category": "modularmagic:energy",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:expanded_aether_emitter",
+      "link_recipe": true,
+      "text": "将以太压成一道可见的射流，送往指定的装置。这一档通常能送到 16 格外，每束最多 1K 以太；相邻储槽为它提供积蓄。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让流向清楚可见",
+      "text": "调谐器先点发射器，再点接收装置，头部就会转向那里。两端间要留出无遮挡的通道，射流到达后才会填进对方的积蓄。$(br2)一台发射器同时只送一束，路程越长，等待也越久。潜行使用调谐器可暂停输出。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:expanded_aether_emitter"
+    }
+  ]
+}

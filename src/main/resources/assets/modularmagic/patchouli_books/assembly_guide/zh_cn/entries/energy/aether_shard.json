@@ -1,0 +1,19 @@
+{
+  "name": "以太碎片",
+  "icon": "modularmagic:aether_shard",
+  "category": "modularmagic:energy",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:aether_shard",
+      "link_recipe": true,
+      "text": "离开约束的以太像握不住的光。它会在约 100 tick 后散去，手中浮现的倒计时正是剩下的时间。物品说明记着每枚实际封存的以太，通常是 200。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "别让它白白散去",
+      "text": "从扰乱器或凝结器取材前，先备好配方。完成的器物能约束以太，不会继续倒数。$(br2)来不及使用时，赶在消散前对有空位的普通储槽右键，便能放回封存的以太。想让材料长存，则需要结晶室。"
+    }
+  ]
+}

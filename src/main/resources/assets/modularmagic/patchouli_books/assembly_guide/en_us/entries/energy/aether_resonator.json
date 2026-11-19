@@ -1,0 +1,43 @@
+{
+  "name": "Aether Resonator",
+  "icon": "modularmagic:aether_resonator",
+  "category": "modularmagic:energy",
+  "sortnum": 15,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:aether_resonator",
+      "link_recipe": true,
+      "text": "Amethyst creates no aether, but one vibration can call to another. I mounted a crystal in copper beside a reservoir and heard the first echo of its flow.$(br2)Crafting yields only a shell. Insert the first shard to gain 100/s, an eighteen-block lossless radius and a thirty-six-block maximum radius."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Plant the root first",
+      "text": "Put a resonator beside a charged reservoir and install amethyst. This is the main network's root. Walls do not stop resonance.$(br2)To supply another device, tune the root and then the device. Merely sharing the area is not enough: show aether which path to follow."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Lay branches toward the distance",
+      "text": "Place a second resonator with amethyst inside the root's coverage. Tune the root and then the new resonator to give it a parent. Extend a third from the second, following paths and mines.$(br2)Branches may fork, but each child follows one parent. Do not close a loop. Choosing a new parent replaces the old link."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Let the whole tree remember you",
+      "text": "Use your portable receiver on any resonator in the tree. It remembers the network: carry it and your jars within connected branches without rebinding at every stop.$(br2)Only this main network answers you. If a parent is severed, loses its crystals or falls silent, the path back to the main flow is broken. Look at a resonator to find its upstream position."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "More crystals, farther echoes",
+      "text": "Each shard commonly provides 100/s, up to sixty-four: exactly 6.4K/s when full. Each adds two lossless blocks and four maximum blocks, reaching 144 lossless and 288 maximum.$(br2)Sneak-use installs a stack; sneak-use with an empty hand retrieves them all. An empty shell stops. More crystals cannot multiply its upstream supply."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Long paths lose some light",
+      "text": "Beyond each link's lossless radius, some aether fades: commonly 5% for each extra block, capped at 75%. Relays apply their losses link by link.$(br2)Every root and fork shares its own outgoing bandwidth. Strengthen the trunk before expanding the tips. Branches follow active places; they do not wake sleeping land on their own."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:aether_resonator"
+    }
+  ]
+}

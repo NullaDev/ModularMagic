@@ -8,7 +8,7 @@
                       "type":  "patchouli:spotlight",
                       "item":  "modularmagic:gem_action_set_block",
                       "link_recipe":  true,
-                      "text":  "Place the specified block state at the spell\u0027s block position, subject to engine modification rules. Sample a block item using the reference slot."
+                      "text":  "Place the specified block state at the spell\u0027s block position, where changing blocks is permitted. Sample a block item using the reference slot."
                   },
                   {
                       "anchor":  "mana_cost",

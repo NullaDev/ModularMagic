@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "G G",
+    "DCD",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "C": {
+      "item": "modularmagic:mana_container_basic"
+    }
+  },
+  "result": {
+    "id": "modularmagic:mana_container_expanded",
+    "count": 1
+  }
+}

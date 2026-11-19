@@ -1,4 +1,16 @@
 pluginManagement {
+    // Apply machine-local network settings before plugin/dependency resolution.
+    // Keep shared versions in gradle.properties; this optional file stays out of Git.
+    def localSettings = new File(settingsDir, 'gradle-local.properties')
+    if (localSettings.isFile()) {
+        def localProperties = new Properties()
+        localSettings.withInputStream { localProperties.load(it) }
+        localProperties.each { key, value ->
+            if (key.startsWith('systemProp.')) {
+                System.setProperty(key.substring('systemProp.'.length()), value.toString())
+            }
+        }
+    }
     repositories {
         mavenLocal()
         gradlePluginPortal()

@@ -200,6 +200,6 @@ public final class CostPreview {
     private static double log(double v) { return Math.log(v)/Math.log(2); }
     private static double h(double ticks) { return .05*log(1+ticks/20); }
     public static String number(double v) { return String.format(Locale.ROOT, "%.2f", v); }
-    public static String manaNumber(double v) { return Long.toString(ResourceBalance.wholeMana(v)); }
+    public static String manaNumber(double v) { return cn.nulladev.modularmagic.util.AetherNumbers.format(ResourceBalance.wholeMana(v)); }
     private CostPreview() {}
 }

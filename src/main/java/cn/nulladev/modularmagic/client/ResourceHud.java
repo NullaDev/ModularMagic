@@ -40,7 +40,7 @@ public final class ResourceHud {
                 Math.clamp((debt?-shown:shown) / max, 0, 1), Component.translatable(debt?"hud.modularmagic.focus_debt":tripped?"hud.modularmagic.focus_tripped":"hud.modularmagic.focus",
                         debt?String.format(java.util.Locale.ROOT,"%.1f",Math.max(0,-focus)):String.format(java.util.Locale.ROOT, "%.1f / %.1f", focus, max)));
     }
-    private static String number(double value){return Long.toString((long)Math.floor(value));}
+    private static String number(double value){return cn.nulladev.modularmagic.util.AetherNumbers.format((long)Math.floor(value));}
     private static void draw(GuiGraphics g, int x, int y, int color, double fraction, Component label) {
         var font = Minecraft.getInstance().font;
         g.fill(x - 2, y - 2, x + 146, y + 17, 0xb0121722);

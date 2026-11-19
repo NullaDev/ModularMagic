@@ -14,7 +14,7 @@
                       "anchor":  "mana_cost",
                       "title":  "默认魔力消耗",
                       "type":  "patchouli:text",
-                      "text":  "每目标 2000+150r+2r²。r 是本次传送距离。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
+                      "text":  "每目标 2K+150r+2r²。r 是本次传送距离。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
                   },
                   {
                       "anchor":  "focus_cost",

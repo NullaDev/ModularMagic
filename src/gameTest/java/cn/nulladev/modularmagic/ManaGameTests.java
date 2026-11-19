@@ -13,7 +13,7 @@ import net.neoforged.neoforge.gametest.*;
 public final class ManaGameTests {
     @GameTest(template = "empty")
     public static void containersPersistAndNeverRegenerate(GameTestHelper helper) {
-        for (String tier : java.util.List.of("small", "medium", "large")) {
+        for (String tier : java.util.List.of("basic", "expanded", "ultimate")) {
             var empty = ModContent.MANA_CONTAINERS.get("mana_container_" + tier).toStack();
             var full = ModContent.MANA_CONTAINERS.get("mana_container_" + tier).get().filledStack();
             helper.assertTrue(empty.getItem() == full.getItem(), "Empty and full must be states of the same item");
@@ -42,11 +42,11 @@ public final class ManaGameTests {
     }
 
     @GameTest(template = "empty")
-    public static void inventoryTotalsFocusAndLegacyMigration(GameTestHelper helper) {
+    public static void inventoryTotalsAndFocus(GameTestHelper helper) {
         var player = net.neoforged.neoforge.common.util.FakePlayerFactory.get(helper.getLevel(),
                 new com.mojang.authlib.GameProfile(java.util.UUID.randomUUID(), "ManaOwner"));
         player.getInventory().clearContent();
-        var item = ModContent.MANA_CONTAINERS.get("mana_container_small").get();
+        var item = ModContent.MANA_CONTAINERS.get("mana_container_basic").get();
         var full = item.filledStack(); var half = new ItemStack(item); item.receive(half, 50000, false);
         player.getInventory().setItem(0, full); player.getInventory().setItem(9, half);
         player.getInventory().offhand.set(0, new ItemStack(item));
@@ -54,11 +54,6 @@ public final class ManaGameTests {
         helper.assertTrue(sum.stored() == 150000 && sum.capacity() == 300000 && !sum.infinite(), "HUD total must include hotbar, backpack and offhand");
         player.getInventory().setItem(10, ModContent.MANA_CONTAINERS.get("creative_mana_container").toStack());
         helper.assertTrue(cn.nulladev.modularmagic.mana.InventoryMana.total(player).infinite(), "Creative source must mark the total infinite");
-        var legacy = net.minecraft.core.registries.BuiltInRegistries.ITEM.get(ModularMagic.id("mana_container_small_full"));
-        var old = new ItemStack(legacy); player.getInventory().setItem(1, old);
-        legacy.inventoryTick(old, helper.getLevel(), player, 1, false);
-        helper.assertTrue(player.getInventory().getItem(1).is(item) && item.stored(player.getInventory().getItem(1)) == 100000,
-                "Old full containers must migrate without losing charge");
         cn.nulladev.modularmagic.mana.PlayerFocus.set(player, -2);
         cn.nulladev.modularmagic.mana.PlayerFocus.set(player, 1);
         helper.assertTrue(player.getData(cn.nulladev.modularmagic.mana.PlayerFocus.TRIPPED), "Focus debt must remain tripped past zero");
@@ -86,14 +81,11 @@ public final class ManaGameTests {
         helper.succeed();
     }
     @GameTest(template="empty")
-    public static void oldCurrencyBalancesRetainTheirChargeRatio(GameTestHelper helper){
-        var item=ModContent.MANA_CONTAINERS.get("mana_container_medium").get();var stack=new ItemStack(item);
-        var tag=new net.minecraft.nbt.CompoundTag();tag.putLong("modularmagic_mana_units",375*ManaStorage.LEGACY_SCALE);
-        stack.set(net.minecraft.core.component.DataComponents.CUSTOM_DATA,net.minecraft.world.item.component.CustomData.of(tag));
-        helper.assertTrue(item.capacity(stack)==1000000&&item.stored(stack)==375000,"Existing fixed-point balances must convert without losing their charge ratio");
-        tag.remove("modularmagic_mana_units");tag.putLong("modularmagic_mana",375);
-        stack.set(net.minecraft.core.component.DataComponents.CUSTOM_DATA,net.minecraft.world.item.component.CustomData.of(tag));
-        helper.assertTrue(item.stored(stack)==375000,"Pre-fixed-point saves must use their original currency unit too");helper.succeed();
+    public static void batteryBalancesRetainTheirExactStoredUnits(GameTestHelper helper){
+        var item=ModContent.MANA_CONTAINERS.get("mana_container_expanded").get();var stack=new ItemStack(item);
+        cn.nulladev.modularmagic.item.ManaContainerItem.writeUnits(stack,375000*ManaStorage.SCALE+1);
+        var restored=ItemStack.parseOptional(helper.getLevel().registryAccess(),(net.minecraft.nbt.CompoundTag)stack.save(helper.getLevel().registryAccess()));
+        helper.assertTrue(item.capacity(restored)==1000000&&item.storedUnits(restored)==375000*ManaStorage.SCALE+1,"Reloading a battery must preserve the fixed-point balance exactly");helper.succeed();
     }
     @GameTest(template="empty")
     @SuppressWarnings("unchecked")

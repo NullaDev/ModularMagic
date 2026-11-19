@@ -1,0 +1,28 @@
+{
+  "name": "Personal Aether Anchor",
+  "icon": "modularmagic:personal_aether_anchor",
+  "category": "modularmagic:energy",
+  "sortnum": 17,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:personal_aether_anchor",
+      "link_recipe": true,
+      "text": "An Ender Chest always recognizes its owner, but flowing aether cannot hold that bond. Crystalline fragments provide the final confinement: preserve your presence in the anchor, and the glimmer can follow it to you."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A path beyond crystallization",
+      "text": "Its recipe needs crystalline fragments: first obtain a Nether Star and build its chamber. Place the anchor beside a reservoir and bind your portable receiver.$(br2)It supplies its owner on the move, rather than replacing a workshop's resonance tree. Common same-world delivery is 1K/s with 10% extra spent maintaining the bond."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Keep the home glimmer awake",
+      "text": "Travel should not put your home to sleep. The anchor and its supply must remain active; a world anchor can watch over that small patch of land.$(br2)A Worldbinding Eye extends the bond to other worlds, commonly spending 25% extra. The contents of ordinary Ender Chests remain untouched."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:personal_aether_anchor"
+    }
+  ]
+}

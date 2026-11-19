@@ -1,0 +1,28 @@
+{
+  "name": "Aether Tuner",
+  "icon": "modularmagic:aether_tuner",
+  "category": "modularmagic:energy",
+  "sortnum": 14,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:aether_tuner",
+      "link_recipe": true,
+      "text": "Strike amethyst and its echoes answer one another. This tuner remembers the rhythm of an aether flow and passes that rhythm to another device."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Remember upstream, then downstream",
+      "text": "For pulses, select the emitter and then its destination.$(br2)For resonance, select a connected resonator and then a downstream resonator or workshop device. Each resonator follows one parent but can feed several branches.$(br2)Use the tuner in the air to clear a mistaken selection."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Rearrange the flow",
+      "text": "Sneak-use a child resonator to detach its parent. It can become a new root beside a reservoir. Sneak-use a root to change its frequency, then retune the downstream branches.$(br2)Sneak-use a world anchor to select one or nine chunks, or other devices to pause output. A resonance tree cannot loop back into itself."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:aether_tuner"
+    }
+  ]
+}

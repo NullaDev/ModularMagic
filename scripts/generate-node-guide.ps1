@@ -22,7 +22,7 @@ action/random|生成 count 个 0 到 1 之间的随机数，变量名为 name0�
 action/variable|计算表达式并保存为命名变量，供子动作及其后代使用。|Evaluate an expression and bind its result to a named variable for the child action and its descendants.
 action/move|依次应用空间修饰，再在变换后的位置和朝向执行子动作。|Apply spatial modifiers in order, then execute the child action at the resulting position and orientation.
 action/processor|按目标类型与选区寻找实体，再对选中实体依次执行实体处理节点。伤害等效果应装在这里。|Find entities using the target type and selector, then apply entity processors in order. Put damage and similar effects here.
-action/synced_logic|执行需要服务端与客户端配合的子动作。在 MM 自定义法术中由法术同步机制协调视觉与实际效果。|Execute a child action requiring server and client coordination. MM coordinates its visuals and actual effects through spell synchronization.
+action/synced_logic|把其中的动作按同一节律展开，让光影与实际作用保持一致。|Unfold the attached action in one rhythm, keeping its appearance and actual effects together.
 action/iterate|重复执行子动作，可指定循环次数与索引变量。索引从 0 开始。|Repeat the child action a set number of times. An optional index variable starts at zero.
 action/iterate_delayed|按指定游戏刻间隔重复执行子动作，可在每次执行中读取循环索引。|Repeat the child action at the specified tick interval, optionally exposing the iteration index.
 action/while_delayed|每轮先检查条件，成立才执行子动作并安排下一轮；step 限制循环轮数。|Check a condition before each iteration. If true, run the child and schedule the next iteration; step limits the iterations.
@@ -38,7 +38,7 @@ action/dust_particle|产生指定颜色的尘埃粒子，可调整大小、速�
 action/transition_particle|产生在起始色与结束色之间渐变的尘埃粒子。|Spawn dust particles that transition between the specified start and end colors.
 action/custom_particle|生成可自定义运动与外观的粒子。运动可以省略，外观节点必须提供。|Spawn a particle with a custom appearance and optional motion. An appearance node is required.
 action/sound|在法术位置播放声音，可设置声音 ID、音量与音调。|Play a sound at the spell position with a configurable sound ID, volume and pitch.
-action/set_block|在法术所在方块位置放置指定方块状态，受引擎方块修改规则限制。参考槽可从方块物品取样。|Place the specified block state at the spell's block position, subject to engine modification rules. Sample a block item using the reference slot.
+action/set_block|在法术所在方块位置放置指定方块状态，只能在允许改变的地方生效。参考槽可从方块物品取样。|Place the specified block state at the spell's block position, where changing blocks is permitted. Sample a block item using the reference slot.
 action/set_block_facing|放置指定方块并根据法术朝向设置其方向属性，适用于具有朝向的方块。|Place a block and orient supported facing properties according to the spell's direction.
 action/remove_block|按所选方式移除方块。DROP 会掉落物品，DESTROY 破坏但不掉落，REMOVE 移除，SET_AIR 设为空气。|Remove a block using DROP with drops, DESTROY without drops, REMOVE, or SET_AIR.
 action/knock_block|将方块击飞为运动中的方块，并按设置计算碰撞伤害上限。|Launch a block into motion, with configurable speed and collision damage limits.
@@ -60,7 +60,7 @@ predicate/not|反转子条件的判断结果：成立变不成立，反之亦然
 predicate/move|先修改用于判断的位置与朝向，再求值子条件，不直接修改世界。|Transform the position and orientation used for testing, then evaluate the child condition without changing the world.
 predicate/block|检查当前位置的方块是否匹配给定方块 ID。|Check whether the block at the current position matches the specified block ID.
 predicate/surface_below|按所选支撑面类型检查当前位置下方是否有合适表面。|Check for a suitable supporting surface below the current position using the selected surface type.
-predicate/block_test|检查当前位置方块是否具有所选性质，例如是否符合引擎提供的方块测试。|Test the block at the current position using the selected built-in block property test.
+predicate/block_test|检查当前位置方块是否具有所选性质，例如是否属于所选的方块性质。|Test the block at the current position using the selected built-in block property test.
 predicate/depth_test|从当前位置向下逐层测试子条件；在最大深度内任一层成立即通过。可提供深度索引。|Test the child condition at successive depths below the current position. Any passing depth succeeds; an optional depth index is available.
 predicate/ranged_test|在范围内逐方块测试子条件，满足条件的位置数量达到最小数量时通过。|Test the child condition at block positions in range, succeeding once the number of matching positions reaches the minimum.
 filter/and|只让满足全部子过滤条件的实体通过。它筛选的是目标本身的状态，不是所在位置。|Accept entities that satisfy every child filter. These are entity filters rather than spatial conditions.

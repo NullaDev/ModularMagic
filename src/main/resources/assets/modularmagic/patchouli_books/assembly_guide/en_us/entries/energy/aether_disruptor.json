@@ -1,0 +1,28 @@
+{
+  "name": "Aether Disruptor",
+  "icon": "modularmagic:aether_disruptor",
+  "category": "modularmagic:energy",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:aether_disruptor",
+      "link_recipe": true,
+      "text": "An Ender Pearl diverts aether just before it becomes water. The copper collector catches that glimmer in a small 5K-aether reserve. My notes record about 20 every two seconds."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Arrange the water",
+      "text": "Place it directly below the middle cell, with a source on each side at the same height. The middle must stay flowing; scoop out an existing source once. One side alone provides no source-forming instant to intercept.$(br2)Empty-hand use extracts one fragment; sneak-use extracts up to sixteen. Their lifetime begins when they leave the device."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Send the reserves onward",
+      "text": "Adjacent reservoirs or emitters collect its aether. To build material reserves, pause output with redstone or sneak-use the tuner.$(br2)Collection continues until the reserve fills. More water cannot make the same collector work faster."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:aether_disruptor"
+    }
+  ]
+}

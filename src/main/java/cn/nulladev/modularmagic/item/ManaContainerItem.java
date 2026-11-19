@@ -10,16 +10,9 @@ import java.util.List;
 import java.util.function.LongSupplier;
 
 public final class ManaContainerItem extends Item implements ManaStorage {
-    private static final String MANA = "modularmagic_mana";
     private static final String UNITS = "modularmagic_mana_units", RESERVED = "modularmagic_reserved_units";
     private final LongSupplier limit;
     private final boolean infinite;
-    private java.util.function.Supplier<ManaContainerItem> replacement;
-    private boolean legacyFull;
-    public static ManaContainerItem legacy(Properties properties, LongSupplier capacity, boolean full, java.util.function.Supplier<ManaContainerItem> replacement) {
-        var item = new ManaContainerItem(properties, capacity, false);
-        item.replacement = replacement; item.legacyFull = full; return item;
-    }
     public ManaContainerItem(Properties properties, LongSupplier capacity, boolean infinite) {
         super(properties.stacksTo(1)); this.limit = capacity; this.infinite = infinite;
     }
@@ -30,7 +23,7 @@ public final class ManaContainerItem extends Item implements ManaStorage {
     @Override public long storedUnits(ItemStack stack) {
         if (infinite) return Long.MAX_VALUE;
         var tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
-        return Math.clamp(tag.contains(UNITS) ? tag.getLong(UNITS) : tag.contains(MANA) ? tag.getLong(MANA)*LEGACY_SCALE : legacyFull ? capacity(stack)*SCALE : 0, 0L, capacity(stack)*SCALE);
+        return Math.clamp(tag.getLong(UNITS), 0L, capacity(stack)*SCALE);
     }
     public ItemStack filledStack() {
         var stack = new ItemStack(this);
@@ -68,7 +61,7 @@ public final class ManaContainerItem extends Item implements ManaStorage {
     }
     public static void writeUnits(ItemStack stack, long amount) {
         var tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
-        tag.remove(MANA); tag.putLong(UNITS, amount); stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
+        tag.putLong(UNITS, amount); stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
     }
     public static long reserved(ItemStack stack) { return stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getLong(RESERVED); }
     public static void reserved(ItemStack stack, long amount) {
@@ -79,15 +72,9 @@ public final class ManaContainerItem extends Item implements ManaStorage {
     @Override public void inventoryTick(ItemStack stack, net.minecraft.world.level.Level level, net.minecraft.world.entity.Entity entity, int slot, boolean selected) {
         if (level.isClientSide() || !(entity instanceof net.minecraft.world.entity.player.Player player)) return;
         cn.nulladev.modularmagic.spell.billing.ManaEscrow.get(player.getServer()).claim(stack);
-        if (replacement == null) return;
-        if (player.getInventory().getItem(slot) != stack) return;
-        var converted = new ItemStack(replacement.get());
-        converted.applyComponents(stack.getComponentsPatch());
-        writeUnits(converted, storedUnits(stack));
-        player.getInventory().setItem(slot, converted);
     }
     @Override public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
         tooltip.add(infinite ? Component.translatable("tooltip.modularmagic.mana_infinite")
-                : Component.translatable("tooltip.modularmagic.mana_stored", stored(stack), capacity(stack)));
+                : Component.translatable("tooltip.modularmagic.mana_stored", cn.nulladev.modularmagic.util.AetherNumbers.format(stored(stack)), cn.nulladev.modularmagic.util.AetherNumbers.format(capacity(stack))));
     }
 }

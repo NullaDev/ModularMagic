@@ -14,7 +14,7 @@
                       "anchor":  "mana_cost",
                       "title":  "Default Mana Cost",
                       "type":  "patchouli:text",
-                      "text":  "2000+150*r+2*r*r per target, for teleport distance r.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
+                      "text":  "2K+150*r+2*r*r per target, for teleport distance r.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
                   },
                   {
                       "anchor":  "focus_cost",

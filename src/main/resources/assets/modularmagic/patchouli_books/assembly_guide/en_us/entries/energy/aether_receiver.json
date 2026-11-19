@@ -1,0 +1,28 @@
+{
+  "name": "Portable Aether Receiver",
+  "icon": "modularmagic:aether_receiver",
+  "category": "modularmagic:energy",
+  "sortnum": 16,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:aether_receiver",
+      "link_recipe": true,
+      "text": "A small echo you can carry. It stores no aether itself, but tells the flow where your jars have gone."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Follow the branches from home",
+      "text": "Use it on a connected resonator to remember the entire tree. Carry the receiver and jars in your inventory or offhand to recharge within any connected branch.$(br2)Unbuilt paths cannot answer. Charge your jars before travelling; a branch also shares its bandwidth with other devices."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Later, leave yourself a path home",
+      "text": "With crystalline material, make a personal anchor and rebind here. Within the same world, supply no longer depends on resonance coverage.$(br2)To cross between worlds, fit a Worldbinding Eye to the anchor. Rebinding to another tree or anchor remembers that new path."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:aether_receiver"
+    }
+  ]
+}

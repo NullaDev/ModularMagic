@@ -9,10 +9,9 @@ public final class CostRules {
     public static final ModConfigSpec SPEC;
     public static final ModConfigSpec.IntValue TARGETS,TICKS,STEPS,PARALLEL,ENTITIES,VISUALS;
     public static final ModConfigSpec.DoubleValue RADIUS,SPEED,DAMAGE,DURATION;
-    private static final ModConfigSpec.IntValue FORMULA_VERSION;
     private static final Map<String,ModConfigSpec.ConfigValue<String>> MANA=new HashMap<>(),FOCUS=new HashMap<>();
     static {
-        var b=new ModConfigSpec.Builder();FORMULA_VERSION=b.comment("Automatic migration version; do not edit.").defineInRange("formulaVersion",1,1,3);b.push("limits");
+        var b=new ModConfigSpec.Builder();b.push("limits");
         TARGETS=b.defineInRange("maxTargetsPerSelection",8,1,64);TICKS=b.defineInRange("maxLifetimeTicks",1200,20,72000);
         STEPS=b.defineInRange("maxWorkPerCast",8000000,64,16000000);PARALLEL=b.defineInRange("maxActiveCasts",32,1,256);
         ENTITIES=b.defineInRange("maxProjectilesPerCast",256,1,4096);VISUALS=b.defineInRange("maxVisualEmissionsPerCast",2000000,1,4000000);
@@ -40,13 +39,6 @@ public final class CostRules {
     });return Map.copyOf(copy);}
     public static double evaluate(String formula,Map<String,Double> values){var vars=new HashMap<String,Range>();values.forEach((k,v)->vars.put(k,Range.at(v)));return cost(rule(formula,vars));}
     public static Range manaBound(String id,Map<String,Range> values){var price=MANA.get(id);if(price==null)throw new IllegalArgumentException("Unpriced node "+id);var range=rule(price.get(),values);return new Range(range.lo()*ResourceBalance.MANA_SCALE,range.hi()*ResourceBalance.MANA_SCALE);}
-    public static void migrate(net.neoforged.fml.config.ModConfig config){
-        if(config.getSpec()!=SPEC||FORMULA_VERSION.get()>=3)return;
-        if(FORMULA_VERSION.get()<2)for(String id:List.of("root/instant","root/charge","root/continuous"))if(FOCUS.get(id).get().equals("1+children"))FOCUS.get(id).set(ResourceBalance.ROOT_FOCUS);
-        if(STEPS.get()==65536)STEPS.set(8000000);
-        if(VISUALS.get()==2048)VISUALS.set(2000000);
-        FORMULA_VERSION.set(3);config.getLoadedConfig().save();
-    }
     public static double focus(String id,Map<String,Double> values){var vars=new HashMap<String,Range>();values.forEach((k,v)->vars.put(k,Range.at(v)));return cost(rule(FOCUS.get(id).get(),vars))*(id.startsWith("root/")?ResourceBalance.FOCUS_SCALE:1);}
     private static Range rule(String formula,Map<String,Range> values){if(formula.matches("(?s).*\\brand\\s*\\(.*"))throw new IllegalArgumentException("Resource rules must be deterministic");return Range.eval(formula,values);}
     private static double cost(Range r){if(r.lo()<0||r.hi()>1e12)throw new IllegalArgumentException("Invalid resource price");return r.hi();}

@@ -9,6 +9,10 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 
 @EventBusSubscriber(modid = ModularMagic.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public final class ModularMagicClient {
+    @SubscribeEvent
+    public static void energyRenderers(net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(cn.nulladev.modularmagic.energy.EnergyContent.ENTITY.get(), EnergyRenderer::new);
+    }
     private ModularMagicClient() {}
     @SubscribeEvent
     public static void registerScreens(RegisterMenuScreensEvent event) {
