@@ -1,0 +1,19 @@
+{
+  "name": "Aether Mimic: Stone",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:stone\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:stone\"}]",
+      "link_recipe": false,
+      "text": "Water meeting lava from above leaves stone, consuming the water in the change. Two water sources teach the mimic to restore that supply."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Shaping the Pattern",
+      "text": "Use a sample at the center of a blank mimic, with these materials around it:$(br2)Water Bucket ×2$(br)Lava Bucket$(br)Rune Plate: Material Manifestation$(br)Rune Plate: Spatial Frames"
+    }
+  ]
+}

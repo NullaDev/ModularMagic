@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：唱片",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"music\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "唱片",
+      "text": "一张薄薄的唱片，能将同一段旋律一次次完整地展开。若让它的纹样在最后一次回响中彻底散开，留下的便不只是寂静。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "用调谐器先点选器物，再点选附近的$(l)唱片机$()，最多连接四台。器物每轮会$(l)永久消耗一张唱片$()；再次点选可解除连接。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_music"
+    }
+  ],
+  "sortnum": 20
+}

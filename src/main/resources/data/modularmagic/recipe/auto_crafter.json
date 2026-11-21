@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:crafter"
+    },
+    {
+      "item": "modularmagic:aether_gem"
+    },
+    {
+      "item": "modularmagic:aether_gem"
+    },
+    {
+      "item": "modularmagic:rune_plate_k00"
+    },
+    {
+      "item": "modularmagic:rune_plate_k07"
+    }
+  ],
+  "result": {
+    "id": "modularmagic:auto_crafter",
+    "count": 1
+  }
+}

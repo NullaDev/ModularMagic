@@ -1,0 +1,24 @@
+{
+  "name": "Aether Mimic: Rails",
+  "icon": "modularmagic:rail_placeholder",
+  "category": "modularmagic:mimics",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:rail_placeholder",
+      "link_recipe": true,
+      "text": "Repeated piston movement can leave an extra rail behind. All four rail types share one mimic and the same small aether cost."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Shaping the Pattern",
+      "text": "Use a sample at the center of a blank mimic, with these materials around it:$(br2)Sticky Piston$(br)Slimeball$(br)Rune Plate: Moving Blocks$(br)Rune Plate: Repetition and Sustain$(br)Rune Plate: Material Manifestation"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Choose a Material",
+      "text": "Use any material in this family as the reference when shaping the common mimic.$(br2)Craft that mimic together with a matching block, in either order, to select what it generates.$(br2)Craft the bound mimic alone to recover both the common mimic and the original material."
+    }
+  ]
+}

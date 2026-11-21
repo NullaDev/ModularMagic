@@ -1,0 +1,24 @@
+{
+  "type": "modularmagic:placeholder",
+  "target": "modularmagic:gravity",
+  "ingredients": [
+    {
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "item": "minecraft:sticky_piston"
+    },
+    {
+      "item": "minecraft:slime_block"
+    },
+    {
+      "item": "modularmagic:rune_plate_k21"
+    },
+    {
+      "item": "modularmagic:rune_plate_k22"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    }
+  ]
+}

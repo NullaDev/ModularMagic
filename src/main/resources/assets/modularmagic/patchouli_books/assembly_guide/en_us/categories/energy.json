@@ -1,6 +1,6 @@
 {
-  "name": "The Flow of Aether",
-  "description": "Where does water come from? Follow that question to the aether beneath the world, then guide it toward your workshop and wand. Begin with Your First Aether Flow.",
+  "name": "Aether",
+  "description": "Gather, store and carry aether from your workshop to your wand.",
   "icon": "modularmagic:aether_tank",
-  "sortnum": 3
+  "sortnum": 1
 }

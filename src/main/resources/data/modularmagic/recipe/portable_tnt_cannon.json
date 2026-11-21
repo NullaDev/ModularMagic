@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "type": "neoforge:components",
+      "items": "modularmagic:item_placeholder",
+      "components": {
+        "minecraft:custom_data": {
+          "MaterialTarget": "minecraft:tnt"
+        }
+      },
+      "strict": false
+    },
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "minecraft:dispenser"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "modularmagic:aether_gem"
+    }
+  ],
+  "result": {
+    "id": "modularmagic:portable_tnt_cannon",
+    "count": 1
+  }
+}

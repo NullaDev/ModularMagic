@@ -1,41 +1,41 @@
 {
-    "name":  "Spell Node: Custom Projectile",
-    "icon":  "modularmagic:gem_action_custom_projectile",
-    "category":  "modularmagic:nodes",
-    "sortnum":  243,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_action_custom_projectile",
-                      "link_recipe":  true,
-                      "text":  "Shoot a projectile defined by a configuration node, setting its speed, lifetime, piercing options and configuration parameters."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "500 + 100*v*v per projectile, plus configured maintenance, hits and actions.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.1 plus configuration structure; lifetime and target count do not directly add complexity.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)config$(br)Projectile config / Insert one node"
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)speed / Optional$(br)$(o)speed$()$(br2)$(li)life / Required$(br)$(o)life$()$(br2)$(li)bypass Wall / Optional$(br)$(o)bypassWall$()"
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)bypass Entity / Optional$(br)$(o)bypassEntity$()$(br2)$(li)params / Optional$(br)$(o)params$()"
-                  }
-              ]
+  "name": "Spell Node: Custom Projectile",
+  "icon": "modularmagic:gem_action_custom_projectile",
+  "category": "modularmagic:nodes",
+  "sortnum": 243,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_action_custom_projectile",
+      "link_recipe": true,
+      "text": "Shoot a projectile defined by a configuration node, setting its speed, lifetime, piercing options and configuration parameters."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "500 + 100*v*v per projectile, plus configured maintenance, hits and actions."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.1 plus configuration structure; lifetime and target count do not directly add complexity."
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)config$(br)Projectile config / Insert one node"
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)speed / Optional$(br2)$(li)life / Required$(br2)$(li)bypass Wall / Optional"
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)bypass Entity / Optional$(br2)$(li)params / Optional"
+    }
+  ]
 }

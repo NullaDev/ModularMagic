@@ -1,36 +1,36 @@
 {
-    "name":  "Spell Node: While Delayed",
-    "icon":  "modularmagic:gem_action_while_delayed",
-    "category":  "modularmagic:nodes",
-    "sortnum":  223,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_action_while_delayed",
-                      "link_recipe":  true,
-                      "text":  "Check a condition before each iteration. If true, run the child and schedule the next iteration; step limits the iterations."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "Add the body costs for every actual repetition. Loops do not discount damage or materials.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.35 + L(n)*C + H(T), for total delay span T. While loops also add 0.1 and the condition structure.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)condition$(br)Predicate / Insert one node$(br2)$(li)child$(br)Action / Insert one node"
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)step / Required$(br)$(o)step$()$(br2)$(li)delay / Required$(br)$(o)delay$()$(br2)$(li)index / Optional$(br)$(o)index$()"
-                  }
-              ]
+  "name": "Spell Node: While Delayed",
+  "icon": "modularmagic:gem_action_while_delayed",
+  "category": "modularmagic:nodes",
+  "sortnum": 223,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_action_while_delayed",
+      "link_recipe": true,
+      "text": "Check a condition before each iteration. If true, run the child and schedule the next iteration; step limits the iterations."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "Add the body costs for every actual repetition. Loops do not discount damage or materials."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.35 + L(n)*C + H(T), for total delay span T. While loops also add 0.1 and the condition structure."
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)condition$(br)Predicate / Insert one node$(br2)$(li)child$(br)Action / Insert one node"
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)step / Required$(br2)$(li)delay / Required$(br2)$(li)index / Optional"
+    }
+  ]
 }

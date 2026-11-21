@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "MM",
+    "MS",
+    " S"
+  ],
+  "key": {
+    "M": {
+      "item": "modularmagic:unformed_matter"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "modularmagic:unformed_axe",
+    "count": 1
+  }
+}

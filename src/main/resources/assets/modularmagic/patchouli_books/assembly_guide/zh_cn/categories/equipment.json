@@ -1,6 +1,6 @@
 {
-    "icon":  "modularmagic:core_wand",
-    "description":  "编写台、法杖与核心的用途和操作。",
-    "name":  "工具与核心",
-    "sortnum":  1
+  "name": "实用工具",
+  "description": "研究、装配、附魔与日常使用的器物，以及能够自行修补的未元装备。",
+  "icon": "modularmagic:core_wand",
+  "sortnum": 4
 }

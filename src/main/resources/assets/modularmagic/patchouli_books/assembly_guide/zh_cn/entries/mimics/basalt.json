@@ -1,0 +1,19 @@
+{
+  "name": "以太拟材：玄武岩",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:basalt\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:basalt\"}]",
+      "link_recipe": false,
+      "text": "岩浆沿着灵魂土流过，在蓝冰旁凝成深色的石柱。这些条件，令它与普通岩石的纹样有所不同。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "为拟材定型",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)岩浆桶$(br)灵魂土$(br)蓝冰$(br)符文板：物质显现$(br)符文板：条件辨认"
+    }
+  ]
+}

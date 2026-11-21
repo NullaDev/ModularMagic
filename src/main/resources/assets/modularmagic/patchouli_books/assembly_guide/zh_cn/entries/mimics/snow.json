@@ -1,0 +1,19 @@
+{
+  "name": "以太拟材：积雪",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:snow\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:snow\"}]",
+      "link_recipe": false,
+      "text": "雪花落在地面，便成了一层薄雪。雪傀儡也能留下相似的痕迹，拟材借用这种纹样，让雪再次落定。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "为拟材定型",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)雪球$(br)雕刻过的南瓜$(br)符文板：物质显现$(br)符文板：重复与维持"
+    }
+  ]
+}

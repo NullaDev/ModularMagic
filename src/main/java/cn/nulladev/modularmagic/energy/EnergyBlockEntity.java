@@ -25,6 +25,8 @@ import java.util.UUID;
 /** A single stored balance, with independent shared input/output quotas. All amounts are fixed-point units. */
 public final class EnergyBlockEntity extends BlockEntity implements WorldlyContainer {
     public long energy;
+    public final net.minecraft.world.SimpleContainer enchantInventory=new net.minecraft.world.SimpleContainer(28){@Override public void setChanged(){super.setChanged();EnergyBlockEntity.this.changed();}};
+    public final cn.nulladev.modularmagic.generator.GeneratorState generator=new cn.nulladev.modularmagic.generator.GeneratorState(this);
     public UUID identity = UUID.randomUUID(), owner;
     public ItemStack battery = ItemStack.EMPTY;
     public ItemStack product = ItemStack.EMPTY;
@@ -48,6 +50,8 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
     public EnergyContent.Kind kind() { return ((EnergyBlock)getBlockState().getBlock()).kind; }
     public long capacity() {
         long mana = switch(kind()) {
+            case ENCHANTER -> cn.nulladev.modularmagic.crafting.ArtificeConfig.ENCHANT_CAPACITY.get();
+            case GENERATOR -> generator.rule()==null?1:generator.rule().capacity.get();
             case DISRUPTOR -> EnergyConfig.DISRUPTOR_CAPACITY.get();
             case TANK -> EnergyConfig.BASIC_CAPACITY.get();
             case EXPANDED_TANK -> EnergyConfig.EXPANDED_CAPACITY.get();
@@ -63,6 +67,8 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
         return mana * ManaStorage.SCALE;
     }
     public long rate() { return switch(kind()) {
+        case ENCHANTER -> cn.nulladev.modularmagic.crafting.ArtificeConfig.ENCHANT_RATE.get();
+        case GENERATOR -> generator.rule()==null?0:generator.rule().output.get();
         case DISRUPTOR -> EnergyConfig.DISRUPTOR_RATE.get();
         case TANK -> EnergyConfig.BASIC_RATE.get();
         case EXPANDED_TANK -> EnergyConfig.EXPANDED_RATE.get();
@@ -95,8 +101,9 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
         var facing=getBlockState().getValue(EnergyBlock.FACING);return new Vec3(facing.getStepX(),0,facing.getStepZ());
     }
     public Vec3 emissionStart() {return emissionPivot().add(emissionDirection().scale(.96));}
-    public long room() { return kind().infinite()?0:Math.max(0,capacity()-energy-pulseAmount-EnergyWorld.incoming(this)); }
+    public long room() { return kind().infinite()?0:Math.max(0,capacity()-energy-pulseAmount-generator.reserved-EnergyWorld.incoming(this)); }
     public long receive(long requested, boolean simulate) {
+        if(kind()==EnergyContent.Kind.GENERATOR)return 0;
         resetQuota();long amount=Math.max(0,Math.min(requested,Math.min(room(),quotaLimit()-inputUsed)));
         if(!simulate&&amount>0) { energy+=amount;inputUsed+=amount;changed(); }return amount;
     }
@@ -142,6 +149,7 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
         long time=level.getGameTime();
         if(kind().infinite() && energy!=capacity()) { energy=capacity();changed(); }
         boolean active=false;
+        if(kind()==EnergyContent.Kind.GENERATOR){generator.tick();active=generator.signal>=3&&generator.signal<15;}
         if(kind().disrupts()) {
             active=waterStructure();
             if(active&&time%EnergyConfig.PASSIVE_INTERVAL.get()==0) { energy=Math.min(capacity(),energy+EnergyConfig.PASSIVE.get()*ManaStorage.SCALE);changed(); }
@@ -241,6 +249,10 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
     public boolean interact(Player player, InteractionHand hand) {
         if(!allowed(player)){player.displayClientMessage(Component.translatable("energy.modularmagic.denied"),true);return true;}
         var held=player.getItemInHand(hand);
+        if(kind()==EnergyContent.Kind.GENERATOR&&held.isEmpty()){
+            generator.comparatorMode=(generator.comparatorMode+1)%3;changed();
+            player.displayClientMessage(Component.translatable("generator.modularmagic.comparator",Component.translatable("generator.modularmagic.mode."+generator.comparatorMode)),true);return true;
+        }
         if(held.getItem() instanceof ManaStorage) {
             if(!kind().tank()) {player.displayClientMessage(Component.translatable("energy.modularmagic.use_reservoir"),true);return true;}
             if(battery.isEmpty()) { battery=held.copyWithCount(1);held.shrink(1);changed(); }
@@ -290,12 +302,13 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
         return Component.translatable("energy.modularmagic.status",AetherNumbers.format(energy/ManaStorage.SCALE),AetherNumbers.format(capacity()/ManaStorage.SCALE),battery.isEmpty()?Component.translatable("energy.modularmagic.no_battery"):battery.getHoverName());
     }
     public CompoundTag itemData() {
-        var tag=new CompoundTag();tag.putLong("Energy",energy+pulseAmount);tag.putUUID("Identity",identity);
+        var tag=new CompoundTag();tag.put("Generator",generator.save());tag.putLong("Energy",energy+pulseAmount);tag.putUUID("Identity",identity);
         tag.putInt("ResonanceUpgrades",resonanceUpgrades);
         tag.putInt("Channel",channel);tag.putBoolean("CrossDimension",crossDimension);tag.putInt("Radius",loaderRadius);
         if(owner!=null)tag.putUUID("Owner",owner);return tag;
     }
     public void restoreItem(CompoundTag tag) {
+        if(tag.contains("Generator"))generator.load(tag.getCompound("Generator"));
         energy=Math.max(0,tag.getLong("Energy"));if(tag.hasUUID("Identity"))identity=tag.getUUID("Identity");
         resonanceUpgrades=Math.clamp(tag.getInt("ResonanceUpgrades"),0,64);
         if(tag.hasUUID("Owner"))owner=tag.getUUID("Owner");channel=Math.clamp(tag.getInt("Channel"),0,15);
@@ -303,11 +316,13 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
     }
     public ItemStack asItem() {
         var stack=new ItemStack(getBlockState().getBlock());var tag=new CompoundTag();var data=itemData();
-        if(kind().tank()||kind()==EnergyContent.Kind.CRYSTAL_CHAMBER||kind()==EnergyContent.Kind.CONDENSER)data.putLong("Energy",0);
+        if(kind()==EnergyContent.Kind.ENCHANTER||kind().tank()||kind()==EnergyContent.Kind.CRYSTAL_CHAMBER||kind()==EnergyContent.Kind.CONDENSER||kind()==EnergyContent.Kind.GENERATOR)data.putLong("Energy",0);
+        if(kind()==EnergyContent.Kind.GENERATOR){var g=data.getCompound("Generator");g.putLong("Reserved",0);if(generator.ruleId.equals("curing"))g.remove("Actor");}
         tag.put("AetherDevice",data);stack.set(DataComponents.CUSTOM_DATA,CustomData.of(tag));return stack;
     }
     @Override protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        super.saveAdditional(tag,registries);tag.merge(itemData());tag.putLong("Energy",energy);
+        super.saveAdditional(tag,registries);
+        if(kind()==EnergyContent.Kind.ENCHANTER){var items=net.minecraft.core.NonNullList.withSize(28,ItemStack.EMPTY);for(int i=0;i<28;i++)items.set(i,enchantInventory.getItem(i));net.minecraft.world.ContainerHelper.saveAllItems(tag,items,registries);}tag.merge(itemData());tag.putLong("Energy",energy);
         if(!battery.isEmpty())tag.put("Battery",battery.save(registries));
         if(!product.isEmpty())tag.put("Product",product.save(registries));
         tag.putBoolean("OutputPaused",outputPaused);tag.putBoolean("LoaderEnabled",loaderEnabled);
@@ -320,6 +335,7 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
     }
     @Override protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.loadAdditional(tag,registries);restoreItem(tag);
+        if(kind()==EnergyContent.Kind.ENCHANTER){var items=net.minecraft.core.NonNullList.withSize(28,ItemStack.EMPTY);net.minecraft.world.ContainerHelper.loadAllItems(tag,items,registries);for(int i=0;i<28;i++)enchantInventory.setItem(i,items.get(i));}
         battery=tag.contains("Battery")?ItemStack.parseOptional(registries,tag.getCompound("Battery")):ItemStack.EMPTY;
         product=tag.contains("Product")?ItemStack.parseOptional(registries,tag.getCompound("Product")):ItemStack.EMPTY;
         outputPaused=tag.getBoolean("OutputPaused");loaderEnabled=tag.getBoolean("LoaderEnabled");

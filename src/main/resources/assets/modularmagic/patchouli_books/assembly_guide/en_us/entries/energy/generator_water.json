@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Water",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"water\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Water",
+      "text": "Leave a gap between two water sources and a new source fills it. Neither neighbor shrinks; the extra water is another shape of aether."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "Bring $(l)water sources$() into reach and leave room for them to form again. The device takes sources and leaves flowing water alone."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_water"
+    }
+  ],
+  "sortnum": 2
+}

@@ -1,24 +1,14 @@
 {
   "name": "以太扰乱器",
   "icon": "modularmagic:aether_disruptor",
-  "category": "modularmagic:energy",
-  "sortnum": 1,
+  "category": "modularmagic:generators",
+  "sortnum": 0,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "modularmagic:aether_disruptor",
       "link_recipe": true,
-      "text": "末影珍珠会让水成形前的以太偏离原来的流向。铜制的收集面把那一缕微光截住，留下 5K 的小小缓存；我的记录约为每两秒 20。"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "搭出一段无限水",
-      "text": "装置放在中央水格正下方，两侧同高各有一个水源。中央必须保持流动水；若已经是水源，先舀走。只有一侧有水，便没有那次可供截留的生成。$(br2)空手右键取一枚碎片，潜行可取最多 16 枚；寿命从离开装置时开始。"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "把积蓄送走",
-      "text": "储槽或发射器贴在旁边，就能接住以太。想攒够材料再取出时，给扰乱器一个红石信号，或潜行使用调谐器暂停输出。$(br2)截流仍会继续，直到缓存装满。更多的水不会让同一只工作头更快。"
+      "text": "把它放在$(l)两端水源之间、缺口水格的下方$()。水一次次尝试成形，铜片便能一次次截住那缕流动。$(br2)储槽贴在旁边就能接走积蓄。想取碎片时，空手触碰它。"
     },
     {
       "type": "patchouli:crafting",

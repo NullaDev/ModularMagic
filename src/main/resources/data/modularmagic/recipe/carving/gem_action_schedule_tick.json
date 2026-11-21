@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "action/schedule_tick",
+  "knowledge": "action/schedule_tick",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_action_schedule_tick",
+    "count": 1
+  }
+}

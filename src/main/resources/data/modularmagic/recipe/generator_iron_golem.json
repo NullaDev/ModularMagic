@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "modularmagic:generator_housing"
+    },
+    {
+      "item": "modularmagic:rune_plate_k24"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    },
+    {
+      "item": "modularmagic:rune_plate_k08"
+    },
+    {
+      "item": "minecraft:iron_block"
+    },
+    {
+      "item": "minecraft:carved_pumpkin"
+    },
+    {
+      "item": "minecraft:bell"
+    }
+  ],
+  "result": {
+    "id": "modularmagic:aether_generator",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "AetherDevice": {
+          "Generator": {
+            "Rule": "iron_golem"
+          }
+        }
+      }
+    }
+  }
+}

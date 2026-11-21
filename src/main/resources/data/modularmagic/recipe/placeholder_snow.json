@@ -1,0 +1,18 @@
+{
+  "type": "modularmagic:placeholder",
+  "target": "minecraft:snow",
+  "ingredients": [
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "minecraft:carved_pumpkin"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    },
+    {
+      "item": "modularmagic:rune_plate_k07"
+    }
+  ]
+}

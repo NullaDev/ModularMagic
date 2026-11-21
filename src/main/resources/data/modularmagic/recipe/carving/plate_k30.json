@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "plate:K30",
+  "knowledge": "K30",
+  "ingredient": {
+    "item": "minecraft:clay_ball"
+  },
+  "result": {
+    "id": "modularmagic:rune_plate_k30",
+    "count": 1
+  }
+}

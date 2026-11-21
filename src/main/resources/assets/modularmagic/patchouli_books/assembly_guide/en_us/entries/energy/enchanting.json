@@ -1,0 +1,27 @@
+{
+  "name": "Aether Enchanter",
+  "icon": "modularmagic:aether_enchanter",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:aether_enchanter",
+      "link_recipe": true,
+      "text": "Lapis settles into patterns as an enchanting table works. Once you can read those lines, chance need no longer choose the result.$(br2)The chest holds your examples. $(l)Put equipment at the upper left, then left-click a stored book or enchanted item.$() Right-click a stored example to take it out."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Trace the Pattern Again",
+      "text": "Supply the table through your aether network, then trace the enchantment. $(l)The example remains; only your equipment changes.$()$(br2)Levels add: Sharpness I plus II gives III, up to its usual limit of V. Conflicting patterns and those the item cannot carry are left aside."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Beyond the Anvil",
+      "text": "Deeper patterns need more aether, much as intricate work at an anvil takes more experience. Here you need not surrender that experience yourself. Store enough aether, and the work can proceed."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:aether_enchanter"
+    }
+  ]
+}

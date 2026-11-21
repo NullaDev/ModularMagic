@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Equipment",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"equipment\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Equipment",
+      "text": "Some zombies emerge from darkness already wearing armor. I have never seen them mine or forge, yet their armor is as real as mine."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "Use the tuner on the device, then a nearby $(l)armor stand$(). It consumes the stand’s armor one piece at a time. Worn pieces yield less; enchantments do not increase the yield."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_equipment"
+    }
+  ],
+  "sortnum": 5
+}

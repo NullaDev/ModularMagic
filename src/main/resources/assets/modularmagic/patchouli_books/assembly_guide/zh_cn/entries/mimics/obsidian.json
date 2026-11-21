@@ -1,0 +1,29 @@
+{
+  "name": "以太拟材：黑曜石",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:obsidian\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 15,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:obsidian\"}]",
+      "link_recipe": false,
+      "text": "岩浆遇水凝成黑曜石；进入末地时，脚下的平台会重新出现；末影龙复生时，高柱也会重建。$(br2)三条不同的道路，都能留下同一种物质。选择其中一条为拟材定型即可。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "岩浆凝固",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)水桶 ×2$(br)岩浆桶$(br)符文板：物质显现$(br)符文板：条件辨认"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "龙柱重建",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)末地水晶 ×4$(br)符文板：重复与维持$(br)符文板：作用区域$(br)符文板：物质显现"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "末地平台",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)末影之眼$(br)黑曜石$(br)符文板：空间转移$(br)符文板：越界同调$(br)符文板：物质显现$(br)符文板：作用区域"
+    }
+  ]
+}

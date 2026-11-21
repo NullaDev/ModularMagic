@@ -1,0 +1,1052 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "modularmagic:item/item_placeholder"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "modularmagic:material": 1
+      },
+      "model": "modularmagic:item/mimic_bound"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 2
+      },
+      "model": "modularmagic:item/mimic_water"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 3
+      },
+      "model": "modularmagic:item/mimic_lava"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 4
+      },
+      "model": "modularmagic:item/mimic_cobblestone"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 5
+      },
+      "model": "modularmagic:item/mimic_stone"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 6
+      },
+      "model": "modularmagic:item/mimic_basalt"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 7
+      },
+      "model": "modularmagic:item/mimic_snow"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 8
+      },
+      "model": "modularmagic:item/mimic_ice"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 9
+      },
+      "model": "modularmagic:item/mimic_fire"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 10
+      },
+      "model": "modularmagic:item/mimic_tnt"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 11
+      },
+      "model": "modularmagic:item/mimic_powder_snow"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 12
+      },
+      "model": "modularmagic:item/mimic_obsidian"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 13
+      },
+      "model": "modularmagic:item/mimic_amethyst_cluster"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 14
+      },
+      "model": "modularmagic:item/mimic_pointed_dripstone"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 15
+      },
+      "model": "modularmagic:item/mimic_sculk"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 16
+      },
+      "model": "modularmagic:item/mimic_sand"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 17
+      },
+      "model": "modularmagic:item/mimic_red_sand"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 18
+      },
+      "model": "modularmagic:item/mimic_gravel"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 19
+      },
+      "model": "modularmagic:item/mimic_anvil"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 20
+      },
+      "model": "modularmagic:item/mimic_chipped_anvil"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 21
+      },
+      "model": "modularmagic:item/mimic_damaged_anvil"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 22
+      },
+      "model": "modularmagic:item/mimic_dragon_egg"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 23
+      },
+      "model": "modularmagic:item/mimic_suspicious_sand"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 24
+      },
+      "model": "modularmagic:item/mimic_suspicious_gravel"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 25
+      },
+      "model": "modularmagic:item/mimic_white_concrete_powder"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 26
+      },
+      "model": "modularmagic:item/mimic_orange_concrete_powder"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 27
+      },
+      "model": "modularmagic:item/mimic_magenta_concrete_powder"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 28
+      },
+      "model": "modularmagic:item/mimic_light_blue_concrete_powder"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 29
+      },
+      "model": "modularmagic:item/mimic_yellow_concrete_powder"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 30
+      },
+      "model": "modularmagic:item/mimic_lime_concrete_powder"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 31
+      },
+      "model": "modularmagic:item/mimic_pink_concrete_powder"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 32
+      },
+      "model": "modularmagic:item/mimic_gray_concrete_powder"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 33
+      },
+      "model": "modularmagic:item/mimic_light_gray_concrete_powder"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 34
+      },
+      "model": "modularmagic:item/mimic_cyan_concrete_powder"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 35
+      },
+      "model": "modularmagic:item/mimic_purple_concrete_powder"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 36
+      },
+      "model": "modularmagic:item/mimic_blue_concrete_powder"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 37
+      },
+      "model": "modularmagic:item/mimic_brown_concrete_powder"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 38
+      },
+      "model": "modularmagic:item/mimic_green_concrete_powder"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 39
+      },
+      "model": "modularmagic:item/mimic_red_concrete_powder"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 40
+      },
+      "model": "modularmagic:item/mimic_black_concrete_powder"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 41
+      },
+      "model": "modularmagic:item/mimic_rail"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 42
+      },
+      "model": "modularmagic:item/mimic_powered_rail"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 43
+      },
+      "model": "modularmagic:item/mimic_detector_rail"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 44
+      },
+      "model": "modularmagic:item/mimic_activator_rail"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 45
+      },
+      "model": "modularmagic:item/mimic_oak_log"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 46
+      },
+      "model": "modularmagic:item/mimic_oak_wood"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 47
+      },
+      "model": "modularmagic:item/mimic_stripped_oak_log"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 48
+      },
+      "model": "modularmagic:item/mimic_stripped_oak_wood"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 49
+      },
+      "model": "modularmagic:item/mimic_oak_leaves"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 50
+      },
+      "model": "modularmagic:item/mimic_oak_sapling"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 51
+      },
+      "model": "modularmagic:item/mimic_spruce_log"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 52
+      },
+      "model": "modularmagic:item/mimic_spruce_wood"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 53
+      },
+      "model": "modularmagic:item/mimic_stripped_spruce_log"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 54
+      },
+      "model": "modularmagic:item/mimic_stripped_spruce_wood"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 55
+      },
+      "model": "modularmagic:item/mimic_spruce_leaves"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 56
+      },
+      "model": "modularmagic:item/mimic_spruce_sapling"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 57
+      },
+      "model": "modularmagic:item/mimic_birch_log"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 58
+      },
+      "model": "modularmagic:item/mimic_birch_wood"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 59
+      },
+      "model": "modularmagic:item/mimic_stripped_birch_log"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 60
+      },
+      "model": "modularmagic:item/mimic_stripped_birch_wood"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 61
+      },
+      "model": "modularmagic:item/mimic_birch_leaves"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 62
+      },
+      "model": "modularmagic:item/mimic_birch_sapling"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 63
+      },
+      "model": "modularmagic:item/mimic_jungle_log"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 64
+      },
+      "model": "modularmagic:item/mimic_jungle_wood"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 65
+      },
+      "model": "modularmagic:item/mimic_stripped_jungle_log"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 66
+      },
+      "model": "modularmagic:item/mimic_stripped_jungle_wood"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 67
+      },
+      "model": "modularmagic:item/mimic_jungle_leaves"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 68
+      },
+      "model": "modularmagic:item/mimic_jungle_sapling"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 69
+      },
+      "model": "modularmagic:item/mimic_acacia_log"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 70
+      },
+      "model": "modularmagic:item/mimic_acacia_wood"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 71
+      },
+      "model": "modularmagic:item/mimic_stripped_acacia_log"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 72
+      },
+      "model": "modularmagic:item/mimic_stripped_acacia_wood"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 73
+      },
+      "model": "modularmagic:item/mimic_acacia_leaves"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 74
+      },
+      "model": "modularmagic:item/mimic_acacia_sapling"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 75
+      },
+      "model": "modularmagic:item/mimic_dark_oak_log"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 76
+      },
+      "model": "modularmagic:item/mimic_dark_oak_wood"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 77
+      },
+      "model": "modularmagic:item/mimic_stripped_dark_oak_log"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 78
+      },
+      "model": "modularmagic:item/mimic_stripped_dark_oak_wood"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 79
+      },
+      "model": "modularmagic:item/mimic_dark_oak_leaves"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 80
+      },
+      "model": "modularmagic:item/mimic_dark_oak_sapling"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 81
+      },
+      "model": "modularmagic:item/mimic_mangrove_log"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 82
+      },
+      "model": "modularmagic:item/mimic_mangrove_wood"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 83
+      },
+      "model": "modularmagic:item/mimic_stripped_mangrove_log"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 84
+      },
+      "model": "modularmagic:item/mimic_stripped_mangrove_wood"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 85
+      },
+      "model": "modularmagic:item/mimic_mangrove_leaves"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 86
+      },
+      "model": "modularmagic:item/mimic_mangrove_propagule"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 87
+      },
+      "model": "modularmagic:item/mimic_cherry_log"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 88
+      },
+      "model": "modularmagic:item/mimic_cherry_wood"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 89
+      },
+      "model": "modularmagic:item/mimic_stripped_cherry_log"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 90
+      },
+      "model": "modularmagic:item/mimic_stripped_cherry_wood"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 91
+      },
+      "model": "modularmagic:item/mimic_cherry_leaves"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 92
+      },
+      "model": "modularmagic:item/mimic_cherry_sapling"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 93
+      },
+      "model": "modularmagic:item/mimic_azalea_leaves"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 94
+      },
+      "model": "modularmagic:item/mimic_flowering_azalea_leaves"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 95
+      },
+      "model": "modularmagic:item/mimic_azalea"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 96
+      },
+      "model": "modularmagic:item/mimic_flowering_azalea"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 97
+      },
+      "model": "modularmagic:item/mimic_melon"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 98
+      },
+      "model": "modularmagic:item/mimic_pumpkin"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 99
+      },
+      "model": "modularmagic:item/mimic_wheat"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 100
+      },
+      "model": "modularmagic:item/mimic_carrots"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 101
+      },
+      "model": "modularmagic:item/mimic_potatoes"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 102
+      },
+      "model": "modularmagic:item/mimic_beetroots"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 103
+      },
+      "model": "modularmagic:item/mimic_melon_stem"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 104
+      },
+      "model": "modularmagic:item/mimic_pumpkin_stem"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 105
+      },
+      "model": "modularmagic:item/mimic_sugar_cane"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 106
+      },
+      "model": "modularmagic:item/mimic_cactus"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 107
+      },
+      "model": "modularmagic:item/mimic_kelp"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 108
+      },
+      "model": "modularmagic:item/mimic_kelp_plant"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 109
+      },
+      "model": "modularmagic:item/mimic_bamboo"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 110
+      },
+      "model": "modularmagic:item/mimic_bamboo_sapling"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 111
+      },
+      "model": "modularmagic:item/mimic_bamboo_block"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 112
+      },
+      "model": "modularmagic:item/mimic_stripped_bamboo_block"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 113
+      },
+      "model": "modularmagic:item/mimic_cocoa"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 114
+      },
+      "model": "modularmagic:item/mimic_vine"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 115
+      },
+      "model": "modularmagic:item/mimic_weeping_vines"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 116
+      },
+      "model": "modularmagic:item/mimic_weeping_vines_plant"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 117
+      },
+      "model": "modularmagic:item/mimic_twisting_vines"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 118
+      },
+      "model": "modularmagic:item/mimic_twisting_vines_plant"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 119
+      },
+      "model": "modularmagic:item/mimic_chorus_plant"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 120
+      },
+      "model": "modularmagic:item/mimic_chorus_flower"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 121
+      },
+      "model": "modularmagic:item/mimic_nether_wart"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 122
+      },
+      "model": "modularmagic:item/mimic_sweet_berry_bush"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 123
+      },
+      "model": "modularmagic:item/mimic_brown_mushroom"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 124
+      },
+      "model": "modularmagic:item/mimic_red_mushroom"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 125
+      },
+      "model": "modularmagic:item/mimic_short_grass"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 126
+      },
+      "model": "modularmagic:item/mimic_tall_grass"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 127
+      },
+      "model": "modularmagic:item/mimic_fern"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 128
+      },
+      "model": "modularmagic:item/mimic_large_fern"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 129
+      },
+      "model": "modularmagic:item/mimic_dead_bush"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 130
+      },
+      "model": "modularmagic:item/mimic_seagrass"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 131
+      },
+      "model": "modularmagic:item/mimic_tall_seagrass"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 132
+      },
+      "model": "modularmagic:item/mimic_sea_pickle"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 133
+      },
+      "model": "modularmagic:item/mimic_lily_pad"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 134
+      },
+      "model": "modularmagic:item/mimic_hanging_roots"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 135
+      },
+      "model": "modularmagic:item/mimic_mangrove_roots"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 136
+      },
+      "model": "modularmagic:item/mimic_muddy_mangrove_roots"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 137
+      },
+      "model": "modularmagic:item/mimic_dandelion"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 138
+      },
+      "model": "modularmagic:item/mimic_poppy"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 139
+      },
+      "model": "modularmagic:item/mimic_blue_orchid"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 140
+      },
+      "model": "modularmagic:item/mimic_allium"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 141
+      },
+      "model": "modularmagic:item/mimic_azure_bluet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 142
+      },
+      "model": "modularmagic:item/mimic_red_tulip"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 143
+      },
+      "model": "modularmagic:item/mimic_orange_tulip"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 144
+      },
+      "model": "modularmagic:item/mimic_white_tulip"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 145
+      },
+      "model": "modularmagic:item/mimic_pink_tulip"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 146
+      },
+      "model": "modularmagic:item/mimic_oxeye_daisy"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 147
+      },
+      "model": "modularmagic:item/mimic_cornflower"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 148
+      },
+      "model": "modularmagic:item/mimic_lily_of_the_valley"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 149
+      },
+      "model": "modularmagic:item/mimic_wither_rose"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 150
+      },
+      "model": "modularmagic:item/mimic_sunflower"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 151
+      },
+      "model": "modularmagic:item/mimic_lilac"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 152
+      },
+      "model": "modularmagic:item/mimic_rose_bush"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 153
+      },
+      "model": "modularmagic:item/mimic_peony"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 154
+      },
+      "model": "modularmagic:item/mimic_pink_petals"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 155
+      },
+      "model": "modularmagic:item/mimic_torchflower"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 156
+      },
+      "model": "modularmagic:item/mimic_torchflower_crop"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 157
+      },
+      "model": "modularmagic:item/mimic_pitcher_plant"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 158
+      },
+      "model": "modularmagic:item/mimic_pitcher_crop"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 159
+      },
+      "model": "modularmagic:item/mimic_white_carpet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 160
+      },
+      "model": "modularmagic:item/mimic_orange_carpet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 161
+      },
+      "model": "modularmagic:item/mimic_magenta_carpet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 162
+      },
+      "model": "modularmagic:item/mimic_light_blue_carpet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 163
+      },
+      "model": "modularmagic:item/mimic_yellow_carpet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 164
+      },
+      "model": "modularmagic:item/mimic_lime_carpet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 165
+      },
+      "model": "modularmagic:item/mimic_pink_carpet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 166
+      },
+      "model": "modularmagic:item/mimic_gray_carpet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 167
+      },
+      "model": "modularmagic:item/mimic_light_gray_carpet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 168
+      },
+      "model": "modularmagic:item/mimic_cyan_carpet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 169
+      },
+      "model": "modularmagic:item/mimic_purple_carpet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 170
+      },
+      "model": "modularmagic:item/mimic_blue_carpet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 171
+      },
+      "model": "modularmagic:item/mimic_brown_carpet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 172
+      },
+      "model": "modularmagic:item/mimic_green_carpet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 173
+      },
+      "model": "modularmagic:item/mimic_red_carpet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 174
+      },
+      "model": "modularmagic:item/mimic_black_carpet"
+    }
+  ]
+}

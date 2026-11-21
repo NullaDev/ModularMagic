@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Lava",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"lava\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Lava",
+      "text": "The cauldron beneath the dripstone fills, yet the source above never shrinks. Drop by drop, the same pattern fills another space."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "The device consumes nearby $(l)lava sources or full lava cauldrons$(). A cauldron remains empty, ready to fill again."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_lava"
+    }
+  ],
+  "sortnum": 4
+}

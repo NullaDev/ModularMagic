@@ -1,0 +1,18 @@
+{
+  "name": "无尽之肥料",
+  "icon": "modularmagic:endless_fertilizer",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:endless_fertilizer",
+      "link_recipe": true,
+      "title": "从岩石到新芽",
+      "text": "苔藓把岩石覆成柔软的绿，堆肥又能让这些新生的痕迹留下骨粉。将这几段纹样收进同一件器物，便能借以太促成下一次生长。$(br2)手持它$(l)右键施肥$()，效果与骨粉相同。每次有效施肥会消耗随身容器中的以太，器物本身会留下。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:endless_fertilizer"
+    }
+  ]
+}

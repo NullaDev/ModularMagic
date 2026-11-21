@@ -1,0 +1,19 @@
+{
+  "name": "Aether Mimic: Powder Snow",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:powder_snow\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 14,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:powder_snow\"}]",
+      "link_recipe": false,
+      "text": "Snow falling into an uncovered cauldron slowly fills it with powder snow. The mimic remembers the open vessel, the falling snow and the wait."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Shaping the Pattern",
+      "text": "Use a sample at the center of a blank mimic, with these materials around it:$(br2)Cauldron$(br)Bucket$(br)Snowball$(br)Rune Plate: Material Manifestation$(br)Rune Plate: Sequence and Delay$(br)Rune Plate: Numbers and Chance"
+    }
+  ]
+}

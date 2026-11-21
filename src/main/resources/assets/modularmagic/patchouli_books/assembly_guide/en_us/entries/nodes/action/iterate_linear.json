@@ -1,41 +1,41 @@
 {
-    "name":  "Spell Node: Iterate Linear",
-    "icon":  "modularmagic:gem_action_iterate_linear",
-    "category":  "modularmagic:nodes",
-    "sortnum":  224,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_action_iterate_linear",
-                      "link_recipe":  true,
-                      "text":  "Execute the child at successive positions along a line, controlled by forward steps, additional offsets and the starting-point option."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "Add the body costs for every actual repetition. Loops do not discount damage or materials.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.2 + L(n)*C, for maximum repetitions n and body complexity C.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)child$(br)Action / Insert one node"
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)along Dir / Optional$(br)$(o)alongDir$()$(br2)$(li)offset / Optional$(br)$(o)offset$()$(br2)$(li)along Offset / Optional$(br)$(o)alongOffset$()"
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)step / Required$(br)$(o)step$()$(br2)$(li)start From Origin / Optional$(br)$(o)startFromOrigin$()$(br2)$(li)index / Optional$(br)$(o)index$()"
-                  }
-              ]
+  "name": "Spell Node: Iterate Linear",
+  "icon": "modularmagic:gem_action_iterate_linear",
+  "category": "modularmagic:nodes",
+  "sortnum": 224,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_action_iterate_linear",
+      "link_recipe": true,
+      "text": "Execute the child at successive positions along a line, controlled by forward steps, additional offsets and the starting-point option."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "Add the body costs for every actual repetition. Loops do not discount damage or materials."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.2 + L(n)*C, for maximum repetitions n and body complexity C."
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)child$(br)Action / Insert one node"
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)along Dir / Optional$(br2)$(li)offset / Optional$(br2)$(li)along Offset / Optional"
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)step / Required$(br2)$(li)start From Origin / Optional$(br2)$(li)index / Optional"
+    }
+  ]
 }

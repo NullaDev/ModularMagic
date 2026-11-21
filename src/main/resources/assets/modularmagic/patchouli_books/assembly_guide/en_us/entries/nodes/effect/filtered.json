@@ -1,36 +1,36 @@
 {
-    "name":  "Spell Node: Filtered",
-    "icon":  "modularmagic:gem_effect_filtered",
-    "category":  "modularmagic:nodes",
-    "sortnum":  774,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_effect_filtered",
-                      "link_recipe":  true,
-                      "text":  "Partition entities with an entity filter, then run the corresponding accepted or fallback processor list."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "Charge the branch each target takes; reserve the more expensive branch per target.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.1 + P + max(A,B) + 0.25*min(A,B), like a conditional branch.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)filter$(br)Filter / Insert one node$(br2)$(li)Accepted targets$(br)Effect / Add up to 64 nodes"
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)Rejected targets$(br)Effect / Add up to 64 nodes"
-                  }
-              ]
+  "name": "Spell Node: Filtered",
+  "icon": "modularmagic:gem_effect_filtered",
+  "category": "modularmagic:nodes",
+  "sortnum": 774,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_effect_filtered",
+      "link_recipe": true,
+      "text": "Partition entities with an entity filter, then run the corresponding accepted or fallback processor list."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "Charge the branch each target takes; reserve the more expensive branch per target."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.1 + P + max(A,B) + 0.25*min(A,B), like a conditional branch."
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)filter$(br)Filter / Insert one node$(br2)$(li)Accepted targets$(br)Effect / Add up to 64 nodes"
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)Rejected targets$(br)Effect / Add up to 64 nodes"
+    }
+  ]
 }

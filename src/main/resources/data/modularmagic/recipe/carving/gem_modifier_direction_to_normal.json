@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "modifier/direction_to_normal",
+  "knowledge": "modifier/direction_to_normal",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_modifier_direction_to_normal",
+    "count": 1
+  }
+}

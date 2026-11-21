@@ -24,6 +24,7 @@ public final class AetherJadeData {
         data.putLong("Capacity", be.capacity() / ManaStorage.SCALE);
         data.putBoolean("Infinite", be.kind().infinite());
         data.putString("Status", status(be));
+        if(be.kind()==EnergyContent.Kind.GENERATOR){data.putString("Generator",be.generator.ruleId);data.putInt("Comparator",be.generator.comparator());data.putInt("Cooldown",Math.max(0,be.generator.cooldown));}
         if(be.resonanceParent!=null)data.putLong("Upstream",be.resonanceParent.asLong());
         data.putLong("Bandwidth", be.kind().emitter() ?
                 (long)be.shotSize()*20/EnergyConfig.SHOT_INTERVAL.get() : be.rate());
@@ -64,6 +65,7 @@ public final class AetherJadeData {
     }
 
     public static String status(EnergyBlockEntity be) {
+        if(be.kind()==EnergyContent.Kind.GENERATOR)return "generator_"+be.generator.status;
         if(be.kind()==EnergyContent.Kind.RESONATOR&&!be.resonanceEnabled())return "amethyst_required";
         if (be.paused()) return "paused";
         if(be.kind()==EnergyContent.Kind.RESONATOR&&ResonanceNetwork.root(be)==null)return "upstream_asleep";

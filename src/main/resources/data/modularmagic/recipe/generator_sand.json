@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "modularmagic:generator_housing"
+    },
+    {
+      "item": "modularmagic:rune_plate_k24"
+    },
+    {
+      "item": "modularmagic:rune_plate_k22"
+    },
+    {
+      "item": "modularmagic:rune_plate_k21"
+    },
+    {
+      "item": "minecraft:sand"
+    },
+    {
+      "item": "minecraft:sticky_piston"
+    },
+    {
+      "item": "minecraft:ender_eye"
+    }
+  ],
+  "result": {
+    "id": "modularmagic:aether_generator",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "AetherDevice": {
+          "Generator": {
+            "Rule": "sand"
+          }
+        }
+      }
+    }
+  }
+}

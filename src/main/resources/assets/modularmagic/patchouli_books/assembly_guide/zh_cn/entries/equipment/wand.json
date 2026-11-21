@@ -1,24 +1,14 @@
 {
-    "name":  "初学者法杖",
-    "icon":  "modularmagic:core_wand",
-    "category":  "modularmagic:equipment",
-    "sortnum":  1,
-    "pages":  [
-                  {
-                      "link_recipe":  true,
-                      "item":  "modularmagic:core_wand",
-                      "type":  "patchouli:spotlight",
-                      "text":  "容纳九颗法术核心，施放当前选中的法术。潜行右键打开核心仓，像背包一样装入或取出核心；关闭后内容保存在法杖内。"
-                  },
-                  {
-                      "title":  "施放与切换",
-                      "type":  "patchouli:text",
-                      "text":  "普通右键施放瞬发法术；蓄力型按住后松开施放；持续型按住使用。未成形或空核心不能施法。$(br2)用方向键上、下切换核心，或使用自己选定的按键。物品说明会显示装入数量、当前选择与消耗倍率。"
-                  },
-                  {
-                      "title":  "供能与专注",
-                      "type":  "patchouli:text",
-                      "text":  "把充过能的魔力容器放在背包或副手即可供能，多个容器会一起使用。施法不会消耗核心。$(br2)专注会自行恢复；透支后要等到回满才能再次施法。创造模式无需资源。详细规则见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  }
-              ]
+  "name": "初学者法杖",
+  "icon": "modularmagic:core_wand",
+  "category": "modularmagic:equipment",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:core_wand",
+      "link_recipe": true,
+      "text": "$(l)潜行右键$()打开杖身，可以装下九枚核心。用上、下方向键挑选想施放的那一枚。$(br2)瞬发轻点，蓄力按住再松开，持续型则维持握持。别忘了随身带一只充过能的以太容器。"
+    }
+  ]
 }

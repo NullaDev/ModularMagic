@@ -2,23 +2,13 @@
   "name": "随身以太接收器",
   "icon": "modularmagic:aether_receiver",
   "category": "modularmagic:energy",
-  "sortnum": 16,
+  "sortnum": 14,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "modularmagic:aether_receiver",
       "link_recipe": true,
-      "text": "一枚随身的小小回声。它不储存以太，却能替罐子指明你所在的位置。"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "先沿着家中的支路",
-      "text": "对主网中已经接通的共鸣器右键，记住整棵共鸣树。把接收器和魔力容器放在背包或副手，走进任一已连接支路的覆盖即可补给。$(br2)没有铺到的地方不会回应你。出门前仍应充满容器，枝头的带宽也要与其他装置共享。"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "再把归路留给自己",
-      "text": "有了晶化材料，就能制作个人供能锚。对锚右键重新绑定，此后同一片天地内便不受共鸣范围限制。$(br2)想穿过世界之间的界限，还需要为锚装上定界之眼。换绑到另一棵树或另一只锚时，会记住新的归路。"
+      "text": "让接收器听过家中一台共鸣器的声音，它就能记住整张网。$(br2)对主网上的共鸣器$(l)右键绑定，随后随身携带$()。走进已连通支路的覆盖里，背包中的容器就能补充以太。"
     },
     {
       "type": "patchouli:crafting",

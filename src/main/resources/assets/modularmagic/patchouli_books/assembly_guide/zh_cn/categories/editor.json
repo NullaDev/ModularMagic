@@ -1,6 +1,6 @@
 {
-    "icon":  "minecraft:writable_book",
-    "description":  "第一次游玩先读从零开始，再查操作速查。",
-    "name":  "入门教程",
-    "sortnum":  0
+  "name": "新手指南",
+  "description": "从一颗末影珍珠开始，观察纹样、研究知识，再装配你的第一个法术。",
+  "icon": "modularmagic:void_lens",
+  "sortnum": 0
 }

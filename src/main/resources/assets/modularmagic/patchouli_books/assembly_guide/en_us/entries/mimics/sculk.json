@@ -1,0 +1,19 @@
+{
+  "name": "Aether Mimic: Sculk",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:sculk\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 18,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:sculk\"}]",
+      "link_recipe": false,
+      "text": "Experience reaching a sculk catalyst spreads sculk across nearby ground. The aether in experience takes a material form."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Shaping the Pattern",
+      "text": "Use a sample at the center of a blank mimic, with these materials around it:$(br2)Sculk Catalyst$(br)Bottle o’ Enchanting$(br)Rune Plate: Material Manifestation$(br)Rune Plate: The Shape of Experience"
+    }
+  ]
+}

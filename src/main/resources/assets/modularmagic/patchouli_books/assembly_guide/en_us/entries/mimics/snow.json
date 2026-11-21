@@ -1,0 +1,19 @@
+{
+  "name": "Aether Mimic: Snow",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:snow\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:snow\"}]",
+      "link_recipe": false,
+      "text": "Snow settles in a thin layer. A snow golem leaves a similar trace for the mimic to remember."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Shaping the Pattern",
+      "text": "Use a sample at the center of a blank mimic, with these materials around it:$(br2)Snowball$(br)Carved Pumpkin$(br)Rune Plate: Material Manifestation$(br)Rune Plate: Repetition and Sustain"
+    }
+  ]
+}

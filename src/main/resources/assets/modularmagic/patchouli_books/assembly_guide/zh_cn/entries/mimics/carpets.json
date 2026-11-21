@@ -1,0 +1,24 @@
+{
+  "name": "以太拟材：地毯",
+  "icon": "modularmagic:carpet_placeholder",
+  "category": "modularmagic:mimics",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:carpet_placeholder",
+      "link_recipe": true,
+      "text": "活塞推动黏液块时，薄薄的地毯也能留下额外的一份。颜色只改变它的外观，不改变这道重复的纹样。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "为拟材定型",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)黏性活塞$(br)黏液球$(br)符文板：方块的运动$(br)符文板：重复与维持$(br)符文板：物质显现"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "选定要生成的物质",
+      "text": "定型通用拟材时，中心可用这一类中的任意材料作参考。$(br2)在工作台中，将通用拟材与对应的方块无序合成，即可选定要生成的物质。$(br2)将选定后的拟材单独放回合成格，可以拆回通用拟材，并返还原材料。"
+    }
+  ]
+}

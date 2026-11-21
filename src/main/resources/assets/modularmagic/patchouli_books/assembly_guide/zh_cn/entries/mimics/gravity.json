@@ -1,0 +1,24 @@
+{
+  "name": "以太拟材：重力方块",
+  "icon": "modularmagic:gravity_placeholder",
+  "category": "modularmagic:mimics",
+  "sortnum": 13,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gravity_placeholder",
+      "link_recipe": true,
+      "text": "沙、沙砾、铁砧与混凝土粉末遵从同一条坠落的规则。穿过末地传送门时，一份坠落的方块竟可能在两边留下痕迹。它们共用一种重力方块拟材。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "为拟材定型",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)末影之眼$(br)黏性活塞$(br)黏液块$(br)符文板：空间转移$(br)符文板：方块的运动$(br)符文板：物质显现"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "选定要生成的物质",
+      "text": "定型通用拟材时，中心可用这一类中的任意材料作参考。$(br2)在工作台中，将通用拟材与对应的方块无序合成，即可选定要生成的物质。$(br2)将选定后的拟材单独放回合成格，可以拆回通用拟材，并返还原材料。"
+    }
+  ]
+}

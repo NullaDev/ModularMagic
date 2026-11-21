@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "modularmagic:unformed_sword",
+    "modularmagic:unformed_pickaxe",
+    "modularmagic:unformed_axe",
+    "modularmagic:unformed_shovel",
+    "modularmagic:unformed_hoe",
+    "modularmagic:unformed_helmet",
+    "modularmagic:unformed_chestplate",
+    "modularmagic:unformed_leggings",
+    "modularmagic:unformed_boots"
+  ]
+}

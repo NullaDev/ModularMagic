@@ -1,0 +1,17 @@
+{
+  "name": "高级法杖",
+  "icon": "modularmagic:advanced_wand",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:advanced_wand",
+      "link_recipe": true,
+      "text": "金柄将以太引入未元物质，术式便能以更少的耗费成形。$(br2)像初学者法杖一样装入核心、切换法术。$(l)同一法术，现在只需更少的以太与专注。$()具体倍率可查看法杖上的说明。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:advanced_wand"
+    }
+  ]
+}

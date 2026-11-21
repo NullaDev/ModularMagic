@@ -1,0 +1,19 @@
+{
+  "name": "Aether Mimic: Pointed Dripstone",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:pointed_dripstone\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 17,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:pointed_dripstone\"}]",
+      "link_recipe": false,
+      "text": "Water above a dripstone block allows the pointed stone below to grow. The mimic remembers that growth, rather than merely breaking a piece away."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Shaping the Pattern",
+      "text": "Use a sample at the center of a blank mimic, with these materials around it:$(br2)Dripstone Block$(br)Water Bucket$(br)Pointed Dripstone$(br)Rune Plate: Material Manifestation$(br)Rune Plate: Sequence and Delay$(br)Rune Plate: Numbers and Chance"
+    }
+  ]
+}

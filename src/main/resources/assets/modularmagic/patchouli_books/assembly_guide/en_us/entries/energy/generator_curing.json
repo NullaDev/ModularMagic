@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Curing",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"curing\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Curing",
+      "text": "A golden apple should bring a villager back. The device takes the apple and draws away the weakness, holding that unfinished change in its pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "$(l)Name a zombie villager$(), weaken it, then drop a golden apple nearby. After a treatment’s wait, aether emerges; the zombie remains. Each cycle needs fresh weakness and another apple. Keep it close while the device works."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_curing"
+    }
+  ],
+  "sortnum": 22
+}

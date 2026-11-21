@@ -1,0 +1,21 @@
+{
+  "type": "modularmagic:placeholder",
+  "target": "modularmagic:carpets",
+  "ingredients": [
+    {
+      "item": "minecraft:sticky_piston"
+    },
+    {
+      "item": "minecraft:slime_ball"
+    },
+    {
+      "item": "modularmagic:rune_plate_k22"
+    },
+    {
+      "item": "modularmagic:rune_plate_k07"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    }
+  ]
+}

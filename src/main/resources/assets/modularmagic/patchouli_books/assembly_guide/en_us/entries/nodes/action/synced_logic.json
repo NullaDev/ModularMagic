@@ -1,31 +1,31 @@
 {
-    "name":  "Spell Node: Synced Logic",
-    "icon":  "modularmagic:gem_action_synced_logic",
-    "category":  "modularmagic:nodes",
-    "sortnum":  220,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_action_synced_logic",
-                      "link_recipe":  true,
-                      "text":  "Unfold the attached action in one rhythm, keeping its appearance and actual effects together."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "Only the connected nodes contribute; this node adds no mana fee.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.05 plus the attached action; its accompanying appearance is not charged a second time.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)child$(br)Action / Insert one node"
-                  }
-              ]
+  "name": "Spell Node: Synced Logic",
+  "icon": "modularmagic:gem_action_synced_logic",
+  "category": "modularmagic:nodes",
+  "sortnum": 220,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_action_synced_logic",
+      "link_recipe": true,
+      "text": "Unfold the attached action in one rhythm, keeping its appearance and actual effects together."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "Only the connected nodes contribute; this node adds no aether fee."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.05 plus the attached action; its accompanying appearance is not charged a second time."
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)child$(br)Action / Insert one node"
+    }
+  ]
 }

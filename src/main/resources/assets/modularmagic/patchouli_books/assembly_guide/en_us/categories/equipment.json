@@ -1,6 +1,6 @@
 {
-    "icon":  "modularmagic:core_wand",
-    "description":  "How to use the writing table, wand and assembled cores.",
-    "name":  "Tools and Cores",
-    "sortnum":  1
+  "name": "Tools and Equipment",
+  "description": "Tools for research, spell assembly and enchanting, with dark matter equipment that mends itself.",
+  "icon": "modularmagic:core_wand",
+  "sortnum": 4
 }

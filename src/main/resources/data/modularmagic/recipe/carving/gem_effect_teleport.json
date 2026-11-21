@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "effect/teleport",
+  "knowledge": "effect/teleport",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_effect_teleport",
+    "count": 1
+  }
+}

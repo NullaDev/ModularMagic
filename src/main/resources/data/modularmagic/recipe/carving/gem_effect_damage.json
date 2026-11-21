@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "effect/damage",
+  "knowledge": "effect/damage",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_effect_damage",
+    "count": 1
+  }
+}

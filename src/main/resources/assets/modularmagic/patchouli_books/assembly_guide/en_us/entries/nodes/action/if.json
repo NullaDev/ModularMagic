@@ -1,36 +1,36 @@
 {
-    "name":  "Spell Node: If",
-    "icon":  "modularmagic:gem_action_if",
-    "category":  "modularmagic:nodes",
-    "sortnum":  213,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_action_if",
-                      "link_recipe":  true,
-                      "text":  "Test a condition, running the action when true and the fallback when false. Either branch may be empty."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "Pay for the test and chosen branch. Reserve for the more expensive branch.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.1 + P + max(A,B) + 0.25*min(A,B), for condition P and branches A and B.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)predicate$(br)Predicate / Insert one node$(br2)$(li)If true$(br)Action / Optional; one node at most"
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)fallback$(br)Action / Optional; one node at most"
-                  }
-              ]
+  "name": "Spell Node: If",
+  "icon": "modularmagic:gem_action_if",
+  "category": "modularmagic:nodes",
+  "sortnum": 213,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_action_if",
+      "link_recipe": true,
+      "text": "Test a condition, running the action when true and the fallback when false. Either branch may be empty."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "Pay for the test and chosen branch. Reserve for the more expensive branch."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.1 + P + max(A,B) + 0.25*min(A,B), for condition P and branches A and B."
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)predicate$(br)Predicate / Insert one node$(br2)$(li)If true$(br)Action / Optional; one node at most"
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)fallback$(br)Action / Optional; one node at most"
+    }
+  ]
 }

@@ -143,13 +143,35 @@ sourceSets {
     }
 }
 configurations.gameTestImplementation.extendsFrom(configurations.implementation)
+configurations.gameTestCompileOnly.extendsFrom(configurations.compileOnly)
 configurations.gameTestRuntimeOnly.extendsFrom(configurations.runtimeOnly)
 runs.gameTestServer {
     modSource project.sourceSets.gameTest
     systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
 }
 
+if (providers.gradleProperty('utilitiesSmoke').getOrElse('false').toBoolean()) {
+    runs.client {
+        modSource project.sourceSets.gameTest
+        systemProperty 'modularmagic.utilitiesSmoke', 'true'
+        arguments.addAll '--quickPlaySingleplayer', 'modularmagic-ui-smoke', '--width', '1280', '--height', '720'
+    }
+}
+if (providers.gradleProperty('artificeSmoke').getOrElse('false').toBoolean()) {
+    runs.client {
+        modSource project.sourceSets.gameTest
+        systemProperty 'modularmagic.artificeSmoke', 'true'
+        arguments.addAll '--quickPlaySingleplayer', 'modularmagic-ui-smoke', '--width', '1280', '--height', '720'
+    }
+}
 // Test-only client driver; excluded from regular runs and published JARs.
+if (providers.gradleProperty('researchSmoke').getOrElse('false').toBoolean()) {
+    runs.client {
+        modSource project.sourceSets.gameTest
+        systemProperty 'modularmagic.researchSmoke', 'true'
+        arguments.addAll '--quickPlaySingleplayer', 'modularmagic-ui-smoke', '--width', '1280', '--height', '720'
+    }
+}
 if (providers.gradleProperty('energySmoke').getOrElse('false').toBoolean()) {
     runs.client {
         modSource project.sourceSets.gameTest
@@ -233,6 +255,7 @@ dependencies {
     implementation "dev.xkmc:l2library:${l2library_ver}"
     implementation "dev.xkmc:l2damagetracker:${l2damagetracker_ver}"
     implementation "dev.xkmc:fast_projectile_api:${fast_projectile_api_ver}"
+    compileOnly "mezz.jei:jei-${jei_minecraft_version}:${jei_version}"
     runtimeOnly "mezz.jei:jei-${jei_minecraft_version}:${jei_version}"
     runtimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}"
     runtimeOnly "vazkii.patchouli:Patchouli:${patchouli_version}"

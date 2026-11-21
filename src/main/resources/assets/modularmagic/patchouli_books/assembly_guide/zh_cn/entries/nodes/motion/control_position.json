@@ -1,31 +1,31 @@
 {
-    "name":  "法术节点：控制位置轨迹",
-    "icon":  "modularmagic:gem_motion_control_position",
-    "category":  "modularmagic:nodes",
-    "sortnum":  978,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_motion_control_position",
-                      "link_recipe":  true,
-                      "text":  "将空间修饰的结果作为每次更新的目标位置，用于直接编写运动轨迹。"
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "默认魔力消耗",
-                      "type":  "patchouli:text",
-                      "text":  "用于有碰撞效果的弹体时，每个弹体每 tick 计 1；纯装饰粒子的运动不收费。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "结构复杂度",
-                      "type":  "patchouli:text",
-                      "text":  "基础运动 0.05；轨迹控制还要加上所装空间修饰的复杂度，只计算一次。$(br2)复杂度汇总后，按 5+10C+0.625C² 换算整次专注消耗。详见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "title":  "继续装配",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)空间修饰$(br)空间修饰 / 可放多个，最多 64 个"
-                  }
-              ]
+  "name": "法术节点：控制位置轨迹",
+  "icon": "modularmagic:gem_motion_control_position",
+  "category": "modularmagic:nodes",
+  "sortnum": 978,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_motion_control_position",
+      "link_recipe": true,
+      "text": "将空间修饰的结果作为每次更新的目标位置，用于直接编写运动轨迹。"
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "默认以太消耗",
+      "type": "patchouli:text",
+      "text": "用于有碰撞效果的弹体时，每个弹体每 tick 计 1；纯装饰粒子的运动不收费。"
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "结构复杂度",
+      "type": "patchouli:text",
+      "text": "基础运动 0.05；轨迹控制还要加上所装空间修饰的复杂度，只计算一次。"
+    },
+    {
+      "title": "继续装配",
+      "type": "patchouli:text",
+      "text": "$(li)空间修饰$(br)空间修饰 / 可放多个，最多 64 个"
+    }
+  ]
 }

@@ -1,36 +1,31 @@
 {
-    "name":  "Spell Node: Simple",
-    "icon":  "modularmagic:gem_motion_simple",
-    "category":  "modularmagic:nodes",
-    "sortnum":  977,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_motion_simple",
-                      "link_recipe":  true,
-                      "text":  "Update movement using friction and gravity for effects such as ballistic or drifting particles and projectiles."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "1 per projectile per tick; motion of decorative particles is free.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.05; controlled motion also includes its modifiers, counted once.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "Using This Node",
-                      "type":  "patchouli:text",
-                      "text":  "You do not need to attach any more nodes here. Insert it, then select it to adjust its settings on the right. Right-click it on the canvas to take it back."
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)friction / Optional$(br)$(o)friction$()$(br2)$(li)gravity / Optional$(br)$(o)gravity$()"
-                  }
-              ]
+  "name": "Spell Node: Simple",
+  "icon": "modularmagic:gem_motion_simple",
+  "category": "modularmagic:nodes",
+  "sortnum": 977,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_motion_simple",
+      "link_recipe": true,
+      "text": "Update movement using friction and gravity for effects such as ballistic or drifting particles and projectiles."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "1 per projectile per tick; motion of decorative particles is free."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.05; controlled motion also includes its modifiers, counted once."
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)friction / Optional$(br2)$(li)gravity / Optional"
+    }
+  ]
 }

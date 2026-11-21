@@ -1,31 +1,26 @@
 {
-    "name":  "Spell Node: Align With Caster",
-    "icon":  "modularmagic:gem_modifier_align_with_caster",
-    "category":  "modularmagic:nodes",
-    "sortnum":  312,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_modifier_align_with_caster",
-                      "link_recipe":  true,
-                      "text":  "Align the spell\u0027s forward direction with the caster\u0027s current view, including after a delay."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "0. Subsequent effects are priced normally.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.05; distance and angle do not change complexity.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "Using This Node",
-                      "type":  "patchouli:text",
-                      "text":  "No more nodes or values are needed here. Insert the gem in its matching slot. Right-click it on the canvas when you want to replace it."
-                  }
-              ]
+  "name": "Spell Node: Align With Caster",
+  "icon": "modularmagic:gem_modifier_align_with_caster",
+  "category": "modularmagic:nodes",
+  "sortnum": 312,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_modifier_align_with_caster",
+      "link_recipe": true,
+      "text": "Align the spell's forward direction with the caster's current view, including after a delay."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "0. Subsequent effects are priced normally."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.05; distance and angle do not change complexity."
+    }
+  ]
 }

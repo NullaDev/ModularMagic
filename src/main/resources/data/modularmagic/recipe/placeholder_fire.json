@@ -1,0 +1,21 @@
+{
+  "type": "modularmagic:placeholder",
+  "target": "minecraft:fire",
+  "ingredients": [
+    {
+      "item": "minecraft:lava_bucket"
+    },
+    {
+      "item": "minecraft:oak_planks"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    },
+    {
+      "item": "modularmagic:rune_plate_k19"
+    },
+    {
+      "item": "modularmagic:rune_plate_k10"
+    }
+  ]
+}

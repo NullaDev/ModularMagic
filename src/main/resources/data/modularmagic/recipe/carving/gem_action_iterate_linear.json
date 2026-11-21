@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "action/iterate_linear",
+  "knowledge": "action/iterate_linear",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_action_iterate_linear",
+    "count": 1
+  }
+}

@@ -12,7 +12,7 @@ import java.util.*;
 
 public final class EnergyContent {
     public enum Kind {
-        DISRUPTOR("aether_disruptor"), TANK("aether_tank"), EXPANDED_TANK("expanded_aether_tank"),
+        ENCHANTER("aether_enchanter"), GENERATOR("aether_generator"), DISRUPTOR("aether_disruptor"), TANK("aether_tank"), EXPANDED_TANK("expanded_aether_tank"),
         ULTIMATE_TANK("ultimate_aether_tank"), CREATIVE_TANK("creative_aether_tank"),
         CONDENSER("aether_condenser"), CRYSTAL_CHAMBER("aether_crystallization_chamber"),
         EMITTER("aether_emitter"), EXPANDED_EMITTER("expanded_aether_emitter"), ULTIMATE_EMITTER("ultimate_aether_emitter"), CREATIVE_EMITTER("creative_aether_emitter"), CREATIVE("creative_aether_generator"),
@@ -45,7 +45,7 @@ public final class EnergyContent {
             var block = BLOCK_REG.register(kind.id, () -> new EnergyBlock(kind,
                     BlockBehaviour.Properties.of().strength(2.5F).sound(SoundType.COPPER).noOcclusion().forceSolidOn().lightLevel(s -> s.getValue(EnergyBlock.ACTIVE) ? 8 : 0)));
             BLOCKS.put(kind, block);
-            ITEMS.put(kind, ITEM_REG.register(kind.id, () -> new BlockItem(block.get(), new Item.Properties().stacksTo(1).rarity(kind.rarity()))));
+            ITEMS.put(kind, ITEM_REG.register(kind.id, () -> kind==Kind.GENERATOR?new cn.nulladev.modularmagic.generator.GeneratorItem(block.get()):new BlockItem(block.get(), new Item.Properties().stacksTo(1).rarity(kind.rarity()))));
         }
     }
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<EnergyBlockEntity>> ENTITY = BE_REG.register("aether_device",

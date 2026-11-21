@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Music Discs",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"music\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Music Discs",
+      "text": "A thin record can unfold the same melody again and again. Let its pattern dissolve in one final echo, and more than silence remains."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "Tune the device, then nearby $(l)jukeboxes$(), up to four. Each cycle $(l)permanently consumes one record$(). Select a jukebox again to disconnect it."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_music"
+    }
+  ],
+  "sortnum": 20
+}

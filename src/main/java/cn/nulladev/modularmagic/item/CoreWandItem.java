@@ -19,11 +19,21 @@ import net.neoforged.neoforge.network.PacketDistributor;
 import java.util.List;
 
 public final class CoreWandItem extends WandItem {
-    private final boolean creative;
-    public CoreWandItem(Properties properties) { this(properties, false); }
-    public CoreWandItem(Properties properties, boolean creative) { super(properties); this.creative = creative; }
-    public double manaMultiplier(ItemStack stack) { return creative ? 0 : cn.nulladev.modularmagic.config.ResourceConfig.WAND_MANA.get(); }
-    public double focusMultiplier(ItemStack stack) { return creative ? 0 : cn.nulladev.modularmagic.config.ResourceConfig.WAND_FOCUS.get(); }
+    public enum Tier {BEGINNER, ADVANCED, CREATIVE}
+    private final Tier tier;
+    public CoreWandItem(Properties properties) { this(properties, Tier.BEGINNER); }
+    public CoreWandItem(Properties properties, boolean creative) { this(properties, creative ? Tier.CREATIVE : Tier.BEGINNER); }
+    public CoreWandItem(Properties properties, Tier tier) { super(properties); this.tier = tier; }
+    public double manaMultiplier(ItemStack stack) { return switch(tier) {
+        case BEGINNER -> cn.nulladev.modularmagic.config.ResourceConfig.WAND_MANA.get();
+        case ADVANCED -> cn.nulladev.modularmagic.config.ResourceConfig.ADVANCED_WAND_MANA.get();
+        case CREATIVE -> 0;
+    }; }
+    public double focusMultiplier(ItemStack stack) { return switch(tier) {
+        case BEGINNER -> cn.nulladev.modularmagic.config.ResourceConfig.WAND_FOCUS.get();
+        case ADVANCED -> cn.nulladev.modularmagic.config.ResourceConfig.ADVANCED_WAND_FOCUS.get();
+        case CREATIVE -> 0;
+    }; }
     private static ItemStack core(ItemStack stack) { return WandCores.read(stack).get(WandCores.selected(stack)); }
     private static String document(ItemStack stack) { return SpellCoreItem.read(core(stack)).toJson(); }
 

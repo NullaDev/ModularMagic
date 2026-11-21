@@ -1,19 +1,14 @@
 {
-    "name":  "未成形法术核心",
-    "icon":  "modularmagic:unformed_spell_core",
-    "category":  "modularmagic:equipment",
-    "sortnum":  3,
-    "pages":  [
-                  {
-                      "link_recipe":  true,
-                      "item":  "modularmagic:unformed_spell_core",
-                      "type":  "patchouli:spotlight",
-                      "text":  "非空但尚未通过校验的半成品。缺少必要子槽、错误表达式或无效 ID 都可能导致未成形。它会保留所有节点与填写的文本。"
-                  },
-                  {
-                      "title":  "继续编辑",
-                      "type":  "patchouli:text",
-                      "text":  "放回编写台，悬停状态按钮查看问题，补齐节点或修正参数并应用。它可以放进法杖保存，但不能施法。$(br2)若移空所有子节点，则恢复为对应类型的空法术核心，仍保留根参数。"
-                  }
-              ]
+  "name": "未成形法术核心",
+  "icon": "modularmagic:unformed_spell_core",
+  "category": "modularmagic:equipment",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:unformed_spell_core",
+      "link_recipe": true,
+      "text": "还有一处纹样没能接通。宝石与墨迹都留在原处，不必从头来过。$(br2)放回编写台，看看$(l)状态标记的提示$()，再补上缺失的连接或改动数值。"
+    }
+  ]
 }

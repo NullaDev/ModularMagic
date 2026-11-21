@@ -2,22 +2,25 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "OSO",
-    "OEO",
-    "CCC"
+    "OGO",
+    "EBE",
+    "OPO"
   ],
   "key": {
     "O": {
       "item": "minecraft:obsidian"
     },
-    "S": {
-      "tag": "modularmagic:aether_fragments"
+    "G": {
+      "item": "modularmagic:aether_gem"
     },
     "E": {
       "item": "minecraft:ender_pearl"
     },
-    "C": {
-      "item": "minecraft:copper_ingot"
+    "B": {
+      "item": "modularmagic:mana_container_expanded"
+    },
+    "P": {
+      "item": "modularmagic:rune_plate_k27"
     }
   },
   "result": {

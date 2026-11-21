@@ -1,0 +1,17 @@
+{
+  "name": "Advanced Wand",
+  "icon": "modularmagic:advanced_wand",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:advanced_wand",
+      "link_recipe": true,
+      "text": "A gold handle carries the current into dark matter, where a spell can take shape with less effort.$(br2)Keep your cores inside and switch spells as before. $(l)The same spell asks for less aether and focus.$() The wand’s tooltip shows its current multipliers."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:advanced_wand"
+    }
+  ]
+}

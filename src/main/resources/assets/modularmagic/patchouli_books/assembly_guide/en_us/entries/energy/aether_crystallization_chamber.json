@@ -2,23 +2,13 @@
   "name": "Aether Crystallization Chamber",
   "icon": "modularmagic:aether_crystallization_chamber",
   "category": "modularmagic:energy",
-  "sortnum": 8,
+  "sortnum": 7,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "modularmagic:aether_crystallization_chamber",
       "link_recipe": true,
-      "text": "Near a Nether Star, aether stops trying to fade. Solid clusters grow around the nucleus. The star remains through each crystallization, and the glimmer finally gains a lasting form."
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Feed the crystal",
-      "text": "Place beside a reservoir or connect a pulse or resonance branch. It grows crystalline fragments on its own, commonly up to four each second.$(br2)A fragment usually stores 200 and spends another 200 becoming stable. Empty-hand use takes one; sneak-use takes all. Hoppers collect the output, and growth pauses at a full stack."
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Save a fading fragment",
-      "text": "Toss a still-living fragment onto the top. The nucleus stabilizes it, spending only the extra processing aether.$(br2)Collect it from the same output. This chamber grows crystals; portable jars belong in liquid reservoirs."
+      "text": "The Nether Star refuses to fade with the glimmer. Around its nucleus, aether grows into lasting crystals.$(br2)Supply the chamber, then take its product with an empty hand. $(l)Crystalline fragments do not fade.$() Stabilizing them spends extra aether that a reservoir cannot return."
     },
     {
       "type": "patchouli:crafting",

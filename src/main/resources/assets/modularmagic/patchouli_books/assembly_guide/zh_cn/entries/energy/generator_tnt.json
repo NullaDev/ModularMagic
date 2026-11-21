@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：TNT",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"tnt\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "TNT",
+      "text": "原来的 TNT 还嵌在移动的结构中，另一份却已经燃起引信。若在爆炸前将这份多出的物质收回，便能得到一大股以太。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "让$(l)点燃的 TNT$()进入附近。器物每次截获后都要等待很久；等待中、被红石暂停或缓存已满时，它都无法截获。先安排好时序与安全的退路。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_tnt"
+    }
+  ],
+  "sortnum": 23
+}

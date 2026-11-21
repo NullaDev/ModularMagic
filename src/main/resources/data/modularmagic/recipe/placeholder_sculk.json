@@ -1,0 +1,18 @@
+{
+  "type": "modularmagic:placeholder",
+  "target": "minecraft:sculk",
+  "ingredients": [
+    {
+      "item": "minecraft:sculk_catalyst"
+    },
+    {
+      "item": "minecraft:experience_bottle"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    },
+    {
+      "item": "modularmagic:rune_plate_k32"
+    }
+  ]
+}

@@ -45,6 +45,7 @@ public final class ModContent {
     public static final DeferredItem<SpellCoreItem> UNFORMED_CORE = ITEMS.register("unformed_spell_core",
             () -> new SpellCoreItem(new Item.Properties().stacksTo(1), false));
     public static final DeferredItem<CoreWandItem> CORE_WAND = ITEMS.register("core_wand", () -> new CoreWandItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CoreWandItem> ADVANCED_WAND = ITEMS.register("advanced_wand", () -> new CoreWandItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE), CoreWandItem.Tier.ADVANCED));
     public static final DeferredItem<CoreWandItem> CREATIVE_WAND = ITEMS.register("creative_wand", () -> new CoreWandItem(new Item.Properties().stacksTo(1), true));
     public static final Map<String, DeferredItem<ManaContainerItem>> MANA_CONTAINERS = new LinkedHashMap<>();
     public static final DeferredHolder<MenuType<?>, MenuType<WandMenu>> WAND_MENU = MENUS.register("wand_cores",
@@ -72,9 +73,33 @@ public final class ModContent {
                 .icon(WRITING_TABLE_ITEM::toStack)
                 .displayItems((parameters, output) -> {
                     output.accept(WRITING_TABLE_ITEM.get());
+                    output.accept(cn.nulladev.modularmagic.research.ResearchContent.LENS.get());
+                    output.accept(cn.nulladev.modularmagic.research.PlaceholderContent.ITEM.get());
+                    for(var family:cn.nulladev.modularmagic.research.MimicFamily.values())output.accept(family.template());
+                    for(String id:java.util.List.of("water","lava","cobblestone","stone","basalt","snow","ice","fire","tnt","powder_snow","obsidian","amethyst_cluster","pointed_dripstone","sculk"))output.accept(cn.nulladev.modularmagic.research.PlaceholderItem.create(net.minecraft.resources.ResourceLocation.withDefaultNamespace(id)));
+                    output.accept(cn.nulladev.modularmagic.research.ResearchContent.TABLE_ITEM.get());
+                    output.accept(cn.nulladev.modularmagic.research.ResearchContent.CARVER_ITEM.get());
+                    output.accept(cn.nulladev.modularmagic.research.ResearchContent.BLANK.get());
+                    output.accept(cn.nulladev.modularmagic.crafting.ArtificeContent.BLANK_CORE.get());
+                    output.accept(cn.nulladev.modularmagic.crafting.ArtificeContent.GLASS_ITEM.get());
+                    output.accept(cn.nulladev.modularmagic.crafting.ArtificeContent.GEM.get());
+                    output.accept(cn.nulladev.modularmagic.crafting.ArtificeContent.MATTER.get());
+                    cn.nulladev.modularmagic.crafting.ArtificeContent.PLATES.values().forEach(i->output.accept(i.get()));
+                    cn.nulladev.modularmagic.crafting.ArtificeContent.GEAR.values().forEach(i->output.accept(i.get()));
+                    output.accept(cn.nulladev.modularmagic.research.ResearchContent.INK.get());
+                    cn.nulladev.modularmagic.research.ResearchCatalog.all().forEach(t->output.accept(cn.nulladev.modularmagic.research.ResearchNoteItem.create(t.id(),true)));
+                    output.accept(cn.nulladev.modularmagic.utility.UtilityContent.FUEL.get());
+                    output.accept(cn.nulladev.modularmagic.utility.UtilityContent.FERTILIZER.get());
+                    output.accept(cn.nulladev.modularmagic.utility.UtilityContent.FOOD.get());
+                    output.accept(cn.nulladev.modularmagic.utility.UtilityContent.CANNON.get());
+                    output.accept(cn.nulladev.modularmagic.utility.UtilityContent.CRAFTER.get());
                     output.accept(CORE_WAND.get());
+                    output.accept(ADVANCED_WAND.get());
                     output.accept(CREATIVE_WAND.get());
-                    cn.nulladev.modularmagic.energy.EnergyContent.ITEMS.values().forEach(item -> output.accept(item.get()));
+                    cn.nulladev.modularmagic.energy.EnergyContent.ITEMS.forEach((kind,item) -> {if(kind!=cn.nulladev.modularmagic.energy.EnergyContent.Kind.GENERATOR)output.accept(item.get());});
+                    output.accept(cn.nulladev.modularmagic.generator.GeneratorItems.HOUSING.get());
+
+                    cn.nulladev.modularmagic.generator.GeneratorCatalog.RULES.keySet().forEach(id->output.accept(cn.nulladev.modularmagic.generator.GeneratorItem.create(id)));
                     output.accept(cn.nulladev.modularmagic.energy.EnergyContent.LINK.get());
                     output.accept(cn.nulladev.modularmagic.energy.EnergyContent.RECEIVER.get());
                     output.accept(cn.nulladev.modularmagic.energy.EnergyContent.CRYSTAL.get());

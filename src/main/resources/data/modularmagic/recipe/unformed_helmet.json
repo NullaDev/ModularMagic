@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "MMM",
+    "M M"
+  ],
+  "key": {
+    "M": {
+      "item": "modularmagic:unformed_matter"
+    }
+  },
+  "result": {
+    "id": "modularmagic:unformed_helmet",
+    "count": 1
+  }
+}

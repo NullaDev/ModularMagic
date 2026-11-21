@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "action/block_in_range",
+  "knowledge": "action/block_in_range",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_action_block_in_range",
+    "count": 1
+  }
+}

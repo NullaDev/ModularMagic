@@ -1,0 +1,23 @@
+{
+  "name": "Blank Aether Mimic",
+  "icon": "modularmagic:item_placeholder",
+  "category": "modularmagic:mimics",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder",
+      "link_recipe": true,
+      "text": "A blank mimic can hold the pattern of matter taking shape. $(l)Right-click to open it.$() Place a reference at the center, then the required clues around it. The reference remains; the surrounding materials are used to shape the mimic.$(br2)The following entries describe each pattern. JEI shows their combinations."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Matter from Aether",
+      "text": "Keep a shaped mimic in your pack. Spells use real materials first; when they are missing, the matching mimic creates them for an extra aether cost.$(br2)You can also use the mimic directly to place its material. $(l)Aether is spent, but the mimic remains.$()"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:item_placeholder"
+    }
+  ]
+}

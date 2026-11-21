@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "action/dust_particle",
+  "knowledge": "action/dust_particle",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_action_dust_particle",
+    "count": 1
+  }
+}

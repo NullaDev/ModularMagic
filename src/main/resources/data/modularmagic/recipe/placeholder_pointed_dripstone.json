@@ -1,0 +1,24 @@
+{
+  "type": "modularmagic:placeholder",
+  "target": "minecraft:pointed_dripstone",
+  "ingredients": [
+    {
+      "item": "minecraft:dripstone_block"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "minecraft:pointed_dripstone"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    },
+    {
+      "item": "modularmagic:rune_plate_k06"
+    },
+    {
+      "item": "modularmagic:rune_plate_k10"
+    }
+  ]
+}

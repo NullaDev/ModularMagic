@@ -1,36 +1,31 @@
 {
-    "name":  "法术节点：击退",
-    "icon":  "modularmagic:gem_effect_knockback",
-    "category":  "modularmagic:nodes",
-    "sortnum":  767,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_effect_knockback",
-                      "link_recipe":  true,
-                      "text":  "对选中的目标施加击退，强度、水平角度与俯仰角度共同决定击退方向。"
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "默认魔力消耗",
-                      "type":  "patchouli:text",
-                      "text":  "每目标 500b+500b²。b 是击退强度，不是目标最终移动的距离。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "结构复杂度",
-                      "type":  "patchouli:text",
-                      "text":  "0.1。伤害、等级和命中人数都不改变这个数值。$(br2)复杂度汇总后，按 5+10C+0.625C² 换算整次专注消耗。详见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "title":  "使用方法",
-                      "type":  "patchouli:text",
-                      "text":  "这里不需要再接其他节点。装入后，左键选中它，就能在右侧调整设置。想换成别的节点时，在画布上右键取回即可。"
-                  },
-                  {
-                      "title":  "可编辑参数",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)击退强度 / 必填$(br)$(o)knockback$()$(br2)$(li)水平角度 / 可留空$(br)$(o)angle$()$(br2)$(li)俯仰角度 / 可留空$(br)$(o)tilt$()"
-                  }
-              ]
+  "name": "法术节点：击退",
+  "icon": "modularmagic:gem_effect_knockback",
+  "category": "modularmagic:nodes",
+  "sortnum": 767,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_effect_knockback",
+      "link_recipe": true,
+      "text": "对选中的目标施加击退，强度、水平角度与俯仰角度共同决定击退方向。"
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "默认以太消耗",
+      "type": "patchouli:text",
+      "text": "每目标 500b+500b²。b 是击退强度，不是目标最终移动的距离。"
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "结构复杂度",
+      "type": "patchouli:text",
+      "text": "0.1。伤害、等级和命中人数都不改变这个数值。"
+    },
+    {
+      "title": "可编辑参数",
+      "type": "patchouli:text",
+      "text": "$(li)击退强度 / 必填$(br2)$(li)水平角度 / 可留空$(br2)$(li)俯仰角度 / 可留空"
+    }
+  ]
 }

@@ -1,0 +1,23 @@
+{
+  "name": "自动合成器",
+  "icon": "modularmagic:auto_crafter",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:auto_crafter",
+      "link_recipe": true,
+      "title": "把配方留在掌心",
+      "text": "合成器本就知道如何把物品排列成器物。留下配方的影像，再接上以太，它便能在背包里继续工作。$(br2)$(l)右键打开$()，用物品点击九宫格设置参考，右键可清除。参考物不会消耗。选择开启，再收起界面，它就会持续尝试合成。修改配方后，需要重新开启。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "实物与拟材",
+      "text": "它会先取用背包中的实物，缺料时再借$(l)对应的以太拟材$()补齐；生成材料会额外消耗以太。流体拟材还需要空桶，合成后的空桶照常留下。$(br2)产物与余料都会放回背包。材料、以太不足，或背包没有位置时，它便会停下，不会扣走半份材料。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:auto_crafter"
+    }
+  ]
+}

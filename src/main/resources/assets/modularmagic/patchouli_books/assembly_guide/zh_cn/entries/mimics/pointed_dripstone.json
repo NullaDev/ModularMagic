@@ -1,0 +1,19 @@
+{
+  "name": "以太拟材：滴水石锥",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:pointed_dripstone\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 17,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:pointed_dripstone\"}]",
+      "link_recipe": false,
+      "text": "水留在滴水石块上方，下方的石锥却在等待中一点点伸长。拟材记住这段生长，而不只是从原有石锥上折下一截。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "为拟材定型",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)滴水石块$(br)水桶$(br)滴水石锥$(br)符文板：物质显现$(br)符文板：先后与等待$(br)符文板：数与不确定性"
+    }
+  ]
+}

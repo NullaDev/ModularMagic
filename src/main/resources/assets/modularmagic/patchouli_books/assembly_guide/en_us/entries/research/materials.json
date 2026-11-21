@@ -1,0 +1,25 @@
+{
+  "name": "Shapes Left by Aether",
+  "icon": "modularmagic:aether_gem",
+  "category": "modularmagic:energy",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Light in Glass",
+      "text": "Stray aether settles into glass, lending it resilience and a faint glow. The glass survives being broken.$(br2)It can enclose more aether, but cannot hold it through a move: $(l)breaking a tank releases what was inside.$()"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:aether_glass"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "An Ordered Lattice",
+      "text": "Diamond and emerald lattices hold aether more steadily than glass. Their small size limits their capacity, but makes them suited to portable containers and the hearts of wands and emitters."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:aether_gem"
+    }
+  ]
+}

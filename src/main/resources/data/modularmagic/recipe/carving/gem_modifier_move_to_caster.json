@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "modifier/move_to_caster",
+  "knowledge": "modifier/move_to_caster",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_modifier_move_to_caster",
+    "count": 1
+  }
+}

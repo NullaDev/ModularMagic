@@ -1,46 +1,46 @@
 {
-    "name":  "Spell Core: Continuous",
-    "icon":  "modularmagic:root_continuous",
-    "category":  "modularmagic:nodes",
-    "sortnum":  91,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:root_continuous",
-                      "link_recipe":  true,
-                      "text":  "The root of a continuous spell. An Beginner Wand executes it while held in use; account for repeated execution when designing effects."
-                  },
-                  {
-                      "title":  "Using this core",
-                      "type":  "patchouli:text",
-                      "text":  "Insert this core directly into the writing table. The canvas root cannot be removed by right-clicking; use Take core to extract the whole assembly.$(br2)With no child nodes, it remains this typed spell core. A nonempty incomplete assembly becomes an Unformed Spell Core. Parameters are retained even when empty."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "500 to start, plus the spell. A purely decorative spell starts at 0.01.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Default Focus Cost",
-                      "type":  "patchouli:text",
-                      "text":  "Each cast costs 5 + 10*C + 0.625*C^2 focus. C is total structural complexity. The fixed 5 is never discounted. Each channeling pulse is a separate cast.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)trigger type$(br)Origin / Insert one node$(br2)$(li)action$(br)Action / Insert one node"
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)condition$(br)Predicate / Optional; one node at most"
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)icon / Required$(br)$(o)icon$()$(br2)$(li)order / Required$(br)$(o)order$()"
-                  }
-              ]
+  "name": "Spell Core: Continuous",
+  "icon": "modularmagic:root_continuous",
+  "category": "modularmagic:nodes",
+  "sortnum": 91,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:root_continuous",
+      "link_recipe": true,
+      "text": "The root of a continuous spell. An Beginner Wand executes it while held in use; account for repeated execution when designing effects."
+    },
+    {
+      "title": "Using this core",
+      "type": "patchouli:text",
+      "text": "Insert this core directly into the writing table. The canvas root cannot be removed by right-clicking; use Take core to extract the whole assembly.$(br2)With no child nodes, it remains this typed spell core. A nonempty incomplete assembly becomes an Unformed Spell Core. Parameters are retained even when empty."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "500 to start, plus the spell. A purely decorative spell starts at 0.01."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Default Focus Cost",
+      "type": "patchouli:text",
+      "text": "Each cast costs 5 + 10*C + 0.625*C^2 focus. C is total structural complexity. The fixed 5 is never discounted. Each channeling pulse is a separate cast."
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)trigger type$(br)Origin / Insert one node$(br2)$(li)action$(br)Action / Insert one node"
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)condition$(br)Predicate / Optional; one node at most"
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)icon / Required$(br2)$(li)order / Required"
+    }
+  ]
 }

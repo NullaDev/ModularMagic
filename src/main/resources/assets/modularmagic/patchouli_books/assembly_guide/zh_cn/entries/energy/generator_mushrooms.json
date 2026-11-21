@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：蘑菇",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"mushrooms\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "蘑菇",
+      "text": "原来的蘑菇并未减少，附近却忽然多出了一整朵。没有从小芽慢慢长大的过程，新的纹样已经完整地立在地上。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "器物每轮收取附近$(l)一朵红蘑菇与一朵棕蘑菇$()，两种缺一便会等待。给菌菇留出重新蔓延的空间。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_mushrooms"
+    }
+  ],
+  "sortnum": 19
+}

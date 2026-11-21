@@ -1,19 +1,14 @@
 {
-    "name":  "Formed Spell Core",
-    "icon":  "modularmagic:formed_spell_core",
-    "category":  "modularmagic:equipment",
-    "sortnum":  2,
-    "pages":  [
-                  {
-                      "link_recipe":  true,
-                      "item":  "modularmagic:formed_spell_core",
-                      "type":  "patchouli:spotlight",
-                      "text":  "A complete arrangement of gems and values. The core remembers each node and its settings; load it into a Beginner Wand to cast."
-                  },
-                  {
-                      "title":  "Editing and examples",
-                      "type":  "patchouli:text",
-                      "text":  "Return it to a table to edit. Changes may make it unformed again without losing its structure.$(br2)The Built-in Spells creative tab supplies 28 editable L2Magic examples for casting or studying."
-                  }
-              ]
+  "name": "Formed Spell Core",
+  "icon": "modularmagic:formed_spell_core",
+  "category": "modularmagic:equipment",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:formed_spell_core",
+      "link_recipe": true,
+      "text": "The pattern is complete, and the gems remember their places. Put it in a wand and aether can set this rule in motion.$(br2)Return it to the writing table whenever you wish to change it."
+    }
+  ]
 }

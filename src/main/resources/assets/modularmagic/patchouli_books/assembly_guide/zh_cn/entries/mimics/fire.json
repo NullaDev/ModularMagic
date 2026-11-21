@@ -1,0 +1,19 @@
+{
+  "name": "以太拟材：火焰",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:fire\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:fire\"}]",
+      "link_recipe": false,
+      "text": "岩浆没有触到木头，火焰却可能出现在附近。把木材、岩浆与那次偶然一并记下，便能重现一簇火。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "为拟材定型",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)岩浆桶$(br)橡木木板$(br)符文板：物质显现$(br)符文板：燃烧与侵袭$(br)符文板：数与不确定性"
+    }
+  ]
+}

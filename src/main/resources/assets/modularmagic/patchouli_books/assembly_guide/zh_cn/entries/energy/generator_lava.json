@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：岩浆",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"lava\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "岩浆",
+      "text": "滴水石锥下的锅积满了，岩浆源却并未减少。一滴又一滴，世界沿着同一道纹样填满了新的空处。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "器物收取附近的$(l)岩浆源或满锅岩浆$()。炼药锅会留下，重新变为空锅，等待下一次积满。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_lava"
+    }
+  ],
+  "sortnum": 4
+}

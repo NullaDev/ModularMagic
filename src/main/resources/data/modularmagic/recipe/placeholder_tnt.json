@@ -1,0 +1,30 @@
+{
+  "type": "modularmagic:placeholder",
+  "target": "minecraft:tnt",
+  "ingredients": [
+    {
+      "item": "minecraft:tnt"
+    },
+    {
+      "item": "minecraft:dead_tube_coral_fan"
+    },
+    {
+      "item": "minecraft:detector_rail"
+    },
+    {
+      "item": "minecraft:slime_block"
+    },
+    {
+      "item": "minecraft:sticky_piston"
+    },
+    {
+      "item": "modularmagic:rune_plate_k22"
+    },
+    {
+      "item": "modularmagic:rune_plate_k18"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    }
+  ]
+}

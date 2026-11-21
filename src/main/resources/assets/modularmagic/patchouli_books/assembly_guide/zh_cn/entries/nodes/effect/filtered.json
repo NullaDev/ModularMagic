@@ -1,36 +1,36 @@
 {
-    "name":  "法术节点：按实体分流",
-    "icon":  "modularmagic:gem_effect_filtered",
-    "category":  "modularmagic:nodes",
-    "sortnum":  774,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_effect_filtered",
-                      "link_recipe":  true,
-                      "text":  "按实体过滤条件分成两组，分别依次执行成立或不成立的处理列表。"
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "默认魔力消耗",
-                      "type":  "patchouli:text",
-                      "text":  "按每个目标实际进入的分组计算效果费。预留时每人取较贵一支。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "结构复杂度",
-                      "type":  "patchouli:text",
-                      "text":  "0.1 + P + max(A,B) + 0.25×min(A,B)，与条件分支相同。$(br2)复杂度汇总后，按 5+10C+0.625C² 换算整次专注消耗。详见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "title":  "继续装配",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)实体过滤$(br)实体过滤 / 需要放入 1 个$(br2)$(li)通过过滤时$(br)实体处理 / 可放多个，最多 64 个"
-                  },
-                  {
-                      "title":  "继续装配",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)未通过过滤时$(br)实体处理 / 可放多个，最多 64 个"
-                  }
-              ]
+  "name": "法术节点：按实体分流",
+  "icon": "modularmagic:gem_effect_filtered",
+  "category": "modularmagic:nodes",
+  "sortnum": 774,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_effect_filtered",
+      "link_recipe": true,
+      "text": "按实体过滤条件分成两组，分别依次执行成立或不成立的处理列表。"
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "默认以太消耗",
+      "type": "patchouli:text",
+      "text": "按每个目标实际进入的分组计算效果费。预留时每人取较贵一支。"
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "结构复杂度",
+      "type": "patchouli:text",
+      "text": "0.1 + P + max(A,B) + 0.25×min(A,B)，与条件分支相同。"
+    },
+    {
+      "title": "继续装配",
+      "type": "patchouli:text",
+      "text": "$(li)实体过滤$(br)实体过滤 / 需要放入 1 个$(br2)$(li)通过过滤时$(br)实体处理 / 可放多个，最多 64 个"
+    },
+    {
+      "title": "继续装配",
+      "type": "patchouli:text",
+      "text": "$(li)未通过过滤时$(br)实体处理 / 可放多个，最多 64 个"
+    }
+  ]
 }

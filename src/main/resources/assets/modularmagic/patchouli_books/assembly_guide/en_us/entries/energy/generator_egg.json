@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Eggs",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"egg\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Eggs",
+      "text": "Even without another meal, an adult chicken leaves a whole egg after a while. That recurring appearance has a pattern of its own."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "The device collects nearby $(l)dropped eggs$(). Deliver the coop’s eggs to it; the chickens can stay in their coop."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_egg"
+    }
+  ],
+  "sortnum": 21
+}

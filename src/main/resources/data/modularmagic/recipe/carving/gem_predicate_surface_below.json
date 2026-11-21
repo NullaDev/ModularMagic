@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "predicate/surface_below",
+  "knowledge": "predicate/surface_below",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_predicate_surface_below",
+    "count": 1
+  }
+}

@@ -2,23 +2,13 @@
   "name": "Expanded Aether Reservoir",
   "icon": "modularmagic:expanded_aether_tank",
   "category": "modularmagic:energy",
-  "sortnum": 4,
+  "sortnum": 3,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "modularmagic:expanded_aether_tank",
       "link_recipe": true,
-      "text": "A gold frame confines aether in the pool. The surface reveals its reserves. This tier commonly holds 5M, taking in and sending out up to 10K/s each."
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Immerse a container",
-      "text": "Use a mana container to immerse it, then sneak-use with an empty hand to retrieve it after charging. The jar is visible in the liquid.$(br2)Both fragment types can be returned here. Only their stored aether returns; crystallization spent its processing share. To extract crafting material, supply a condenser."
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Drain before moving",
-      "text": "A reservoir supplies adjacent emitters, root resonators or anchors. Merely touching another reservoir does not balance their reserves.$(br2)Breaking the frame releases its aether, so transfer the reserves first. An inserted charging jar drops separately; comparators can read the surface level."
+      "text": "Gold withstands a greater reserve. The surface remains still.$(br2)Use it like a $(l:energy/aether_tank)Basic Reservoir$(/l), and drain it before moving."
     },
     {
       "type": "patchouli:crafting",

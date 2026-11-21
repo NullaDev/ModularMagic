@@ -2,23 +2,13 @@
   "name": "Aether Condenser",
   "icon": "modularmagic:aether_condenser",
   "category": "modularmagic:energy",
-  "sortnum": 7,
+  "sortnum": 6,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "modularmagic:aether_condenser",
       "link_recipe": true,
-      "text": "The disruptor taught me how to catch the glimmer. I placed the same Ender Pearl interference structure in a chamber: it now confines collected aether instead of waiting for water to form."
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Extract beside the crafting table",
-      "text": "Place it beside a reservoir, or feed it with pulses or a resonance branch. Empty-hand use extracts one fragment; sneak-use extracts up to sixteen, normally costing 200 each.$(br2)The countdown begins on extraction. Build reserves and prepare materials first, rather than timing every recipe around slow collection."
-    },
-    {
-      "type": "patchouli:text",
-      "title": "A fleeting form",
-      "text": "An Ender Pearl gathers aether only briefly. Extracted fragments still fade. This chamber neither charges jars nor creates its own aether.$(br2)To keep that light for longer, you need a true nucleus: a Nether Star."
+      "text": "The disruptor taught me how to catch fragments. I enclosed the same pearl array in a chamber; now I need not wait for water.$(br2)Supply it from a reservoir and $(l)use an empty hand to extract a fragment$(). Keep it beside your crafting table."
     },
     {
       "type": "patchouli:crafting",

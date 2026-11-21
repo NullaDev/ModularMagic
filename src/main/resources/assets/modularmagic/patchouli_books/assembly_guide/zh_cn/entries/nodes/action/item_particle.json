@@ -1,41 +1,36 @@
 {
-    "name":  "法术节点：物品碎屑",
-    "icon":  "modularmagic:gem_action_item_particle",
-    "category":  "modularmagic:nodes",
-    "sortnum":  231,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_action_item_particle",
-                      "link_recipe":  true,
-                      "text":  "产生使用指定物品纹理的碎屑粒子，可调整速度、大小与寿命。"
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "默认魔力消耗",
-                      "type":  "patchouli:text",
-                      "text":  "每个粒子 0.2。纯装饰粒子的运动和外观不另收费。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "结构复杂度",
-                      "type":  "patchouli:text",
-                      "text":  "0。纯粒子展开的控制结构按通常复杂度的 2% 计算。$(br2)复杂度汇总后，按 5+10C+0.625C² 换算整次专注消耗。详见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "title":  "使用方法",
-                      "type":  "patchouli:text",
-                      "text":  "这里不需要再接其他节点。装入后，左键选中它，就能在右侧调整设置。想换成别的节点时，在画布上右键取回即可。"
-                  },
-                  {
-                      "title":  "可编辑参数",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)物品 ID / 必填$(br)$(o)item$()$(br2)$(li)速度 / 必填$(br)$(o)speed$()$(br2)$(li)缩放 / 必填$(br)$(o)scale$()"
-                  },
-                  {
-                      "title":  "可编辑参数",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)存在刻数 / 必填$(br)$(o)life$()$(br2)$(li)破碎效果 / 必填$(br)$(o)breaking$()"
-                  }
-              ]
+  "name": "法术节点：物品碎屑",
+  "icon": "modularmagic:gem_action_item_particle",
+  "category": "modularmagic:nodes",
+  "sortnum": 231,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_action_item_particle",
+      "link_recipe": true,
+      "text": "产生使用指定物品纹理的碎屑粒子，可调整速度、大小与寿命。"
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "默认以太消耗",
+      "type": "patchouli:text",
+      "text": "每个粒子 0.2。纯装饰粒子的运动和外观不另收费。"
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "结构复杂度",
+      "type": "patchouli:text",
+      "text": "0。纯粒子展开的控制结构按通常复杂度的 2% 计算。"
+    },
+    {
+      "title": "可编辑参数",
+      "type": "patchouli:text",
+      "text": "$(li)物品 ID / 必填$(br2)$(li)速度 / 必填$(br2)$(li)缩放 / 必填"
+    },
+    {
+      "title": "可编辑参数",
+      "type": "patchouli:text",
+      "text": "$(li)存在刻数 / 必填$(br2)$(li)破碎效果 / 必填"
+    }
+  ]
 }

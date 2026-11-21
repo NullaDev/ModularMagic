@@ -1,0 +1,18 @@
+{
+  "name": "便携式 TNT 炮",
+  "icon": "modularmagic:portable_tnt_cannon",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:portable_tnt_cannon",
+      "link_recipe": true,
+      "title": "把爆炸留给旅途",
+      "text": "水幕兜住爆炸，将冲击收束成向前的一推。便携的炮身里，也能留下同样的纹样。$(br2)朝想去的方向看，再右键点火。视线越向上，升得越高。$(l)这次爆炸不会伤害自己，落地仍会受伤。$()先看好落点，再借下一次冲击赶路。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:portable_tnt_cannon"
+    }
+  ]
+}

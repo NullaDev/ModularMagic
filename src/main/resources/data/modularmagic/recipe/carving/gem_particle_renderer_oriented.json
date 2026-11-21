@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "particle_renderer/oriented",
+  "knowledge": "particle_renderer/oriented",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_particle_renderer_oriented",
+    "count": 1
+  }
+}

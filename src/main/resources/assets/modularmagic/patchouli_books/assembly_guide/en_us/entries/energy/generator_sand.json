@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Falling Sand",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"sand\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Falling Sand",
+      "text": "A falling sand block enters an End portal, yet traces can remain on both sides. For an instant, falling and passage unfold the same material twice."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "Pass $(l)falling sand, red sand or gravel$() near the device. It removes them before they land, reclaiming aether without leaving an item."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_sand"
+    }
+  ],
+  "sortnum": 13
+}

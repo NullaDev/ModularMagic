@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "tag": "modularmagic:aether_fragments"
+    }
+  ],
+  "result": {
+    "id": "modularmagic:blank_spell_node",
+    "count": 4
+  }
+}

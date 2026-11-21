@@ -1,0 +1,19 @@
+{
+  "name": "以太拟材：粉雪",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:powder_snow\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 14,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:powder_snow\"}]",
+      "link_recipe": false,
+      "text": "雪落进露天的炼药锅，锅里便一点点积满粉雪。拟材记下了向上的锅口、落雪的天空与漫长的等待。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "为拟材定型",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)炼药锅$(br)桶$(br)雪球$(br)符文板：物质显现$(br)符文板：先后与等待$(br)符文板：数与不确定性"
+    }
+  ]
+}

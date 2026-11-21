@@ -1,0 +1,24 @@
+{
+  "name": "Aether Mimic: Gravity Blocks",
+  "icon": "modularmagic:gravity_placeholder",
+  "category": "modularmagic:mimics",
+  "sortnum": 13,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gravity_placeholder",
+      "link_recipe": true,
+      "text": "Sand, gravel, anvils and concrete powder share a falling rule that can leave a trace on both sides of an End portal. They share one gravity mimic."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Shaping the Pattern",
+      "text": "Use a sample at the center of a blank mimic, with these materials around it:$(br2)Eye of Ender$(br)Sticky Piston$(br)Slime Block$(br)Rune Plate: Spatial Transfer$(br)Rune Plate: Moving Blocks$(br)Rune Plate: Material Manifestation"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Choose a Material",
+      "text": "Use any material in this family as the reference when shaping the common mimic.$(br2)Craft that mimic together with a matching block, in either order, to select what it generates.$(br2)Craft the bound mimic alone to recover both the common mimic and the original material."
+    }
+  ]
+}

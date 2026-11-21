@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：火焰",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"fire\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "火焰",
+      "text": "岩浆没有触到木头，火焰却可能出现在附近的空处。透过透镜，那一瞬间的燃烧有着清晰的纹样。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "让器物附近不断出现$(l)普通火焰$()。它会收走火焰并留下下方的方块，让你准备的引火装置继续工作。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_fire"
+    }
+  ],
+  "sortnum": 8
+}

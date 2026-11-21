@@ -1,0 +1,19 @@
+{
+  "name": "以太拟材：水",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:water\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:water\"}]",
+      "link_recipe": false,
+      "text": "缺口刚出现，两侧的水便同时涌来，补出一整格新的水源。拟材记下的，是这份永不减少的补充。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "为拟材定型",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)水桶 ×2$(br)符文板：物质显现$(br)符文板：重复与维持"
+    }
+  ]
+}

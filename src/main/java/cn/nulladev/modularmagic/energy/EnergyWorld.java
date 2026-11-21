@@ -118,6 +118,10 @@ public final class EnergyWorld {
             player.getInventory().setChanged();
         }
     }
+    @SubscribeEvent public static void tntTick(EntityTickEvent.Pre event) {
+        if(!(event.getEntity() instanceof net.minecraft.world.entity.item.PrimedTnt tnt)||!(tnt.level() instanceof ServerLevel level))return;
+        for(var be:devices(level))if(be.kind()==EnergyContent.Kind.GENERATOR&&be.generator.captureTnt(tnt)){event.setCanceled(true);return;}
+    }
     @SubscribeEvent public static void itemTick(EntityTickEvent.Post event) {
         if(event.getEntity() instanceof ItemEntity item&&!item.level().isClientSide&&AetherShardItem.expired(item.getItem(),item.level()))item.discard();
     }

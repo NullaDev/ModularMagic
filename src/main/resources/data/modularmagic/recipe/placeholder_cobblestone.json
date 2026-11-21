@@ -1,0 +1,15 @@
+{
+  "type": "modularmagic:placeholder",
+  "target": "minecraft:cobblestone",
+  "ingredients": [
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "minecraft:lava_bucket"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    }
+  ]
+}

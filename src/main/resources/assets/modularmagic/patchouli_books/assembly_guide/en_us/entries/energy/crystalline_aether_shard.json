@@ -2,18 +2,13 @@
   "name": "Crystalline Aether Fragment",
   "icon": "modularmagic:crystalline_aether_shard",
   "category": "modularmagic:energy",
-  "sortnum": 9,
+  "sortnum": 8,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "modularmagic:crystalline_aether_shard",
       "link_recipe": true,
-      "text": "A glimmer given lasting form. It survives away from its nucleus, can be stored and transported, and replaces fleeting fragments in basic recipes. Its tooltip records the actual stored amount."
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Let it flow again",
-      "text": "Use it on a finite reservoir with room to release its stored aether. Processing aether was already spent and cannot return.$(br2)Crystalline material also makes a personal anchor, giving aether a path to follow you beyond the amethyst branches."
+      "text": "At last, no race against a countdown.$(br2)Store it like an ordinary material, or return its confined aether to a reservoir."
     }
   ]
 }

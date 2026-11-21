@@ -1,36 +1,31 @@
 {
-    "name":  "Spell Node: Set Delta",
-    "icon":  "modularmagic:gem_effect_set_delta",
-    "category":  "modularmagic:nodes",
-    "sortnum":  771,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_effect_set_delta",
-                      "link_recipe":  true,
-                      "text":  "Set selected entities\u0027 velocity vectors directly rather than adding a push to their existing velocity."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "500*v+500*v*v per target; v is the requested velocity magnitude.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.1, regardless of damage, effect level or number of targets.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "Using This Node",
-                      "type":  "patchouli:text",
-                      "text":  "You do not need to attach any more nodes here. Insert it, then select it to adjust its settings on the right. Right-click it on the canvas to take it back."
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)x / Required$(br)$(o)x$()$(br2)$(li)y / Required$(br)$(o)y$()$(br2)$(li)z / Required$(br)$(o)z$()"
-                  }
-              ]
+  "name": "Spell Node: Set Delta",
+  "icon": "modularmagic:gem_effect_set_delta",
+  "category": "modularmagic:nodes",
+  "sortnum": 771,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_effect_set_delta",
+      "link_recipe": true,
+      "text": "Set selected entities' velocity vectors directly rather than adding a push to their existing velocity."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "500*v+500*v*v per target; v is the requested velocity magnitude."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.1, regardless of damage, effect level or number of targets."
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)x / Required$(br2)$(li)y / Required$(br2)$(li)z / Required"
+    }
+  ]
 }

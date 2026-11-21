@@ -80,6 +80,7 @@ public final class WandGameTests {
     @GameTest(template = "empty")
     public static void wandExecutesSpellAndCostHookCanDenyIt(GameTestHelper helper) {
         var player = player(helper); var level = helper.getLevel();
+        player.getInventory().setItem(11,new ItemStack(Items.STONE));
         player.getInventory().setItem(12,ModContent.MANA_CONTAINERS.get("mana_container_ultimate").get().filledStack());
         var doc = SpellDocument.create("root/instant");
         doc.insert(doc.root.id, "trigger_type", 0, "trigger/self_pos");

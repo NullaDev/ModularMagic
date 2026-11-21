@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "particle_renderer/color",
+  "knowledge": "particle_renderer/color",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_particle_renderer_color",
+    "count": 1
+  }
+}

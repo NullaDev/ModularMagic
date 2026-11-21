@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：作物",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"crops\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "作物",
+      "text": "我盯着麦苗看了很久。它并没有一点点拔高，而是在某一刻，整株突然换成了更茂盛的样子。成长像是沿着几级看不见的台阶跳跃，直到谷穗成熟。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "器物沿着这些变化倒着走，将附近$(l)成熟的作物退回幼苗$()，收回其中一部分以太。植株仍在，但这次不会留下收成。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_crops"
+    }
+  ],
+  "sortnum": 9
+}

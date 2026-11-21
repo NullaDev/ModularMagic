@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：落沙",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"sand\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "落沙",
+      "text": "一块沙落进末地传送门，两边却都可能留下它的痕迹。坠落与穿越交错的那一瞬间，物质的纹样竟被展开了两次。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "让$(l)仍在坠落的沙、红沙或沙砾$()经过器物附近。器物会在它们落地前将其消去，收回以太，不留下实物。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_sand"
+    }
+  ],
+  "sortnum": 13
+}

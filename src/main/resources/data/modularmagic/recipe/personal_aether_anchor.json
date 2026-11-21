@@ -2,25 +2,25 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "DSD",
-    "AEA",
-    "CCC"
+    " C ",
+    "GEG",
+    "NPN"
   ],
   "key": {
-    "D": {
-      "item": "minecraft:diamond"
+    "G": {
+      "item": "modularmagic:aether_gem"
     },
-    "S": {
+    "C": {
       "item": "modularmagic:crystalline_aether_shard"
-    },
-    "A": {
-      "item": "minecraft:amethyst_shard"
     },
     "E": {
       "item": "minecraft:ender_chest"
     },
-    "C": {
-      "item": "minecraft:copper_ingot"
+    "N": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "P": {
+      "item": "modularmagic:rune_plate_k26"
     }
   },
   "result": {

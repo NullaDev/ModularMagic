@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Honey",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"honey\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Honey",
+      "text": "Honey changes the hive’s pattern one level at a time. Each change fills a little more of what was empty."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "The device removes honey from nearby hives and nests one level at a time. Bees and their homes remain; an empty hive leaves the device waiting."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_honey"
+    }
+  ],
+  "sortnum": 12
+}

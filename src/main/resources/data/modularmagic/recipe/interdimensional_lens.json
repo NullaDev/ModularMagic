@@ -1,28 +1,23 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "pattern": [
-    "PDP",
-    "CEC",
-    "PSP"
-  ],
-  "key": {
-    "P": {
-      "item": "minecraft:popped_chorus_fruit"
-    },
-    "D": {
-      "item": "minecraft:dragon_breath"
-    },
-    "C": {
-      "item": "modularmagic:crystalline_aether_shard"
-    },
-    "E": {
+  "ingredients": [
+    {
       "item": "minecraft:ender_eye"
     },
-    "S": {
-      "item": "minecraft:netherite_scrap"
+    {
+      "item": "modularmagic:aether_gem"
+    },
+    {
+      "item": "minecraft:dragon_breath"
+    },
+    {
+      "item": "minecraft:popped_chorus_fruit"
+    },
+    {
+      "item": "modularmagic:rune_plate_k29"
     }
-  },
+  ],
   "result": {
     "id": "modularmagic:interdimensional_lens",
     "count": 1

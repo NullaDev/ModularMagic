@@ -1,0 +1,28 @@
+{
+  "name": "What a Spell Asks",
+  "icon": "modularmagic:core_wand",
+  "category": "modularmagic:editor",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Hold a Pattern",
+      "text": "Making a gem sing is easy. Holding dozens of changes at once is tiring.$(br2)$(l)Focus is yours, and returns with rest.$() Intricate arrangements ask more of it. An overdrawn cast can finish, but you must $(l)recover completely$() before casting again."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Current Within",
+      "text": "A pattern cannot stir on its own. It draws aether from your carried jars to place matter, move bodies or strike.$(br2)$(l)An empty jar will not fill itself.$() Check your reserves before leaving, or follow a resonance branch back to the workshop."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Spell That Misses",
+      "text": "A missed target cannot return all the force already released.$(br2)$(l)A miss refunds only part of the unused aether, never focus.$() The core records a basic cast. Leave more room for additional targets."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Working It Out",
+      "text": "The figures from repeated experiments are kept in $(l:resource_costs)Working Notes$(/l). Turn there when you want to compare two arrangements precisely."
+    }
+  ]
+}

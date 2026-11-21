@@ -1,0 +1,46 @@
+{
+  "name": "未元物质与装备",
+  "icon": "modularmagic:unformed_matter",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:unformed_matter",
+      "link_recipe": true,
+      "text": "我将木材、岩石、皮革、金属与晶石融进以太，尽力模仿它们被世界生成之前的模样：还未成为任何一种材料，因此$(l)仍有一切可能$()。$(br2)这就是未元物质。即使已经制成器物，它也记得如何重新成形，能借以太不断修补自身。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让裂痕合拢",
+      "text": "$(l)随身带着有以太的容器$()，未元工具与护甲上的裂痕便会慢慢合拢。修补会消耗容器里的以太；以太用尽，修补也会暂停。$(br2)穿齐一套未元护甲，流经身体的以太会更顺畅，施法时便能省下一小部分。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:unformed_matter"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:unformed_sword",
+      "recipe2": "modularmagic:unformed_pickaxe"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:unformed_axe",
+      "recipe2": "modularmagic:unformed_shovel"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:unformed_hoe",
+      "recipe2": "modularmagic:unformed_helmet"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:unformed_chestplate",
+      "recipe2": "modularmagic:unformed_leggings"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:unformed_boots"
+    }
+  ]
+}

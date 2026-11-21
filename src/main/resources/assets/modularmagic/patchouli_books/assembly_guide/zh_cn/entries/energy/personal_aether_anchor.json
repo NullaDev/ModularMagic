@@ -2,23 +2,13 @@
   "name": "个人供能锚",
   "icon": "modularmagic:personal_aether_anchor",
   "category": "modularmagic:energy",
-  "sortnum": 17,
+  "sortnum": 15,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "modularmagic:personal_aether_anchor",
       "link_recipe": true,
-      "text": "末影箱总能认出自己的主人，但流动的以太留不住这份联系。晶化碎片补上了最后一道约束：把你的气息固定在锚中，微光就能循着它找到你。"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "晶化之后的归路",
-      "text": "制作需要晶化以太碎片，因此先取得下界之星并建好结晶室。将锚贴在储槽旁，用随身接收器右键绑定。$(br2)它只为自己的主人随身补给，不代替工坊的共鸣树。同一世界常见送达上限为 1K/秒，另花 10% 维持联系。"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "让家中的火光长明",
-      "text": "远行不等于让基地沉睡。锚和以太来源必须仍在活动，才能继续送来补给；可以用世界锚照看这一小片土地。$(br2)定界之眼能把联系延伸到其他世界，常见的额外消耗为 25%。末影箱原来的物品仍在原处，不会被供能锚取用。"
+      "text": "末影箱能认出同一个我。若把这份辨认留给以太，也许走远后仍有一条路相连。$(br2)把供能锚接上基地储槽，再用$(l)随身接收器对它绑定$()。从此，同一片天地里的距离不再要靠一台台共鸣器跨过。"
     },
     {
       "type": "patchouli:crafting",

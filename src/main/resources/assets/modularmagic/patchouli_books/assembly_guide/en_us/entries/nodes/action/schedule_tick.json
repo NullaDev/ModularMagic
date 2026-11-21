@@ -1,36 +1,31 @@
 {
-    "name":  "Spell Node: Schedule Tick",
-    "icon":  "modularmagic:gem_action_schedule_tick",
-    "category":  "modularmagic:nodes",
-    "sortnum":  240,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_action_schedule_tick",
-                      "link_recipe":  true,
-                      "text":  "Schedule a delayed tick for the specified block. This does not pause the spell tree."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "100 per scheduled block update.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.15 + H(t), charged for the arrangement rather than every waiting tick.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "Using This Node",
-                      "type":  "patchouli:text",
-                      "text":  "You do not need to attach any more nodes here. Insert it, then select it to adjust its settings on the right. Right-click it on the canvas to take it back."
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)tick / Required$(br)$(o)tick$()$(br2)$(li)block / Required$(br)$(o)block$()"
-                  }
-              ]
+  "name": "Spell Node: Schedule Tick",
+  "icon": "modularmagic:gem_action_schedule_tick",
+  "category": "modularmagic:nodes",
+  "sortnum": 240,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_action_schedule_tick",
+      "link_recipe": true,
+      "text": "Schedule a delayed tick for the specified block. This does not pause the spell tree."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "100 per scheduled block update."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.15 + H(t), charged for the arrangement rather than every waiting tick."
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)tick / Required$(br2)$(li)block / Required"
+    }
+  ]
 }

@@ -1,0 +1,18 @@
+{
+  "name": "无尽之能源",
+  "icon": "modularmagic:endless_fuel",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:endless_fuel",
+      "link_recipe": true,
+      "title": "留在火里的纹样",
+      "text": "推动地毯的那道规则，可以把同一片纹样一遍遍展开。若将它留在炉火中，烧去的便总是刚刚多出的那一份。$(br2)把它放进炉子的燃料槽。每轮燃烧只相当于一块地毯，却会$(l)留下自身继续燃烧，不消耗以太$()。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:endless_fuel"
+    }
+  ]
+}

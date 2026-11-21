@@ -1,36 +1,31 @@
 {
-    "name":  "Spell Node: Sound",
-    "icon":  "modularmagic:gem_action_sound",
-    "category":  "modularmagic:nodes",
-    "sortnum":  235,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_action_sound",
-                      "link_recipe":  true,
-                      "text":  "Play a sound at the spell position with a configurable sound ID, volume and pitch."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "1 per sound played.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0. Purely decorative control structures also receive the cosmetic discount.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "Using This Node",
-                      "type":  "patchouli:text",
-                      "text":  "You do not need to attach any more nodes here. Insert it, then select it to adjust its settings on the right. Right-click it on the canvas to take it back."
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)sound / Required$(br)$(o)sound$()$(br2)$(li)volume / Optional$(br)$(o)volume$()$(br2)$(li)pitch / Optional$(br)$(o)pitch$()"
-                  }
-              ]
+  "name": "Spell Node: Sound",
+  "icon": "modularmagic:gem_action_sound",
+  "category": "modularmagic:nodes",
+  "sortnum": 235,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_action_sound",
+      "link_recipe": true,
+      "text": "Play a sound at the spell position with a configurable sound ID, volume and pitch."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "1 per sound played."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0. Purely decorative control structures also receive the cosmetic discount."
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)sound / Required$(br2)$(li)volume / Optional$(br2)$(li)pitch / Optional"
+    }
+  ]
 }

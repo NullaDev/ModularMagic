@@ -1,36 +1,36 @@
 {
-    "name":  "Spell Node: Ignite",
-    "icon":  "modularmagic:gem_effect_ignite",
-    "category":  "modularmagic:nodes",
-    "sortnum":  773,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_effect_ignite",
-                      "link_recipe":  true,
-                      "text":  "Run extra processors on living targets already on fire, then ignite selected entities. Newly ignited targets do not immediately receive those extras."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "Ignition costs 20*t per target. Extra effects on already burning targets keep their own costs.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.1 plus attached effects, independent of burn duration or target count.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)Already burning targets$(br)Effect / Add up to 64 nodes"
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)burn Ticks / Required$(br)$(o)burnTicks$()"
-                  }
-              ]
+  "name": "Spell Node: Ignite",
+  "icon": "modularmagic:gem_effect_ignite",
+  "category": "modularmagic:nodes",
+  "sortnum": 773,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_effect_ignite",
+      "link_recipe": true,
+      "text": "Run extra processors on living targets already on fire, then ignite selected entities. Newly ignited targets do not immediately receive those extras."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "Ignition costs 20*t per target. Extra effects on already burning targets keep their own costs."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.1 plus attached effects, independent of burn duration or target count."
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)Already burning targets$(br)Effect / Add up to 64 nodes"
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)burn Ticks / Required"
+    }
+  ]
 }

@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "root/continuous",
+  "knowledge": "root/continuous",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_core"
+  },
+  "result": {
+    "id": "modularmagic:root_continuous",
+    "count": 1
+  }
+}

@@ -45,7 +45,7 @@ public final class CastAccount {
         prices.forEach((key,formula)->{try{constants.put(key,CostRules.evaluate(formula,Map.of()));}catch(RuntimeException ignored){}});
     }
     public static CastAccount open(ServerPlayer player,ItemStack wand,dev.xkmc.l2magic.content.engine.context.SpellContext context,SpellBudget.Plan plan){
-        var item=(CoreWandItem)wand.getItem();double rate=item.manaMultiplier(wand);
+        var item=(CoreWandItem)wand.getItem();double rate=item.manaMultiplier(wand)*(cn.nulladev.modularmagic.crafting.ArtificeContent.fullArmor(player)?1-cn.nulladev.modularmagic.crafting.ArtificeConfig.ARMOR_DISCOUNT.get():1);
         var inventory=new ArrayList<ItemStack>();inventory.addAll(player.getInventory().items);inventory.addAll(player.getInventory().offhand);
         boolean infinite=rate==0||inventory.stream().anyMatch(s->s.getItem() instanceof ManaStorage m&&m.infinite(s));
         var a=new CastAccount(player,rate,infinite,context.origin());

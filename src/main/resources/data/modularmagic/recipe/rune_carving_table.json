@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "QFQ",
+    "WWW"
+  ],
+  "key": {
+    "Q": {
+      "item": "minecraft:iron_nugget"
+    },
+    "F": {
+      "item": "minecraft:flint"
+    },
+    "W": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "id": "modularmagic:rune_carving_table",
+    "count": 1
+  }
+}

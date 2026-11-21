@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Crops",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"crops\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Crops",
+      "text": "I watched the wheat for a long time. It did not stretch a little at a time: the whole plant changed at once. Growth climbed invisible steps until the ears were ripe."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "The device follows those changes backward, returning nearby $(l)mature crops to seedlings$() and reclaiming part of their aether. The plant remains, but there is no harvest."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_crops"
+    }
+  ],
+  "sortnum": 9
+}

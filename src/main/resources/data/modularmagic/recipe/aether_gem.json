@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "modularmagic:aether_fragments"
+    },
+    [
+      {
+        "item": "minecraft:diamond"
+      },
+      {
+        "item": "minecraft:emerald"
+      }
+    ]
+  ],
+  "result": {
+    "id": "modularmagic:aether_gem",
+    "count": 1
+  }
+}

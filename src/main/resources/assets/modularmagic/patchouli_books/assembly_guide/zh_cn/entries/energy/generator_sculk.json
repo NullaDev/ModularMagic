@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：幽匿",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"sculk\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "幽匿",
+      "text": "生灵消失后，本该飘散的经验落进幽匿催发体，附近的土地便披上了新的纹样。经验与物质之间，似乎也有一条相通的路。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "让$(l)幽匿块$()蔓延到器物附近。器物会将这些方块消去，收回其中的以太。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_sculk"
+    }
+  ],
+  "sortnum": 14
+}

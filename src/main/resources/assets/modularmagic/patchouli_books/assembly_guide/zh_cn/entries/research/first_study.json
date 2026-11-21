@@ -1,0 +1,18 @@
+{
+  "name": "纸上的疑问",
+  "icon": "modularmagic:void_lens",
+  "category": "modularmagic:editor",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:rune_research_table",
+      "link_recipe": true,
+      "text": "$(l)手持未解读的笔记，右键研究台$()。墨水可以放在纸旁，也可以留在背包里；开始解读时才会用上。$(br2)选右侧虚影，填入同色接口。左键节点调整数值，右键取回末端节点。纸上的纹样只是推演，背包里的宝石不必放进去。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "一页重新摊开",
+      "text": "「参考术式」可对照连接，悬停查看参数，再回到「我的解读」继续。$(br2)$(l)离开未完成的研究，笔记会回到包里，草稿与本次开题记录则会清空。$()再次铺开，要重新花费墨水。已经读懂的知识仍属于你。"
+    }
+  ]
+}

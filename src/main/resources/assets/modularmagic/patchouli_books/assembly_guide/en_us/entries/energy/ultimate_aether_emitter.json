@@ -2,18 +2,13 @@
   "name": "Ultimate Aether Emitter",
   "icon": "modularmagic:ultimate_aether_emitter",
   "category": "modularmagic:energy",
-  "sortnum": 12,
+  "sortnum": 9,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "modularmagic:ultimate_aether_emitter",
       "link_recipe": true,
-      "text": "Compresses aether into a visible pulse aimed at a device. This tier commonly reaches 24 blocks and carries up to 5K per pulse. An adjacent reservoir supplies its reserve."
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Make the route visible",
-      "text": "Use the tuner on the emitter and then the destination. Its head turns to face that point. Keep the route clear: the pulse must arrive before it fills the destination.$(br2)One emitter sends one pulse at a time, so longer journeys mean longer waits. Sneak-use the tuner to pause output."
+      "text": "A stronger casing carries a swifter stream. Connect it like the $(l:energy/aether_emitter)Basic Emitter$(/l)."
     },
     {
       "type": "patchouli:smithing",

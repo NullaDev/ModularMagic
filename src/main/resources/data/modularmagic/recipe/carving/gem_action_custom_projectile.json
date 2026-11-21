@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "action/custom_projectile",
+  "knowledge": "action/custom_projectile",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_action_custom_projectile",
+    "count": 1
+  }
+}

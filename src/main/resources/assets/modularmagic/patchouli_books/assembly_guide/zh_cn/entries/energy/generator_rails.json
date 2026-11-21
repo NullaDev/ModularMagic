@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：铁轨",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"rails\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "铁轨",
+      "text": "活塞重复推动同一段结构时，铁轨竟能留下多余的一份。那份微小的重复，也藏着可以收回的以太。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "将$(l)铁轨掉落物$()送到附近。四种铁轨都能使用；器物每次只收取缓存能够容纳的数量。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_rails"
+    }
+  ],
+  "sortnum": 16
+}

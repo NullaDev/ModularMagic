@@ -2,19 +2,22 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    " G ",
-    "GSG",
-    " C "
+    " C ",
+    "GBG",
+    " P "
   ],
   "key": {
-    "G": {
-      "item": "minecraft:glass"
-    },
-    "S": {
-      "tag": "modularmagic:aether_fragments"
-    },
     "C": {
       "item": "minecraft:copper_ingot"
+    },
+    "G": {
+      "item": "modularmagic:aether_gem"
+    },
+    "B": {
+      "item": "minecraft:glass_bottle"
+    },
+    "P": {
+      "item": "modularmagic:rune_plate_k03"
     }
   },
   "result": {

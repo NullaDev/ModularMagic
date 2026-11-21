@@ -1,46 +1,46 @@
 {
-    "name":  "Spell Node: Config",
-    "icon":  "modularmagic:gem_projectile_config",
-    "category":  "modularmagic:nodes",
-    "sortnum":  899,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_projectile_config",
-                      "link_recipe":  true,
-                      "text":  "Define a custom projectile\u0027s motion, hit processors, appearance and lifecycle actions. Used by Custom Projectile, not directly as an action."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "Add motion maintenance, hits and triggered actions. Reserve a bounded number of callbacks.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "Add motion, appearance and event structures once, not again on every flight tick.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)motion$(br)Motion / Optional; one node at most$(br2)$(li)tick$(br)Action / Optional; one node at most"
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)hit$(br)Effect / Add up to 64 nodes$(br2)$(li)renderer$(br)Projectile renderer / Optional; one node at most"
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)land$(br)Action / Optional; one node at most$(br2)$(li)expire$(br)Action / Optional; one node at most"
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)params / Optional$(br)$(o)params$()$(br2)$(li)filter / Optional$(br)$(o)filter$()$(br2)$(li)size / Optional$(br)$(o)size$()"
-                  }
-              ]
+  "name": "Spell Node: Config",
+  "icon": "modularmagic:gem_projectile_config",
+  "category": "modularmagic:nodes",
+  "sortnum": 899,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_projectile_config",
+      "link_recipe": true,
+      "text": "Define a custom projectile's motion, hit processors, appearance and lifecycle actions. Used by Custom Projectile, not directly as an action."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "Add motion maintenance, hits and triggered actions. Reserve a bounded number of callbacks."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "Add motion, appearance and event structures once, not again on every flight tick."
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)motion$(br)Motion / Optional; one node at most$(br2)$(li)tick$(br)Action / Optional; one node at most"
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)hit$(br)Effect / Add up to 64 nodes$(br2)$(li)renderer$(br)Projectile renderer / Optional; one node at most"
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)land$(br)Action / Optional; one node at most$(br2)$(li)expire$(br)Action / Optional; one node at most"
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)params / Optional$(br2)$(li)filter / Optional$(br2)$(li)size / Optional"
+    }
+  ]
 }

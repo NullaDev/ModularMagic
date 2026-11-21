@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：积雪",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"snow\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "积雪",
+      "text": "雪花从天而降，落在地上便多出一层薄雪。透过透镜，我看见以太随着雪片落定；让这层雪重新消散，便能收回其中的一部分。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "装置每隔很久才会收取一次$(l)所在区块$()内、下方一格至上方两格的雪层，积雪越多，收获越多。刚摆下时也要等待一个完整周期。$(br2)若只把雪傀儡困在一角，每轮便只有那一点薄雪可收。给它铺出更长的路，或让大片土地承接降雪，才更有收获。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_snow"
+    }
+  ],
+  "sortnum": 6
+}

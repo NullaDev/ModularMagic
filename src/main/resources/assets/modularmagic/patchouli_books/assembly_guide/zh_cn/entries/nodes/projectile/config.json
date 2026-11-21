@@ -1,46 +1,46 @@
 {
-    "name":  "法术节点：弹体配置",
-    "icon":  "modularmagic:gem_projectile_config",
-    "category":  "modularmagic:nodes",
-    "sortnum":  899,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_projectile_config",
-                      "link_recipe":  true,
-                      "text":  "定义自定义弹体的运动、命中处理、外观及生命周期动作；由自定义弹体动作节点使用，不可直接作为主动作。"
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "默认魔力消耗",
-                      "type":  "patchouli:text",
-                      "text":  "运动维护、逐次命中和实际触发的动作分别相加。每种回调都要预留足够的次数。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "结构复杂度",
-                      "type":  "patchouli:text",
-                      "text":  "运动、外观和各处动作的结构复杂度相加，只计算一次。不会每飞一 tick 都再收一遍。$(br2)复杂度汇总后，按 5+10C+0.625C² 换算整次专注消耗。详见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "title":  "继续装配",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)运动$(br)运动 / 可以不放，最多 1 个$(br2)$(li)每刻动作$(br)动作 / 可以不放，最多 1 个"
-                  },
-                  {
-                      "title":  "继续装配",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)命中效果$(br)实体处理 / 可放多个，最多 64 个$(br2)$(li)外观$(br)弹体渲染 / 可以不放，最多 1 个"
-                  },
-                  {
-                      "title":  "继续装配",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)落地动作$(br)动作 / 可以不放，最多 1 个$(br2)$(li)消散动作$(br)动作 / 可以不放，最多 1 个"
-                  },
-                  {
-                      "title":  "可编辑参数",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)自定义参数 / 可留空$(br)$(o)params$()$(br2)$(li)目标过滤 / 可留空$(br)$(o)filter$()$(br2)$(li)尺寸 / 可留空$(br)$(o)size$()"
-                  }
-              ]
+  "name": "法术节点：弹体配置",
+  "icon": "modularmagic:gem_projectile_config",
+  "category": "modularmagic:nodes",
+  "sortnum": 899,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_projectile_config",
+      "link_recipe": true,
+      "text": "定义自定义弹体的运动、命中处理、外观及生命周期动作；由自定义弹体动作节点使用，不可直接作为主动作。"
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "默认以太消耗",
+      "type": "patchouli:text",
+      "text": "运动维护、逐次命中和实际触发的动作分别相加。每种回调都要预留足够的次数。"
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "结构复杂度",
+      "type": "patchouli:text",
+      "text": "运动、外观和各处动作的结构复杂度相加，只计算一次。不会每飞一 tick 都再收一遍。"
+    },
+    {
+      "title": "继续装配",
+      "type": "patchouli:text",
+      "text": "$(li)运动$(br)运动 / 可以不放，最多 1 个$(br2)$(li)每刻动作$(br)动作 / 可以不放，最多 1 个"
+    },
+    {
+      "title": "继续装配",
+      "type": "patchouli:text",
+      "text": "$(li)命中效果$(br)实体处理 / 可放多个，最多 64 个$(br2)$(li)外观$(br)弹体渲染 / 可以不放，最多 1 个"
+    },
+    {
+      "title": "继续装配",
+      "type": "patchouli:text",
+      "text": "$(li)落地动作$(br)动作 / 可以不放，最多 1 个$(br2)$(li)消散动作$(br)动作 / 可以不放，最多 1 个"
+    },
+    {
+      "title": "可编辑参数",
+      "type": "patchouli:text",
+      "text": "$(li)自定义参数 / 可留空$(br2)$(li)目标过滤 / 可留空$(br2)$(li)尺寸 / 可留空"
+    }
+  ]
 }

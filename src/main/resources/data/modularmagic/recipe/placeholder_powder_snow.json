@@ -1,0 +1,24 @@
+{
+  "type": "modularmagic:placeholder",
+  "target": "minecraft:powder_snow",
+  "ingredients": [
+    {
+      "item": "minecraft:cauldron"
+    },
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    },
+    {
+      "item": "modularmagic:rune_plate_k06"
+    },
+    {
+      "item": "modularmagic:rune_plate_k10"
+    }
+  ]
+}

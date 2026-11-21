@@ -1,24 +1,14 @@
 {
-    "name":  "Beginner Wand",
-    "icon":  "modularmagic:core_wand",
-    "category":  "modularmagic:equipment",
-    "sortnum":  1,
-    "pages":  [
-                  {
-                      "link_recipe":  true,
-                      "item":  "modularmagic:core_wand",
-                      "type":  "patchouli:spotlight",
-                      "text":  "Store nine spell cores and cast the selected spell. Sneak-right-click to open its core inventory and transfer cores normally. Contents persist inside the wand."
-                  },
-                  {
-                      "title":  "Casting and selection",
-                      "type":  "patchouli:text",
-                      "text":  "Right-click instant spells, hold and release charged spells, and hold continuous spells. Empty or unformed cores cannot cast.$(br2)Switch with Up/Down or your chosen keys. The tooltip shows core count, current selection and cost multipliers."
-                  },
-                  {
-                      "title":  "Mana and Focus",
-                      "type":  "patchouli:text",
-                      "text":  "Carry charged mana containers in your inventory or offhand; multiple containers combine automatically. Casting does not consume cores.$(br2)Focus recovers naturally. After overdraw, wait until it is full before casting again. Creative mode needs no resources. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  }
-              ]
+  "name": "Beginner Wand",
+  "icon": "modularmagic:core_wand",
+  "category": "modularmagic:equipment",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:core_wand",
+      "link_recipe": true,
+      "text": "$(l)Sneak-use$() the wand to open space for nine cores. Choose one with the up and down arrow keys.$(br2)Tap for an instant cast, hold and release to charge, or keep holding a continuous spell. Carry a charged aether container."
+    }
+  ]
 }

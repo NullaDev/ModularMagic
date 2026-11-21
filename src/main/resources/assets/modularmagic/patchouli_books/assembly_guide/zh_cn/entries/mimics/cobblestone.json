@@ -1,0 +1,19 @@
+{
+  "name": "以太拟材：圆石",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:cobblestone\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:cobblestone\"}]",
+      "link_recipe": false,
+      "text": "流水碰上岩浆，一整块圆石便占据了原先的空处。留下两种流体相遇时的纹样，便能再次凝成岩石。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "为拟材定型",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)水桶$(br)岩浆桶$(br)符文板：物质显现"
+    }
+  ]
+}

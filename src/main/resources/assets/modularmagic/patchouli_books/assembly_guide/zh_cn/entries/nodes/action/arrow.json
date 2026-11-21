@@ -1,36 +1,31 @@
 {
-    "name":  "法术节点：发射箭",
-    "icon":  "modularmagic:gem_action_arrow",
-    "category":  "modularmagic:nodes",
-    "sortnum":  241,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_action_arrow",
-                      "link_recipe":  true,
-                      "text":  "沿法术前向发射箭，可设置初速与箭上附带的状态效果列表。"
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "默认魔力消耗",
-                      "type":  "patchouli:text",
-                      "text":  "每支 500 + 100×v²，再加箭的伤害 m(d) 和药水效果费用。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "结构复杂度",
-                      "type":  "patchouli:text",
-                      "text":  "0.1。伤害、等级和命中人数都不改变这个数值。$(br2)复杂度汇总后，按 5+10C+0.625C² 换算整次专注消耗。详见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "title":  "使用方法",
-                      "type":  "patchouli:text",
-                      "text":  "这里不需要再接其他节点。装入后，左键选中它，就能在右侧调整设置。想换成别的节点时，在画布上右键取回即可。"
-                  },
-                  {
-                      "title":  "可编辑参数",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)速度 / 可留空$(br)$(o)speed$()$(br2)$(li)状态效果列表 / 可留空$(br)$(o)effects$()"
-                  }
-              ]
+  "name": "法术节点：发射箭",
+  "icon": "modularmagic:gem_action_arrow",
+  "category": "modularmagic:nodes",
+  "sortnum": 241,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_action_arrow",
+      "link_recipe": true,
+      "text": "沿法术前向发射箭，可设置初速与箭上附带的状态效果列表。"
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "默认以太消耗",
+      "type": "patchouli:text",
+      "text": "每支 500 + 100×v²，再加箭的伤害 m(d) 和药水效果费用。"
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "结构复杂度",
+      "type": "patchouli:text",
+      "text": "0.1。伤害、等级和命中人数都不改变这个数值。"
+    },
+    {
+      "title": "可编辑参数",
+      "type": "patchouli:text",
+      "text": "$(li)速度 / 可留空$(br2)$(li)状态效果列表 / 可留空"
+    }
+  ]
 }

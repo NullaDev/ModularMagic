@@ -1,0 +1,19 @@
+{
+  "name": "Aether Mimic: Cobblestone",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:cobblestone\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:cobblestone\"}]",
+      "link_recipe": false,
+      "text": "Water meets lava, and cobblestone fills the space. The mimic remembers their meeting."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Shaping the Pattern",
+      "text": "Use a sample at the center of a blank mimic, with these materials around it:$(br2)Water Bucket$(br)Lava Bucket$(br)Rune Plate: Material Manifestation"
+    }
+  ]
+}

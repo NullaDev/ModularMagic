@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Sculk",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"sculk\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Sculk",
+      "text": "Experience from a fallen creature reaches a sculk catalyst, and new patterns spread across the ground. There is a path between experience and matter."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "Let $(l)sculk blocks$() spread near the device. It removes those blocks and reclaims their aether."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_sculk"
+    }
+  ],
+  "sortnum": 14
+}

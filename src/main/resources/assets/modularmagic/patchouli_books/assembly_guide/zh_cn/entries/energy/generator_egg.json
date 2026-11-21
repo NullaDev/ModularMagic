@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：鸡蛋",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"egg\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "鸡蛋",
+      "text": "即使不再喂食，成年鸡仍会隔些时候留下一枚完好的蛋。那份规律的出现，也能在透镜里找到相应的纹样。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "器物会收取附近$(l)落在地上的鸡蛋$()。把鸡舍的产物引来即可，鸡群不必待在器物旁边。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_egg"
+    }
+  ],
+  "sortnum": 21
+}

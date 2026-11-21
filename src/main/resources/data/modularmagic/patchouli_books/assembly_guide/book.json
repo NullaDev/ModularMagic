@@ -1,1 +1,7 @@
-{"name":"Assembly Guide / 装配指南","landing_text":"ModularMagic editor prototype. No research or energy progression is enabled yet.","version":1,"creative_tab":"modularmagic:main","use_resource_pack":true}
+{
+  "name": "book.modularmagic.assembly_guide.name",
+  "landing_text": "book.modularmagic.assembly_guide.landing",
+  "version": "dev",
+  "creative_tab": "modularmagic:main",
+  "use_resource_pack": true
+}

@@ -1,0 +1,24 @@
+{
+  "name": "以太拟材：植物",
+  "icon": "modularmagic:plant_placeholder",
+  "category": "modularmagic:mimics",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:plant_placeholder",
+      "link_recipe": true,
+      "text": "瓜果一齐成形，甘蔗又长出完整的一节，树干与树叶也在枝头展开。小蘑菇能自行扩散，留下新的同伴。$(br2)这些植物共用一种拟材。巨型蘑菇的方块需要骨粉催生，不属于这道纹样。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "为拟材定型",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)泥土$(br)水桶$(br)符文板：物质显现$(br)符文板：先后与等待$(br)符文板：数与不确定性$(br)符文板：重复与维持"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "选定要生成的物质",
+      "text": "定型通用拟材时，中心可用这一类中的任意材料作参考。$(br2)在工作台中，将通用拟材与对应的方块无序合成，即可选定要生成的物质。$(br2)将选定后的拟材单独放回合成格，可以拆回通用拟材，并返还原材料。"
+    }
+  ]
+}

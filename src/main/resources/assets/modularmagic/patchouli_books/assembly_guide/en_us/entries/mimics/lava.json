@@ -1,0 +1,19 @@
+{
+  "name": "Aether Mimic: Lava",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:lava\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:lava\"}]",
+      "link_recipe": false,
+      "text": "The source never shrinks, yet the cauldron fills below the dripstone. The mimic remembers the drops, the wait and their chance to fall."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Shaping the Pattern",
+      "text": "Use a sample at the center of a blank mimic, with these materials around it:$(br2)Lava Bucket$(br)Pointed Dripstone$(br)Cauldron$(br)Rune Plate: Material Manifestation$(br)Rune Plate: Sequence and Delay$(br)Rune Plate: Numbers and Chance"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Light That Mends Matter",
+  "icon": "minecraft:experience_bottle",
+  "category": "modularmagic:energy",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Light That Mends",
+      "text": "A pickaxe bearing Mending takes in a mote of experience, and a crack closes without a scrap of new material.$(br2)Through the lens, I recognize that familiar current. $(l)Experience is another form of aether.$() Dark matter holds a similar pattern within itself."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "modularmagic:energy/generator_experience",
+        "modularmagic:equipment/unformed"
+      ],
+      "text": "Those two patterns suggest a way to reclaim aether, and a material that can use it to mend."
+    }
+  ]
+}

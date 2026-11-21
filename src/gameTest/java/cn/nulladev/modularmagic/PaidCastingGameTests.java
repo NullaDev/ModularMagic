@@ -13,6 +13,23 @@ import java.util.*;
 @GameTestHolder(ModularMagic.MOD_ID)
 @PrefixGameTestTemplate(false)
 public final class PaidCastingGameTests {
+    @GameTest(template="empty") public static void advancedWandAppliesBothDiscountsToRealCasting(GameTestHelper h){
+        var p=player(h);var battery=ModContent.MANA_CONTAINERS.get("mana_container_expanded").get().filledStack();p.getInventory().setItem(10,battery);var doc=damage(4,0);var beginner=wand(h,p,doc);var advanced=ModContent.ADVANCED_WAND.toStack();WandCores.write(advanced,WandCores.read(beginner));p.setItemInHand(InteractionHand.MAIN_HAND,advanced);
+        var item=ModContent.ADVANCED_WAND.get();double focus=PlayerFocus.value(p);h.assertTrue(item.manaMultiplier(advanced)==.5&&item.focusMultiplier(advanced)==.8,"Advanced wand defaults must be 0.5 aether and 0.8 focus");
+        h.assertTrue(item.cast(advanced,p,0),"The advanced wand executes the same stored core in survival");
+        h.assertTrue(((ManaStorage)battery.getItem()).stored(battery)==1000000-1350,"The actual cast pays half of the beginner wand's 2700 aether fee");h.assertTrue(Math.abs(focus-PlayerFocus.value(p)-CostPreview.estimate(doc).focus()*.8)<1e-8,"The actual cast pays 80 percent of the structural focus cost");
+        h.assertTrue(new CoreWandSelector().test(advanced)&&WandCores.read(advanced).getFirst().getCount()==1,"The advanced wand retains its real core and supports the same selection controls");
+        var recipe=(net.minecraft.world.item.crafting.CraftingRecipe)h.getLevel().getRecipeManager().byKey(ModularMagic.id("advanced_wand")).orElseThrow().value();var grid=net.minecraft.core.NonNullList.withSize(9,ItemStack.EMPTY);grid.set(2,cn.nulladev.modularmagic.crafting.ArtificeContent.MATTER.toStack());grid.set(4,new ItemStack(net.minecraft.world.item.Items.GOLD_INGOT));grid.set(6,new ItemStack(net.minecraft.world.item.Items.GOLD_INGOT));var input=net.minecraft.world.item.crafting.CraftingInput.of(3,3,grid);
+        h.assertTrue(recipe.matches(input,h.getLevel())&&recipe.assemble(input,h.getLevel().registryAccess()).is(ModContent.ADVANCED_WAND.get()),"Two gold ingots form the handle below the dark matter tip");h.succeed();
+    }
+    @GameTest(template="empty") public static void aFullUnformedSuitDiscountsManaWithoutDiscountingFocus(GameTestHelper h){
+        var p=player(h);for(var pair:Map.of(net.minecraft.world.entity.EquipmentSlot.HEAD,"helmet",net.minecraft.world.entity.EquipmentSlot.CHEST,"chestplate",net.minecraft.world.entity.EquipmentSlot.LEGS,"leggings",net.minecraft.world.entity.EquipmentSlot.FEET,"boots").entrySet())p.setItemSlot(pair.getKey(),cn.nulladev.modularmagic.crafting.ArtificeContent.GEAR.get(pair.getValue()).toStack());
+        var battery=ModContent.MANA_CONTAINERS.get("mana_container_expanded").get().filledStack();p.getInventory().setItem(10,battery);var doc=damage(4,0);var wand=wand(h,p,doc);double focus=PlayerFocus.value(p);
+        h.assertTrue(ModContent.CORE_WAND.get().cast(wand,p,0),"The complete suit must still allow the funded spell");
+        long cost=(long)Math.ceil(2700*(1-cn.nulladev.modularmagic.crafting.ArtificeConfig.ARMOR_DISCOUNT.get()));
+        h.assertTrue(((ManaStorage)battery.getItem()).storedUnits(battery)==(1000000-cost)*ManaStorage.SCALE,"The full suit reduces the actual item-mana charge by its configured rate");
+        h.assertTrue(Math.abs(focus-PlayerFocus.value(p)-CostPreview.estimate(doc).focus())<1e-8,"Armor must not discount the structure's focus cost");h.succeed();
+    }
     private static net.neoforged.neoforge.common.util.FakePlayer player(GameTestHelper h){
         var p=net.neoforged.neoforge.common.util.FakePlayerFactory.get(h.getLevel(),new com.mojang.authlib.GameProfile(UUID.randomUUID(),"PaidCaster"));
         p.setPos(h.absolutePos(new net.minecraft.core.BlockPos(1,2,1)).getCenter());
@@ -80,13 +97,17 @@ public final class PaidCastingGameTests {
         var first=h.spawn(net.minecraft.world.entity.EntityType.ZOMBIE,1,2,1);first.setNoAi(true);
         var second=h.spawn(net.minecraft.world.entity.EntityType.ZOMBIE,2,2,1);second.setNoAi(true);
         var w=wand(h,p,doc);var battery=ModContent.MANA_CONTAINERS.get("mana_container_basic").toStack();
-        var storage=(ManaStorage)battery.getItem();storage.receive(battery,3000,false);p.getInventory().setItem(10,battery);
+        var storage=(ManaStorage)battery.getItem();p.getInventory().setItem(10,battery);
+        // Other tests can populate FastProjectile's per-tick section cache before these mobs spawn.
+        // Query on a fresh tick so this verifies payment, rather than an empty cached selection.
+        h.runAfterDelay(2,()->{
+        storage.receive(battery,3000,false);
         h.assertTrue(!ModContent.CORE_WAND.get().cast(w,p,0)&&first.getHealth()==20&&second.getHealth()==20,"Insufficient funds must not damage only an affordable subset");
         storage.receive(battery,97000,false);
         h.assertTrue(ModContent.CORE_WAND.get().cast(w,p,0),"Funded selection must cast");
-        h.assertTrue(first.getHealth()<20&&second.getHealth()<20,"Both selected targets must receive the effect");
+        h.assertTrue(first.getHealth()<20&&second.getHealth()<20,"Both selected targets must receive the effect: health="+first.getHealth()+","+second.getHealth()+", origin="+p.position());
         double cost=1000*(.5+.05+.002*(4*Math.PI*8/3)+2*2.2);
-        h.assertTrue(storage.storedUnits(battery)==100000*ManaStorage.SCALE-cn.nulladev.modularmagic.spell.billing.CastAccount.units(cost),"Unused target slots must be refunded, while both actual effects remain paid");h.succeed();
+        h.assertTrue(storage.storedUnits(battery)==100000*ManaStorage.SCALE-cn.nulladev.modularmagic.spell.billing.CastAccount.units(cost),"Unused target slots must be refunded, while both actual effects remain paid");h.succeed();});
     }
     @GameTest(template="empty")
     public static void zeroTargetsRefundEffectsAndZeroRateWandIgnoresFocusLockout(GameTestHelper h){

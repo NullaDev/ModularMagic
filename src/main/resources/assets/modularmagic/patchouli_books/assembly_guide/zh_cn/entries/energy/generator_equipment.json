@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：装备",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"equipment\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "装备",
+      "text": "有些从黑暗中走来的僵尸，生来便披着盔甲。我不曾见它们开采矿石、打造装备，那身甲却与铁砧上制成的别无二致。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "用调谐器依次点选器物与附近的$(l)盔甲架$()。器物会逐件收取架上的护甲，破损越重，得到的以太越少；附魔不会增加产出。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_equipment"
+    }
+  ],
+  "sortnum": 5
+}

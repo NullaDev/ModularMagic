@@ -29,6 +29,7 @@ public final class EnergyRenderer implements BlockEntityRenderer<EnergyBlockEnti
         }
         if(be.kind().tank()&&!be.battery.isEmpty())renderItem(be,be.battery,.23F+.38F*be.displayedFill,.48F,pose,buffers,light,overlay);
         if(be.kind()==EnergyContent.Kind.RESONATOR&&be.resonanceEnabled())renderItem(be,new ItemStack(net.minecraft.world.item.Items.AMETHYST_SHARD),.73F,.60F,pose,buffers,light,overlay);
+        if(be.kind()==EnergyContent.Kind.GENERATOR&&be.generator.rule()!=null)renderItem(be,be.generator.rule().icon(),1.1F,.55F,pose,buffers,light,overlay);
         if(be.kind().emitter())renderHead(be,pose,buffers);
         if(be.pulseAmount>0&&be.pulseStart!=null&&be.pulseEnd!=null) {
             double t=Math.min(1,(be.pulseAge+partial)/Math.max(1,be.pulseDuration));

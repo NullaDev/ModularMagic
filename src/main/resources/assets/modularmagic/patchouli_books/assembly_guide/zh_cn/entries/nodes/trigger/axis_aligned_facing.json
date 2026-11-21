@@ -1,31 +1,26 @@
 {
-    "name":  "法术节点：轴向朝向",
-    "icon":  "modularmagic:gem_trigger_axis_aligned_facing",
-    "category":  "modularmagic:nodes",
-    "sortnum":  193,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_trigger_axis_aligned_facing",
-                      "link_recipe":  true,
-                      "text":  "从施法者眼部所在方块中心起法，朝向吸附到最近的世界轴方向。"
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "默认魔力消耗",
-                      "type":  "patchouli:text",
-                      "text":  "0。只决定从哪里起法。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "结构复杂度",
-                      "type":  "patchouli:text",
-                      "text":  "0。选择起点不额外增加结构负担。$(br2)复杂度汇总后，按 5+10C+0.625C² 换算整次专注消耗。详见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "title":  "使用方法",
-                      "type":  "patchouli:text",
-                      "text":  "这里不需要再接其他节点，也没有要填写的数值。把宝石放进对应位置即可；想换成别的节点时，在画布上右键取回。"
-                  }
-              ]
+  "name": "法术节点：轴向朝向",
+  "icon": "modularmagic:gem_trigger_axis_aligned_facing",
+  "category": "modularmagic:nodes",
+  "sortnum": 193,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_trigger_axis_aligned_facing",
+      "link_recipe": true,
+      "text": "从施法者眼部所在方块中心起法，朝向吸附到最近的世界轴方向。"
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "默认以太消耗",
+      "type": "patchouli:text",
+      "text": "0。只决定从哪里起法。"
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "结构复杂度",
+      "type": "patchouli:text",
+      "text": "0。选择起点不额外增加结构负担。"
+    }
+  ]
 }

@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Ice",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"ice\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Ice",
+      "text": "Water does not freeze inward from an edge: under the right conditions, the whole block changes at once."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "The device turns nearby $(l)ordinary ice back into water$(), recovering some aether. Packed and blue ice follow other patterns; the reversal cannot finish where water cannot remain."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_ice"
+    }
+  ],
+  "sortnum": 10
+}

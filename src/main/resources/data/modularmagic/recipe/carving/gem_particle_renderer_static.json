@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "particle_renderer/static",
+  "knowledge": "particle_renderer/static",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_particle_renderer_static",
+    "count": 1
+  }
+}

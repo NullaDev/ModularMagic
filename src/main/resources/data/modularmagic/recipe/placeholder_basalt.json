@@ -1,0 +1,21 @@
+{
+  "type": "modularmagic:placeholder",
+  "target": "minecraft:basalt",
+  "ingredients": [
+    {
+      "item": "minecraft:lava_bucket"
+    },
+    {
+      "item": "minecraft:soul_soil"
+    },
+    {
+      "item": "minecraft:blue_ice"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    },
+    {
+      "item": "modularmagic:rune_plate_k08"
+    }
+  ]
+}

@@ -1,41 +1,36 @@
 {
-    "name":  "Spell Node: Push",
-    "icon":  "modularmagic:gem_effect_push",
-    "category":  "modularmagic:nodes",
-    "sortnum":  768,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_effect_push",
-                      "link_recipe":  true,
-                      "text":  "Push selected entities using either a uniform direction or a direction relative to the spell center."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "500*v+500*v*v per target, for push speed v.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.1, regardless of damage, effect level or number of targets.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "Using This Node",
-                      "type":  "patchouli:text",
-                      "text":  "You do not need to attach any more nodes here. Insert it, then select it to adjust its settings on the right. Right-click it on the canvas to take it back."
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)speed / Required$(br)$(o)speed$()$(br2)$(li)angle / Optional$(br)$(o)angle$()$(br2)$(li)tilt / Optional$(br)$(o)tilt$()"
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)from center / Optional$(br)$(o)from_center$()"
-                  }
-              ]
+  "name": "Spell Node: Push",
+  "icon": "modularmagic:gem_effect_push",
+  "category": "modularmagic:nodes",
+  "sortnum": 768,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_effect_push",
+      "link_recipe": true,
+      "text": "Push selected entities using either a uniform direction or a direction relative to the spell center."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "500*v+500*v*v per target, for push speed v."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.1, regardless of damage, effect level or number of targets."
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)speed / Required$(br2)$(li)angle / Optional$(br2)$(li)tilt / Optional"
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)from center / Optional"
+    }
+  ]
 }

@@ -32,11 +32,11 @@ public final class EditorNetworking {
         public static final Type<Snapshot> TYPE = new Type<>(ModularMagic.id("editor_snapshot"));
         public static final StreamCodec<RegistryFriendlyByteBuf, Snapshot> CODEC = new StreamCodec<>() {
             public Snapshot decode(RegistryFriendlyByteBuf buf) {
-                return new Snapshot(buf.readVarInt(), buf.readLong(), buf.readUtf(SpellDocument.MAX_JSON), buf.readBoolean(), buf.readUtf(4096));
+                return new Snapshot(buf.readVarInt(), buf.readLong(), buf.readUtf(SpellDocument.MAX_JSON), buf.readBoolean(), buf.readUtf(16384));
             }
             public void encode(RegistryFriendlyByteBuf buf, Snapshot value) {
                 buf.writeVarInt(value.container); buf.writeLong(value.revision);
-                buf.writeUtf(value.document, SpellDocument.MAX_JSON); buf.writeBoolean(value.complete); buf.writeUtf(value.status, 4096);
+                buf.writeUtf(value.document, SpellDocument.MAX_JSON); buf.writeBoolean(value.complete); buf.writeUtf(value.status, 16384);
             }
         };
         @Override public Type<Snapshot> type() { return TYPE; }
@@ -45,8 +45,10 @@ public final class EditorNetworking {
     private EditorNetworking() {}
     public static void register(RegisterPayloadHandlersEvent event) {
         var registrar = event.registrar("1");
+        registrar.playToClient(cn.nulladev.modularmagic.research.ResearchNetworking.Knowledge.TYPE,cn.nulladev.modularmagic.research.ResearchNetworking.Knowledge.CODEC,(packet,context)->context.enqueueWork(()->context.player().setData(cn.nulladev.modularmagic.research.ResearchKnowledge.DATA,packet.data())));
         registrar.playToClient(NodeVisual.TYPE, NodeVisual.CODEC, (packet, context) -> context.enqueueWork(() -> packet.handle(context.player().level())));
         registrar.playToClient(FocusSnapshot.TYPE, FocusSnapshot.CODEC, (packet, context) -> context.enqueueWork(() -> {
+            context.player().setData(cn.nulladev.modularmagic.mana.PlayerFocus.CLIENT_MAX, packet.maximum());
             context.player().setData(cn.nulladev.modularmagic.mana.PlayerFocus.VALUE, packet.value());
             context.player().setData(cn.nulladev.modularmagic.mana.PlayerFocus.TRIPPED, packet.tripped());
         }));
@@ -55,10 +57,13 @@ public final class EditorNetworking {
         registrar.playToServer(Edit.TYPE, Edit.CODEC, (packet, context) -> context.enqueueWork(() -> {
             if (context.player().containerMenu instanceof WritingMenu menu && menu.containerId == packet.container())
                 menu.apply(packet.revision(), packet.command());
+            else if(context.player().containerMenu instanceof cn.nulladev.modularmagic.research.ResearchMenu research && research.containerId==packet.container())research.apply(packet.revision(),packet.command());
         }));
         registrar.playToClient(Snapshot.TYPE, Snapshot.CODEC, (packet, context) -> context.enqueueWork(() -> {
             if (context.player().containerMenu instanceof WritingMenu menu && menu.containerId == packet.container())
                 menu.receive(packet);
+            else if(context.player().containerMenu instanceof cn.nulladev.modularmagic.research.ResearchMenu research && research.containerId==packet.container())research.receive(packet);
+            else if(context.player().containerMenu instanceof cn.nulladev.modularmagic.crafting.EnchantingMenu enchanting&&enchanting.containerId==packet.container())enchanting.receive(packet);
         }));
     }
 }

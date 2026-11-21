@@ -1,0 +1,441 @@
+[
+  {
+    "id": "water",
+    "topic": "P01",
+    "icon": "minecraft:water_bucket",
+    "zh": "流水",
+    "en": "Water",
+    "width": 4,
+    "depth": 4,
+    "height": 2,
+    "period": 40,
+    "batch": 1,
+    "capacity": 2000,
+    "output": 200,
+    "yields": [
+      100
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "stone",
+    "topic": "P02",
+    "icon": "minecraft:cobblestone",
+    "zh": "岩石",
+    "en": "Stone",
+    "width": 4,
+    "depth": 4,
+    "height": 4,
+    "period": 10,
+    "batch": 1,
+    "capacity": 4000,
+    "output": 500,
+    "yields": [
+      64,
+      96,
+      128
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "lava",
+    "topic": "P03",
+    "icon": "minecraft:lava_bucket",
+    "zh": "岩浆",
+    "en": "Lava",
+    "width": 4,
+    "depth": 4,
+    "height": 4,
+    "period": 200,
+    "batch": 1,
+    "capacity": 12000,
+    "output": 1000,
+    "yields": [
+      3000
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "equipment",
+    "topic": "P04",
+    "icon": "minecraft:iron_chestplate",
+    "zh": "装备",
+    "en": "Equipment",
+    "width": 8,
+    "depth": 8,
+    "height": 4,
+    "period": 400,
+    "batch": 1,
+    "capacity": 64000,
+    "output": 4000,
+    "yields": [
+      4000
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "snow",
+    "topic": "P05",
+    "icon": "minecraft:snowball",
+    "zh": "积雪",
+    "en": "Snow",
+    "width": 16,
+    "depth": 16,
+    "height": 4,
+    "period": 2400,
+    "batch": 8192,
+    "capacity": 1000000,
+    "output": 8000,
+    "yields": [
+      80
+    ],
+    "storage": "modularmagic:aether_tank",
+    "coldStart": true
+  },
+  {
+    "id": "wool",
+    "topic": "P06",
+    "icon": "minecraft:white_wool",
+    "zh": "羊毛",
+    "en": "Wool",
+    "width": 8,
+    "depth": 8,
+    "height": 4,
+    "period": 400,
+    "batch": 4,
+    "capacity": 16000,
+    "output": 800,
+    "yields": [
+      720
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "fire",
+    "topic": "P07",
+    "icon": "minecraft:flint_and_steel",
+    "zh": "火焰",
+    "en": "Fire",
+    "width": 4,
+    "depth": 4,
+    "height": 2,
+    "period": 40,
+    "batch": 4,
+    "capacity": 1000,
+    "output": 128,
+    "yields": [
+      32
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "crops",
+    "topic": "P08",
+    "icon": "minecraft:wheat",
+    "zh": "作物",
+    "en": "Crops",
+    "width": 8,
+    "depth": 8,
+    "height": 2,
+    "period": 100,
+    "batch": 4,
+    "capacity": 8000,
+    "output": 1000,
+    "yields": [
+      240
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "ice",
+    "topic": "P09",
+    "icon": "minecraft:ice",
+    "zh": "冰",
+    "en": "Ice",
+    "width": 4,
+    "depth": 4,
+    "height": 2,
+    "period": 60,
+    "batch": 1,
+    "capacity": 6000,
+    "output": 600,
+    "yields": [
+      600
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "copper",
+    "topic": "P10",
+    "icon": "minecraft:oxidized_copper",
+    "zh": "铜锈",
+    "en": "Copper",
+    "width": 4,
+    "depth": 4,
+    "height": 4,
+    "period": 400,
+    "batch": 1,
+    "capacity": 12000,
+    "output": 500,
+    "yields": [
+      1000
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "honey",
+    "topic": "P11",
+    "icon": "minecraft:honey_bottle",
+    "zh": "蜂蜜",
+    "en": "Honey",
+    "width": 8,
+    "depth": 8,
+    "height": 4,
+    "period": 200,
+    "batch": 2,
+    "capacity": 4000,
+    "output": 400,
+    "yields": [
+      400
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "sand",
+    "topic": "P12",
+    "icon": "minecraft:sand",
+    "zh": "落沙",
+    "en": "Falling Sand",
+    "width": 4,
+    "depth": 4,
+    "height": 4,
+    "period": 10,
+    "batch": 2,
+    "capacity": 32000,
+    "output": 4000,
+    "yields": [
+      512
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "sculk",
+    "topic": "P13",
+    "icon": "minecraft:sculk",
+    "zh": "幽匿",
+    "en": "Sculk",
+    "width": 8,
+    "depth": 8,
+    "height": 4,
+    "period": 80,
+    "batch": 1,
+    "capacity": 24000,
+    "output": 1500,
+    "yields": [
+      1200
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "iron_golem",
+    "topic": "P14",
+    "icon": "minecraft:iron_block",
+    "zh": "铁傀儡",
+    "en": "Iron Golem",
+    "width": 8,
+    "depth": 8,
+    "height": 8,
+    "period": 800,
+    "batch": 1,
+    "capacity": 128000,
+    "output": 4000,
+    "yields": [
+      32000
+    ],
+    "storage": "modularmagic:mana_container_expanded",
+    "coldStart": false
+  },
+  {
+    "id": "rails",
+    "topic": "P15",
+    "icon": "minecraft:rail",
+    "zh": "铁轨",
+    "en": "Rails",
+    "width": 8,
+    "depth": 8,
+    "height": 4,
+    "period": 20,
+    "batch": 64,
+    "capacity": 4000,
+    "output": 512,
+    "yields": [
+      4
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "amethyst",
+    "topic": "P16",
+    "icon": "minecraft:amethyst_cluster",
+    "zh": "晶簇",
+    "en": "Amethyst",
+    "width": 4,
+    "depth": 4,
+    "height": 4,
+    "period": 1200,
+    "batch": 1,
+    "capacity": 8000,
+    "output": 500,
+    "yields": [
+      2000
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "chorus",
+    "topic": "P17",
+    "icon": "minecraft:chorus_flower",
+    "zh": "紫颂花",
+    "en": "Chorus",
+    "width": 8,
+    "depth": 8,
+    "height": 8,
+    "period": 400,
+    "batch": 1,
+    "capacity": 16000,
+    "output": 800,
+    "yields": [
+      1600
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "mushrooms",
+    "topic": "P18",
+    "icon": "minecraft:red_mushroom",
+    "zh": "蘑菇",
+    "en": "Mushrooms",
+    "width": 8,
+    "depth": 8,
+    "height": 4,
+    "period": 160,
+    "batch": 1,
+    "capacity": 5000,
+    "output": 500,
+    "yields": [
+      480
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "music",
+    "topic": "P19",
+    "icon": "minecraft:music_disc_cat",
+    "zh": "唱片",
+    "en": "Music Discs",
+    "width": 8,
+    "depth": 8,
+    "height": 4,
+    "period": 2400,
+    "batch": 1,
+    "capacity": 512000,
+    "output": 8000,
+    "yields": [
+      240000
+    ],
+    "storage": "modularmagic:aether_tank",
+    "coldStart": true
+  },
+  {
+    "id": "egg",
+    "topic": "P20",
+    "icon": "minecraft:egg",
+    "zh": "鸡蛋",
+    "en": "Eggs",
+    "width": 8,
+    "depth": 8,
+    "height": 4,
+    "period": 40,
+    "batch": 16,
+    "capacity": 16000,
+    "output": 2000,
+    "yields": [
+      500
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  },
+  {
+    "id": "curing",
+    "topic": "P21",
+    "icon": "minecraft:golden_apple",
+    "zh": "治愈",
+    "en": "Curing",
+    "width": 8,
+    "depth": 8,
+    "height": 4,
+    "period": 4800,
+    "batch": 1,
+    "capacity": 3000000,
+    "output": 10000,
+    "yields": [
+      1200000
+    ],
+    "storage": "modularmagic:expanded_aether_tank",
+    "coldStart": false
+  },
+  {
+    "id": "tnt",
+    "topic": "P22",
+    "icon": "minecraft:tnt",
+    "zh": "TNT",
+    "en": "TNT",
+    "width": 8,
+    "depth": 8,
+    "height": 8,
+    "period": 200,
+    "batch": 1,
+    "capacity": 32000,
+    "output": 2000,
+    "yields": [
+      8000
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": true
+  },
+  {
+    "id": "experience",
+    "topic": "P23",
+    "icon": "minecraft:experience_bottle",
+    "zh": "经验",
+    "en": "Experience",
+    "width": 5,
+    "depth": 5,
+    "height": 3,
+    "period": 20,
+    "batch": 64,
+    "capacity": 64000,
+    "output": 3200,
+    "yields": [
+      20
+    ],
+    "storage": "modularmagic:mana_container_basic",
+    "coldStart": false
+  }
+]

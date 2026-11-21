@@ -1,0 +1,26 @@
+{
+  "name": "符文雕刻台",
+  "icon": "modularmagic:rune_carving_table",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:rune_carving_table",
+      "link_recipe": true,
+      "text": "理解了纹样，便能沿着它落下刻刀。$(l)在雕刻台放入空白核心、空白节点或黏土球$()，选择已经掌握的纹样，即可刻下符文。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "承载与留痕",
+      "text": "宝石用来承载法术核心与节点，黏土则会制成刻有符文的硬化板。$(br2)将符文板嵌入器物或机器的外壁，以太便能沿着板面上刻好的纹样流动。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:blank_spell_core"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:blank_spell_node"
+    }
+  ]
+}

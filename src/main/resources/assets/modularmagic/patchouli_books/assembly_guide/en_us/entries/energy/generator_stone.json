@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Stone",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"stone\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Stone",
+      "text": "Water meets lava, and a whole rock block fills the space. Reverse the pattern of that meeting, and the rock unravels."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "Supply nearby $(l)cobblestone, stone or basalt$(). The device removes the blocks and reclaims aether, without leaving item drops."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_stone"
+    }
+  ],
+  "sortnum": 3
+}

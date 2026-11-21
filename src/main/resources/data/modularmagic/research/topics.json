@@ -1,0 +1,1023 @@
+[
+  {
+    "id": "K00",
+    "requires": [],
+    "nodes": [
+      "root/instant",
+      "trigger/self_pos",
+      "trigger/facing_front",
+      "action/list",
+      "action/processor",
+      "selector/self",
+      "modifier/forward",
+      "modifier/set_position",
+      "predicate/expression"
+    ],
+    "sources": [
+      "minecraft:crafting_table"
+    ],
+    "reward": 0,
+    "zh": "装配常识",
+    "en": "Assembly Basics"
+  },
+  {
+    "id": "K01",
+    "requires": [
+      "K00"
+    ],
+    "nodes": [
+      "effect/push",
+      "effect/set_delta",
+      "effect/knockback"
+    ],
+    "sources": [
+      "minecraft:water",
+      "minecraft:piston"
+    ],
+    "reward": 0.5,
+    "zh": "流向与推力",
+    "en": "Flow and Force"
+  },
+  {
+    "id": "K02",
+    "requires": [
+      "K00"
+    ],
+    "nodes": [
+      "action/remove_block"
+    ],
+    "sources": [
+      "minecraft:fire"
+    ],
+    "reward": 0.5,
+    "zh": "消隐",
+    "en": "Vanishing"
+  },
+  {
+    "id": "K03",
+    "requires": [
+      "K00",
+      "K08"
+    ],
+    "nodes": [
+      "action/set_block",
+      "action/set_block_facing"
+    ],
+    "sources": [
+      "minecraft:water"
+    ],
+    "reward": 0.5,
+    "zh": "物质显现",
+    "en": "Material Manifestation"
+  },
+  {
+    "id": "K04",
+    "requires": [
+      "K00"
+    ],
+    "nodes": [
+      "action/particle",
+      "action/block_particle",
+      "action/item_particle",
+      "action/dust_particle",
+      "action/transition_particle",
+      "action/sound",
+      "particle_renderer/simple",
+      "particle_renderer/color",
+      "particle_renderer/transition",
+      "particle_renderer/block",
+      "particle_renderer/item",
+      "particle_renderer/static"
+    ],
+    "sources": [
+      "minecraft:note_block",
+      "minecraft:campfire",
+      "minecraft:jukebox"
+    ],
+    "reward": 0.5,
+    "zh": "征象显影",
+    "en": "Signs and Sound"
+  },
+  {
+    "id": "K05",
+    "requires": [
+      "K00"
+    ],
+    "nodes": [
+      "modifier/normal_offset",
+      "modifier/offset",
+      "modifier/direction",
+      "modifier/set_normal",
+      "modifier/direction_to_normal",
+      "modifier/normal_to_direction",
+      "modifier/move_to_caster",
+      "modifier/align_with_caster",
+      "trigger/axis_aligned_facing",
+      "trigger/horizontal_facing",
+      "trigger/facing_back",
+      "action/move",
+      "selector/move"
+    ],
+    "sources": [
+      "minecraft:water",
+      "minecraft:piston",
+      "minecraft:dispenser"
+    ],
+    "reward": 0.5,
+    "zh": "空间参照",
+    "en": "Spatial Frames"
+  },
+  {
+    "id": "K06",
+    "requires": [
+      "K00"
+    ],
+    "nodes": [
+      "root/charge",
+      "action/delay",
+      "effect/delay",
+      "action/schedule_tick"
+    ],
+    "sources": [
+      "minecraft:repeater"
+    ],
+    "reward": 0.5,
+    "zh": "先后与等待",
+    "en": "Sequence and Delay"
+  },
+  {
+    "id": "K07",
+    "requires": [
+      "K06"
+    ],
+    "nodes": [
+      "root/continuous",
+      "action/iterate",
+      "action/iterate_delayed"
+    ],
+    "sources": [
+      "minecraft:repeater",
+      "minecraft:hopper"
+    ],
+    "reward": 0.5,
+    "zh": "重复与维持",
+    "en": "Repetition and Sustain"
+  },
+  {
+    "id": "K08",
+    "requires": [
+      "K00"
+    ],
+    "nodes": [
+      "action/if",
+      "predicate/block",
+      "predicate/surface_below",
+      "predicate/block_test"
+    ],
+    "sources": [
+      "minecraft:oak_trapdoor",
+      "minecraft:observer",
+      "minecraft:spruce_trapdoor",
+      "minecraft:birch_trapdoor",
+      "minecraft:jungle_trapdoor",
+      "minecraft:acacia_trapdoor",
+      "minecraft:dark_oak_trapdoor",
+      "minecraft:mangrove_trapdoor",
+      "minecraft:cherry_trapdoor",
+      "minecraft:bamboo_trapdoor",
+      "minecraft:crimson_trapdoor",
+      "minecraft:warped_trapdoor",
+      "minecraft:iron_trapdoor"
+    ],
+    "reward": 0.5,
+    "zh": "条件辨认",
+    "en": "Recognizing Conditions"
+  },
+  {
+    "id": "K09",
+    "requires": [
+      "K08"
+    ],
+    "nodes": [
+      "predicate/and",
+      "predicate/or",
+      "predicate/not"
+    ],
+    "sources": [
+      "minecraft:redstone_torch"
+    ],
+    "reward": 0.5,
+    "zh": "逻辑组合",
+    "en": "Logical Composition"
+  },
+  {
+    "id": "K10",
+    "requires": [
+      "K08"
+    ],
+    "nodes": [
+      "action/variable",
+      "action/random",
+      "modifier/random_offset",
+      "modifier/random_direction"
+    ],
+    "sources": [
+      "minecraft:dropper",
+      "minecraft:comparator"
+    ],
+    "reward": 0.5,
+    "zh": "数与不确定性",
+    "en": "Numbers and Chance"
+  },
+  {
+    "id": "K11",
+    "requires": [
+      "K05",
+      "K07"
+    ],
+    "nodes": [
+      "modifier/rotate",
+      "predicate/move",
+      "action/iterate_linear",
+      "action/iterate_arc"
+    ],
+    "sources": [
+      "minecraft:rail"
+    ],
+    "reward": 0.5,
+    "zh": "方向与展开",
+    "en": "Directions and Patterns"
+  },
+  {
+    "id": "K12",
+    "requires": [
+      "K05"
+    ],
+    "nodes": [
+      "selector/box",
+      "selector/line",
+      "selector/arc",
+      "selector/cylinder",
+      "selector/ball"
+    ],
+    "sources": [
+      "minecraft:stone_pressure_plate",
+      "minecraft:beacon"
+    ],
+    "reward": 0.5,
+    "zh": "作用区域",
+    "en": "Areas of Effect"
+  },
+  {
+    "id": "K13",
+    "requires": [
+      "K12",
+      "K09"
+    ],
+    "nodes": [
+      "selector/compound",
+      "action/block_in_range",
+      "predicate/depth_test",
+      "predicate/ranged_test"
+    ],
+    "sources": [
+      "minecraft:chest"
+    ],
+    "reward": 0.5,
+    "zh": "集合与遍查",
+    "en": "Collections and Traversal"
+  },
+  {
+    "id": "K14",
+    "requires": [
+      "K07",
+      "K09",
+      "K10"
+    ],
+    "nodes": [
+      "action/while_delayed",
+      "action/random_pos_fan",
+      "action/random_pos_sphere"
+    ],
+    "sources": [
+      "minecraft:hopper"
+    ],
+    "reward": 0.5,
+    "zh": "受约束的重复",
+    "en": "Bounded Repetition"
+  },
+  {
+    "id": "K15",
+    "requires": [
+      "K01",
+      "K05"
+    ],
+    "nodes": [
+      "action/arrow",
+      "motion/simple"
+    ],
+    "sources": [
+      "minecraft:dispenser"
+    ],
+    "reward": 0.5,
+    "zh": "弹道",
+    "en": "Ballistics"
+  },
+  {
+    "id": "K16",
+    "requires": [
+      "K15",
+      "K07",
+      "K18"
+    ],
+    "nodes": [
+      "action/trident",
+      "action/custom_projectile",
+      "projectile/config",
+      "motion/control_position",
+      "motion/control_velocity",
+      "projectile_renderer/simple"
+    ],
+    "sources": [
+      "minecraft:dispenser"
+    ],
+    "reward": 0.5,
+    "zh": "轨迹与碰撞",
+    "en": "Trajectories and Collisions"
+  },
+  {
+    "id": "K17",
+    "requires": [
+      "K04",
+      "K05",
+      "K06"
+    ],
+    "nodes": [
+      "action/custom_particle",
+      "particle_renderer/oriented",
+      "action/synced_logic"
+    ],
+    "sources": [
+      "minecraft:hay_block"
+    ],
+    "reward": 0.5,
+    "zh": "精细显影",
+    "en": "Detailed Manifestations"
+  },
+  {
+    "id": "K18",
+    "requires": [
+      "K00"
+    ],
+    "nodes": [
+      "effect/damage",
+      "effect/projectile_hit"
+    ],
+    "sources": [
+      "minecraft:cactus",
+      "minecraft:target"
+    ],
+    "reward": 0.5,
+    "zh": "冲击",
+    "en": "Impact"
+  },
+  {
+    "id": "K19",
+    "requires": [
+      "K18"
+    ],
+    "nodes": [
+      "effect/ignite",
+      "effect/property"
+    ],
+    "sources": [
+      "minecraft:campfire",
+      "minecraft:fire",
+      "minecraft:powder_snow"
+    ],
+    "reward": 0.5,
+    "zh": "燃烧与侵袭",
+    "en": "Burning and Affliction"
+  },
+  {
+    "id": "K20",
+    "requires": [
+      "K08"
+    ],
+    "nodes": [
+      "effect/effect",
+      "effect/filtered",
+      "filter/effect",
+      "filter/and",
+      "filter/or",
+      "filter/not"
+    ],
+    "sources": [
+      "minecraft:brewing_stand"
+    ],
+    "reward": 0.5,
+    "zh": "药性与筛选",
+    "en": "Potions and Filters"
+  },
+  {
+    "id": "K21",
+    "requires": [
+      "K05",
+      "K08"
+    ],
+    "nodes": [
+      "effect/teleport",
+      "effect/cast_at",
+      "trigger/target_pos",
+      "trigger/target_entity"
+    ],
+    "sources": [
+      "minecraft:obsidian",
+      "minecraft:nether_portal"
+    ],
+    "reward": 0.5,
+    "zh": "空间转移",
+    "en": "Spatial Transfer"
+  },
+  {
+    "id": "K22",
+    "requires": [
+      "K03",
+      "K15"
+    ],
+    "nodes": [
+      "action/knock_block"
+    ],
+    "sources": [
+      "minecraft:sand",
+      "minecraft:gravel"
+    ],
+    "reward": 0.5,
+    "zh": "方块的运动",
+    "en": "Moving Blocks"
+  },
+  {
+    "id": "K23",
+    "requires": [
+      "K00"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:water",
+      "minecraft:glass",
+      "modularmagic:aether_disruptor"
+    ],
+    "reward": 0.5,
+    "zh": "以太截流",
+    "en": "Aether Interception"
+  },
+  {
+    "id": "K24",
+    "requires": [
+      "K02",
+      "K03",
+      "K08"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:furnace"
+    ],
+    "reward": 0.5,
+    "zh": "规则逆转",
+    "en": "Reversing Rules"
+  },
+  {
+    "id": "K25",
+    "requires": [
+      "K06",
+      "K07",
+      "K11"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:budding_amethyst",
+      "minecraft:amethyst_cluster"
+    ],
+    "reward": 0.5,
+    "zh": "晶体共鸣",
+    "en": "Crystal Resonance"
+  },
+  {
+    "id": "K26",
+    "requires": [
+      "K21",
+      "K25",
+      "K28"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:ender_chest"
+    ],
+    "reward": 0.5,
+    "zh": "归属与远程",
+    "en": "Ownership and Distance"
+  },
+  {
+    "id": "K27",
+    "requires": [
+      "K07",
+      "K23",
+      "K08"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:red_bed",
+      "minecraft:lodestone",
+      "minecraft:white_bed",
+      "minecraft:orange_bed",
+      "minecraft:magenta_bed",
+      "minecraft:light_blue_bed",
+      "minecraft:yellow_bed",
+      "minecraft:lime_bed",
+      "minecraft:pink_bed",
+      "minecraft:gray_bed",
+      "minecraft:light_gray_bed",
+      "minecraft:cyan_bed",
+      "minecraft:purple_bed",
+      "minecraft:blue_bed",
+      "minecraft:brown_bed",
+      "minecraft:green_bed",
+      "minecraft:black_bed"
+    ],
+    "reward": 0.5,
+    "zh": "世界驻留",
+    "en": "World Persistence"
+  },
+  {
+    "id": "K28",
+    "requires": [
+      "K23"
+    ],
+    "nodes": [],
+    "sources": [
+      "modularmagic:aether_crystallization_chamber",
+      "minecraft:beacon"
+    ],
+    "reward": 0.5,
+    "zh": "稳定结晶",
+    "en": "Stable Crystallization"
+  },
+  {
+    "id": "K29",
+    "requires": [
+      "K26",
+      "K21"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:end_stone",
+      "minecraft:end_portal_frame"
+    ],
+    "reward": 0.5,
+    "zh": "越界同调",
+    "en": "Interdimensional Attunement"
+  },
+  {
+    "id": "K30",
+    "requires": [
+      "K08",
+      "K23"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:gold_block",
+      "minecraft:diamond_block",
+      "minecraft:smithing_table"
+    ],
+    "reward": 0.5,
+    "zh": "约束与扩容",
+    "en": "Containment and Expansion"
+  },
+  {
+    "id": "K31",
+    "requires": [
+      "K03",
+      "K08"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:crafting_table"
+    ],
+    "reward": 0.5,
+    "zh": "唤物",
+    "en": "Conjuration"
+  },
+  {
+    "id": "P01",
+    "requires": [
+      "K24"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:water"
+    ],
+    "reward": 0.5,
+    "zh": "流水",
+    "en": "Water"
+  },
+  {
+    "id": "P02",
+    "requires": [
+      "K24"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:cobblestone",
+      "minecraft:stone",
+      "minecraft:basalt"
+    ],
+    "reward": 0.5,
+    "zh": "岩石",
+    "en": "Stone"
+  },
+  {
+    "id": "P03",
+    "requires": [
+      "K24",
+      "K06"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:cauldron",
+      "minecraft:lava",
+      "minecraft:water_cauldron",
+      "minecraft:lava_cauldron",
+      "minecraft:powder_snow_cauldron"
+    ],
+    "reward": 0.5,
+    "zh": "岩浆",
+    "en": "Lava"
+  },
+  {
+    "id": "P04",
+    "requires": [
+      "K24"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:iron_block"
+    ],
+    "reward": 0.5,
+    "zh": "装备",
+    "en": "Equipment"
+  },
+  {
+    "id": "P05",
+    "requires": [
+      "K24",
+      "K13",
+      "K06"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:snow",
+      "minecraft:snow_block"
+    ],
+    "reward": 0.5,
+    "zh": "积雪",
+    "en": "Snow"
+  },
+  {
+    "id": "P06",
+    "requires": [
+      "K24",
+      "K20",
+      "K12"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:white_wool",
+      "minecraft:orange_wool",
+      "minecraft:magenta_wool",
+      "minecraft:light_blue_wool",
+      "minecraft:yellow_wool",
+      "minecraft:lime_wool",
+      "minecraft:pink_wool",
+      "minecraft:gray_wool",
+      "minecraft:light_gray_wool",
+      "minecraft:cyan_wool",
+      "minecraft:purple_wool",
+      "minecraft:blue_wool",
+      "minecraft:brown_wool",
+      "minecraft:green_wool",
+      "minecraft:red_wool",
+      "minecraft:black_wool"
+    ],
+    "reward": 0.5,
+    "zh": "羊毛",
+    "en": "Wool"
+  },
+  {
+    "id": "P07",
+    "requires": [
+      "K24",
+      "K19"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:fire"
+    ],
+    "reward": 0.5,
+    "zh": "火焰",
+    "en": "Fire"
+  },
+  {
+    "id": "P08",
+    "requires": [
+      "K24"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:wheat",
+      "minecraft:carrots",
+      "minecraft:potatoes",
+      "minecraft:beetroots"
+    ],
+    "reward": 0.5,
+    "zh": "作物",
+    "en": "Crops"
+  },
+  {
+    "id": "P09",
+    "requires": [
+      "K24"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:ice"
+    ],
+    "reward": 0.5,
+    "zh": "冰",
+    "en": "Ice"
+  },
+  {
+    "id": "P10",
+    "requires": [
+      "K24",
+      "K06"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:copper_block",
+      "minecraft:oxidized_copper",
+      "minecraft:exposed_copper",
+      "minecraft:weathered_copper"
+    ],
+    "reward": 0.5,
+    "zh": "铜锈",
+    "en": "Copper"
+  },
+  {
+    "id": "P11",
+    "requires": [
+      "K24",
+      "K06"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:beehive",
+      "minecraft:bee_nest"
+    ],
+    "reward": 0.5,
+    "zh": "蜂蜜",
+    "en": "Honey"
+  },
+  {
+    "id": "P12",
+    "requires": [
+      "K24",
+      "K22",
+      "K21"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:end_portal_frame",
+      "minecraft:end_portal"
+    ],
+    "reward": 0.5,
+    "zh": "落沙",
+    "en": "Falling Sand"
+  },
+  {
+    "id": "P13",
+    "requires": [
+      "K24",
+      "K12",
+      "K20"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:sculk",
+      "minecraft:sculk_catalyst"
+    ],
+    "reward": 0.5,
+    "zh": "幽匿",
+    "en": "Sculk"
+  },
+  {
+    "id": "P14",
+    "requires": [
+      "K24",
+      "K12",
+      "K06"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:iron_block"
+    ],
+    "reward": 0.5,
+    "zh": "铁傀儡",
+    "en": "Iron Golem"
+  },
+  {
+    "id": "P15",
+    "requires": [
+      "K24",
+      "K11",
+      "K12"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:rail",
+      "minecraft:powered_rail",
+      "minecraft:detector_rail",
+      "minecraft:activator_rail"
+    ],
+    "reward": 0.5,
+    "zh": "铁轨",
+    "en": "Rails"
+  },
+  {
+    "id": "P16",
+    "requires": [
+      "K24",
+      "K04",
+      "K06"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:amethyst_cluster",
+      "minecraft:budding_amethyst"
+    ],
+    "reward": 0.5,
+    "zh": "晶簇",
+    "en": "Amethyst"
+  },
+  {
+    "id": "P17",
+    "requires": [
+      "K24",
+      "K13",
+      "K06"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:chorus_flower",
+      "minecraft:chorus_plant"
+    ],
+    "reward": 0.5,
+    "zh": "紫颂花",
+    "en": "Chorus"
+  },
+  {
+    "id": "P18",
+    "requires": [
+      "K24",
+      "K09"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:red_mushroom",
+      "minecraft:brown_mushroom",
+      "minecraft:mycelium"
+    ],
+    "reward": 0.5,
+    "zh": "蘑菇",
+    "en": "Mushrooms"
+  },
+  {
+    "id": "P19",
+    "requires": [
+      "K24",
+      "K04",
+      "K06"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:jukebox"
+    ],
+    "reward": 0.5,
+    "zh": "唱片",
+    "en": "Music Discs"
+  },
+  {
+    "id": "P20",
+    "requires": [
+      "K24",
+      "K12"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:hay_block"
+    ],
+    "reward": 0.5,
+    "zh": "鸡蛋",
+    "en": "Eggs"
+  },
+  {
+    "id": "P21",
+    "requires": [
+      "K24",
+      "K20",
+      "K06",
+      "K12"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:iron_bars",
+      "minecraft:brewing_stand"
+    ],
+    "reward": 0.5,
+    "zh": "治愈",
+    "en": "Curing"
+  },
+  {
+    "id": "P22",
+    "requires": [
+      "K24",
+      "K19",
+      "K12"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:tnt"
+    ],
+    "reward": 0.5,
+    "zh": "TNT",
+    "en": "TNT"
+  },
+  {
+    "id": "K32",
+    "requires": [
+      "K00"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:anvil",
+      "minecraft:grindstone",
+      "minecraft:enchanting_table"
+    ],
+    "reward": 0.5,
+    "zh": "经验的形态",
+    "en": "The Shape of Experience"
+  },
+  {
+    "id": "K33",
+    "requires": [
+      "K32",
+      "K03"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:enchanting_table"
+    ],
+    "reward": 0.5,
+    "zh": "附魔的纹样",
+    "en": "Patterns of Enchantment"
+  },
+  {
+    "id": "K34",
+    "requires": [
+      "K32",
+      "K33",
+      "K28"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:netherite_block"
+    ],
+    "reward": 0.5,
+    "zh": "未定的物质",
+    "en": "Matter Unwritten"
+  },
+  {
+    "id": "P23",
+    "requires": [
+      "K24",
+      "K32"
+    ],
+    "nodes": [],
+    "sources": [
+      "minecraft:anvil",
+      "minecraft:grindstone"
+    ],
+    "reward": 0.5,
+    "zh": "经验回流",
+    "en": "Experience Reclaimed"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "name": "以太附魔台",
+  "icon": "modularmagic:aether_enchanter",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:aether_enchanter",
+      "link_recipe": true,
+      "text": "附魔时，青金石在台面上铺成了纹样。看懂这些线条后，结果便不必再交给偶然。$(br2)箱子留着供你描摹的样本。$(l)装备放左上，再左键选中下方收纳的书或附魔物品。$()右键可以取回样本。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "沿着旧纹再刻一遍",
+      "text": "接上以太网络，储够所需的以太，再刻下附魔。$(l)样本始终留下，只有装备上的纹样会改变。$()$(br2)等级直接相加：锋利 I 加锋利 II 得到锋利 III，但仍不会越过锋利 V。不能共存的纹样、装备无法承载的纹样，会被略过。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "铁砧之外",
+      "text": "纹样越深，所需的以太越多，正如铁砧上刻下复杂附魔要花费更多经验。只是这里不再由你承担那份经历；储够以太，再复杂的纹样也能写下。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:aether_enchanter"
+    }
+  ]
+}

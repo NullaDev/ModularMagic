@@ -1,0 +1,19 @@
+{
+  "name": "以太拟材：冰",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:ice\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:ice\"}]",
+      "link_recipe": false,
+      "text": "一格水会在寒冷中突然凝成整块冰。若要不断重现这次变化，除了寒冷与等待，还要让被冻住的水有源源不断的补充。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "为拟材定型",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)水桶 ×2$(br)符文板：物质显现$(br)符文板：先后与等待$(br)符文板：条件辨认"
+    }
+  ]
+}

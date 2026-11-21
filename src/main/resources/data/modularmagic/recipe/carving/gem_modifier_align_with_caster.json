@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "modifier/align_with_caster",
+  "knowledge": "modifier/align_with_caster",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_modifier_align_with_caster",
+    "count": 1
+  }
+}

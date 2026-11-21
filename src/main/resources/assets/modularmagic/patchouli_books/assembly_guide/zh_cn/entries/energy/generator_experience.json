@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：经验",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"experience\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "经验",
+      "text": "经验能让带有经验修补的工具恢复完好，却没有带来新的木料或金属。那些光点，只是以另一种形态流动的以太。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "站在器物附近，它便会慢慢收取$(l)你身上的经验$()，将其化为以太。离开范围，或用红石让器物暂停，即可停止收取。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_experience"
+    }
+  ],
+  "sortnum": 24
+}

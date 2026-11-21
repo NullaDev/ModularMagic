@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: TNT",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"tnt\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "TNT",
+      "text": "The original TNT remains in the moving assembly, while another charge already burns. Reclaim that extra matter before it explodes, and a large pulse of aether remains."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "Bring $(l)primed TNT$() into reach. After each capture, the device needs a long rest. It cannot capture while resting, paused by redstone, or full. Plan the timing and leave a safe outlet."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_tnt"
+    }
+  ],
+  "sortnum": 23
+}

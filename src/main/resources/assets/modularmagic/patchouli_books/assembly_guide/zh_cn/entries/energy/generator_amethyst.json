@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：晶簇",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"amethyst\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "晶簇",
+      "text": "紫水晶芽经历几次突然的变化，最终长成完整晶簇，下面的母岩却从未减少。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "器物把$(l)依附紫水晶母岩的完整晶簇$()退回大型晶芽，收回最后一次生长的以太。母岩与晶芽都会留下，等待它再次长成。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_amethyst"
+    }
+  ],
+  "sortnum": 17
+}

@@ -23,6 +23,7 @@ public enum AetherBlockProvider implements IBlockComponentProvider, IServerDataP
         if (data.getBoolean("Infinite")) tooltip.add(text("infinite"));
         else bar(tooltip,data,"stored");
         tooltip.add(text("status",text("state."+data.getString("Status"),AetherNumbers.format(data.getLong("StartCost")))));
+        if(data.contains("Generator")){tooltip.add(Component.translatable("generator.modularmagic.name",Component.translatable("generator.modularmagic."+data.getString("Generator"))));tooltip.add(Component.translatable("generator.modularmagic.jade",data.getInt("Comparator"),data.getInt("Cooldown")));}
         if(data.contains("Products"))tooltip.add(text("products",data.getInt("Products")));
         if(data.contains("Upgrades"))tooltip.add(text("resonance_upgrades",data.getInt("Upgrades"),data.getInt("MaxUpgrades")));
         if(data.contains("Upstream"))tooltip.add(text("upstream",BlockPos.of(data.getLong("Upstream")).toShortString()));

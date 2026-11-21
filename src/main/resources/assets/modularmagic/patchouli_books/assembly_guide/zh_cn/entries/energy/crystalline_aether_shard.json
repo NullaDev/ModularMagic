@@ -2,18 +2,13 @@
   "name": "晶化以太碎片",
   "icon": "modularmagic:crystalline_aether_shard",
   "category": "modularmagic:energy",
-  "sortnum": 9,
+  "sortnum": 8,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "modularmagic:crystalline_aether_shard",
       "link_recipe": true,
-      "text": "一束留住了形体的以太。它离开晶核也不会消散，可以装箱、运输，并替代基础配方中的短命碎片。说明中记着这枚晶体实际封存的含量。"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "让它重新流动",
-      "text": "对有空位的普通储槽右键，可把封存的以太放回。结晶加工已经花掉的以太不会返还。$(br2)晶化材料还可以用来制作个人供能锚，把原本只能沿着紫水晶支路追随你的以太，留下一条更遥远的归路。"
+      "text": "终于不用和倒数争抢了。$(br2)它可以像普通材料一样存放，也能将封存的以太放回储槽。"
     }
   ]
 }

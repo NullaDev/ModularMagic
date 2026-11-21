@@ -1,6 +1,6 @@
 {
-    "name":  "Node Reference",
-    "description":  "All nodes and the three typed cores, searchable by name. Entries describe their purpose, child slots and parameters.",
-    "icon":  "modularmagic:gem_action_iterate",
-    "sortnum":  2
+  "name": "Spell Nodes",
+  "description": "Look up spell cores and nodes, their connections and their parameters.",
+  "icon": "modularmagic:gem_action_iterate",
+  "sortnum": 5
 }

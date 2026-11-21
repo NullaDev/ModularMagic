@@ -1,0 +1,356 @@
+{
+  "name": "观察线索一览",
+  "category": "modularmagic:misc",
+  "icon": "modularmagic:void_lens",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "装配常识",
+      "text": "$(l)工作台$()",
+      "anchor": "k00"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "流向与推力",
+      "text": "$(l)水、活塞$()$(br2)前置知识：装配常识",
+      "anchor": "k01"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "消隐",
+      "text": "$(l)火焰$()$(br2)前置知识：装配常识",
+      "anchor": "k02"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "物质显现",
+      "text": "$(l)水$()$(br2)前置知识：装配常识、条件辨认",
+      "anchor": "k03"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "征象显影",
+      "text": "$(l)音符盒、营火、唱片机$()$(br2)前置知识：装配常识",
+      "anchor": "k04"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "空间参照",
+      "text": "$(l)水、活塞、发射器$()$(br2)前置知识：装配常识",
+      "anchor": "k05"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "先后与等待",
+      "text": "$(l)中继器$()$(br2)前置知识：装配常识",
+      "anchor": "k06"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "重复与维持",
+      "text": "$(l)中继器、漏斗$()$(br2)前置知识：先后与等待",
+      "anchor": "k07"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "条件辨认",
+      "text": "$(l)任意活板门、侦测器$()$(br2)前置知识：装配常识",
+      "anchor": "k08"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "逻辑组合",
+      "text": "$(l)红石火把$()$(br2)前置知识：条件辨认",
+      "anchor": "k09"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "数与不确定性",
+      "text": "$(l)投掷器、比较器$()$(br2)前置知识：条件辨认",
+      "anchor": "k10"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "方向与展开",
+      "text": "$(l)铁轨$()$(br2)前置知识：空间参照、重复与维持",
+      "anchor": "k11"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "作用区域",
+      "text": "$(l)石质压力板、信标$()$(br2)前置知识：空间参照",
+      "anchor": "k12"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "集合与遍查",
+      "text": "$(l)箱子$()$(br2)前置知识：作用区域、逻辑组合",
+      "anchor": "k13"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "受约束的重复",
+      "text": "$(l)漏斗$()$(br2)前置知识：重复与维持、逻辑组合、数与不确定性",
+      "anchor": "k14"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "弹道",
+      "text": "$(l)发射器$()$(br2)前置知识：流向与推力、空间参照",
+      "anchor": "k15"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "轨迹与碰撞",
+      "text": "$(l)发射器$()$(br2)前置知识：弹道、重复与维持、冲击",
+      "anchor": "k16"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "精细显影",
+      "text": "$(l)干草块$()$(br2)前置知识：征象显影、空间参照、先后与等待",
+      "anchor": "k17"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "冲击",
+      "text": "$(l)仙人掌、标靶$()$(br2)前置知识：装配常识",
+      "anchor": "k18"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "燃烧与侵袭",
+      "text": "$(l)营火、火焰、细雪$()$(br2)前置知识：冲击",
+      "anchor": "k19"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "药性与筛选",
+      "text": "$(l)酿造台$()$(br2)前置知识：条件辨认",
+      "anchor": "k20"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "空间转移",
+      "text": "$(l)黑曜石、下界传送门$()$(br2)前置知识：空间参照、条件辨认",
+      "anchor": "k21"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "方块的运动",
+      "text": "$(l)沙、沙砾$()$(br2)前置知识：物质显现、弹道",
+      "anchor": "k22"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "以太截流",
+      "text": "$(l)水、玻璃、以太扰乱器$()$(br2)前置知识：装配常识",
+      "anchor": "k23"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "规则逆转",
+      "text": "$(l)熔炉$()$(br2)前置知识：消隐、物质显现、条件辨认",
+      "anchor": "k24"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "晶体共鸣",
+      "text": "$(l)紫水晶母岩、紫水晶簇$()$(br2)前置知识：先后与等待、重复与维持、方向与展开",
+      "anchor": "k25"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "归属与远程",
+      "text": "$(l)末影箱$()$(br2)前置知识：空间转移、晶体共鸣、稳定结晶",
+      "anchor": "k26"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "世界驻留",
+      "text": "$(l)任意床、磁石$()$(br2)前置知识：重复与维持、以太截流、条件辨认",
+      "anchor": "k27"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "稳定结晶",
+      "text": "$(l)以太结晶室、信标$()$(br2)前置知识：以太截流",
+      "anchor": "k28"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "越界同调",
+      "text": "$(l)末地石、末地传送门框架$()$(br2)前置知识：归属与远程、空间转移",
+      "anchor": "k29"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "约束与扩容",
+      "text": "$(l)金块、钻石块、锻造台$()$(br2)前置知识：条件辨认、以太截流",
+      "anchor": "k30"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "唤物",
+      "text": "$(l)工作台$()$(br2)前置知识：物质显现、条件辨认",
+      "anchor": "k31"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "流水",
+      "text": "$(l)水$()$(br2)前置知识：规则逆转",
+      "anchor": "p01"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "岩石",
+      "text": "$(l)圆石、石头、玄武岩$()$(br2)前置知识：规则逆转",
+      "anchor": "p02"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "岩浆",
+      "text": "$(l)任意炼药锅、岩浆$()$(br2)前置知识：规则逆转、先后与等待",
+      "anchor": "p03"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "装备",
+      "text": "$(l)铁块$()$(br2)前置知识：规则逆转",
+      "anchor": "p04"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "积雪",
+      "text": "$(l)积雪、雪块$()$(br2)前置知识：规则逆转、集合与遍查、先后与等待",
+      "anchor": "p05"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "羊毛",
+      "text": "$(l)任意羊毛$()$(br2)前置知识：规则逆转、药性与筛选、作用区域",
+      "anchor": "p06"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "火焰",
+      "text": "$(l)火焰$()$(br2)前置知识：规则逆转、燃烧与侵袭",
+      "anchor": "p07"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "作物",
+      "text": "$(l)麦苗、胡萝卜、马铃薯、甜菜$()$(br2)前置知识：规则逆转",
+      "anchor": "p08"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "冰",
+      "text": "$(l)冰$()$(br2)前置知识：规则逆转",
+      "anchor": "p09"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "铜锈",
+      "text": "$(l)铜块、氧化铜块、斑驳铜块、锈蚀铜块$()$(br2)前置知识：规则逆转、先后与等待",
+      "anchor": "p10"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "蜂蜜",
+      "text": "$(l)蜂箱、蜂巢$()$(br2)前置知识：规则逆转、先后与等待",
+      "anchor": "p11"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "落沙",
+      "text": "$(l)末地传送门框架、末地传送门$()$(br2)前置知识：规则逆转、方块的运动、空间转移",
+      "anchor": "p12"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "幽匿",
+      "text": "$(l)幽匿块、幽匿催发体$()$(br2)前置知识：规则逆转、作用区域、药性与筛选",
+      "anchor": "p13"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "铁傀儡",
+      "text": "$(l)铁块$()$(br2)前置知识：规则逆转、作用区域、先后与等待",
+      "anchor": "p14"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "铁轨",
+      "text": "$(l)铁轨、动力铁轨、探测铁轨、激活铁轨$()$(br2)前置知识：规则逆转、方向与展开、作用区域",
+      "anchor": "p15"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "晶簇",
+      "text": "$(l)紫水晶簇、紫水晶母岩$()$(br2)前置知识：规则逆转、征象显影、先后与等待",
+      "anchor": "p16"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "紫颂花",
+      "text": "$(l)紫颂花、紫颂植株$()$(br2)前置知识：规则逆转、集合与遍查、先后与等待",
+      "anchor": "p17"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "蘑菇",
+      "text": "$(l)红蘑菇、棕蘑菇、菌丝$()$(br2)前置知识：规则逆转、逻辑组合",
+      "anchor": "p18"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "唱片",
+      "text": "$(l)唱片机$()$(br2)前置知识：规则逆转、征象显影、先后与等待",
+      "anchor": "p19"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "鸡蛋",
+      "text": "$(l)干草块$()$(br2)前置知识：规则逆转、作用区域",
+      "anchor": "p20"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "治愈",
+      "text": "$(l)铁栏杆、酿造台$()$(br2)前置知识：规则逆转、药性与筛选、先后与等待、作用区域",
+      "anchor": "p21"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "TNT",
+      "text": "$(l)TNT$()$(br2)前置知识：规则逆转、燃烧与侵袭、作用区域",
+      "anchor": "p22"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "经验的形态",
+      "text": "$(l)anvil、grindstone、enchanting_table$()$(br2)前置知识：装配常识",
+      "anchor": "k32"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "附魔的纹样",
+      "text": "$(l)enchanting_table$()$(br2)前置知识：经验的形态、物质显现",
+      "anchor": "k33"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "未元物质",
+      "text": "$(l)netherite_block$()$(br2)前置知识：经验的形态、附魔的纹样、稳定结晶",
+      "anchor": "k34"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "经验回流",
+      "text": "$(l)anvil、grindstone$()$(br2)前置知识：规则逆转、经验的形态",
+      "anchor": "p23"
+    }
+  ]
+}

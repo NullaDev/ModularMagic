@@ -1,0 +1,18 @@
+{
+  "name": "Aether Generator Housing",
+  "icon": "modularmagic:generator_housing",
+  "category": "modularmagic:generators",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:generator_housing",
+      "link_recipe": true,
+      "text": "A housing holds the buffer; a $(l)rune plate$() tells it which natural rule to turn back. Add a small piece of that rule’s familiar world, then give the aether a path out."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_housing"
+    }
+  ]
+}

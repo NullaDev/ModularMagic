@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Amethyst",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"amethyst\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Amethyst",
+      "text": "An amethyst bud changes in distinct steps until a cluster stands where it grew, without consuming its parent rock."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "The device returns a $(l)full cluster attached to budding amethyst$() to a large bud, reclaiming the final growth step. Parent and bud remain to grow again."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_amethyst"
+    }
+  ],
+  "sortnum": 17
+}

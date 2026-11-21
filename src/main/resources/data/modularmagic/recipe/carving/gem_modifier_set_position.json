@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "modifier/set_position",
+  "knowledge": "modifier/set_position",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_modifier_set_position",
+    "count": 1
+  }
+}

@@ -1,103 +1,53 @@
 {
-    "name":  "Understanding Focus and Mana",
-    "icon":  "modularmagic:mana_container_basic",
-    "category":  "modularmagic:editor",
-    "sortnum":  2,
-    "pages":  [
-                  {
-                      "title":  "Read This First",
-                      "type":  "patchouli:text",
-                      "text":  "Hold a wand to see available inventory mana and focus. Check the formed core for base costs and the wand for its multipliers.$(br2)Aether and mana amounts use K (thousand), M (million), and B (billion). This guide records common rules; trust the readings on your core. Creative mode spends no resources."
-                  },
-                  {
-                      "title":  "Two Resources",
-                      "type":  "patchouli:text",
-                      "text":  "Focus is your ability to control a spell. It belongs to the player and recovers naturally.$(br2)Mana belongs to items and does not regenerate. It needs an external supply. Damage, area, targets and duration mainly affect mana."
-                  },
-                  {
-                      "title":  "Base Cost and Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "Each cast costs:$(br2)F=5+10*C+0.625*C^2$(br2)5 is the fixed startup cost; C is total structural complexity. An entity effect contributes 0.1 and a modifier 0.05. Combine complexity before converting to focus once. Damage values and actual target counts do not change C."
-                  },
-                  {
-                      "title":  "Simple and Complex Spells",
-                      "type":  "patchouli:text",
-                      "text":  "Using the same self selector and damage effects:$(br2)1 effect: C=0.3, about 8.06 focus.$(br)10 effects: C=1.2, 17.90 focus.$(br)50 effects: C=5.2, 73.90 focus.$(br2)More complex structures carry an increasing burden. Raising one damage value only increases mana."
-                  },
-                  {
-                      "title":  "Loops",
-                      "type":  "patchouli:text",
-                      "text":  "Let C be body complexity and n the maximum repetitions. Loop complexity is:$(br2)0.2 + L(n)*C$(br2)L(n)=log2(1+n). For C=0.3 and n=10, loop complexity is about 1.238; combine it with the rest of the structure before calculating focus. Mana still counts every effect."
-                  },
-                  {
-                      "title":  "Delays",
-                      "type":  "patchouli:text",
-                      "text":  "A delay adds 0.15+H(t) complexity, plus its action.$(br2)H(t)=0.05*log2(1+t/20), with t in ticks. Normally 20 ticks make a second. Repeated delays use the span from first to last repetition, rather than charging focus each tick."
-                  },
-                  {
-                      "title":  "Branches",
-                      "type":  "patchouli:text",
-                      "text":  "Branch complexity is:$(br2)0.1+P+max(A,B)+0.25*min(A,B)$(br2)P is condition complexity; A and B are branch complexities. Preparing a fallback adds a small burden. Mana pays for the chosen branch, but reserves for the more expensive one."
-                  },
-                  {
-                      "title":  "Damage Prices",
-                      "type":  "patchouli:text",
-                      "text":  "Ordinary damage costs, per target and attempt:$(br2)m(d)=500*d+12.5*d*d$(br2)Damage 4 costs 2.2K mana; 20 costs 15K; 100 costs 175000. Stronger single hits cost more per damage point. Damage types share the default price. Focus does not grow with d."
-                  },
-                  {
-                      "title":  "Whole Mana Costs",
-                      "type":  "patchouli:text",
-                      "text":  "Effect fees accumulate before applying the wand multiplier. Total mana is rounded up to a whole number, as is the base mana shown on cores.$(br2)For example, startup 10 plus ten particles priced at 0.2 costs 12 mana. Startup plus one particle rounds 10.2 up to 11. Focus may still be fractional."
-                  },
-                  {
-                      "title":  "Reserve, Then Settle",
-                      "type":  "patchouli:text",
-                      "text":  "Before starting, reserve enough mana from inventory and offhand containers to complete the spell. Insufficient mana prevents the cast without spending either resource.$(br2)A complete miss returns only 50% of unused reserves by default; the rest is lost. After a valid target attempt, unused reserves return in full. Startup, delivery, queries and damage attempts remain paid, even if a target resists. A failed casting condition still spends preparation focus and actual query fees."
-                  },
-                  {
-                      "title":  "Missed Spell Losses",
-                      "type":  "patchouli:text",
-                      "text":  "If a spell ends with 1K unused mana, the default refund is 500 and the other 500 is lost. Startup, queries and effect fees already spent are not refunded.$(br2)Cosmetic spells, block spells and failed casting conditions are exempt by default. Different worlds may lose different amounts; watch what actually returns to your jars. Refunds round down to keep consumption whole."
-                  },
-                  {
-                      "title":  "When Focus Runs Low",
-                      "type":  "patchouli:text",
-                      "text":  "With enough mana, a bounded spell may overdraw focus below zero and finish its delayed effects and projectiles.$(br2)No new spells can start until focus fully recovers. Channeling stops before its next pulse; effects already started are not undone."
-                  },
-                  {
-                      "title":  "Focus Is Never Refunded",
-                      "type":  "patchouli:text",
-                      "text":  "Structural focus is paid once when the spell starts, regardless of target count. Missing, refunding mana or cancelling later effects never returns that focus.$(br2)The refund ratio affects item mana only. Even at a 100% mana refund, focus must recover normally, and overdraw still locks casting until it is full."
-                  },
-                  {
-                      "title":  "Debt and Recovery",
-                      "type":  "patchouli:text",
-                      "text":  "After overdraw, the red bar shows remaining focus debt. Once it reaches zero, the recovery bar fills until focus is full and lockout ends. Recovery defaults to 10 per second: zero to maximum 100 takes about 10 seconds, with extra time for debt.$(br2)With maximum 100, Earth Spike Field costs about 136.98 and leaves -36.98. Full recovery takes about 13.7 seconds at normal tick speed. Not every glimmer remains visible in a dense burst, but the spell\u0027s effects and costs remain the same."
-                  },
-                  {
-                      "title":  "Keep Your Effects",
-                      "type":  "patchouli:text",
-                      "text":  "A particle costs 0.2 mana and a sound 1; both add zero complexity. Purely decorative controls use 2% of normal complexity; decorative startup costs 10 mana.$(br2)Every separate cast still pays the fixed 5 focus. Adding effects to an existing spell does not add another startup cost.$(br2)A beautiful spell need not be an expensive one."
-                  },
-                  {
-                      "title":  "Symbols in Effect Entries",
-                      "type":  "patchouli:text",
-                      "text":  "d: requested damage; v: speed; r: teleport distance; t: ticks; a: amplifier, where zero means level I; k: price factor, default 1.$(br2)Timed effects start at 20*t*(a+1)^2*k. Instant effects use 1K*(a+1)^2*k. Trust the actual readings on your core."
-                  },
-                  {
-                      "title":  "Wands and Creative Mode",
-                      "type":  "patchouli:text",
-                      "text":  "Mana and focus each use the corresponding wand multiplier: 1 for the beginner wand and 0 for the creative wand.$(br2)In creative mode, all wands cast without resource costs or focus lockout. An infinite mana container in survival supplies unlimited mana, but an ordinary wand still spends focus."
-                  },
-                  {
-                      "title":  "Selections and Limits",
-                      "type":  "patchouli:text",
-                      "text":  "Each selection affects at most 8 targets by default, nearest to its origin first. Reserves cover all 8 slots; settlement normally pays only for actual targets; a complete miss also loses part of the unused reserve.$(br2)Repetitions, range, lifetime and simultaneous casts also have limits. Unbounded costs or excessive settings prevent casting. Reduce the range or repetitions."
-                  },
-                  {
-                      "title":  "Base Costs on Cores",
-                      "type":  "patchouli:text",
-                      "text":  "Core tooltips calculate base mana and focus from saved values, including local variables, loop indices, repetition counts, areas and effect levels.$(br2)Base prices assume one target and multipliers of 1. Additional targets, travel distance and future random values are not part of the fixed base."
-                  }
-              ]
+  "name": "Working Notes",
+  "icon": "modularmagic:mana_container_basic",
+  "category": "modularmagic:misc",
+  "sortnum": -1,
+  "pages": [
+    {
+      "title": "Base Cost and Complexity",
+      "type": "patchouli:text",
+      "text": "Each cast costs:$(br2)F=5+10*C+0.625*C^2$(br2)5 is the fixed startup cost; C is total structural complexity. An entity effect contributes 0.1 and a modifier 0.05. Combine complexity before converting to focus once. Damage values and actual target counts do not change C."
+    },
+    {
+      "title": "Simple and Complex Spells",
+      "type": "patchouli:text",
+      "text": "Using the same self selector and damage effects:$(br2)1 effect: C=0.3, about 8.06 focus.$(br)10 effects: C=1.2, 17.90 focus.$(br)50 effects: C=5.2, 73.90 focus.$(br2)More complex structures carry an increasing burden. Raising one damage value only increases aether."
+    },
+    {
+      "title": "Loops",
+      "type": "patchouli:text",
+      "text": "Let C be body complexity and n the maximum repetitions. Loop complexity is:$(br2)0.2 + L(n)*C$(br2)L(n)=log2(1+n). For C=0.3 and n=10, loop complexity is about 1.238; combine it with the rest of the structure before calculating focus. Aether still counts every effect."
+    },
+    {
+      "title": "Delays",
+      "type": "patchouli:text",
+      "text": "A delay adds 0.15+H(t) complexity, plus its action.$(br2)H(t)=0.05*log2(1+t/20), with t in ticks. Normally 20 ticks make a second. Repeated delays use the span from first to last repetition, rather than charging focus each tick."
+    },
+    {
+      "title": "Branches",
+      "type": "patchouli:text",
+      "text": "Branch complexity is:$(br2)0.1+P+max(A,B)+0.25*min(A,B)$(br2)P is condition complexity; A and B are branch complexities. Preparing a fallback adds a small burden. Aether pays for the chosen branch, but reserves for the more expensive one."
+    },
+    {
+      "title": "Damage Prices",
+      "type": "patchouli:text",
+      "text": "Ordinary damage costs, per target and attempt:$(br2)m(d)=500*d+12.5*d*d$(br2)Damage 4 costs 2.2K aether; 20 costs 15K; 100 costs 175000. Stronger single hits cost more per damage point. Damage types share the default price. Focus does not grow with d."
+    },
+    {
+      "title": "Symbols in Effect Entries",
+      "type": "patchouli:text",
+      "text": "d: requested damage; v: speed; r: teleport distance; t: ticks; a: amplifier, where zero means level I; k: price factor, default 1.$(br2)Timed effects start at 20*t*(a+1)^2*k. Instant effects use 1K*(a+1)^2*k. Trust the actual readings on your core."
+    },
+    {
+      "title": "Selections and Limits",
+      "type": "patchouli:text",
+      "text": "Each selection affects at most 8 targets by default, nearest to its origin first. Reserves cover all 8 slots; settlement normally pays only for actual targets; a complete miss also loses part of the unused reserve.$(br2)Repetitions, range, lifetime and simultaneous casts also have limits. Unbounded costs or excessive settings prevent casting. Reduce the range or repetitions."
+    },
+    {
+      "title": "Base Costs on Cores",
+      "type": "patchouli:text",
+      "text": "Core tooltips calculate base aether and focus from saved values, including local variables, loop indices, repetition counts, areas and effect levels.$(br2)Base prices assume one target and multipliers of 1. Additional targets, travel distance and future random values are not part of the fixed base."
+    }
+  ]
 }

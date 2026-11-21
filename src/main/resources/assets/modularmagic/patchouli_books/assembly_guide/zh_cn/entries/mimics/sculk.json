@@ -1,0 +1,19 @@
+{
+  "name": "以太拟材：幽匿",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:sculk\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 18,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:sculk\"}]",
+      "link_recipe": false,
+      "text": "生灵留下的经验落进幽匿催发体，附近的土地便换上幽匿的纹样。经验中的以太，就这样成了新的物质。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "为拟材定型",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)幽匿催发体$(br)附魔之瓶$(br)符文板：物质显现$(br)符文板：经验的形态"
+    }
+  ]
+}

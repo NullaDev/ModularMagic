@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：冰",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"ice\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "冰",
+      "text": "水并不是从边缘慢慢结冻的；条件合适时，一整格水会突然变成冰。那次变化，在透镜中留下了清晰的纹样。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "器物将附近的$(l)普通冰还原成水$()，收回部分以太。浮冰和蓝冰的纹样不同，不能照搬；炎热得留不住水的地方也无法完成这次还原。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_ice"
+    }
+  ],
+  "sortnum": 10
+}

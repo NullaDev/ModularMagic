@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：羊毛",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"wool\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "羊毛",
+      "text": "羊低头吃掉一块草皮，整身羊毛便突然长了回来。我看见的并非缓慢生长，而是一次完整的显现。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "器物收回$(l)成年绵羊身上的整层羊毛$()，羊仍安然无恙，也不会掉落羊毛物品。给它们留下可以重新长草的土地，下一轮的纹样才会出现。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_wool"
+    }
+  ],
+  "sortnum": 7
+}

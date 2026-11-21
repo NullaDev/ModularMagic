@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Fire",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"fire\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Fire",
+      "text": "Lava need not touch the wood for a flame to appear nearby. Through the lens, that instant of ignition has a distinct pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "Supply nearby $(l)ordinary fire$(). The device consumes the flames and leaves their supporting blocks in place."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_fire"
+    }
+  ],
+  "sortnum": 8
+}

@@ -2,9 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "G G",
-    "DTD",
-    "GGG"
+    "GDG",
+    "GBG",
+    " P "
   ],
   "key": {
     "G": {
@@ -13,8 +13,11 @@
     "D": {
       "item": "minecraft:diamond"
     },
-    "T": {
+    "B": {
       "item": "modularmagic:aether_tank"
+    },
+    "P": {
+      "item": "modularmagic:rune_plate_k30"
     }
   },
   "result": {

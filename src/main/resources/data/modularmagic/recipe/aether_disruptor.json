@@ -2,22 +2,25 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "CGC",
-    "SPS",
-    "CCC"
+    "CBC",
+    "GRG",
+    "CLC"
   ],
   "key": {
     "C": {
       "item": "minecraft:copper_ingot"
     },
+    "B": {
+      "item": "minecraft:bucket"
+    },
     "G": {
       "item": "minecraft:glass"
     },
-    "S": {
-      "item": "minecraft:stone"
+    "R": {
+      "item": "minecraft:redstone"
     },
-    "P": {
-      "item": "minecraft:ender_pearl"
+    "L": {
+      "item": "modularmagic:rune_plate_k23"
     }
   },
   "result": {

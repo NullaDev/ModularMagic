@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "  M",
+    " G ",
+    "G  "
+  ],
+  "key": {
+    "M": {
+      "item": "modularmagic:unformed_matter"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "id": "modularmagic:advanced_wand",
+    "count": 1
+  }
+}

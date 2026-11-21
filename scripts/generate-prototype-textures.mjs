@@ -6,7 +6,7 @@ import {deflateSync} from 'node:zlib';
 // No Minecraft bitmap is copied, recolored or embedded by this generator.
 const palettes={copper:['#302633','#78504b','#bf805c','#f0bd88'],gold:['#33283b','#8a6833','#d1a84c','#ffedac'],netherite:['#191d2c','#3d4056','#73738e','#bbb9d0']};
 function rgba(hex){return [...hex.replace('#','').match(/../g).map(x=>parseInt(x,16)),255];}
-class Pixels {
+export class Pixels {
  constructor(w=16,h=16){this.w=w;this.h=h;this.data=Buffer.alloc(w*h*4);}
  set(x,y,color){if(x>=0&&y>=0&&x<this.w&&y<this.h)this.data.set(typeof color==='string'?rgba(color):color,(y*this.w+x)*4);}
  rect(x,y,w,h,c){for(let j=y;j<y+h;j++)for(let i=x;i<x+w;i++)this.set(i,j,c);return this;}
@@ -14,7 +14,7 @@ class Pixels {
 }
 function crc(buf){let c=0xffffffff;for(const v of buf){c^=v;for(let i=0;i<8;i++)c=(c>>>1)^((c&1)?0xedb88320:0);}return (c^0xffffffff)>>>0;}
 function chunk(type,data){const head=Buffer.from(type),len=Buffer.alloc(4),sum=Buffer.alloc(4);len.writeUInt32BE(data.length);sum.writeUInt32BE(crc(Buffer.concat([head,data])));return Buffer.concat([len,head,data,sum]);}
-function png(p){const ihdr=Buffer.alloc(13);ihdr.writeUInt32BE(p.w);ihdr.writeUInt32BE(p.h,4);ihdr[8]=8;ihdr[9]=6;const rows=[];for(let y=0;y<p.h;y++)rows.push(Buffer.from([0]),p.data.subarray(y*p.w*4,(y+1)*p.w*4));return Buffer.concat([Buffer.from([137,80,78,71,13,10,26,10]),chunk('IHDR',ihdr),chunk('IDAT',deflateSync(Buffer.concat(rows))),chunk('IEND',Buffer.alloc(0))]);}
+export function png(p){const ihdr=Buffer.alloc(13);ihdr.writeUInt32BE(p.w);ihdr.writeUInt32BE(p.h,4);ihdr[8]=8;ihdr[9]=6;const rows=[];for(let y=0;y<p.h;y++)rows.push(Buffer.from([0]),p.data.subarray(y*p.w*4,(y+1)*p.w*4));return Buffer.concat([Buffer.from([137,80,78,71,13,10,26,10]),chunk('IHDR',ihdr),chunk('IDAT',deflateSync(Buffer.concat(rows))),chunk('IEND',Buffer.alloc(0))]);}
 function gem(stable=false){const p=new Pixels();for(let y=1;y<15;y++){const half=Math.max(0,Math.floor((7-Math.abs(y-7))/1.7));for(let x=7-half;x<=8+half;x++)p.set(x,y,x===7-half||x===8+half?'#193652':x<8?'#75e4fa':x<10?'#32a9d4':'#2869a6');}p.line(7,2,5,7,'#d5ffff').line(7,3,8,10,'#a0f8ff').line(8,10,7,13,'#2e7ba6');if(stable){p.rect(3,9,2,4,'#216b94').rect(4,8,1,4,'#8af5ff').rect(10,7,2,5,'#4cbbe2').rect(11,6,1,3,'#c6ffff').line(3,13,11,13,'#4584a5');}else{p.set(2,4,'#75e4fa');p.set(12,3,'#c6ffff');p.set(12,12,'#4cbbe2');}return p;}
 function container(theme){const p=new Pixels(),c=palettes[theme]??palettes.netherite;p.rect(5,1,6,2,c[0]).rect(6,0,4,1,c[2]).rect(4,3,8,1,c[0]).rect(3,4,10,9,c[0]).rect(4,4,8,9,'#286179').rect(5,4,6,8,'#64d6e5').rect(6,5,4,6,'#299bbc').rect(4,5,1,6,'#b8f7f5').rect(5,6,1,4,'#d8ffff').rect(3,12,10,2,c[1]).rect(4,14,8,1,c[0]).rect(4,12,8,1,c[3]).rect(4,3,8,2,c[2]).rect(5,3,6,1,c[3]).rect(7,7,3,3,c[0]).rect(8,7,1,3,'#bffbff');if(theme==='creative')for(let y=7;y<10;y++)for(let x=7;x<10;x++)p.set(x,y,((x>>1)+(y>>1))%2?'#d532f0':'#21122c');return p;}
 function tool(kind){const p=new Pixels();if(kind==='tuner'){p.line(3,14,10,7,'#26324b').line(4,14,11,7,'#c38c5c').line(5,13,11,7,'#f2c995');p.rect(8,3,5,5,'#30314d').rect(9,2,1,5,'#81dcee').rect(12,1,1,6,'#81dcee').rect(10,6,2,2,'#5caad6').set(10,3,'#dfbbff');}

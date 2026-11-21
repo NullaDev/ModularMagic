@@ -2,9 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "GQG",
-    "DED",
-    "GGG"
+    "GDG",
+    " B ",
+    " P "
   ],
   "key": {
     "G": {
@@ -13,11 +13,11 @@
     "D": {
       "item": "minecraft:diamond"
     },
-    "E": {
+    "B": {
       "item": "modularmagic:aether_emitter"
     },
-    "Q": {
-      "item": "minecraft:quartz"
+    "P": {
+      "item": "modularmagic:rune_plate_k30"
     }
   },
   "result": {

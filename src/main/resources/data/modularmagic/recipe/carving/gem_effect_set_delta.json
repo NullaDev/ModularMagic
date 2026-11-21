@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "effect/set_delta",
+  "knowledge": "effect/set_delta",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_effect_set_delta",
+    "count": 1
+  }
+}

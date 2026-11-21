@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "modularmagic:generator_housing"
+    },
+    {
+      "item": "modularmagic:rune_plate_k24"
+    },
+    {
+      "item": "modularmagic:rune_plate_k06"
+    },
+    {
+      "item": "modularmagic:rune_plate_k10"
+    },
+    {
+      "item": "minecraft:wheat_seeds"
+    },
+    {
+      "item": "minecraft:dirt"
+    },
+    {
+      "item": "minecraft:iron_hoe"
+    }
+  ],
+  "result": {
+    "id": "modularmagic:aether_generator",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "AetherDevice": {
+          "Generator": {
+            "Rule": "crops"
+          }
+        }
+      }
+    }
+  }
+}

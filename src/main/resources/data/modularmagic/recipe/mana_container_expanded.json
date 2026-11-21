@@ -1,10 +1,10 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "modularmagic:container_upgrade",
   "category": "misc",
   "pattern": [
-    "G G",
-    "DCD",
-    "GGG"
+    "GDG",
+    "CBC",
+    " P "
   ],
   "key": {
     "G": {
@@ -14,7 +14,13 @@
       "item": "minecraft:diamond"
     },
     "C": {
+      "item": "modularmagic:aether_gem"
+    },
+    "B": {
       "item": "modularmagic:mana_container_basic"
+    },
+    "P": {
+      "item": "modularmagic:rune_plate_k30"
     }
   },
   "result": {

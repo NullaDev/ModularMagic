@@ -1,1 +1,8 @@
-{"replace":false,"values":["modularmagic:spell_writing_table"]}
+{
+  "replace": false,
+  "values": [
+    "modularmagic:spell_writing_table",
+    "modularmagic:rune_research_table",
+    "modularmagic:rune_carving_table"
+  ]
+}

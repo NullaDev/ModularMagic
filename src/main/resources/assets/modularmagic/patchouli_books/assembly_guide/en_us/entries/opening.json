@@ -1,0 +1,23 @@
+{
+  "name": "Taken for Granted",
+  "icon": "minecraft:ender_pearl",
+  "category": "modularmagic:editor",
+  "sortnum": -10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Two Blocks of Water",
+      "text": "Two water blocks make an endless source.$(br2)You never thought to question it. Dig a pit, pour two buckets, and draw as much as you need. The world has always worked that way."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Through the Pearl",
+      "text": "Until you held an Ender Pearl to your eye.$(br2)Through its murky green, a faint current came from nowhere. It gathered where water was missing, turned along a repeating pattern, and became water.$(br2)Lower the pearl: only the familiar surface remained."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Patterns",
+      "text": "Later you saw it in flowing water, and again where fire vanished.$(br2)Different outcomes, the same current. Perhaps the patterns made the difference.$(br2)$(l)What if you could record them?$()"
+    }
+  ]
+}

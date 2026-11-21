@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：岩石",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"stone\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "岩石",
+      "text": "水流与岩浆相遇，原先的空处便被一整块岩石填满。将相遇时的纹样倒转，坚硬的岩石也能重新散开。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "把$(l)圆石、石头或玄武岩$()送入附近。器物会消去方块，收回其中的以太，不再留下掉落物。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_stone"
+    }
+  ],
+  "sortnum": 3
+}

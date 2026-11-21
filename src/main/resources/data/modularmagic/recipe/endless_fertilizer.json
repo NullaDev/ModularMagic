@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "type": "neoforge:components",
+      "items": "modularmagic:item_placeholder",
+      "components": {
+        "minecraft:custom_data": {
+          "MaterialTarget": "minecraft:stone"
+        }
+      },
+      "strict": false
+    },
+    {
+      "item": "minecraft:moss_block"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "item": "minecraft:composter"
+    },
+    {
+      "item": "modularmagic:aether_gem"
+    }
+  ],
+  "result": {
+    "id": "modularmagic:endless_fertilizer",
+    "count": 1
+  }
+}

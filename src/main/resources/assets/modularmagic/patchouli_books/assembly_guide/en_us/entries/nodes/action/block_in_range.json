@@ -1,41 +1,41 @@
 {
-    "name":  "Spell Node: Block In Range",
-    "icon":  "modularmagic:gem_action_block_in_range",
-    "category":  "modularmagic:nodes",
-    "sortnum":  228,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_action_block_in_range",
-                      "link_recipe":  true,
-                      "text":  "Visit block positions in range and execute the child, optionally delaying between blocks and exposing position variables."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "Add the body costs for every actual repetition. Loops do not discount damage or materials.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.2 + L(n)*C for at most n blocks. Per-block waiting does not charge complexity again.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)child$(br)Action / Insert one node"
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)range / Required$(br)$(o)range$()$(br2)$(li)height / Optional$(br)$(o)height$()$(br2)$(li)delay Per Block / Optional$(br)$(o)delayPerBlock$()"
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)variable / Optional$(br)$(o)variable$()"
-                  }
-              ]
+  "name": "Spell Node: Block In Range",
+  "icon": "modularmagic:gem_action_block_in_range",
+  "category": "modularmagic:nodes",
+  "sortnum": 228,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_action_block_in_range",
+      "link_recipe": true,
+      "text": "Visit block positions in range and execute the child, optionally delaying between blocks and exposing position variables."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "Add the body costs for every actual repetition. Loops do not discount damage or materials."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.2 + L(n)*C for at most n blocks. Per-block waiting does not charge complexity again."
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)child$(br)Action / Insert one node"
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)range / Required$(br2)$(li)height / Optional$(br2)$(li)delay Per Block / Optional"
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)variable / Optional"
+    }
+  ]
 }

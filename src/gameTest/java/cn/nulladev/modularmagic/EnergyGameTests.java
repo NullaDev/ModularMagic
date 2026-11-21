@@ -146,13 +146,13 @@ public final class EnergyGameTests {
         var p=player(h);var pos=h.absolutePos(new BlockPos(1,1,1));h.getLevel().setBlockAndUpdate(pos,Blocks.CRAFTING_TABLE.defaultBlockState());
         var menu=new net.minecraft.world.inventory.CraftingMenu(42,p.getInventory(),net.minecraft.world.inventory.ContainerLevelAccess.create(h.getLevel(),pos));
         var shard=AetherShardItem.create(false,h.getLevel());
-        ItemStack[] inputs={new ItemStack(Items.COPPER_INGOT),new ItemStack(Items.GLASS),new ItemStack(Items.COPPER_INGOT),
-                new ItemStack(Items.GLASS),shard,new ItemStack(Items.GLASS),new ItemStack(Items.COPPER_INGOT),new ItemStack(Items.COPPER_INGOT),new ItemStack(Items.COPPER_INGOT)};
+        ItemStack[] inputs={new ItemStack(Items.GLASS),new ItemStack(Items.GLASS),ItemStack.EMPTY,
+                new ItemStack(Items.GLASS),shard,new ItemStack(Items.GLASS),ItemStack.EMPTY,ItemStack.EMPTY,ItemStack.EMPTY};
         for(int i=0;i<inputs.length;i++)menu.getSlot(i+1).set(inputs[i]);
-        h.assertTrue(menu.getSlot(0).getItem().is(EnergyContent.ITEMS.get(EnergyContent.Kind.TANK).get()),"A live fragment must craft the actual reservoir recipe");
+        h.assertTrue(menu.getSlot(0).getItem().is(cn.nulladev.modularmagic.crafting.ArtificeContent.GLASS_ITEM.get()),"A live fragment must craft the actual reservoir recipe");
         var tag=EnergyLinkItem.data(shard);tag.putLong("AetherExpires",AetherShardItem.clock(h.getLevel()));EnergyLinkItem.data(shard,tag);
         menu.clicked(0,0,net.minecraft.world.inventory.ClickType.PICKUP,p);
-        h.assertTrue(menu.getCarried().isEmpty()&&menu.getSlot(5).getItem().isEmpty()&&menu.getSlot(1).getItem().is(Items.COPPER_INGOT),"A stale result must not be taken or consume the other materials after its fragment expires");h.succeed();
+        h.assertTrue(menu.getCarried().isEmpty()&&menu.getSlot(5).getItem().isEmpty()&&menu.getSlot(1).getItem().is(Items.GLASS),"A stale result must not be taken or consume the other materials after its fragment expires");h.succeed();
     }
     @GameTest(template="empty",batch="energy",timeoutTicks=40)
     public static void crossDimensionSupplyRequiresTheInstalledUpgrade(GameTestHelper h) {

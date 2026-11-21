@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "modularmagic:block/enchanter_top",
+    "bottom": "modularmagic:block/aether_casing",
+    "side": "modularmagic:block/frame_gold"
+  }
+}

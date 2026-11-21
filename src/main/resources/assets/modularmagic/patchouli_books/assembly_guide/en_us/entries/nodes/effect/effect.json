@@ -1,41 +1,36 @@
 {
-    "name":  "Spell Node: Effect",
-    "icon":  "modularmagic:gem_effect_effect",
-    "category":  "modularmagic:nodes",
-    "sortnum":  769,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_effect_effect",
-                      "link_recipe":  true,
-                      "text":  "Apply a status effect with a duration, amplifier and display options. The reference slot samples a potion\u0027s first effect."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "Timed effects: 20*t*(a+1)^2*k per target. Instant effects use 1K*(a+1)^2*k instead of duration.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.1, regardless of damage, effect level or number of targets.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "Using This Node",
-                      "type":  "patchouli:text",
-                      "text":  "You do not need to attach any more nodes here. Insert it, then select it to adjust its settings on the right. Right-click it on the canvas to take it back."
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)effect / Required$(br)$(o)effect$()$(br2)$(li)duration / Required$(br)$(o)duration$()$(br2)$(li)amplifier / Optional$(br)$(o)amplifier$()"
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)ambient / Optional$(br)$(o)ambient$()$(br2)$(li)visible / Optional$(br)$(o)visible$()"
-                  }
-              ]
+  "name": "Spell Node: Effect",
+  "icon": "modularmagic:gem_effect_effect",
+  "category": "modularmagic:nodes",
+  "sortnum": 769,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_effect_effect",
+      "link_recipe": true,
+      "text": "Apply a status effect with a duration, amplifier and display options. The reference slot samples a potion's first effect."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "Timed effects: 20*t*(a+1)^2*k per target. Instant effects use 1K*(a+1)^2*k instead of duration."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.1, regardless of damage, effect level or number of targets."
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)effect / Required$(br2)$(li)duration / Required$(br2)$(li)amplifier / Optional"
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)ambient / Optional$(br2)$(li)visible / Optional"
+    }
+  ]
 }

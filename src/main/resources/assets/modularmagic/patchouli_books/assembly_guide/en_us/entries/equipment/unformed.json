@@ -1,0 +1,46 @@
+{
+  "name": "Dark Matter and Equipment",
+  "icon": "modularmagic:unformed_matter",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:unformed_matter",
+      "link_recipe": true,
+      "text": "I brought wood, stone, leather, metals and gems together in aether, trying to imitate what they might have been before the world gave them form. Not yet any one material, they still held $(l)every possibility.$()$(br2)This is dark matter. Even worked into a tool, it remembers how to take shape again, drawing on aether to mend itself."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Closing the Cracks",
+      "text": "$(l)Carry a charged aether container.$() Worn dark matter tools and armor slowly mend, drawing aether from it. When it runs dry, the repairs stop.$(br2)A full suit guides the current more smoothly, saving a little aether when you cast."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:unformed_matter"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:unformed_sword",
+      "recipe2": "modularmagic:unformed_pickaxe"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:unformed_axe",
+      "recipe2": "modularmagic:unformed_shovel"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:unformed_hoe",
+      "recipe2": "modularmagic:unformed_helmet"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:unformed_chestplate",
+      "recipe2": "modularmagic:unformed_leggings"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:unformed_boots"
+    }
+  ]
+}

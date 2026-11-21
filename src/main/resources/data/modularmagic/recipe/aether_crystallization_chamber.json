@@ -2,25 +2,25 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "AGA",
-    "ENE",
-    "CCC"
+    "QSQ",
+    "GBG",
+    " P "
   ],
   "key": {
-    "A": {
-      "item": "minecraft:iron_ingot"
+    "Q": {
+      "item": "minecraft:quartz"
     },
-    "G": {
-      "item": "minecraft:glass"
-    },
-    "E": {
-      "item": "minecraft:ender_pearl"
-    },
-    "N": {
+    "S": {
       "item": "minecraft:nether_star"
     },
-    "C": {
-      "item": "minecraft:copper_block"
+    "G": {
+      "item": "modularmagic:aether_glass"
+    },
+    "B": {
+      "item": "modularmagic:aether_condenser"
+    },
+    "P": {
+      "item": "modularmagic:rune_plate_k28"
     }
   },
   "result": {

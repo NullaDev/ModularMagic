@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "action/set_block_facing",
+  "knowledge": "action/set_block_facing",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_action_set_block_facing",
+    "count": 1
+  }
+}

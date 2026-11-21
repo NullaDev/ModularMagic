@@ -1,22 +1,20 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "pattern": [
-    "CAC",
-    "ASA",
-    "CAC"
-  ],
-  "key": {
-    "C": {
-      "item": "minecraft:copper_ingot"
+  "ingredients": [
+    {
+      "item": "minecraft:ender_pearl"
     },
-    "A": {
+    {
+      "item": "modularmagic:aether_gem"
+    },
+    {
       "item": "minecraft:amethyst_shard"
     },
-    "S": {
-      "tag": "modularmagic:aether_fragments"
+    {
+      "item": "modularmagic:rune_plate_k26"
     }
-  },
+  ],
   "result": {
     "id": "modularmagic:aether_receiver",
     "count": 1

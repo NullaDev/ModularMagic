@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:clay_ball"
+    },
+    {
+      "item": "modularmagic:aether_gem"
+    },
+    {
+      "item": "modularmagic:rune_plate_k31"
+    }
+  ],
+  "result": {
+    "id": "modularmagic:item_placeholder",
+    "count": 1
+  }
+}

@@ -1,32 +1,26 @@
 {
-    "name":  "魔力容器",
-    "icon":  "modularmagic:mana_container_basic",
-    "category":  "modularmagic:equipment",
-    "sortnum":  5,
-    "pages":  [
-                  {
-                      "link_recipe":  true,
-                      "item":  "modularmagic:mana_container_basic",
-                      "type":  "patchouli:spotlight",
-                      "text":  "基础、扩容、终极、创造四档与储槽、发射器使用相同的稀有度颜色。普通三档常见容量为 100K、1M、10M，以手中罐子的读数为准。$(br2)空、部分充满、全满是同一个物品的不同状态，不会自行回魔。持杖时屏幕显示背包容器的总储量和玩家专注。"
-                  },
-                  {
-                      "link_recipe":  true,
-                      "item":  "modularmagic:mana_container_expanded",
-                      "type":  "patchouli:spotlight",
-                      "text":  "基础、扩容、终极、创造四档与储槽、发射器使用相同的稀有度颜色。普通三档常见容量为 100K、1M、10M，以手中罐子的读数为准。$(br2)空、部分充满、全满是同一个物品的不同状态，不会自行回魔。持杖时屏幕显示背包容器的总储量和玩家专注。"
-                  },
-                  {
-                      "link_recipe":  true,
-                      "item":  "modularmagic:mana_container_ultimate",
-                      "type":  "patchouli:spotlight",
-                      "text":  "基础、扩容、终极、创造四档与储槽、发射器使用相同的稀有度颜色。普通三档常见容量为 100K、1M、10M，以手中罐子的读数为准。$(br2)空、部分充满、全满是同一个物品的不同状态，不会自行回魔。持杖时屏幕显示背包容器的总储量和玩家专注。"
-                  },
-                  {
-                      "link_recipe":  true,
-                      "item":  "modularmagic:creative_mana_container",
-                      "type":  "patchouli:spotlight",
-                      "text":  "只有无限满容器，不会被抽空，也不接收魔力。放在背包或副手即可为法杖提供无限魔力，但不会免除专注消耗。"
-                  }
-              ]
+  "name": "基础以太容器",
+  "icon": "modularmagic:mana_container_basic",
+  "category": "modularmagic:energy",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:mana_container_basic",
+      "link_recipe": true,
+      "text": "从池中带走的以太需要一只稳妥的罐子。把它$(l)浸入储槽充能$()，再潜行空手取回；带在背包或副手，就能供法杖取用。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:mana_container_expanded",
+      "link_recipe": true,
+      "text": "金制的约束能收进更多微光，适合更长的旅途。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:mana_container_ultimate",
+      "link_recipe": true,
+      "text": "下界合金的外壁，可以抵住更丰厚的积蓄。罐子空了，仍要回到供能处。"
+    }
+  ]
 }

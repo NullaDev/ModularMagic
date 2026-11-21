@@ -2,18 +2,13 @@
   "name": "Worldbinding Eye",
   "icon": "modularmagic:interdimensional_lens",
   "category": "modularmagic:energy",
-  "sortnum": 18,
+  "sortnum": 16,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "modularmagic:interdimensional_lens",
       "link_recipe": true,
-      "text": "An ordinary Eye of Ender points to a single destination. Bathe it in dragon breath and steady its fracture with crystalline aether, and it can finally gaze into another world."
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Leave its gaze on the anchor",
-      "text": "Craft it after gathering dragon breath and chorus materials in the End. Use it on your personal anchor to supply its bound receiver across worlds.$(br2)No second anchor is needed at the destination, but the home anchor and supply must remain active. An ordinary Eye of Ender cannot perform this upgrade."
+      "text": "An Eye of Ender always seems to point farther than sight.$(br2)Fit this lens to a $(l)Personal Aether Anchor$() and the current can cross into another world. Leave a generous reserve at home."
     },
     {
       "type": "patchouli:crafting",

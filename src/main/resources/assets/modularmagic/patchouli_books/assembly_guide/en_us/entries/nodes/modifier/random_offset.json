@@ -1,41 +1,36 @@
 {
-    "name":  "Spell Node: Random Offset",
-    "icon":  "modularmagic:gem_modifier_random_offset",
-    "category":  "modularmagic:nodes",
-    "sortnum":  306,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_modifier_random_offset",
-                      "link_recipe":  true,
-                      "text":  "Randomly offset the spell position within the selected shape and dimensions, creating scattered effects."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "0. Subsequent effects are priced normally.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.05; distance and angle do not change complexity.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "Using This Node",
-                      "type":  "patchouli:text",
-                      "text":  "You do not need to attach any more nodes here. Insert it, then select it to adjust its settings on the right. Right-click it on the canvas to take it back."
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)shape / Required$(br)$(o)shape$()$(br2)$(li)x / Optional$(br)$(o)x$()$(br2)$(li)y / Optional$(br)$(o)y$()"
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)z / Optional$(br)$(o)z$()"
-                  }
-              ]
+  "name": "Spell Node: Random Offset",
+  "icon": "modularmagic:gem_modifier_random_offset",
+  "category": "modularmagic:nodes",
+  "sortnum": 306,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_modifier_random_offset",
+      "link_recipe": true,
+      "text": "Randomly offset the spell position within the selected shape and dimensions, creating scattered effects."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "0. Subsequent effects are priced normally."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.05; distance and angle do not change complexity."
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)shape / Required$(br2)$(li)x / Optional$(br2)$(li)y / Optional"
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)z / Optional"
+    }
+  ]
 }

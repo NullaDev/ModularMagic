@@ -1,36 +1,36 @@
 {
-    "name":  "Spell Node: Depth Test",
-    "icon":  "modularmagic:gem_predicate_depth_test",
-    "category":  "modularmagic:nodes",
-    "sortnum":  559,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_predicate_depth_test",
-                      "link_recipe":  true,
-                      "text":  "Test the child condition at successive depths below the current position. Any passing depth succeeds; an optional depth index is available."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "1 per position actually checked, plus its condition.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.1 + L(n)*C, using the maximum position count n and attached condition cost C.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)child$(br)Predicate / Insert one node"
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)max depth / Required$(br)$(o)max_depth$()$(br2)$(li)index / Optional$(br)$(o)index$()"
-                  }
-              ]
+  "name": "Spell Node: Depth Test",
+  "icon": "modularmagic:gem_predicate_depth_test",
+  "category": "modularmagic:nodes",
+  "sortnum": 559,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_predicate_depth_test",
+      "link_recipe": true,
+      "text": "Test the child condition at successive depths below the current position. Any passing depth succeeds; an optional depth index is available."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "1 per position actually checked, plus its condition."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.1 + L(n)*C, using the maximum position count n and attached condition cost C."
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)child$(br)Predicate / Insert one node"
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)max depth / Required$(br2)$(li)index / Optional"
+    }
+  ]
 }

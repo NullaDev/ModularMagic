@@ -1,24 +1,19 @@
 {
-    "name":  "法术编写台",
-    "icon":  "modularmagic:spell_writing_table",
-    "category":  "modularmagic:equipment",
-    "sortnum":  0,
-    "pages":  [
-                  {
-                      "link_recipe":  true,
-                      "item":  "modularmagic:spell_writing_table",
-                      "type":  "patchouli:spotlight",
-                      "text":  "编辑法术结构的工作台。放置后右键打开，将空核心或已保存核心放入右上角输入槽。详细操作见$(l:modularmagic:tutorial)从零教程$(/l)。"
-                  },
-                  {
-                      "recipe":  "modularmagic:spell_writing_table",
-                      "type":  "patchouli:crafting",
-                      "text":  "工作台与书与笔无序合成。"
-                  },
-                  {
-                      "title":  "保存与取出",
-                      "type":  "patchouli:text",
-                      "text":  "应用参数提交修改，取出核心整体取走。关闭界面会保存未提交参数，核心留在台内；重新打开或重载世界可继续。$(br2)同一张台同时只供一人编辑。拆除台子会掉落其中保存的核心。"
-                  }
-              ]
+  "name": "把符文连接起来",
+  "icon": "modularmagic:spell_writing_table",
+  "category": "modularmagic:equipment",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:spell_writing_table",
+      "link_recipe": true,
+      "text": "将一颗核心放上桌，已经刻好的宝石便能接入它的纹样。$(br2)$(l)相同颜色的接口$()彼此呼应。点选宝石调整它的数值；想取回一枚宝石，先拆下它后面的连接。合上界面，核心仍会留在桌上。"
+    },
+    {
+      "recipe": "modularmagic:spell_writing_table",
+      "type": "patchouli:crafting",
+      "text": "工作台与书与笔无序合成。"
+    }
+  ]
 }

@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Experience",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"experience\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Experience",
+      "text": "Experience can mend an enchanted tool without bringing fresh wood or metal. Those lights are aether moving in another form."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "Stand nearby and the device slowly draws $(l)your experience$(), turning it into aether. Step out of reach or pause it with redstone to stop the draw."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_experience"
+    }
+  ],
+  "sortnum": 24
+}

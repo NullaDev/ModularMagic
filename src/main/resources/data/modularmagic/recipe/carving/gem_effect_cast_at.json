@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "effect/cast_at",
+  "knowledge": "effect/cast_at",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_effect_cast_at",
+    "count": 1
+  }
+}

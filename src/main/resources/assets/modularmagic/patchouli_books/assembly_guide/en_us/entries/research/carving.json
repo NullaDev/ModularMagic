@@ -1,0 +1,26 @@
+{
+  "name": "Rune Carving Table",
+  "icon": "modularmagic:rune_carving_table",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:rune_carving_table",
+      "link_recipe": true,
+      "text": "Once a pattern makes sense, you can follow it with a chisel. $(l)Place a blank core, blank node or clay ball on the carving desk.$() Choose a pattern you know, then carve."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Vessels and Impressions",
+      "text": "Gems become spell cores and nodes. Clay becomes a hardened rune plate.$(br2)Set a plate into the wall of a device, and aether can follow the pattern carved across its surface."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:blank_spell_core"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:blank_spell_node"
+    }
+  ]
+}

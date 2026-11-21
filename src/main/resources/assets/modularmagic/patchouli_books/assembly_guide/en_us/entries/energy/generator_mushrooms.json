@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Mushrooms",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"mushrooms\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Mushrooms",
+      "text": "The original mushroom remains, yet a complete new one suddenly stands nearby, with no gradual growth from a tiny bud."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "Each cycle takes $(l)one red and one brown mushroom$() from nearby. If either is missing, the device waits. Leave room for them to spread again."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_mushrooms"
+    }
+  ],
+  "sortnum": 19
+}

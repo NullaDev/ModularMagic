@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "root/instant",
+  "knowledge": "root/instant",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_core"
+  },
+  "result": {
+    "id": "modularmagic:root_instant",
+    "count": 1
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：紫颂花",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"chorus\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "紫颂花",
+      "text": "紫颂花忽然换了一种形状，枝条便又向外伸出一段。最后，它停在枯萎的纹样上，再也没有下一次变化。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "器物把附近$(l)枯萎的紫颂花$()退回能够继续生长的状态，收回这次变化中的部分以太。花仍留在原处。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_chorus"
+    }
+  ],
+  "sortnum": 18
+}

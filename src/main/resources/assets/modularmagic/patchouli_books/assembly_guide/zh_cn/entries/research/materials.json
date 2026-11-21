@@ -1,0 +1,25 @@
+{
+  "name": "以太留下的形状",
+  "icon": "modularmagic:aether_gem",
+  "category": "modularmagic:energy",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "玻璃里的微光",
+      "text": "散逸的以太钻进玻璃，令它更有韧性，也留下了一点微光。敲下来的玻璃仍能再次使用。$(br2)它能围住更多以太，却经不起搬动：$(l)拆下储槽，里面的以太就会散去。$()"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:aether_glass"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "整齐的晶格",
+      "text": "钻石与绿宝石的晶格，比玻璃更能安稳地收住以太。小小的宝石容量不及储槽，却能做成随身携带的以太容器，也能点亮法杖与发射器的核心。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:aether_gem"
+    }
+  ]
+}

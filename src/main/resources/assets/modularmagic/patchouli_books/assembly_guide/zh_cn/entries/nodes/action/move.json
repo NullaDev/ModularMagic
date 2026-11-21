@@ -1,31 +1,31 @@
 {
-    "name":  "法术节点：变换空间",
-    "icon":  "modularmagic:gem_action_move",
-    "category":  "modularmagic:nodes",
-    "sortnum":  218,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_action_move",
-                      "link_recipe":  true,
-                      "text":  "依次应用空间修饰，再在变换后的位置和朝向执行子动作。"
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "默认魔力消耗",
-                      "type":  "patchouli:text",
-                      "text":  "只计算连接在后面的节点，本身不另收。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "结构复杂度",
-                      "type":  "patchouli:text",
-                      "text":  "所装空间修饰与后续动作的复杂度相加。$(br2)复杂度汇总后，按 5+10C+0.625C² 换算整次专注消耗。详见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "title":  "继续装配",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)空间修饰$(br)空间修饰 / 可放多个，最多 64 个$(br2)$(li)子节点$(br)动作 / 需要放入 1 个"
-                  }
-              ]
+  "name": "法术节点：变换空间",
+  "icon": "modularmagic:gem_action_move",
+  "category": "modularmagic:nodes",
+  "sortnum": 218,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_action_move",
+      "link_recipe": true,
+      "text": "依次应用空间修饰，再在变换后的位置和朝向执行子动作。"
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "默认以太消耗",
+      "type": "patchouli:text",
+      "text": "只计算连接在后面的节点，本身不另收。"
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "结构复杂度",
+      "type": "patchouli:text",
+      "text": "所装空间修饰与后续动作的复杂度相加。"
+    },
+    {
+      "title": "继续装配",
+      "type": "patchouli:text",
+      "text": "$(li)空间修饰$(br)空间修饰 / 可放多个，最多 64 个$(br2)$(li)子节点$(br)动作 / 需要放入 1 个"
+    }
+  ]
 }

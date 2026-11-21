@@ -1,0 +1,27 @@
+{
+  "type": "modularmagic:placeholder",
+  "target": "minecraft:obsidian",
+  "ingredients": [
+    {
+      "item": "minecraft:end_crystal"
+    },
+    {
+      "item": "minecraft:end_crystal"
+    },
+    {
+      "item": "minecraft:end_crystal"
+    },
+    {
+      "item": "minecraft:end_crystal"
+    },
+    {
+      "item": "modularmagic:rune_plate_k07"
+    },
+    {
+      "item": "modularmagic:rune_plate_k12"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    }
+  ]
+}

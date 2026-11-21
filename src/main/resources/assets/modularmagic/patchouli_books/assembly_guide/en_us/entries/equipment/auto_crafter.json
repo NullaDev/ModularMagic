@@ -1,0 +1,23 @@
+{
+  "name": "Portable Auto Crafter",
+  "icon": "modularmagic:auto_crafter",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:auto_crafter",
+      "link_recipe": true,
+      "title": "A Recipe in Your Palm",
+      "text": "A crafter already knows how to arrange materials. Give it a recipe’s image and aether, and it can keep working inside your pack.$(br2)$(l)Right-click to open it.$() Click the grid with samples; right-click to clear them. Samples are retained. Switch it on and close the screen to begin. Editing the pattern pauses it."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Materials and Mimics",
+      "text": "Real materials come first. $(l)Matching aether mimics$() can fill missing ingredients for their additional generation fee. Fluid mimics also need empty buckets; recipes return those buckets normally.$(br2)Results and remainders go back into your pack. Missing resources or a full pack pause the work without taking a partial payment."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:auto_crafter"
+    }
+  ]
+}

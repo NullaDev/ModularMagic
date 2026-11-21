@@ -1,6 +1,6 @@
 {
-    "icon":  "minecraft:writable_book",
-    "description":  "Start with the walkthrough, then use the controls reference.",
-    "name":  "Getting Started",
-    "sortnum":  0
+  "name": "Getting Started",
+  "description": "Begin with an ender pearl, learn to read the patterns, and assemble your first spell.",
+  "icon": "modularmagic:void_lens",
+  "sortnum": 0
 }

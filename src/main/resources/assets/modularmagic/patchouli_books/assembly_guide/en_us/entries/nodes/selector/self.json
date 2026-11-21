@@ -1,31 +1,26 @@
 {
-    "name":  "Spell Node: Self",
-    "icon":  "modularmagic:gem_selector_self",
-    "category":  "modularmagic:nodes",
-    "sortnum":  444,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_selector_self",
-                      "link_recipe":  true,
-                      "text":  "Select the caster, for effects such as self buffs or movement."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "0. Selecting yourself needs no area scan.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.1, independent of the following effect strength.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "Using This Node",
-                      "type":  "patchouli:text",
-                      "text":  "No more nodes or values are needed here. Insert the gem in its matching slot. Right-click it on the canvas when you want to replace it."
-                  }
-              ]
+  "name": "Spell Node: Self",
+  "icon": "modularmagic:gem_selector_self",
+  "category": "modularmagic:nodes",
+  "sortnum": 444,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_selector_self",
+      "link_recipe": true,
+      "text": "Select the caster, for effects such as self buffs or movement."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "0. Selecting yourself needs no area scan."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.1, independent of the following effect strength."
+    }
+  ]
 }

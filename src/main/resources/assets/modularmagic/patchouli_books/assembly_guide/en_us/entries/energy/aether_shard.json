@@ -8,12 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "modularmagic:aether_shard",
       "link_recipe": true,
-      "text": "Unconfined aether is light you cannot hold for long. It fades after about 100 ticks; the countdown while holding it shows the time left. Its tooltip records the actual contents, usually 200 aether."
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Do not let it fade unused",
-      "text": "Prepare your recipe before extracting from a disruptor or condenser. Finished devices confine aether and do not keep counting down.$(br2)If you cannot use a fragment in time, return it to a finite reservoir with room before it fades. For lasting material, seek a crystallization chamber."
+      "text": "You really caught it. Even without the lens, the pale light remains in your hand.$(br2)But it is slipping away. $(l)Use it before the countdown ends, or return it to a reservoir with room.$() A lasting material needs a steadier nucleus."
     }
   ]
 }

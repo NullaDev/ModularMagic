@@ -1,0 +1,19 @@
+{
+  "name": "以太拟材：岩浆",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:lava\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:lava\"}]",
+      "link_recipe": false,
+      "text": "岩浆源没有减少，滴水石锥下的锅却能一滴滴积满。拟材记住滴落、等待与偶然，让岩浆再次成形。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "为拟材定型",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)岩浆桶$(br)滴水石锥$(br)炼药锅$(br)符文板：物质显现$(br)符文板：先后与等待$(br)符文板：数与不确定性"
+    }
+  ]
+}

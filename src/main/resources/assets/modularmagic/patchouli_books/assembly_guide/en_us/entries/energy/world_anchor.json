@@ -2,23 +2,18 @@
   "name": "World Anchor",
   "icon": "modularmagic:world_anchor",
   "category": "modularmagic:energy",
-  "sortnum": 19,
+  "sortnum": 17,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "modularmagic:world_anchor",
       "link_recipe": true,
-      "text": "The place of our first arrival seems to be remembered more deeply by the world. I used an Ender Pearl to imitate that mark, so a small patch of land remembers to let water flow and crystals grow even beyond my sight."
+      "text": "The place where we first arrived seems better remembered by the world. I tried leaving that memory elsewhere.$(br2)Place the anchor beside a supplied reservoir and $(l)use it with an empty hand to wake it$(). With aether flowing, this land keeps working beyond your sight."
     },
     {
       "type": "patchouli:text",
-      "title": "Give the land a reserve",
-      "text": "Place it beside a charged reservoir, gather at least 100 and enable it with an empty hand. It first watches its own chunk; sneak-use the tuner to extend that watch to the surrounding nine.$(br2)Each chunk commonly spends 2 aether per second. Include production, storage and the resonance root, so the whole supply remains awake."
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Silence and waking",
-      "text": "When reserves run out, the anchor falls silent. About a minute after you leave this world, it also withdraws its mark and waits for your return.$(br2)After the world's long silence, a distant anchor may not yet be awake when you return. Visit it and let it catch the aether flow again; its watch will resume."
+      "title": "Sleep and Waking",
+      "text": "At first it watches its own chunk. Sneak-use the tuner to spread its memory over the surrounding nine.$(br2)An empty reserve, or the world’s long sleep, lets the mark fall quiet. $(l)Return to it$() and let the land recognize your footsteps again."
     },
     {
       "type": "patchouli:crafting",

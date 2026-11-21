@@ -1,36 +1,31 @@
 {
-    "name":  "法术节点：直线选区",
-    "icon":  "modularmagic:gem_selector_line",
-    "category":  "modularmagic:nodes",
-    "sortnum":  448,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_selector_line",
-                      "link_recipe":  true,
-                      "text":  "沿前向逐步采样，以给定尺寸建立直线实体选区。"
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "默认魔力消耗",
-                      "type":  "patchouli:text",
-                      "text":  "每次查询 50 + 2×V。V 是扫描体积；直线和圆弧按各次采样的查询相加。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "结构复杂度",
-                      "type":  "patchouli:text",
-                      "text":  "0.1。扫描范围和找到多少人不改变复杂度。$(br2)复杂度汇总后，按 5+10C+0.625C² 换算整次专注消耗。详见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "title":  "使用方法",
-                      "type":  "patchouli:text",
-                      "text":  "这里不需要再接其他节点。装入后，左键选中它，就能在右侧调整设置。想换成别的节点时，在画布上右键取回即可。"
-                  },
-                  {
-                      "title":  "可编辑参数",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)循环次数 / 必填$(br)$(o)step$()$(br2)$(li)尺寸 / 必填$(br)$(o)size$()"
-                  }
-              ]
+  "name": "法术节点：直线选区",
+  "icon": "modularmagic:gem_selector_line",
+  "category": "modularmagic:nodes",
+  "sortnum": 448,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_selector_line",
+      "link_recipe": true,
+      "text": "沿前向逐步采样，以给定尺寸建立直线实体选区。"
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "默认以太消耗",
+      "type": "patchouli:text",
+      "text": "每次查询 50 + 2×V。V 是扫描体积；直线和圆弧按各次采样的查询相加。"
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "结构复杂度",
+      "type": "patchouli:text",
+      "text": "0.1。扫描范围和找到多少人不改变复杂度。"
+    },
+    {
+      "title": "可编辑参数",
+      "type": "patchouli:text",
+      "text": "$(li)循环次数 / 必填$(br2)$(li)尺寸 / 必填"
+    }
+  ]
 }

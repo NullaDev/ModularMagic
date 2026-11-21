@@ -17,10 +17,20 @@ public final class ModularMagic {
     public ModularMagic(IEventBus modBus, net.neoforged.fml.ModContainer container) {
         container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER, cn.nulladev.modularmagic.energy.EnergyConfig.SPEC, "modularmagic-energy.toml");
         cn.nulladev.modularmagic.energy.EnergyContent.register(modBus);
+        cn.nulladev.modularmagic.generator.GeneratorItems.register(modBus);
+        container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER,cn.nulladev.modularmagic.generator.GeneratorCatalog.SPEC,"modularmagic-generators.toml");
         modBus.addListener(cn.nulladev.modularmagic.energy.EnergyWorld::registerTickets);
         container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER, cn.nulladev.modularmagic.config.ResourceConfig.SPEC);
         container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER, cn.nulladev.modularmagic.spell.billing.CostRules.SPEC, "modularmagic-costs.toml");
+        cn.nulladev.modularmagic.crafting.ArtificeContent.register(modBus);
+        container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER,cn.nulladev.modularmagic.crafting.ArtificeConfig.SPEC,"modularmagic-artifice.toml");
+        cn.nulladev.modularmagic.utility.UtilityContent.register(modBus);
+        container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER,cn.nulladev.modularmagic.utility.UtilityConfig.SPEC,"modularmagic-utilities.toml");
         ModContent.register(modBus);
+        cn.nulladev.modularmagic.research.ResearchContent.register(modBus);
+        cn.nulladev.modularmagic.research.PlaceholderContent.register(modBus);
+        container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER,cn.nulladev.modularmagic.research.PlaceholderContent.SPEC,"modularmagic-placeholders.toml");
+        container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER,cn.nulladev.modularmagic.research.ResearchContent.SPEC,"modularmagic-research.toml");
         cn.nulladev.modularmagic.mana.PlayerFocus.register(modBus);
         modBus.addListener(EditorNetworking::register);
         modBus.addListener(ModularMagic::creativeContents);

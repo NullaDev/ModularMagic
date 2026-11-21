@@ -1,36 +1,31 @@
 {
-    "name":  "Spell Node: Box",
-    "icon":  "modularmagic:gem_selector_box",
-    "category":  "modularmagic:nodes",
-    "sortnum":  446,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_selector_box",
-                      "link_recipe":  true,
-                      "text":  "Select entities in a box configured by size, height and centering. Selection alone applies no effects."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "Each query costs 50 + 2*V, where V is scan volume. Lines and arcs add their sample queries.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.1. Scan range and target count do not change complexity.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "Using This Node",
-                      "type":  "patchouli:text",
-                      "text":  "You do not need to attach any more nodes here. Insert it, then select it to adjust its settings on the right. Right-click it on the canvas to take it back."
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)size / Required$(br)$(o)size$()$(br2)$(li)y / Required$(br)$(o)y$()$(br2)$(li)center / Optional$(br)$(o)center$()"
-                  }
-              ]
+  "name": "Spell Node: Box",
+  "icon": "modularmagic:gem_selector_box",
+  "category": "modularmagic:nodes",
+  "sortnum": 446,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_selector_box",
+      "link_recipe": true,
+      "text": "Select entities in a box configured by size, height and centering. Selection alone applies no effects."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "Each query costs 50 + 2*V, where V is scan volume. Lines and arcs add their sample queries."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.1. Scan range and target count do not change complexity."
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)size / Required$(br2)$(li)y / Required$(br2)$(li)center / Optional"
+    }
+  ]
 }

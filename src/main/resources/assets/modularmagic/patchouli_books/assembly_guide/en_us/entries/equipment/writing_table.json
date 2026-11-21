@@ -1,24 +1,19 @@
 {
-    "name":  "Spell Writing Table",
-    "icon":  "modularmagic:spell_writing_table",
-    "category":  "modularmagic:equipment",
-    "sortnum":  0,
-    "pages":  [
-                  {
-                      "link_recipe":  true,
-                      "item":  "modularmagic:spell_writing_table",
-                      "type":  "patchouli:spotlight",
-                      "text":  "Place and open this table to edit a spell. Insert a typed or saved core in the top-right slot. See the $(l:modularmagic:tutorial)walkthrough$(/l)."
-                  },
-                  {
-                      "recipe":  "modularmagic:spell_writing_table",
-                      "type":  "patchouli:crafting",
-                      "text":  "Shapeless crafting table and book and quill recipe."
-                  },
-                  {
-                      "title":  "Saving and extraction",
-                      "type":  "patchouli:text",
-                      "text":  "Apply commits edits; Take core extracts the assembly. Closing saves pending parameters and keeps the core inside across world reloads.$(br2)One player can edit a table at a time. Breaking it drops its stored core."
-                  }
-              ]
+  "name": "Connecting Spell Nodes",
+  "icon": "modularmagic:spell_writing_table",
+  "category": "modularmagic:equipment",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:spell_writing_table",
+      "link_recipe": true,
+      "text": "Place a core on the table and join your carved gems to its pattern.$(br2)$(l)Matching colors$() fit together. Select a gem to change its values; remove its children before taking it back. The core stays on the table when you leave."
+    },
+    {
+      "recipe": "modularmagic:spell_writing_table",
+      "type": "patchouli:crafting",
+      "text": "Shapeless crafting table and book and quill recipe."
+    }
+  ]
 }

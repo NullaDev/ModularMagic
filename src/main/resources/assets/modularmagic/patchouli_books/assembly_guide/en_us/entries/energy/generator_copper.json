@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Copper",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"copper\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Copper",
+      "text": "Copper weathers in steps as well. Two matching blocks can suddenly acquire different colors."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "The device moves nearby copper $(l)one oxidation stage backward$(), reclaiming some aether. Fresh copper must weather again before another reversal."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_copper"
+    }
+  ],
+  "sortnum": 11
+}

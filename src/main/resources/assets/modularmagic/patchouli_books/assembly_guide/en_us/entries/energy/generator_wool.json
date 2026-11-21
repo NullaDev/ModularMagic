@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Wool",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"wool\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Wool",
+      "text": "A sheep takes a mouthful of grass, and its entire fleece returns at once. This is no gradual growth, but a complete change."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "The device reclaims the fleece of nearby $(l)adult sheep$(), leaving them unharmed and dropping no wool. Leave grazing ground for the next cycle."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_wool"
+    }
+  ],
+  "sortnum": 7
+}

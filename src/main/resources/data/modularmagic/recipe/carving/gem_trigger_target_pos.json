@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "trigger/target_pos",
+  "knowledge": "trigger/target_pos",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_trigger_target_pos",
+    "count": 1
+  }
+}

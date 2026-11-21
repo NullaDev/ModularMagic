@@ -1,41 +1,36 @@
 {
-    "name":  "Spell Node: Damage",
-    "icon":  "modularmagic:gem_effect_damage",
-    "category":  "modularmagic:nodes",
-    "sortnum":  766,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_effect_damage",
-                      "link_recipe":  true,
-                      "text":  "Deal the specified amount and type of damage to selected entities, subject to damage type and vanilla damage rules."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "Per target and attempt: m(d)=k*(500*d+12.5*d*d). d is requested damage; ordinary damage uses k=1.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.1, regardless of damage, effect level or number of targets.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "Using This Node",
-                      "type":  "patchouli:text",
-                      "text":  "You do not need to attach any more nodes here. Insert it, then select it to adjust its settings on the right. Right-click it on the canvas to take it back."
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)damage type / Required$(br)$(o)damage_type$()$(br2)$(li)damage / Required$(br)$(o)damage$()$(br2)$(li)indirect / Optional$(br)$(o)indirect$()"
-                  },
-                  {
-                      "title":  "Parameters",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)positioned / Optional$(br)$(o)positioned$()"
-                  }
-              ]
+  "name": "Spell Node: Damage",
+  "icon": "modularmagic:gem_effect_damage",
+  "category": "modularmagic:nodes",
+  "sortnum": 766,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_effect_damage",
+      "link_recipe": true,
+      "text": "Deal the specified amount and type of damage to selected entities, subject to damage type and vanilla damage rules."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "Per target and attempt: m(d)=k*(500*d+12.5*d*d). d is requested damage; ordinary damage uses k=1."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.1, regardless of damage, effect level or number of targets."
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)damage type / Required$(br2)$(li)damage / Required$(br2)$(li)indirect / Optional"
+    },
+    {
+      "title": "Parameters",
+      "type": "patchouli:text",
+      "text": "$(li)positioned / Optional"
+    }
+  ]
 }

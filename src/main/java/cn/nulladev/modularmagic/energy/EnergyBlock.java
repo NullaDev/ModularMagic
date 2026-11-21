@@ -44,10 +44,12 @@ public final class EnergyBlock extends Block implements EntityBlock {
             var tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
             if (tag.contains("AetherDevice")) be.restoreItem(tag.getCompound("AetherDevice"));
             if (placer != null) be.owner = placer.getUUID();
+            if(kind==EnergyContent.Kind.GENERATOR)be.generator.placed();
             be.changed();
         }
     }
     @Override protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if(kind==EnergyContent.Kind.ENCHANTER&&!(stack.getItem() instanceof EnergyLinkItem)){cn.nulladev.modularmagic.crafting.EnchantingMenu.open(player,pos);return ItemInteractionResult.SUCCESS;}
         if (stack.getItem() instanceof EnergyLinkItem) return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
         if (!(level.getBlockEntity(pos) instanceof EnergyBlockEntity be)) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         if (!level.isClientSide && be.interact(player, hand)) return ItemInteractionResult.SUCCESS;
@@ -55,12 +57,13 @@ public final class EnergyBlock extends Block implements EntityBlock {
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
     @Override protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+        if(kind==EnergyContent.Kind.ENCHANTER){cn.nulladev.modularmagic.crafting.EnchantingMenu.open(player,pos);return InteractionResult.sidedSuccess(level.isClientSide);}
         if (!level.isClientSide && level.getBlockEntity(pos) instanceof EnergyBlockEntity be) be.interact(player, InteractionHand.MAIN_HAND);
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
     @Override protected boolean hasAnalogOutputSignal(BlockState state) { return true; }
     @Override protected int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
-        return level.getBlockEntity(pos) instanceof EnergyBlockEntity be ? (int)Math.min(15, be.energy * 15 / Math.max(1, be.capacity())) : 0;
+        return level.getBlockEntity(pos) instanceof EnergyBlockEntity be ? (kind==EnergyContent.Kind.GENERATOR?be.generator.comparator():(int)Math.min(15, be.energy * 15 / Math.max(1, be.capacity()))) : 0;
     }
     @Override protected List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
         if (params.getOptionalParameter(LootContextParams.BLOCK_ENTITY) instanceof EnergyBlockEntity be) return List.of(be.asItem());
@@ -68,6 +71,8 @@ public final class EnergyBlock extends Block implements EntityBlock {
     }
     @Override protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState replacement, boolean moving) {
         if (!state.is(replacement.getBlock()) && level.getBlockEntity(pos) instanceof EnergyBlockEntity be) {
+            if(!level.isClientSide&&kind==EnergyContent.Kind.GENERATOR)cn.nulladev.modularmagic.generator.CuringGenerator.release(be.generator);
+            if(kind==EnergyContent.Kind.ENCHANTER)Containers.dropContents(level,pos,be.enchantInventory);
             be.cancelPulse(); EnergyWorld.release(be);
             if (!be.battery.isEmpty()) Containers.dropItemStack(level, pos.getX()+.5,pos.getY()+.8,pos.getZ()+.5,be.battery);
             be.battery = ItemStack.EMPTY;

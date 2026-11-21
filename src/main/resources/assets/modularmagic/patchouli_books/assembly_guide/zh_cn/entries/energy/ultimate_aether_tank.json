@@ -2,28 +2,13 @@
   "name": "终极以太储槽",
   "icon": "modularmagic:ultimate_aether_tank",
   "category": "modularmagic:energy",
-  "sortnum": 5,
+  "sortnum": 3,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "modularmagic:ultimate_aether_tank",
       "link_recipe": true,
-      "text": "下界合金制框架把以太约束在池中，液面就是积蓄的多少。这一档通常能容纳 50M，输入与输出各可达到 50K/秒。"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "浸入一只容器",
-      "text": "手持魔力容器右键放入，等它充能后潜行空手右键取回。液体中能看见正在充能的罐子。$(br2)两种以太碎片也能右键放回；只收其中封存的以太，结晶时花掉的那部分不会回来。要取出材料，请给凝结器供能。"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "搬迁前先排空",
-      "text": "储槽可贴邻给发射器、根共鸣器或供能锚供能。两个储槽仅仅相邻，并不会自动交换积蓄。$(br2)拆掉框架，失去约束的以太就会逸散；先转走存量。里面的充能容器另行掉落，比较器则能读出液面高低。"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "锻造更坚固的约束",
-      "text": "将扩容储槽与下界合金升级锻造模板、下界合金锭一同放入锻造台。更坚固的框架能够承受更多以太。"
+      "text": "下界合金让框架撑住了更多微光。这不是永不干涸的池子，只是一个更结实的约束。$(br2)充能与取物沿用$(l:energy/aether_tank)基础储槽$(/l)的做法。"
     },
     {
       "type": "patchouli:smithing",

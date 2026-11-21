@@ -1,0 +1,19 @@
+{
+  "name": "以太拟材：紫水晶簇",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:amethyst_cluster\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 16,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:amethyst_cluster\"}]",
+      "link_recipe": false,
+      "text": "晶芽依附在紫水晶母岩上，经历几次变化，最终长成晶簇。母岩并未消耗，新的晶体却已经展开。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "为拟材定型",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)紫水晶块$(br)紫水晶碎片$(br)符文板：物质显现$(br)符文板：先后与等待$(br)符文板：数与不确定性"
+    }
+  ]
+}

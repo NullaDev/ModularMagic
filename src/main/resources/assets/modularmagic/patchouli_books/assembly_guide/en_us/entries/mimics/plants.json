@@ -1,0 +1,24 @@
+{
+  "name": "Aether Mimic: Plants",
+  "icon": "modularmagic:plant_placeholder",
+  "category": "modularmagic:mimics",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:plant_placeholder",
+      "link_recipe": true,
+      "text": "Melons form, cane grows another whole segment, and trunks and leaves unfold. Small mushrooms spread on their own.$(br2)These plant materials share one mimic. Huge mushroom blocks, which require bonemeal to grow, follow a different pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Shaping the Pattern",
+      "text": "Use a sample at the center of a blank mimic, with these materials around it:$(br2)Dirt$(br)Water Bucket$(br)Rune Plate: Material Manifestation$(br)Rune Plate: Sequence and Delay$(br)Rune Plate: Numbers and Chance$(br)Rune Plate: Repetition and Sustain"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Choose a Material",
+      "text": "Use any material in this family as the reference when shaping the common mimic.$(br2)Craft that mimic together with a matching block, in either order, to select what it generates.$(br2)Craft the bound mimic alone to recover both the common mimic and the original material."
+    }
+  ]
+}

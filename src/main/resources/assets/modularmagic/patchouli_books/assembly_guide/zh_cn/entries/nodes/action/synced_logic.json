@@ -1,31 +1,31 @@
 {
-    "name":  "法术节点：同步动作",
-    "icon":  "modularmagic:gem_action_synced_logic",
-    "category":  "modularmagic:nodes",
-    "sortnum":  220,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_action_synced_logic",
-                      "link_recipe":  true,
-                      "text":  "把其中的动作按同一节律展开，让光影与实际作用保持一致。"
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "默认魔力消耗",
-                      "type":  "patchouli:text",
-                      "text":  "只计算连接在后面的节点，本身不另收。$(br2)计算说明见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "结构复杂度",
-                      "type":  "patchouli:text",
-                      "text":  "0.05，再加后续动作；同一作用留下的光影不另收一遍。$(br2)复杂度汇总后，按 5+10C+0.625C² 换算整次专注消耗。详见$(l:modularmagic:resource_costs)专注与魔力$(/l)。"
-                  },
-                  {
-                      "title":  "继续装配",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)子节点$(br)动作 / 需要放入 1 个"
-                  }
-              ]
+  "name": "法术节点：同步动作",
+  "icon": "modularmagic:gem_action_synced_logic",
+  "category": "modularmagic:nodes",
+  "sortnum": 220,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_action_synced_logic",
+      "link_recipe": true,
+      "text": "把其中的动作按同一节律展开，让光影与实际作用保持一致。"
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "默认以太消耗",
+      "type": "patchouli:text",
+      "text": "只计算连接在后面的节点，本身不另收。"
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "结构复杂度",
+      "type": "patchouli:text",
+      "text": "0.05，再加后续动作；同一作用留下的光影不另收一遍。"
+    },
+    {
+      "title": "继续装配",
+      "type": "patchouli:text",
+      "text": "$(li)子节点$(br)动作 / 需要放入 1 个"
+    }
+  ]
 }

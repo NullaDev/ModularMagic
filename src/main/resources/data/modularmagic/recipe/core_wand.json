@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "  G",
+    " P ",
+    "S  "
+  ],
+  "key": {
+    "G": {
+      "item": "modularmagic:aether_gem"
+    },
+    "P": {
+      "item": "modularmagic:rune_plate_k00"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "modularmagic:core_wand",
+    "count": 1
+  }
+}

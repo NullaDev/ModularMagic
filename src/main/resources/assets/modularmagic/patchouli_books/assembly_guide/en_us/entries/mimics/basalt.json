@@ -1,0 +1,19 @@
+{
+  "name": "Aether Mimic: Basalt",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:basalt\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:basalt\"}]",
+      "link_recipe": false,
+      "text": "Lava passing over soul soil beside blue ice forms basalt. These conditions set its pattern apart from ordinary stone."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Shaping the Pattern",
+      "text": "Use a sample at the center of a blank mimic, with these materials around it:$(br2)Lava Bucket$(br)Soul Soil$(br)Blue Ice$(br)Rune Plate: Material Manifestation$(br)Rune Plate: Recognizing Conditions"
+    }
+  ]
+}

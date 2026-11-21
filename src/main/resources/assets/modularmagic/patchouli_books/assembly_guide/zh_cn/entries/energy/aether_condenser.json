@@ -2,23 +2,13 @@
   "name": "以太凝结器",
   "icon": "modularmagic:aether_condenser",
   "category": "modularmagic:energy",
-  "sortnum": 7,
+  "sortnum": 6,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "modularmagic:aether_condenser",
       "link_recipe": true,
-      "text": "扰乱器教会我如何截住微光。我把同样的末影珍珠干涉结构放进空腔，不再等待水生成，而是直接约束已经收集的以太。"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "在工作台旁取材",
-      "text": "把凝结器贴在储槽旁，或用射流与共鸣支路送来以太。空手右键取一枚碎片，潜行可取最多 16 枚；通常每枚花费 200。$(br2)倒计时从取出时开始。先攒下以太，再备好材料，这样不用把合成的希望押在扰乱器的慢速截流上。"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "短暂的形体",
-      "text": "末影珍珠只能让以太暂时聚拢，取出后仍会消散。它不为容器充能，也不会自行生出以太。$(br2)要让这束光留得更久，需要一枚真正的晶核：下界之星。"
+      "text": "扰乱器教会我如何把以太截成碎片。我把相同的珍珠阵列收进空腔，这次，不必等水出现。$(br2)从储槽给它供能，$(l)空手右键取碎片$()。最好把它摆在工作台旁。"
     },
     {
       "type": "patchouli:crafting",

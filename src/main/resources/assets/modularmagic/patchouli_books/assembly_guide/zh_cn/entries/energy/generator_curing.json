@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：治愈",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"curing\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "治愈",
+      "text": "金苹果原本会把村民带回来。器物收走苹果，也抽走了虚弱，把这份未能发生的变化留在纹样里。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "先给僵尸村民$(l)命名$()，施加$(l)虚弱$()，再在附近丢下金苹果。等待一个疗程，以太便会涌出，它却仍是原来的僵尸村民。每次都需要新的虚弱和金苹果；等待时别让它走远。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_curing"
+    }
+  ],
+  "sortnum": 22
+}

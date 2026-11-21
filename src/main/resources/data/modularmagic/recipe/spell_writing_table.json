@@ -1,1 +1,23 @@
-{"type":"minecraft:crafting_shapeless","ingredients":[{"item":"minecraft:crafting_table"},{"item":"minecraft:writable_book"}],"result":{"id":"modularmagic:spell_writing_table","count":1}}
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "GPG",
+    "WWW"
+  ],
+  "key": {
+    "G": {
+      "item": "modularmagic:aether_glass"
+    },
+    "P": {
+      "item": "modularmagic:rune_plate_k00"
+    },
+    "W": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "id": "modularmagic:spell_writing_table",
+    "count": 1
+  }
+}

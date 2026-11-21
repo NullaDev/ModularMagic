@@ -21,7 +21,16 @@ public final class EnergyLinkItem extends Item {
     public static void data(ItemStack stack, CompoundTag tag) { stack.set(DataComponents.CUSTOM_DATA,CustomData.of(tag)); }
     @Override public InteractionResult useOn(UseOnContext ctx) {
         var level=ctx.getLevel();var player=ctx.getPlayer();
-        if (player==null || !(level.getBlockEntity(ctx.getClickedPos()) instanceof EnergyBlockEntity be)) return InteractionResult.PASS;
+        if(player==null)return InteractionResult.PASS;
+        var selection=data(ctx.getItemInHand());
+        if(!receiver&&!level.isClientSide&&selection.contains("Generator")&&selection.getString("GeneratorDimension").equals(level.dimension().location().toString())&&level.getBlockState(ctx.getClickedPos()).is(net.minecraft.world.level.block.Blocks.JUKEBOX)){
+            var origin=BlockPos.of(selection.getLong("Generator"));
+            if(level.hasChunkAt(origin)&&level.getBlockEntity(origin) instanceof EnergyBlockEntity source&&source.allowed(player)&&source.generator.ruleId.equals("music")&&source.generator.bounds().contains(ctx.getClickedPos().getX()+.5,ctx.getClickedPos().getY()+.5,ctx.getClickedPos().getZ()+.5)){
+                var list=source.generator.musicTargets;if(list.contains(ctx.getClickedPos()))list.remove(ctx.getClickedPos());else if(list.size()<4)list.add(ctx.getClickedPos().immutable());
+                source.changed();player.displayClientMessage(Component.translatable("generator.modularmagic.bound"),true);return InteractionResult.SUCCESS;
+            }return InteractionResult.FAIL;
+        }
+        if(!(level.getBlockEntity(ctx.getClickedPos()) instanceof EnergyBlockEntity be))return InteractionResult.PASS;
         if (level.isClientSide) return InteractionResult.SUCCESS;
         if (!be.allowed(player)) { player.displayClientMessage(Component.translatable("energy.modularmagic.denied"),true); return InteractionResult.FAIL; }
         var stack=ctx.getItemInHand();var tag=data(stack);
@@ -68,14 +77,20 @@ public final class EnergyLinkItem extends Item {
         } else if(be.kind()==EnergyContent.Kind.RESONATOR) {
             clearSelection(stack);tag=data(stack);tag.putLong("Resonator",be.getBlockPos().asLong());tag.putString("ResonatorDimension",level.dimension().location().toString());data(stack,tag);
             player.displayClientMessage(Component.translatable("energy.modularmagic.select_resonance_target"),true);
+        } else if(be.kind()==EnergyContent.Kind.GENERATOR){clearSelection(stack);tag=data(stack);tag.putLong("Generator",be.getBlockPos().asLong());tag.putString("GeneratorDimension",level.dimension().location().toString());data(stack,tag);player.displayClientMessage(Component.translatable("generator.modularmagic.select_target"),true);
         } else player.displayClientMessage(be.status(),true);
         return InteractionResult.SUCCESS;
     }
-    private static void clearSelection(ItemStack stack) {var tag=data(stack);tag.remove("Emitter");tag.remove("EmitterDimension");tag.remove("Resonator");tag.remove("ResonatorDimension");data(stack,tag);}
+    private static void clearSelection(ItemStack stack) {var tag=data(stack);tag.remove("Emitter");tag.remove("EmitterDimension");tag.remove("Resonator");tag.remove("ResonatorDimension");tag.remove("Generator");tag.remove("GeneratorDimension");data(stack,tag);}
     @Override public InteractionResultHolder<ItemStack> use(Level level,Player player,InteractionHand hand) {
         if(receiver)return InteractionResultHolder.pass(player.getItemInHand(hand));
         if(!level.isClientSide) {clearSelection(player.getItemInHand(hand));player.displayClientMessage(Component.translatable("energy.modularmagic.selection_cleared"),true);}
         return InteractionResultHolder.sidedSuccess(player.getItemInHand(hand),level.isClientSide);
+    }
+    @Override public InteractionResult interactLivingEntity(ItemStack stack,Player player,net.minecraft.world.entity.LivingEntity target,InteractionHand hand){
+        var tag=data(stack);if(receiver||!tag.contains("Generator")||!tag.getString("GeneratorDimension").equals(player.level().dimension().location().toString()))return InteractionResult.PASS;
+        if(player.level().isClientSide)return InteractionResult.SUCCESS;
+        var p=BlockPos.of(tag.getLong("Generator"));if(player.level().hasChunkAt(p)&&player.level().getBlockEntity(p) instanceof EnergyBlockEntity be&&be.allowed(player)&&be.generator.ruleId.equals("equipment")&&target instanceof net.minecraft.world.entity.decoration.ArmorStand&&be.generator.bounds().contains(target.position())){be.generator.actor=target.getUUID();be.changed();player.displayClientMessage(Component.translatable("generator.modularmagic.bound"),true);return InteractionResult.SUCCESS;}return InteractionResult.FAIL;
     }
     @Override public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> lines, TooltipFlag flag) {
         lines.add(Component.translatable(receiver?"energy.modularmagic.receiver_help":"energy.modularmagic.tuner_help"));

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " Q ",
+    "QGQ",
+    " P "
+  ],
+  "key": {
+    "Q": {
+      "item": "minecraft:gold_nugget"
+    },
+    "G": {
+      "item": "modularmagic:aether_gem"
+    },
+    "P": {
+      "item": "minecraft:ender_pearl"
+    }
+  },
+  "result": {
+    "id": "modularmagic:blank_spell_core",
+    "count": 2
+  }
+}

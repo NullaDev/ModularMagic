@@ -1,0 +1,24 @@
+{
+  "type": "modularmagic:placeholder",
+  "target": "minecraft:obsidian",
+  "ingredients": [
+    {
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "item": "minecraft:obsidian"
+    },
+    {
+      "item": "modularmagic:rune_plate_k21"
+    },
+    {
+      "item": "modularmagic:rune_plate_k29"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    },
+    {
+      "item": "modularmagic:rune_plate_k12"
+    }
+  ]
+}

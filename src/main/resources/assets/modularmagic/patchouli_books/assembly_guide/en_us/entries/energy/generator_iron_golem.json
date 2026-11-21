@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Iron Golem",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"iron_golem\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Iron Golem",
+      "text": "Villagers gather, and an iron guardian appears in their hour of need. No furnace burns and no iron arrives, yet its heavy body stands before me."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "The device consumes nearby $(l)unnamed iron golems$(), leaving no iron ingots. Name any guardian you wish to keep."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_iron_golem"
+    }
+  ],
+  "sortnum": 15
+}

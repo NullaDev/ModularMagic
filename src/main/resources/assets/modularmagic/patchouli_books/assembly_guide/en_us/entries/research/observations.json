@@ -1,0 +1,356 @@
+{
+  "name": "Where to Look",
+  "category": "modularmagic:misc",
+  "icon": "modularmagic:void_lens",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Assembly Basics",
+      "text": "$(l)Crafting Table$()",
+      "anchor": "k00"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Flow and Force",
+      "text": "$(l)Water, Piston$()$(br2)Earlier knowledge: Assembly Basics",
+      "anchor": "k01"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Vanishing",
+      "text": "$(l)Fire$()$(br2)Earlier knowledge: Assembly Basics",
+      "anchor": "k02"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Material Manifestation",
+      "text": "$(l)Water$()$(br2)Earlier knowledge: Assembly Basics, Recognizing Conditions",
+      "anchor": "k03"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Signs and Sound",
+      "text": "$(l)Note Block, Campfire, Jukebox$()$(br2)Earlier knowledge: Assembly Basics",
+      "anchor": "k04"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Spatial Frames",
+      "text": "$(l)Water, Piston, Dispenser$()$(br2)Earlier knowledge: Assembly Basics",
+      "anchor": "k05"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Sequence and Delay",
+      "text": "$(l)Repeater$()$(br2)Earlier knowledge: Assembly Basics",
+      "anchor": "k06"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Repetition and Sustain",
+      "text": "$(l)Repeater, Hopper$()$(br2)Earlier knowledge: Sequence and Delay",
+      "anchor": "k07"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Recognizing Conditions",
+      "text": "$(l)Oak Trapdoor, Observer, Spruce Trapdoor, Birch Trapdoor, Jungle Trapdoor, Acacia Trapdoor, Dark Oak Trapdoor, Mangrove Trapdoor, Cherry Trapdoor, Bamboo Trapdoor, Crimson Trapdoor, Warped Trapdoor, Iron Trapdoor$()$(br2)Earlier knowledge: Assembly Basics",
+      "anchor": "k08"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Logical Composition",
+      "text": "$(l)Redstone Torch$()$(br2)Earlier knowledge: Recognizing Conditions",
+      "anchor": "k09"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Numbers and Chance",
+      "text": "$(l)Dropper, Comparator$()$(br2)Earlier knowledge: Recognizing Conditions",
+      "anchor": "k10"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Directions and Patterns",
+      "text": "$(l)Rail$()$(br2)Earlier knowledge: Spatial Frames, Repetition and Sustain",
+      "anchor": "k11"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Areas of Effect",
+      "text": "$(l)Stone Pressure Plate, Beacon$()$(br2)Earlier knowledge: Spatial Frames",
+      "anchor": "k12"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Collections and Traversal",
+      "text": "$(l)Chest$()$(br2)Earlier knowledge: Areas of Effect, Logical Composition",
+      "anchor": "k13"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Bounded Repetition",
+      "text": "$(l)Hopper$()$(br2)Earlier knowledge: Repetition and Sustain, Logical Composition, Numbers and Chance",
+      "anchor": "k14"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Ballistics",
+      "text": "$(l)Dispenser$()$(br2)Earlier knowledge: Flow and Force, Spatial Frames",
+      "anchor": "k15"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Trajectories and Collisions",
+      "text": "$(l)Dispenser$()$(br2)Earlier knowledge: Ballistics, Repetition and Sustain, Impact",
+      "anchor": "k16"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Detailed Manifestations",
+      "text": "$(l)Hay Block$()$(br2)Earlier knowledge: Signs and Sound, Spatial Frames, Sequence and Delay",
+      "anchor": "k17"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Impact",
+      "text": "$(l)Cactus, Target$()$(br2)Earlier knowledge: Assembly Basics",
+      "anchor": "k18"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Burning and Affliction",
+      "text": "$(l)Campfire, Fire, Powder Snow$()$(br2)Earlier knowledge: Impact",
+      "anchor": "k19"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Potions and Filters",
+      "text": "$(l)Brewing Stand$()$(br2)Earlier knowledge: Recognizing Conditions",
+      "anchor": "k20"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Spatial Transfer",
+      "text": "$(l)Obsidian, Nether Portal$()$(br2)Earlier knowledge: Spatial Frames, Recognizing Conditions",
+      "anchor": "k21"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Moving Blocks",
+      "text": "$(l)Sand, Gravel$()$(br2)Earlier knowledge: Material Manifestation, Ballistics",
+      "anchor": "k22"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Aether Interception",
+      "text": "$(l)Water, Glass, Aether Disruptor$()$(br2)Earlier knowledge: Assembly Basics",
+      "anchor": "k23"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Reversing Rules",
+      "text": "$(l)Furnace$()$(br2)Earlier knowledge: Vanishing, Material Manifestation, Recognizing Conditions",
+      "anchor": "k24"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Crystal Resonance",
+      "text": "$(l)Budding Amethyst, Amethyst Cluster$()$(br2)Earlier knowledge: Sequence and Delay, Repetition and Sustain, Directions and Patterns",
+      "anchor": "k25"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Ownership and Distance",
+      "text": "$(l)Ender Chest$()$(br2)Earlier knowledge: Spatial Transfer, Crystal Resonance, Stable Crystallization",
+      "anchor": "k26"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "World Persistence",
+      "text": "$(l)Red Bed, Lodestone, White Bed, Orange Bed, Magenta Bed, Light Blue Bed, Yellow Bed, Lime Bed, Pink Bed, Gray Bed, Light Gray Bed, Cyan Bed, Purple Bed, Blue Bed, Brown Bed, Green Bed, Black Bed$()$(br2)Earlier knowledge: Repetition and Sustain, Aether Interception, Recognizing Conditions",
+      "anchor": "k27"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Stable Crystallization",
+      "text": "$(l)Aether Crystallization Chamber, Beacon$()$(br2)Earlier knowledge: Aether Interception",
+      "anchor": "k28"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Interdimensional Attunement",
+      "text": "$(l)End Stone, End Portal Frame$()$(br2)Earlier knowledge: Ownership and Distance, Spatial Transfer",
+      "anchor": "k29"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Containment and Expansion",
+      "text": "$(l)Gold Block, Diamond Block, Smithing Table$()$(br2)Earlier knowledge: Recognizing Conditions, Aether Interception",
+      "anchor": "k30"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Conjuration",
+      "text": "$(l)Crafting Table$()$(br2)Earlier knowledge: Material Manifestation, Recognizing Conditions",
+      "anchor": "k31"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Water",
+      "text": "$(l)Water$()$(br2)Earlier knowledge: Reversing Rules",
+      "anchor": "p01"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Stone",
+      "text": "$(l)Cobblestone, Stone, Basalt$()$(br2)Earlier knowledge: Reversing Rules",
+      "anchor": "p02"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Lava",
+      "text": "$(l)Cauldron, Lava, Water Cauldron, Lava Cauldron, Powder Snow Cauldron$()$(br2)Earlier knowledge: Reversing Rules, Sequence and Delay",
+      "anchor": "p03"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Equipment",
+      "text": "$(l)Iron Block$()$(br2)Earlier knowledge: Reversing Rules",
+      "anchor": "p04"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Snow",
+      "text": "$(l)Snow, Snow Block$()$(br2)Earlier knowledge: Reversing Rules, Collections and Traversal, Sequence and Delay",
+      "anchor": "p05"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Wool",
+      "text": "$(l)White Wool, Orange Wool, Magenta Wool, Light Blue Wool, Yellow Wool, Lime Wool, Pink Wool, Gray Wool, Light Gray Wool, Cyan Wool, Purple Wool, Blue Wool, Brown Wool, Green Wool, Red Wool, Black Wool$()$(br2)Earlier knowledge: Reversing Rules, Potions and Filters, Areas of Effect",
+      "anchor": "p06"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Fire",
+      "text": "$(l)Fire$()$(br2)Earlier knowledge: Reversing Rules, Burning and Affliction",
+      "anchor": "p07"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Crops",
+      "text": "$(l)Wheat, Carrots, Potatoes, Beetroots$()$(br2)Earlier knowledge: Reversing Rules",
+      "anchor": "p08"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Ice",
+      "text": "$(l)Ice$()$(br2)Earlier knowledge: Reversing Rules",
+      "anchor": "p09"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Copper",
+      "text": "$(l)Copper Block, Oxidized Copper, Exposed Copper, Weathered Copper$()$(br2)Earlier knowledge: Reversing Rules, Sequence and Delay",
+      "anchor": "p10"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Honey",
+      "text": "$(l)Beehive, Bee Nest$()$(br2)Earlier knowledge: Reversing Rules, Sequence and Delay",
+      "anchor": "p11"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Falling Sand",
+      "text": "$(l)End Portal Frame, End Portal$()$(br2)Earlier knowledge: Reversing Rules, Moving Blocks, Spatial Transfer",
+      "anchor": "p12"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Sculk",
+      "text": "$(l)Sculk, Sculk Catalyst$()$(br2)Earlier knowledge: Reversing Rules, Areas of Effect, Potions and Filters",
+      "anchor": "p13"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Iron Golem",
+      "text": "$(l)Iron Block$()$(br2)Earlier knowledge: Reversing Rules, Areas of Effect, Sequence and Delay",
+      "anchor": "p14"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Rails",
+      "text": "$(l)Rail, Powered Rail, Detector Rail, Activator Rail$()$(br2)Earlier knowledge: Reversing Rules, Directions and Patterns, Areas of Effect",
+      "anchor": "p15"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Amethyst",
+      "text": "$(l)Amethyst Cluster, Budding Amethyst$()$(br2)Earlier knowledge: Reversing Rules, Signs and Sound, Sequence and Delay",
+      "anchor": "p16"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Chorus",
+      "text": "$(l)Chorus Flower, Chorus Plant$()$(br2)Earlier knowledge: Reversing Rules, Collections and Traversal, Sequence and Delay",
+      "anchor": "p17"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Mushrooms",
+      "text": "$(l)Red Mushroom, Brown Mushroom, Mycelium$()$(br2)Earlier knowledge: Reversing Rules, Logical Composition",
+      "anchor": "p18"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Music Discs",
+      "text": "$(l)Jukebox$()$(br2)Earlier knowledge: Reversing Rules, Signs and Sound, Sequence and Delay",
+      "anchor": "p19"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Eggs",
+      "text": "$(l)Hay Block$()$(br2)Earlier knowledge: Reversing Rules, Areas of Effect",
+      "anchor": "p20"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Curing",
+      "text": "$(l)Iron Bars, Brewing Stand$()$(br2)Earlier knowledge: Reversing Rules, Potions and Filters, Sequence and Delay, Areas of Effect",
+      "anchor": "p21"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "TNT",
+      "text": "$(l)Tnt$()$(br2)Earlier knowledge: Reversing Rules, Burning and Affliction, Areas of Effect",
+      "anchor": "p22"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Shape of Experience",
+      "text": "$(l)Anvil, Grindstone, Enchanting Table$()$(br2)Earlier knowledge: Assembly Basics",
+      "anchor": "k32"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Patterns of Enchantment",
+      "text": "$(l)Enchanting Table$()$(br2)Earlier knowledge: The Shape of Experience, Material Manifestation",
+      "anchor": "k33"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Dark Matter",
+      "text": "$(l)Netherite Block$()$(br2)Earlier knowledge: The Shape of Experience, Patterns of Enchantment, Stable Crystallization",
+      "anchor": "k34"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Experience Reclaimed",
+      "text": "$(l)Anvil, Grindstone$()$(br2)Earlier knowledge: Reversing Rules, The Shape of Experience",
+      "anchor": "p23"
+    }
+  ]
+}

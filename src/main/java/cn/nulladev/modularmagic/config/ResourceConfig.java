@@ -7,6 +7,7 @@ public final class ResourceConfig {
     public static final ModConfigSpec SPEC;
     public static final ModConfigSpec.LongValue BASIC, EXPANDED, ULTIMATE;
     public static final ModConfigSpec.DoubleValue WAND_MANA, WAND_FOCUS;
+    public static final ModConfigSpec.DoubleValue ADVANCED_WAND_MANA, ADVANCED_WAND_FOCUS;
     public static final ModConfigSpec.DoubleValue FOCUS_MAX, FOCUS_REGEN;
     public static final ModConfigSpec.DoubleValue MISS_REFUND;
     public static final ModConfigSpec.BooleanValue REFUND_MISS_ONLY;
@@ -21,6 +22,9 @@ public final class ResourceConfig {
         WAND_MANA = b.comment("Multiplier for survival/adventure casting. Creative game mode is always free.")
                 .defineInRange("manaMultiplier", 1.0, 0.0, 1000.0);
         WAND_FOCUS = b.defineInRange("focusMultiplier", 1.0, 0.0, 1000.0);
+        b.pop().push("advancedWand");
+        ADVANCED_WAND_MANA = b.defineInRange("manaMultiplier", 0.5, 0.0, 1000.0);
+        ADVANCED_WAND_FOCUS = b.defineInRange("focusMultiplier", 0.8, 0.0, 1000.0);
         b.pop().push("focus");
         FOCUS_MAX = b.defineInRange("maximum", 100.0, 1.0, 2500000.0);
         FOCUS_REGEN = b.comment("Focus regenerated per second. Default 10 with maximum 100 takes 10 seconds from zero; negative debt takes additional time.")

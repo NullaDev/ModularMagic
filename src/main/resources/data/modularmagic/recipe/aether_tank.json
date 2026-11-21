@@ -3,18 +3,21 @@
   "category": "misc",
   "pattern": [
     "CGC",
-    "GSG",
-    "CCC"
+    "GBG",
+    "CPC"
   ],
   "key": {
     "C": {
       "item": "minecraft:copper_ingot"
     },
     "G": {
-      "item": "minecraft:glass"
+      "item": "modularmagic:aether_glass"
     },
-    "S": {
-      "tag": "modularmagic:aether_fragments"
+    "B": {
+      "item": "modularmagic:mana_container_basic"
+    },
+    "P": {
+      "item": "modularmagic:rune_plate_k03"
     }
   },
   "result": {

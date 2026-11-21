@@ -1,28 +1,28 @@
 {
-    "name":  "Controls and Quick Lookup",
-    "icon":  "minecraft:writable_book",
-    "category":  "modularmagic:editor",
-    "sortnum":  1,
-    "pages":  [
-                  {
-                      "title":  "Start here",
-                      "type":  "patchouli:text",
-                      "text":  "New players should read $(l:modularmagic:tutorial)From Zero: Your First Spell$(/l).$(br2)Look up unfamiliar equipment, follow the flow of aether to supply your workshop, or search the node reference by name."
-                  },
-                  {
-                      "title":  "Assembly controls",
-                      "type":  "patchouli:text",
-                      "text":  "Insert a held gem with left-click; select a node with left-click; remove a leaf with right-click. Empty child slots before removing a parent. Extract roots as a whole.$(br2)Drag space or middle-drag to pan; scroll to zoom. Scroll parameters; use the ellipsis for more options."
-                  },
-                  {
-                      "title":  "Hold Ctrl to look up",
-                      "type":  "patchouli:text",
-                      "text":  "Keep the Assembly Guide in your hotbar. Hover a node, core, table or wand and hold Ctrl until the lookup ring completes.$(br2)This uses Patchouli quick lookup. If its settings use Shift instead, follow that setting. The guide must be in your hotbar."
-                  },
-                  {
-                      "title":  "References and expressions",
-                      "type":  "patchouli:text",
-                      "text":  "Sample icons, blocks and potion effects using reference slots: left-click with the relevant item on your cursor without consuming it; right-click to clear.$(br2)Text fields accept expressions, IDs or the requested JSON. Variables must be in scope; optional fields may be empty."
-                  }
-              ]
+  "name": "Controls and Quick Lookup",
+  "icon": "minecraft:writable_book",
+  "category": "modularmagic:editor",
+  "sortnum": 1,
+  "pages": [
+    {
+      "title": "Start here",
+      "type": "patchouli:text",
+      "text": "New players should read $(l:modularmagic:tutorial)From Zero: Your First Spell$(/l).$(br2)Look up unfamiliar equipment, follow the flow of aether to supply your workshop, or search the node reference by name."
+    },
+    {
+      "title": "Assembly controls",
+      "type": "patchouli:text",
+      "text": "Insert a held gem with left-click; select a node with left-click; remove a leaf with right-click. Empty child slots before removing a parent. Extract roots as a whole.$(br2)Drag space or middle-drag to pan; scroll to zoom. Scroll parameters; use the ellipsis for more options."
+    },
+    {
+      "title": "Hold Ctrl to look up",
+      "type": "patchouli:text",
+      "text": "Keep the Assembly Guide in your hotbar. Hover a node, core, table or wand and hold Ctrl until the lookup ring completes.$(br2)This uses Patchouli quick lookup. If its settings use Shift instead, follow that setting. The guide must be in your hotbar."
+    },
+    {
+      "title": "References and expressions",
+      "type": "patchouli:text",
+      "text": "Sample icons, blocks and potion effects using reference slots: left-click with the relevant item on your cursor without consuming it; right-click to clear.$(br2)Text fields accept expressions, IDs or the requested JSON. Variables must be in scope; optional fields may be empty."
+    }
+  ]
 }

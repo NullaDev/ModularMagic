@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "root/charge",
+  "knowledge": "root/charge",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_core"
+  },
+  "result": {
+    "id": "modularmagic:root_charge",
+    "count": 1
+  }
+}

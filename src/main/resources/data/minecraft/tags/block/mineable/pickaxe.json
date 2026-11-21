@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "modularmagic:aether_generator",
+    "modularmagic:aether_enchanter"
+  ]
+}

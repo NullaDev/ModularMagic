@@ -1,0 +1,24 @@
+{
+  "type": "modularmagic:placeholder",
+  "target": "minecraft:lava",
+  "ingredients": [
+    {
+      "item": "minecraft:lava_bucket"
+    },
+    {
+      "item": "minecraft:pointed_dripstone"
+    },
+    {
+      "item": "minecraft:cauldron"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    },
+    {
+      "item": "modularmagic:rune_plate_k06"
+    },
+    {
+      "item": "modularmagic:rune_plate_k10"
+    }
+  ]
+}

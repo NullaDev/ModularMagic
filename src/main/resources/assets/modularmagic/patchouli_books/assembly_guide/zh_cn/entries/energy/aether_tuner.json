@@ -2,23 +2,13 @@
   "name": "以太调谐器",
   "icon": "modularmagic:aether_tuner",
   "category": "modularmagic:energy",
-  "sortnum": 14,
+  "sortnum": 12,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "modularmagic:aether_tuner",
       "link_recipe": true,
-      "text": "敲击紫水晶时，不同的回声会彼此应和。调谐器可以记住一股以太流的节拍，再把这个节拍交给另一个装置。"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "记住上游，再点下游",
-      "text": "接射流：先点发射器，再点接收装置。$(br2)接共鸣：先点已接通的共鸣器，再点下游共鸣器或工坊装置。一台共鸣器只能跟随一个上游，却能分出多条支路。$(br2)选错时，对空中右键清除记忆。"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "重新安排流向",
-      "text": "潜行点有上游的共鸣器，断开它的上游联系；它可以重新作为根，贴在储槽旁供能。潜行点根共鸣器则更换频率，需要重新同调下游。$(br2)潜行点世界锚切换一个或九个区块；点其他装置暂停或恢复输出。以太不能在共鸣树上绕回自己。"
+      "text": "它记得我先指向的器物，也能把第二处位置告诉微光。$(br2)$(l)先点来源，再点去处。$()对着空气使用，便忘掉刚才的位置。潜行使用可以暂停器物。"
     },
     {
       "type": "patchouli:crafting",

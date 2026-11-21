@@ -1,0 +1,18 @@
+{
+  "name": "Questions on Paper",
+  "icon": "modularmagic:void_lens",
+  "category": "modularmagic:editor",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:rune_research_table",
+      "link_recipe": true,
+      "text": "$(l)Use unfinished notes on the research desk.$() Place ink beside the paper or keep it in your pack; the desk takes what it needs when you begin.$(br2)Choose a shape on the right and fit it into a slot of the same color. Left-click a node to adjust its values, or right-click a loose end to lift it away. The shapes on the paper are impressions: your actual gems stay in your pack."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Fresh Page",
+      "text": "View the Reference to compare connections and hover to inspect values, then return to My Reading.$(br2)$(l)Leaving unfinished work returns the notes and clears the draft and ink payment.$() A fresh attempt needs fresh ink. Knowledge already understood remains yours."
+    }
+  ]
+}

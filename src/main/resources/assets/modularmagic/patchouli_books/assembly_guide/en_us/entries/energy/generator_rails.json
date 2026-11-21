@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Rails",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"rails\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Rails",
+      "text": "As a piston repeats the same movement, an extra rail can remain. Even that small repetition holds a little aether."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "Deliver $(l)dropped rails$() nearby. All four rail types work; the device only takes what its buffer can hold."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_rails"
+    }
+  ],
+  "sortnum": 16
+}

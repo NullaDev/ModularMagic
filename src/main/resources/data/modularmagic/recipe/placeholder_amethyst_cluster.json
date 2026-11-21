@@ -1,0 +1,21 @@
+{
+  "type": "modularmagic:placeholder",
+  "target": "minecraft:amethyst_cluster",
+  "ingredients": [
+    {
+      "item": "minecraft:amethyst_block"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    },
+    {
+      "item": "modularmagic:rune_plate_k06"
+    },
+    {
+      "item": "modularmagic:rune_plate_k10"
+    }
+  ]
+}

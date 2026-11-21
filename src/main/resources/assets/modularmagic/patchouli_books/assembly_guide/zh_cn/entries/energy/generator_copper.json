@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：铜锈",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"copper\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "铜锈",
+      "text": "铜锈似乎也是一阶一阶爬上表面的。前一刻还相同的两块铜，转眼便有了不同的颜色。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "器物将附近铜块的氧化程度$(l)退回一阶段$()，收取这次变化留下的以太。已经恢复原色的铜，需要重新等待铜锈出现。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_copper"
+    }
+  ],
+  "sortnum": 11
+}

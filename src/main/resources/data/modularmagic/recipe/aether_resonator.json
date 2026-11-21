@@ -2,19 +2,25 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    " G ",
-    "GSG",
-    "CCC"
+    "AGA",
+    "CRC",
+    " P "
   ],
   "key": {
-    "G": {
-      "item": "minecraft:glass"
+    "A": {
+      "item": "minecraft:amethyst_block"
     },
-    "S": {
-      "tag": "modularmagic:aether_fragments"
+    "G": {
+      "item": "modularmagic:aether_gem"
     },
     "C": {
-      "item": "minecraft:copper_ingot"
+      "item": "modularmagic:aether_glass"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "P": {
+      "item": "modularmagic:rune_plate_k25"
     }
   },
   "result": {

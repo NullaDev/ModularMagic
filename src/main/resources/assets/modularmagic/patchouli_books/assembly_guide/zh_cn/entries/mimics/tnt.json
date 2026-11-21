@@ -1,0 +1,19 @@
+{
+  "name": "以太拟材：TNT",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:tnt\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 12,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:tnt\"}]",
+      "link_recipe": false,
+      "text": "原来的 TNT 留在移动的结构中，另一份却已经点燃。拟材记住活塞、铁轨与珊瑚留下的痕迹，取出那份多出的物质。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "为拟材定型",
+      "text": "在空白拟材中心放参考物，再将这些材料放入周围的槽位：$(br2)TNT$(br)失活的管珊瑚扇$(br)探测铁轨$(br)黏液块$(br)黏性活塞$(br)符文板：方块的运动$(br)符文板：冲击$(br)符文板：物质显现"
+    }
+  ]
+}

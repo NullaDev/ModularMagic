@@ -1,0 +1,22 @@
+{
+  "name": "以太发生器：蜂蜜",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"honey\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "蜂蜜",
+      "text": "蜂箱里的蜜并不连续积满，而是一层一层改变着纹样。每一次变化，都让原本空着的地方多出了一份甜香。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "让器物运转",
+      "text": "器物逐层取走附近蜂箱或蜂巢中的蜂蜜，收回部分以太。蜜蜂和巢穴都会留下；没有蜜时，器物便会等待。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_honey"
+    }
+  ],
+  "sortnum": 12
+}

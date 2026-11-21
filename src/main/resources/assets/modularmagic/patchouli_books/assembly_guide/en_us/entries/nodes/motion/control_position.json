@@ -1,31 +1,31 @@
 {
-    "name":  "Spell Node: Control Position",
-    "icon":  "modularmagic:gem_motion_control_position",
-    "category":  "modularmagic:nodes",
-    "sortnum":  978,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_motion_control_position",
-                      "link_recipe":  true,
-                      "text":  "Use the result of spatial modifiers as the target position on each update, directly defining a trajectory."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "1 per projectile per tick; motion of decorative particles is free.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0.05; controlled motion also includes its modifiers, counted once.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)modifiers$(br)Modifier / Add up to 64 nodes"
-                  }
-              ]
+  "name": "Spell Node: Control Position",
+  "icon": "modularmagic:gem_motion_control_position",
+  "category": "modularmagic:nodes",
+  "sortnum": 978,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_motion_control_position",
+      "link_recipe": true,
+      "text": "Use the result of spatial modifiers as the target position on each update, directly defining a trajectory."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "1 per projectile per tick; motion of decorative particles is free."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0.05; controlled motion also includes its modifiers, counted once."
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)modifiers$(br)Modifier / Add up to 64 nodes"
+    }
+  ]
 }

@@ -31,7 +31,7 @@ public final class ResourceHud {
         int x = 8, y = g.guiHeight() - 48;
         draw(g, x, y, 0xff38b9d5, mana.infinite() ? 1 : mana.capacity() == 0 ? 0 : (double) mana.stored() / mana.capacity(),
                 Component.translatable("hud.modularmagic.mana", mana.infinite() ? "∞" : number(mana.stored()) + " / " + number(mana.capacity())));
-        double focus = PlayerFocus.value(player), max = ResourceConfig.FOCUS_MAX.get();
+        double focus = PlayerFocus.value(player), max = PlayerFocus.maximum(player);
         long now=System.nanoTime();
         if(displayedPlayer!=player){displayedPlayer=player;focusGauge=new SmoothedGauge(focus,now);}
         if(focusGauge.target()!=focus)focusGauge.update(focus,now);

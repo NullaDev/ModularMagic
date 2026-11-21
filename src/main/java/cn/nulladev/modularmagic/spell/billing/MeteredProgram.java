@@ -125,7 +125,7 @@ public final class MeteredProgram {
                             .comparingDouble((SelectedEntities.Entry e)->e.root().position().distanceToSqr(ctx.loc().pos()))
                             .thenComparing(e->e.root().getUUID())).limit(account.targets).map(SelectedEntities.Entry::e).toList();
                     var targets=new SelectedEntities(chosen);for(var effect:engine.processors())effect.process(targets,ctx);
-                }else ((ConfiguredEngine<?>)frozen.value()).execute(ctx);
+                }else if(!cn.nulladev.modularmagic.research.MaterialPlacement.execute(frozen.value(),ctx,account)) ((ConfiguredEngine<?>)frozen.value()).execute(ctx);
             }finally{BillingRuntime.VISUAL_BATCH.set(beforeBatch);if(previous==null)BillingRuntime.NODE.remove();else BillingRuntime.NODE.set(previous);if(payload==null)BillingRuntime.PAYLOAD.remove();else BillingRuntime.PAYLOAD.set(payload);}
         });}
     }

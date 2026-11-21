@@ -1,0 +1,24 @@
+{
+  "type": "modularmagic:placeholder",
+  "target": "modularmagic:plants",
+  "ingredients": [
+    {
+      "item": "minecraft:dirt"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    },
+    {
+      "item": "modularmagic:rune_plate_k06"
+    },
+    {
+      "item": "modularmagic:rune_plate_k10"
+    },
+    {
+      "item": "modularmagic:rune_plate_k07"
+    }
+  ]
+}

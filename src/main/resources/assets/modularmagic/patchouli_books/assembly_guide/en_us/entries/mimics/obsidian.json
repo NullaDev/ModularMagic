@@ -1,0 +1,29 @@
+{
+  "name": "Aether Mimic: Obsidian",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:obsidian\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 15,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:obsidian\"}]",
+      "link_recipe": false,
+      "text": "Water turns lava into obsidian. Arrival in the End rebuilds its platform, and a dragon’s revival rebuilds the pillars.$(br2)Three different paths form the same material. Any one can shape the mimic."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Cooling Lava",
+      "text": "Use a sample at the center of a blank mimic, with these materials around it:$(br2)Water Bucket ×2$(br)Lava Bucket$(br)Rune Plate: Material Manifestation$(br)Rune Plate: Recognizing Conditions"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Returning Pillars",
+      "text": "Use a sample at the center of a blank mimic, with these materials around it:$(br2)End Crystal ×4$(br)Rune Plate: Repetition and Sustain$(br)Rune Plate: Areas of Effect$(br)Rune Plate: Material Manifestation"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The End Platform",
+      "text": "Use a sample at the center of a blank mimic, with these materials around it:$(br2)Eye of Ender$(br)Obsidian$(br)Rune Plate: Spatial Transfer$(br)Rune Plate: Interdimensional Attunement$(br)Rune Plate: Material Manifestation$(br)Rune Plate: Areas of Effect"
+    }
+  ]
+}

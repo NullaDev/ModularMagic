@@ -1,0 +1,20 @@
+{
+  "name": "会修补物质的光",
+  "icon": "minecraft:experience_bottle",
+  "category": "modularmagic:energy",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "修补裂痕的光",
+      "text": "带有经验修补的镐吸收了一点经验，裂痕便合拢了。没有添进新的材料，那道伤痕却消失了。$(br2)隔着透镜，我认出了熟悉的流动。$(l)经验，也是以太的一种形态。$()未元物质里，同样留着让裂痕合拢的纹样。"
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "modularmagic:energy/generator_experience",
+        "modularmagic:equipment/unformed"
+      ],
+      "text": "沿着这两道纹样，可以收回经验里的以太，也能找到借以太修补自身的材料。"
+    }
+  ]
+}

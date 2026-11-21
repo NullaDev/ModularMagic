@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Chorus",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"chorus\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Chorus",
+      "text": "A chorus flower changes at once, and another branch reaches outward. Eventually it settles into a withered pattern, with no next change."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "The device returns nearby $(l)withered chorus flowers$() to a growing state, reclaiming some aether while leaving the flowers in place."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_chorus"
+    }
+  ],
+  "sortnum": 18
+}

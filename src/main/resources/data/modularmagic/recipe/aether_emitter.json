@@ -2,22 +2,22 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    " GC",
-    "SQC",
-    "CCC"
+    " G ",
+    "CRC",
+    " P "
   ],
   "key": {
     "G": {
-      "item": "minecraft:glass"
+      "item": "modularmagic:aether_gem"
     },
     "C": {
       "item": "minecraft:copper_ingot"
     },
-    "S": {
-      "tag": "modularmagic:aether_fragments"
+    "R": {
+      "item": "minecraft:redstone"
     },
-    "Q": {
-      "item": "minecraft:quartz"
+    "P": {
+      "item": "modularmagic:rune_plate_k01"
     }
   },
   "result": {

@@ -1,31 +1,31 @@
 {
-    "name":  "Spell Node: Move",
-    "icon":  "modularmagic:gem_selector_move",
-    "category":  "modularmagic:nodes",
-    "sortnum":  445,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_selector_move",
-                      "link_recipe":  true,
-                      "text":  "Apply spatial modifiers, then evaluate the child selector in the resulting spatial frame."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "Only the connected nodes contribute; this node adds no mana fee.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "Add the complexity of the attached modifiers and selector.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "What to Attach",
-                      "type":  "patchouli:text",
-                      "text":  "$(li)modifiers$(br)Modifier / Add up to 64 nodes$(br2)$(li)child$(br)Selector / Insert one node"
-                  }
-              ]
+  "name": "Spell Node: Move",
+  "icon": "modularmagic:gem_selector_move",
+  "category": "modularmagic:nodes",
+  "sortnum": 445,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_selector_move",
+      "link_recipe": true,
+      "text": "Apply spatial modifiers, then evaluate the child selector in the resulting spatial frame."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "Only the connected nodes contribute; this node adds no aether fee."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "Add the complexity of the attached modifiers and selector."
+    },
+    {
+      "title": "What to Attach",
+      "type": "patchouli:text",
+      "text": "$(li)modifiers$(br)Modifier / Add up to 64 nodes$(br2)$(li)child$(br)Selector / Insert one node"
+    }
+  ]
 }

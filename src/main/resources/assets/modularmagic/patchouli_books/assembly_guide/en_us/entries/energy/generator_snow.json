@@ -1,0 +1,22 @@
+{
+  "name": "Aether Device: Snow",
+  "icon": "modularmagic:aether_generator[minecraft:custom_data={AetherDevice:{Generator:{Rule:\"snow\"}}}]",
+  "category": "modularmagic:generators",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Snow",
+      "text": "Snow falls from the sky and settles into a thin layer. Through the lens, I can see aether taking shape with each flake; dissolving that layer returns part of it."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Putting It to Work",
+      "text": "After a long interval, the device collects snow in $(l)its own chunk$(), from one block below to two above. More accumulated snow means more aether. A newly placed device waits a full cycle too.$(br2)A golem confined to one corner supplies very little each cycle. Give it a longer route, or let a broad field catch the snowfall."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_snow"
+    }
+  ],
+  "sortnum": 6
+}

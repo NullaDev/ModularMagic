@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "effect/ignite",
+  "knowledge": "effect/ignite",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_effect_ignite",
+    "count": 1
+  }
+}

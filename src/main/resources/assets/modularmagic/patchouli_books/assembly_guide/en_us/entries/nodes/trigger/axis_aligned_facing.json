@@ -1,31 +1,26 @@
 {
-    "name":  "Spell Node: Axis Aligned Facing",
-    "icon":  "modularmagic:gem_trigger_axis_aligned_facing",
-    "category":  "modularmagic:nodes",
-    "sortnum":  193,
-    "pages":  [
-                  {
-                      "type":  "patchouli:spotlight",
-                      "item":  "modularmagic:gem_trigger_axis_aligned_facing",
-                      "link_recipe":  true,
-                      "text":  "Start at the center of the block containing the caster\u0027s eyes, snapping the facing to the nearest world axis."
-                  },
-                  {
-                      "anchor":  "mana_cost",
-                      "title":  "Default Mana Cost",
-                      "type":  "patchouli:text",
-                      "text":  "0. This only chooses where the spell starts.$(br2)See $(l:modularmagic:resource_costs)Focus and Mana$(/l) for the calculation rules."
-                  },
-                  {
-                      "anchor":  "focus_cost",
-                      "title":  "Structural Complexity",
-                      "type":  "patchouli:text",
-                      "text":  "0. Choosing an origin adds no structural cost.$(br2)Combine complexity, then apply 5+10*C+0.625*C^2 for total focus. See $(l:modularmagic:resource_costs)Focus and Mana$(/l)."
-                  },
-                  {
-                      "title":  "Using This Node",
-                      "type":  "patchouli:text",
-                      "text":  "No more nodes or values are needed here. Insert the gem in its matching slot. Right-click it on the canvas when you want to replace it."
-                  }
-              ]
+  "name": "Spell Node: Axis Aligned Facing",
+  "icon": "modularmagic:gem_trigger_axis_aligned_facing",
+  "category": "modularmagic:nodes",
+  "sortnum": 193,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:gem_trigger_axis_aligned_facing",
+      "link_recipe": true,
+      "text": "Start at the center of the block containing the caster's eyes, snapping the facing to the nearest world axis."
+    },
+    {
+      "anchor": "mana_cost",
+      "title": "Default Aether Cost",
+      "type": "patchouli:text",
+      "text": "0. This only chooses where the spell starts."
+    },
+    {
+      "anchor": "focus_cost",
+      "title": "Structural Complexity",
+      "type": "patchouli:text",
+      "text": "0. Choosing an origin adds no structural cost."
+    }
+  ]
 }

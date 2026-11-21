@@ -1,0 +1,19 @@
+{
+  "name": "Aether Mimic: TNT",
+  "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:tnt\"}]",
+  "category": "modularmagic:mimics",
+  "sortnum": 12,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:tnt\"}]",
+      "link_recipe": false,
+      "text": "The original TNT remains while an extra charge is primed. The mimic remembers the traces left by piston, rail and coral."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Shaping the Pattern",
+      "text": "Use a sample at the center of a blank mimic, with these materials around it:$(br2)TNT$(br)Dead Tube Coral Fan$(br)Detector Rail$(br)Slime Block$(br)Sticky Piston$(br)Rune Plate: Moving Blocks$(br)Rune Plate: Impact$(br)Rune Plate: Material Manifestation"
+    }
+  ]
+}

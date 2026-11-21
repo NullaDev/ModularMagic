@@ -1,0 +1,12 @@
+{
+  "type": "modularmagic:rune_carving",
+  "key": "predicate/ranged_test",
+  "knowledge": "predicate/ranged_test",
+  "ingredient": {
+    "item": "modularmagic:blank_spell_node"
+  },
+  "result": {
+    "id": "modularmagic:gem_predicate_ranged_test",
+    "count": 1
+  }
+}

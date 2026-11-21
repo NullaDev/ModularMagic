@@ -1,0 +1,18 @@
+{
+  "name": "以太发生器外壳",
+  "icon": "modularmagic:generator_housing",
+  "category": "modularmagic:generators",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:generator_housing",
+      "link_recipe": true,
+      "text": "外壳容纳缓存，$(l)符文板$()记下要倒转的自然规则。再添上一件与它有关的寻常物品，器物便有了自己的用途。为收拢的以太接好去路，它才不会无处可去。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:generator_housing"
+    }
+  ]
+}
