@@ -1,0 +1,7 @@
+{
+    "parent":  "minecraft:item/generated",
+    "textures":  {
+                     "layer0":  "modularmagic:item/item_placeholder",
+                     "layer1":  "modularmagic:item/creative_sample_mark"
+                 }
+}

@@ -1,6 +1,7 @@
 package cn.nulladev.modularmagic.energy;
 
 import cn.nulladev.modularmagic.ModularMagic;
+import cn.nulladev.modularmagic.network.EnergyVisual;
 import cn.nulladev.modularmagic.mana.ManaStorage;
 import cn.nulladev.modularmagic.spell.billing.ManaEscrow;
 import net.minecraft.core.*;
@@ -9,6 +10,7 @@ import net.minecraft.server.level.*;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.world.chunk.*;
@@ -48,7 +50,11 @@ public final class EnergyWorld {
         long cost=EnergyMath.sourceCost(delivery,efficiency);
         if(delivery<=0||cost>available)return 0;
         long taken=source.extract(cost,false),accepted=dest.receive(delivery,false);
-        source.refund(taken-EnergyMath.sourceCost(accepted,efficiency));return accepted;
+        source.refund(taken-EnergyMath.sourceCost(accepted,efficiency));
+        if (accepted > 0 && source.kind() == EnergyContent.Kind.RESONATOR && source.getLevel() instanceof ServerLevel level) {
+            EnergyVisual.send(level, EnergyVisual.Kind.RESONANCE, visualPoint(source), visualPoint(dest));
+        }
+        return accepted;
     }
     @SubscribeEvent public static void tick(LevelTickEvent.Post event) {
         if(!(event.getLevel() instanceof ServerLevel level)||level.getGameTime()%5!=0)return;
@@ -111,12 +117,23 @@ public final class EnergyWorld {
             if(accepted>0&&cost<=available&&source.extract(cost,false)==cost) {
                 delivered=charge(player,accepted,false);
                 source.refund(cost-EnergyMath.sourceCost(delivered,efficiency));source.changed();
+                if (delivered > 0 && source.getLevel() instanceof ServerLevel sourceLevel) {
+                    Vec3 point = visualPoint(source);
+                    if (source.kind() == EnergyContent.Kind.ANCHOR) {
+                        EnergyVisual.send(sourceLevel, EnergyVisual.Kind.ANCHOR, point, point);
+                    } else {
+                        EnergyVisual.send(sourceLevel, EnergyVisual.Kind.RESONANCE, point, player.getEyePosition());
+                    }
+                }
             }
         }
         if(player.level().getGameTime()%20==0) {
             data.putLong("DeliveredPerSecond",delivered*4/ManaStorage.SCALE);data.putBoolean("Connected",source!=null);EnergyLinkItem.data(receiver,data);
             player.getInventory().setChanged();
         }
+    }
+    private static Vec3 visualPoint(EnergyBlockEntity device) {
+        return Vec3.atCenterOf(device.getBlockPos()).add(0, .6, 0);
     }
     @SubscribeEvent public static void tntTick(EntityTickEvent.Pre event) {
         if(!(event.getEntity() instanceof net.minecraft.world.entity.item.PrimedTnt tnt)||!(tnt.level() instanceof ServerLevel level))return;

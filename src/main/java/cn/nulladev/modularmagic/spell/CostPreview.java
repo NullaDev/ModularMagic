@@ -119,7 +119,14 @@ public final class CostPreview {
             case "effect/ignite" -> mana += .02 * value(node, "burnTicks", vars, Double.NaN);
             case "effect/property" -> mana += .02 * value(node, "duration", vars, Double.NaN);
             case "effect/projectile_hit" -> mana += .5125;
+            case "effect/procreation" -> mana += .25;
+            case "effect/heal_interval" -> mana += .05 + .5 * Math.max(0, value(node, "heal", vars, Double.NaN));
+            case "effect/stacking_status" -> mana += .02 * Math.max(0, value(node, "duration", vars, Double.NaN));
             case "action/set_block", "action/set_block_facing" -> mana += .2;
+            case "action/temporary_block", "action/melt_block" -> mana += .2;
+            case "action/potion_cloud" -> mana += .5 + .1 * sq(value(node, "radius", vars, Double.NaN));
+            case "action/thunder" -> mana += .5 + .5 * Math.max(0, d);
+            case "action/remove_liquid" -> mana += .1 + .02 * Math.max(0, value(node, "limit", vars, Double.NaN));
             case "action/remove_block" -> mana += .5;
             case "action/schedule_tick" -> { mana += .1; focus = .15 + h(value(node,"tick",vars,Double.NaN)); }
             case "effect/effect" -> mana += status(node.parameters.getOrDefault("effect",""), value(node,"duration",vars,0),value(node,"amplifier",vars,0));

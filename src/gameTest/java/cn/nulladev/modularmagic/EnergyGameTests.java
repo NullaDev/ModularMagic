@@ -305,6 +305,10 @@ public final class EnergyGameTests {
         h.assertTrue(EnergyWorld.transfer(resonator,sink,Long.MAX_VALUE,efficiency)==0,"Multiple receivers must share the resonator output quota");
         resonator.interact(p,InteractionHand.MAIN_HAND);h.assertTrue(resonator.resonanceUpgrades==0&&p.getMainHandItem().is(Items.AMETHYST_SHARD)&&p.getMainHandItem().getCount()==8,"Sneak-empty-hand use must retrieve the installed crystals");
         h.assertTrue(resonator.resonanceBandwidth()==0&&resonator.resonanceLosslessDistance()==0&&resonator.resonanceRange()==0&&EnergyWorld.transfer(resonator,sink,Long.MAX_VALUE)==0,"Removing all crystals must deactivate the shell again");
+        p.setGameMode(net.minecraft.world.level.GameType.CREATIVE);
+        p.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(Items.AMETHYST_SHARD,3));
+        resonator.interact(p,InteractionHand.MAIN_HAND);
+        h.assertTrue(resonator.resonanceUpgrades==3&&p.getMainHandItem().getCount()==3,"Installing shards in creative leaves the hand stack intact");
         resonator.resonanceUpgrades=64;var snapshot=cn.nulladev.modularmagic.compat.jade.AetherJadeData.device(resonator);
         h.assertTrue(resonator.resonanceBandwidth()==6400&&snapshot.getLong("Bandwidth")==6400&&snapshot.getInt("Range")==288&&snapshot.getDouble("LosslessDistance")==144,"A full stack must produce exactly 6.4K/s, 144 lossless blocks and 288 maximum blocks in Jade");h.succeed();
     }

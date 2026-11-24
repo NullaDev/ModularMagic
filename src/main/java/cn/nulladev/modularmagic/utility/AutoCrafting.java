@@ -36,11 +36,10 @@ public final class AutoCrafting {
             if(i==locked)continue;var stack=item(player,i);if(stack.isEmpty()||demands.stream().noneMatch(d->d.accepts(stack)))continue;
             for(int n=0;n<Math.min(stack.getCount(),demands.size());n++)sources.add(new Source(i,stack.copyWithCount(1),0,false));
         }
-        var seen=new HashSet<ResourceLocation>();
         for(int i=0;i<37;i++){
-            var mimic=item(player,i);if(!mimic.is(PlaceholderContent.ITEM.get()))continue;var target=PlaceholderItem.target(mimic);if(target==null||!seen.add(target))continue;
-            var generated=material(target);if(generated.isEmpty()||demands.stream().noneMatch(d->d.accepts(generated)))continue;
-            double fee=MaterialPlacement.fee(BuiltInRegistries.BLOCK.get(target).defaultBlockState());if(!Double.isFinite(fee)||fee<0)continue;
+            var mimic=item(player,i);if(mimic.is(PlaceholderContent.CREATIVE.get())&&!player.isCreative())continue;
+            var generated=PlaceholderItem.material(mimic);if(generated.isEmpty()||demands.stream().noneMatch(d->d.accepts(generated)))continue;
+            long fee=PlaceholderItem.price(mimic);if(fee<0)continue;
             long price=CastAccount.units(fee);if(price>=INF/10)continue;
             boolean bucket=generated.is(Items.WATER_BUCKET)||generated.is(Items.LAVA_BUCKET)||generated.is(Items.POWDER_SNOW_BUCKET);
             for(int n=0;n<demands.size();n++)sources.add(new Source(-1,generated,price,bucket));
@@ -65,14 +64,6 @@ public final class AutoCrafting {
         if(!deliver(committed,output,remains,false)||!pay(committed,price,player.isCreative()))return false;
         for(int i=0;i<37;i++)if(!ItemStack.matches(item(player,i),committed.get(i))){var old=item(player,i);if(!old.isEmpty())old.setCount(0);player.getInventory().setItem(i==36?40:i,committed.get(i));}
         player.getInventory().setChanged();player.inventoryMenu.broadcastChanges();return true;
-    }
-    public static ItemStack material(ResourceLocation target){
-        return switch(target.toString()){
-            case "minecraft:water"->new ItemStack(Items.WATER_BUCKET);
-            case "minecraft:lava"->new ItemStack(Items.LAVA_BUCKET);
-            case "minecraft:powder_snow"->new ItemStack(Items.POWDER_SNOW_BUCKET);
-            default->new ItemStack(BuiltInRegistries.BLOCK.get(target).asItem());
-        };
     }
     private static List<Demand> requirements(CraftingRecipe recipe,CraftingInput input){
         var shaped=recipe instanceof ShapedRecipe s?s:recipe instanceof ContainerUpgradeRecipe u?u.delegate():null;

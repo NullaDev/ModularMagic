@@ -48,6 +48,7 @@ public final class ArtificeJeiPlugin implements IModPlugin {
     @Override public void registerItemSubtypes(ISubtypeRegistration r){
         r.registerSubtypeInterpreter(EnergyContent.ITEMS.get(EnergyContent.Kind.GENERATOR).get(),(stack,context)->GeneratorItem.ruleId(stack));
         r.registerSubtypeInterpreter(PlaceholderContent.ITEM.get(),(stack,context)->String.valueOf(PlaceholderItem.target(stack)));
+        for(var family:MimicFamily.values())r.registerSubtypeInterpreter(family.template().getItem(),(stack,context)->String.valueOf(PlaceholderItem.target(stack)));
     }
     @Override public void registerCategories(IRecipeCategoryRegistration r){var helper=r.getJeiHelpers().getGuiHelper();r.addRecipeCategories(new Carving(helper),new Sigils(helper),new Enchanting(helper),new Condensation(helper),new SpellAssembly(helper),new Binding(helper));}
     @Override public void registerVanillaCategoryExtensions(IVanillaCategoryExtensionRegistration r){
@@ -65,9 +66,32 @@ public final class ArtificeJeiPlugin implements IModPlugin {
                 grid.createAndSetOutputs(builder,List.of(GeneratorItems.HOUSING.toStack()));builder.setShapeless();
             }
         });
+        r.getCraftingCategory().addExtension(cn.nulladev.modularmagic.utility.CannonRecipe.class,new mezz.jei.api.recipe.category.extensions.vanilla.crafting.ICraftingCategoryExtension<cn.nulladev.modularmagic.utility.CannonRecipe>(){
+            @Override public void setRecipe(RecipeHolder<cn.nulladev.modularmagic.utility.CannonRecipe> holder,IRecipeLayoutBuilder builder,mezz.jei.api.gui.ingredient.ICraftingGridHelper grid,IFocusGroup focuses){
+                grid.createAndSetInputs(builder,holder.value().getIngredients().stream().map(i->Arrays.asList(i.getItems())).toList(),0,0);
+                grid.createAndSetOutputs(builder,List.of(cn.nulladev.modularmagic.utility.UtilityContent.CANNON.toStack()));
+                builder.setShapeless();
+            }
+        });
+        r.getCraftingCategory().addExtension(PlantTemplateRecipe.class,new mezz.jei.api.recipe.category.extensions.vanilla.crafting.ICraftingCategoryExtension<PlantTemplateRecipe>(){
+            @Override public void setRecipe(RecipeHolder<PlantTemplateRecipe> holder,IRecipeLayoutBuilder builder,mezz.jei.api.gui.ingredient.ICraftingGridHelper grid,IFocusGroup focuses){
+                var recipe=holder.value();
+                var bone=PlaceholderItem.create(ResourceLocation.withDefaultNamespace("bone_meal"));
+                if(recipe.separate()){
+                    grid.createAndSetInputs(builder,List.of(List.of(PlantTemplateRecipe.withBoneMeal(bone))),0,0);
+                    grid.createAndSetOutputs(builder,List.of(MimicFamily.PLANTS.template()));
+                    builder.addSlot(RecipeIngredientRole.OUTPUT,103,39).addItemStack(bone);
+                }else{
+                    grid.createAndSetInputs(builder,List.of(List.of(MimicFamily.PLANTS.template()),List.of(bone)),0,0);
+                    grid.createAndSetOutputs(builder,List.of(PlantTemplateRecipe.withBoneMeal(bone)));
+                }
+                builder.setShapeless();
+            }
+        });
     }
     @Override public void registerRecipeCatalysts(IRecipeCatalystRegistration r){
         r.addRecipeCatalyst(new ItemStack(Items.CRAFTING_TABLE),BINDING);
+        r.addRecipeCatalyst(cn.nulladev.modularmagic.utility.UtilityContent.HANDHELD.toStack(),RecipeTypes.CRAFTING);
         r.addRecipeCatalyst(ResearchContent.CARVER_ITEM.toStack(),CARVING);r.addRecipeCatalyst(PlaceholderContent.ITEM.toStack(),SIGIL);
         r.addRecipeCatalyst(EnergyContent.ITEMS.get(EnergyContent.Kind.ENCHANTER).toStack(),ENCHANTING);
         for(var k:List.of(EnergyContent.Kind.DISRUPTOR,EnergyContent.Kind.CONDENSER,EnergyContent.Kind.CRYSTAL_CHAMBER))r.addRecipeCatalyst(EnergyContent.ITEMS.get(k).toStack(),CONDENSING);
@@ -75,7 +99,7 @@ public final class ArtificeJeiPlugin implements IModPlugin {
     }
     @Override public void registerRecipes(IRecipeRegistration r){
         var level=Minecraft.getInstance().level;if(level==null)return;
-        var bindings=new ArrayList<BindingDisplay>();for(var item:BuiltInRegistries.ITEM){var stack=new ItemStack(item);if(MimicBindingRecipe.material(stack)){bindings.add(new BindingDisplay(MimicFamily.of(((BlockItem)stack.getItem()).getBlock()),stack,false));bindings.add(new BindingDisplay(MimicFamily.of(((BlockItem)stack.getItem()).getBlock()),stack,true));}}r.addRecipes(BINDING,bindings);
+        var bindings=new ArrayList<BindingDisplay>();for(var item:BuiltInRegistries.ITEM){var stack=new ItemStack(item);for(var family:MimicFamily.values())if(MimicBindingRecipe.sample(family,stack)){bindings.add(new BindingDisplay(family,stack,false));bindings.add(new BindingDisplay(family,stack,true));}}r.addRecipes(BINDING,bindings);
         r.addRecipes(CARVING,CarvingRecipe.all(level));r.addRecipes(SIGIL,level.getRecipeManager().getAllRecipesFor(PlaceholderContent.TYPE.get()).stream().map(RecipeHolder::value).toList());
         // Custom crafting recipes need an explicit entry: the vanilla scanner skips special recipes.
         r.addRecipes(RecipeTypes.CRAFTING,level.getRecipeManager().getAllRecipesFor(net.minecraft.world.item.crafting.RecipeType.CRAFTING).stream().filter(h->h.value() instanceof GeneratorHousingRecipe).toList());
@@ -122,7 +146,7 @@ public final class ArtificeJeiPlugin implements IModPlugin {
     }
     private static final class Binding extends Category<BindingDisplay>{
         Binding(IGuiHelper h){super(h,BINDING,"binding",PlaceholderContent.ITEM.toStack(),52);}
-        public void setRecipe(IRecipeLayoutBuilder b,BindingDisplay r,IFocusGroup f){var id=BuiltInRegistries.BLOCK.getKey(((BlockItem)r.material.getItem()).getBlock());var bound=PlaceholderItem.create(id);
+        public void setRecipe(IRecipeLayoutBuilder b,BindingDisplay r,IFocusGroup f){var bound=PlaceholderItem.bind(r.family,r.material);
             b.addSlot(RecipeIngredientRole.INPUT,6,8).addItemStack(r.separate?bound:r.family.template());
             if(!r.separate)b.addSlot(RecipeIngredientRole.INPUT,34,8).addItemStack(r.material);
             b.addSlot(RecipeIngredientRole.OUTPUT,106,8).addItemStack(r.separate?r.family.template():bound);

@@ -1,7 +1,7 @@
 # Local development dependencies
 
 L2Magic 3.0.6 is a separate prerequisite, preserved from the successful local build before the source migration.
-All library JARs remain external dependencies; ModularMagic does not package their classes or resources.
+The ordinary ModularMagic JAR uses external dependencies. The `bundled` build embeds the required original binaries using NeoForge Jar-in-Jar.
 The matching -sources.jar files are kept beside the binaries for IDE navigation.
 
 Git keeps only the ten library families used by `build.gradle`, including their source

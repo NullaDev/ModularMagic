@@ -1,0 +1,17 @@
+{
+  "name": "What They Left Behind",
+  "category": "modularmagic:misc",
+  "icon": "modularmagic:knowledge_fragment",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Now and then, you'll come across a fragment of someone's study of nature, or a spell core they assembled long ago.$(br2)Use a $(l)Knowledge Fragment$() to learn a topic you haven't mastered yet. You can also put it in a crafting grid to make one Crystalline Aether Fragment."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Found Spells",
+      "text": "Villages, mineshafts and dungeons can hold simple spells using flowers, snow or water absorption. Temples, woodland mansions, Nether fortresses and trial vaults can hold spells with multiple steps, like Stone Bridge or Flame Dash. Ancient cities, End cities, bastions, strongholds and ominous vaults can hide complex spells such as Meteor or Thunderstorm.$(br2)Slot a found core into a wand, or examine and edit it at a Spell Writing Table."
+    }
+  ]
+}

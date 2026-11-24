@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_pickaxe"
+    },
+    {
+      "item": "modularmagic:aether_gem"
+    },
+    {
+      "item": "modularmagic:rune_plate_k07"
+    }
+  ],
+  "result": {
+    "id": "modularmagic:tool_unit",
+    "count": 1
+  }
+}

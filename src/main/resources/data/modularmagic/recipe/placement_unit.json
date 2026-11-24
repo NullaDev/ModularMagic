@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "modularmagic:aether_gem"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    }
+  ],
+  "result": {
+    "id": "modularmagic:placement_unit",
+    "count": 1
+  }
+}

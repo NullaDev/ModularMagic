@@ -1,0 +1,24 @@
+{
+  "type": "modularmagic:placeholder",
+  "target": "minecraft:iron_ingot",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_block"
+    },
+    {
+      "item": "minecraft:carved_pumpkin"
+    },
+    {
+      "item": "minecraft:poppy"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    },
+    {
+      "item": "modularmagic:rune_plate_k12"
+    },
+    {
+      "item": "modularmagic:rune_plate_k07"
+    }
+  ]
+}

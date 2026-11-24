@@ -1,5 +1,5 @@
 {
-  "name": "以太拟材：植物",
+  "name": "通用基础样板：植物",
   "icon": "modularmagic:plant_placeholder",
   "category": "modularmagic:mimics",
   "sortnum": 10,
@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "modularmagic:plant_placeholder",
       "link_recipe": true,
-      "text": "瓜果一齐成形，甘蔗又长出完整的一节，树干与树叶也在枝头展开。小蘑菇能自行扩散，留下新的同伴。$(br2)这些植物共用一种拟材。巨型蘑菇的方块需要骨粉催生，不属于这道纹样。"
+      "text": "瓜果、甘蔗、原木和小蘑菇等可自然生长或扩散的植物，共用一类通用样板。"
     },
     {
       "type": "patchouli:text",
@@ -18,7 +18,12 @@
     {
       "type": "patchouli:text",
       "title": "选定要生成的物质",
-      "text": "定型通用拟材时，中心可用这一类中的任意材料作参考。$(br2)在工作台中，将通用拟材与对应的方块无序合成，即可选定要生成的物质。$(br2)将选定后的拟材单独放回合成格，可以拆回通用拟材，并返还原材料。"
+      "text": "定型时以可自然繁殖的植物作参考。在工作台中，将空载样板与相应植物无序合成即可装入。把已装入的样板单独放进合成格，可以取回原植物。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:advanced_plant_placeholder",
+      "text": "空载植物通用样板加骨粉样板，可无序合成高级植物通用样板，用来装入双格花、苔藓等依靠骨粉扩繁的植物。生成费额外计入一次骨粉的消耗。$(br2)先卸下植物，再单独合成空载高级样板。取得普通植物样板时，原骨粉样板会留在格内。"
     }
   ]
 }

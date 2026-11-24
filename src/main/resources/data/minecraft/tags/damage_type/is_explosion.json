@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "modularmagic:glimmering/earthquake",
+    "modularmagic:glimmering/meteor",
+    "modularmagic:glimmering/lava_burst",
+    "modularmagic:glimmering/icy_flash"
+  ]
+}

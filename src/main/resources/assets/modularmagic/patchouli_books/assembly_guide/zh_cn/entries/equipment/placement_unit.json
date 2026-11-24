@@ -1,0 +1,17 @@
+{
+  "name": "简易施法单元：放置",
+  "icon": "modularmagic:placement_unit",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:placement_unit",
+      "link_recipe": true,
+      "text": "潜行右键装入可放置的样板。右键放出对应方块，朝向和附着遵循原版放置规则。每次成功放置消耗缓存里的以太。$(br2)可在以太储槽中补充单元的缓存。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:placement_unit"
+    }
+  ]
+}

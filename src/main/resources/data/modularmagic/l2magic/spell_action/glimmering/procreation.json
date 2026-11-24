@@ -1,0 +1,46 @@
+{
+  "action": {
+    "type": "l2magic:list",
+    "children": [
+      {
+        "type": "l2magic:sound",
+        "pitch": "5+rand(-0.1,0.1)+rand(-0.1,0.1)",
+        "sound": "minecraft:entity.player.levelup",
+        "volume": "1"
+      },
+      {
+        "type": "l2magic:processor",
+        "processors": [
+          {
+            "type": "modularmagic:glimmering/procreation",
+            "num": "4"
+          }
+        ],
+        "selector": {
+          "type": "l2magic:ball",
+          "r": "4.0"
+        },
+        "target": "ALL"
+      },
+      {
+        "type": "l2magic:iterate_delayed",
+        "child": {
+          "type": "l2magic:random_pos_sphere",
+          "child": {
+            "type": "l2magic:particle",
+            "particle": "minecraft:heart",
+            "speed": "0.5"
+          },
+          "count": "20",
+          "radius": "5"
+        },
+        "delay": "2",
+        "step": "10"
+      }
+    ]
+  },
+  "cast_type": "INSTANT",
+  "icon": "minecraft:hay_block",
+  "order": 1009,
+  "trigger_type": "TARGET_POS"
+}

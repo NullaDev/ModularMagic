@@ -107,7 +107,8 @@ public final class EditorGameTests {
         registries.lookupOrThrow(dev.xkmc.l2magic.init.registrate.EngineRegistry.PROJECTILE).listElements().forEach(holder ->
                 configs.add(holder.key().location().toString(), dev.xkmc.l2magic.content.entity.core.ProjectileConfig.CODEC.encodeStart(ops, holder.value()).getOrThrow()));
         long upstreamCount = helper.getLevel().registryAccess().lookupOrThrow(dev.xkmc.l2magic.init.registrate.EngineRegistry.SPELL)
-                .listElementIds().filter(key -> key.location().getNamespace().equals("l2magic")).count();
+                .listElementIds().filter(key -> key.location().getNamespace().equals("l2magic")
+                        || key.location().getNamespace().equals(ModularMagic.MOD_ID) && key.location().getPath().startsWith("glimmering/")).count();
         helper.assertTrue(BuiltinSpells.ids().size() == upstreamCount, "Every upstream example must have an editable preset");
         for (var id : BuiltinSpells.ids()) {
             var core = BuiltinSpells.create(id, helper.getLevel().registryAccess());
@@ -131,13 +132,14 @@ public final class EditorGameTests {
 
     /** Expand projectile references and omit empty lists emitted for unoccupied optional slots. */
     private static com.google.gson.JsonElement canonicalSpell(com.google.gson.JsonElement json, JsonObject configs) {
-        if (json.isJsonPrimitive() && json.getAsJsonPrimitive().isString() && configs.has(json.getAsString()))
-            return canonicalSpell(configs.get(json.getAsString()), configs);
         if (json.isJsonObject()) {
             var result = new JsonObject();
             json.getAsJsonObject().entrySet().forEach(entry -> {
-                if (!entry.getValue().isJsonArray() || !entry.getValue().getAsJsonArray().isEmpty())
-                    result.add(entry.getKey(), canonicalSpell(entry.getValue(), configs));
+                var value = entry.getValue();
+                if (entry.getKey().equals("config") && value.isJsonPrimitive() && configs.has(value.getAsString()))
+                    value = configs.get(value.getAsString());
+                if (!value.isJsonArray() || !value.getAsJsonArray().isEmpty())
+                    result.add(entry.getKey(), canonicalSpell(value, configs));
             });
             return result;
         }

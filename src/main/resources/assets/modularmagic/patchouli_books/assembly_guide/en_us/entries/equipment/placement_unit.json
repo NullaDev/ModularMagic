@@ -1,0 +1,17 @@
+{
+  "name": "Simple Casting Unit: Place",
+  "icon": "modularmagic:placement_unit",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:placement_unit",
+      "link_recipe": true,
+      "text": "Sneak and use to load a placeable sample. Use it on a block to place the sampled block with its usual orientation and support rules. Each successful placement draws aether from the cache.$(br2)Charge the unit in an Aether Tank."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:placement_unit"
+    }
+  ]
+}

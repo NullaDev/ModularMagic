@@ -1,0 +1,17 @@
+{
+  "name": "Simple Casting Unit: Burn",
+  "icon": "modularmagic:burning_unit",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:burning_unit",
+      "link_recipe": true,
+      "text": "Sneak and use to load a fuel sample. In a furnace's fuel slot, the unit supplies the sampled fuel's burn time. Use it on a world block to smelt a block that has a furnace recipe.$(br2)Charge the unit in an Aether Tank."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:burning_unit"
+    }
+  ]
+}

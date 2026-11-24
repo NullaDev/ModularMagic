@@ -1,0 +1,40 @@
+{
+  "action": {
+    "type": "l2magic:block_in_range",
+    "child": {
+      "type": "l2magic:if",
+      "action": {
+        "type": "l2magic:list",
+        "children": [
+          {
+            "type": "l2magic:sound",
+            "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
+            "sound": "minecraft:block.stone.place",
+            "volume": "1"
+          },
+          {
+            "type": "modularmagic:glimmering/temporary_block",
+            "material": "stone",
+            "tick": "rand(180,220)"
+          }
+        ]
+      },
+      "predicate": {
+        "type": "l2magic:and",
+        "list": [
+          {
+            "type": "l2magic:block_test",
+            "test": "REPLACEABLE"
+          }
+        ]
+      }
+    },
+    "delayPerBlock": "0",
+    "height": "0",
+    "range": "3"
+  },
+  "cast_type": "INSTANT",
+  "icon": "minecraft:stone",
+  "order": 1006,
+  "trigger_type": "TARGET_POS"
+}

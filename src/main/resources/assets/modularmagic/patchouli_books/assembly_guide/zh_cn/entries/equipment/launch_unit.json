@@ -1,0 +1,17 @@
+{
+  "name": "简易施法单元：发射",
+  "icon": "modularmagic:launch_unit",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:launch_unit",
+      "link_recipe": true,
+      "text": "潜行右键装入投掷物样板。装入鸡蛋后，右键投出鸡蛋。装入骨粉后，右键可对选中的方块施肥。$(br2)可在以太储槽中补充单元的缓存。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:launch_unit"
+    }
+  ]
+}

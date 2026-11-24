@@ -1,0 +1,32 @@
+{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "misc",
+    "ingredients":  [
+                        {
+                            "type":  "modularmagic:sample",
+                            "target":  "minecraft:stone"
+                        },
+                        {
+                            "item":  "minecraft:moss_block"
+                        },
+                        {
+                            "item":  "minecraft:bone_meal"
+                        },
+                        {
+                            "item":  "minecraft:composter"
+                        },
+                        {
+                            "item":  "modularmagic:aether_gem"
+                        }
+                    ],
+    "result":  {
+                   "id":  "modularmagic:item_placeholder",
+                   "count":  1,
+                   "components":  {
+                                      "minecraft:custom_data":  {
+                                                                    "MaterialTarget":  "minecraft:bone_meal",
+                                                                    "MaterialItem":  true
+                                                                }
+                                  }
+               }
+}

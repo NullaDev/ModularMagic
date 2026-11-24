@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    { "item": "modularmagic:knowledge_fragment" }
+  ],
+  "result": {
+    "id": "modularmagic:crystalline_aether_shard",
+    "count": 1
+  }
+}

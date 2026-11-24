@@ -1,0 +1,16 @@
+{
+  "name": "Handheld Aether Crafting Table",
+  "icon": "modularmagic:handheld_aether_crafting_table",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:handheld_aether_crafting_table",
+      "text": "Samples can follow crafting, stonecutting, and smelting recipes. Put a blank sample above the arrow. Taking a result consumes the blank and its ingredient samples. A real result selects a stonecutting recipe. For smelting, put a furnace in the center, with the input sample on its left and the fuel sample on its right."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:handheld_aether_crafting_table"
+    }
+  ]
+}

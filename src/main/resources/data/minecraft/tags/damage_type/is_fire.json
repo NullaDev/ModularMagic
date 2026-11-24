@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "modularmagic:glimmering/netherrack",
+    "modularmagic:glimmering/soul_sand",
+    "modularmagic:glimmering/hell_mark",
+    "modularmagic:glimmering/flame_dash",
+    "modularmagic:glimmering/spark_burst",
+    "modularmagic:glimmering/soul_burst"
+  ]
+}

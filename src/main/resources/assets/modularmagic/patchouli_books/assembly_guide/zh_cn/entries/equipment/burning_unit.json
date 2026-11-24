@@ -1,0 +1,17 @@
+{
+  "name": "简易施法单元：燃烧",
+  "icon": "modularmagic:burning_unit",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:burning_unit",
+      "link_recipe": true,
+      "text": "潜行右键装入燃料样板。可放进熔炉的燃料槽，提供对应燃料的燃烧时间。手持右键也可冶炼世界中一个符合熔炉配方的方块。$(br2)可在以太储槽中补充单元的缓存。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:burning_unit"
+    }
+  ]
+}

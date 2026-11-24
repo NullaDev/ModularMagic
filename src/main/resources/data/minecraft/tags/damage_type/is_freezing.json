@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "modularmagic:glimmering/snow",
+    "modularmagic:glimmering/powder_snow",
+    "modularmagic:glimmering/ice",
+    "modularmagic:glimmering/packed_ice",
+    "modularmagic:glimmering/blue_ice",
+    "modularmagic:glimmering/winter_storm",
+    "modularmagic:glimmering/snow_tornado"
+  ]
+}

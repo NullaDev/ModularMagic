@@ -51,14 +51,23 @@ public final class MaterialPlacement{
         if(l.getBlockState(pos).equals(state))return false;
         boolean doublePlant=state.getBlock() instanceof DoublePlantBlock&&state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF)==net.minecraft.world.level.block.state.properties.DoubleBlockHalf.LOWER;
         if(doublePlant){var top=pos.above();if(!l.hasChunkAt(top)||l.isOutsideBuildHeight(top)||!l.getWorldBorder().isWithinBounds(top)||p.getServer().isUnderSpawnProtection(l,top,p)||!BlockUtils.allowModification(l,top)||!l.getBlockState(top).canBeReplaced())return false;}
-        var materials=new LinkedHashMap<ItemStack,Integer>();boolean generated=forceGenerate;int count=materialCount(state);
+        var materials=new LinkedHashMap<ItemStack,Integer>();double generationFee=0;int count=materialCount(state);
         if(!p.isCreative()){
             if(unearnedState(state))return false;
             if(!forceGenerate){int left=count;for(var s:inventory(p))if(matches(s,state)){int n=Math.min(left,s.getCount());materials.put(s,n);left-=n;if(left==0)break;}if(left>0)materials.clear();}
-            if(materials.isEmpty()){var id=requestedMaterial==null?BuiltInRegistries.BLOCK.getKey(state.getBlock()):requestedMaterial;boolean found=false;for(var s:inventory(p))if(s.is(PlaceholderContent.ITEM.get())&&id.equals(PlaceholderItem.target(s))){found=true;break;}
-                if(!found){p.displayClientMessage(Component.translatable("placeholder.modularmagic.missing"),true);return false;}generated=true;}
+            if(materials.isEmpty()){
+                long price=Long.MAX_VALUE;
+                for(var sample:inventory(p)){
+                    if(sample.is(PlaceholderContent.CREATIVE.get())||PlaceholderItem.block(sample)!=state.getBlock())continue;
+                    if(requestedMaterial!=null&&!requestedMaterial.equals(PlaceholderItem.target(sample)))continue;
+                    long fee=PlaceholderItem.price(sample);
+                    if(fee>=0)price=Math.min(price,fee);
+                }
+                if(price==Long.MAX_VALUE){p.displayClientMessage(Component.translatable("placeholder.modularmagic.missing"),true);return false;}
+                generationFee=price*(double)count;
+            }
         }
-        double generation=generated?fee(state)*count:0;if(!Double.isFinite(generation)||generation<0)return false;double cost=(extraBase+generation)*multiplier;
+        double cost=(extraBase+generationFee)*multiplier;
         if(!pay(p,cost,infinite,true)){p.displayClientMessage(Component.translatable("gui.modularmagic.not_enough_mana"),true);return false;}
         if(!l.setBlockAndUpdate(pos,state))return false;
         if(doublePlant)state.getBlock().setPlacedBy(l,pos,state,p,new ItemStack(state.getBlock().asItem()));

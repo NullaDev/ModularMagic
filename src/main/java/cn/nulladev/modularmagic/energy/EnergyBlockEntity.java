@@ -1,6 +1,8 @@
 package cn.nulladev.modularmagic.energy;
 
 import cn.nulladev.modularmagic.mana.ManaStorage;
+import cn.nulladev.modularmagic.research.PlaceholderItem;
+import cn.nulladev.modularmagic.utility.UtilityConfig;
 import cn.nulladev.modularmagic.util.AetherNumbers;
 import cn.nulladev.modularmagic.spell.billing.ManaEscrow;
 import net.minecraft.core.*;
@@ -30,6 +32,7 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
     public UUID identity = UUID.randomUUID(), owner;
     public ItemStack battery = ItemStack.EMPTY;
     public ItemStack product = ItemStack.EMPTY;
+    public ItemStack emptyBuckets = ItemStack.EMPTY;
     public BlockPos target;
     public UUID targetIdentity;
     public BlockPos resonanceParent;
@@ -51,6 +54,7 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
     public long capacity() {
         long mana = switch(kind()) {
             case ENCHANTER -> cn.nulladev.modularmagic.crafting.ArtificeConfig.ENCHANT_CAPACITY.get();
+            case MATERIALIZER -> UtilityConfig.MATERIALIZER_CAPACITY.get();
             case GENERATOR -> generator.rule()==null?1:generator.rule().capacity.get();
             case DISRUPTOR -> EnergyConfig.DISRUPTOR_CAPACITY.get();
             case TANK -> EnergyConfig.BASIC_CAPACITY.get();
@@ -68,6 +72,7 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
     }
     public long rate() { return switch(kind()) {
         case ENCHANTER -> cn.nulladev.modularmagic.crafting.ArtificeConfig.ENCHANT_RATE.get();
+        case MATERIALIZER -> UtilityConfig.MATERIALIZER_RATE.get();
         case GENERATOR -> generator.rule()==null?0:generator.rule().output.get();
         case DISRUPTOR -> EnergyConfig.DISRUPTOR_RATE.get();
         case TANK -> EnergyConfig.BASIC_RATE.get();
@@ -81,7 +86,7 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
         case WORLD_ANCHOR -> EnergyConfig.LOADER_INPUT_RATE.get();
         case ANCHOR -> EnergyConfig.ANCHOR_RATE.get();
     }; }
-    private int resonanceLevel() {return Math.clamp(resonanceUpgrades,0,EnergyConfig.RESONANCE_UPGRADES.get());}
+    public int resonanceLevel() {return Math.clamp(resonanceUpgrades,0,EnergyConfig.RESONANCE_UPGRADES.get());}
     public boolean resonanceEnabled() {return resonanceLevel()>0;}
     public long resonanceBandwidth() {return resonanceLevel()*EnergyConfig.RESONANCE_UPGRADE_RATE.get();}
     public int resonanceRange() {return resonanceEnabled()?EnergyConfig.RESONANCE_RANGE.get()+resonanceLevel()*EnergyConfig.RESONANCE_RANGE_PER_SHARD.get():0;}
@@ -166,12 +171,8 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
             active=!product.isEmpty()||energy>=crystalCost();
         }
         if(kind()==EnergyContent.Kind.CONDENSER)active=energy>=EnergyConfig.SHARD.get()*ManaStorage.SCALE;
-        if(kind()==EnergyContent.Kind.RESONATOR&&resonanceEnabled()&&resonanceParent!=null&&time%10==0) {
-            var parent=EnergyWorld.device((ServerLevel)level,resonanceParent);
-            if(parent!=null&&ResonanceNetwork.isParent(parent,this)&&ResonanceNetwork.root(this)!=null) {
-                var point=Vec3.atCenterOf(resonanceParent).lerp(Vec3.atCenterOf(worldPosition),(time%40)/40D);
-                ((ServerLevel)level).sendParticles(ParticleTypes.END_ROD,point.x,point.y+.3,point.z,1,0,0,0,0);
-            }
+        if(kind()==EnergyContent.Kind.MATERIALIZER && !paused() && time%UtilityConfig.MATERIALIZER_INTERVAL.get()==0) {
+            materialize();
         }
         if(kind()==EnergyContent.Kind.WORLD_ANCHOR)active=appliedRadius>=0;
         if((kind().infinite()||kind()==EnergyContent.Kind.RESONATOR||kind()==EnergyContent.Kind.ANCHOR)&&energy>0)active=!outputPaused;
@@ -179,6 +180,21 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
         if(getBlockState().getValue(EnergyBlock.ACTIVE)!=active)level.setBlock(worldPosition,getBlockState().setValue(EnergyBlock.ACTIVE,active),3);
         if(dirty&&time%5==0) { dirty=false;level.sendBlockUpdated(worldPosition,getBlockState(),getBlockState(),Block.UPDATE_CLIENTS);level.updateNeighbourForOutputSignal(worldPosition,getBlockState().getBlock()); }
     }
+    private void materialize() {
+        var generated = PlaceholderItem.material(battery);
+        long price = PlaceholderItem.price(battery);
+        if (generated.isEmpty() || price < 0 || price > energy / ManaStorage.SCALE) return;
+        boolean bucket = generated.is(Items.WATER_BUCKET) || generated.is(Items.LAVA_BUCKET) || generated.is(Items.POWDER_SNOW_BUCKET);
+        if (bucket && emptyBuckets.isEmpty()) return;
+        if (!product.isEmpty() && (!ItemStack.isSameItemSameComponents(product, generated)
+                || product.getCount() >= product.getMaxStackSize())) return;
+        energy -= price * ManaStorage.SCALE;
+        if (bucket) emptyBuckets.shrink(1);
+        if (product.isEmpty()) product = generated;
+        else product.grow(1);
+        changed();
+    }
+
     private void chargeBattery() {
         if(!kind().tank()||battery.isEmpty()||!(battery.getItem() instanceof ManaStorage storage)||paused())return;
         ManaEscrow.get(level.getServer()).claim(battery);
@@ -250,8 +266,9 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
         if(!allowed(player)){player.displayClientMessage(Component.translatable("energy.modularmagic.denied"),true);return true;}
         var held=player.getItemInHand(hand);
         if(kind()==EnergyContent.Kind.GENERATOR&&held.isEmpty()){
-            generator.comparatorMode=(generator.comparatorMode+1)%3;changed();
-            player.displayClientMessage(Component.translatable("generator.modularmagic.comparator",Component.translatable("generator.modularmagic.mode."+generator.comparatorMode)),true);return true;
+            player.displayClientMessage(Component.translatable("generator.modularmagic.comparator",
+                    Math.max(0, generator.cooldown), generator.comparator()), true);
+            return true;
         }
         if(held.getItem() instanceof ManaStorage) {
             if(!kind().tank()) {player.displayClientMessage(Component.translatable("energy.modularmagic.use_reservoir"),true);return true;}
@@ -267,7 +284,7 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
         }
         if(held.is(Items.AMETHYST_SHARD)&&kind()==EnergyContent.Kind.RESONATOR) {
             int installed=Math.min(EnergyConfig.RESONANCE_UPGRADES.get()-resonanceUpgrades,player.isShiftKeyDown()?held.getCount():1);
-            if(installed>0){resonanceUpgrades+=installed;held.shrink(installed);changed();}
+            if(installed>0){resonanceUpgrades+=installed;if(!player.isCreative())held.shrink(installed);changed();}
             player.displayClientMessage(Component.translatable("energy.modularmagic.resonance_upgrades",resonanceUpgrades,EnergyConfig.RESONANCE_UPGRADES.get(),AetherNumbers.format(resonanceBandwidth())),true);return true;
         }
         if(held.is(EnergyContent.CROSS_LENS.get())&&kind()==EnergyContent.Kind.ANCHOR&&!crossDimension) { crossDimension=true;held.shrink(1);changed();return true; }
@@ -325,6 +342,7 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
         if(kind()==EnergyContent.Kind.ENCHANTER){var items=net.minecraft.core.NonNullList.withSize(28,ItemStack.EMPTY);for(int i=0;i<28;i++)items.set(i,enchantInventory.getItem(i));net.minecraft.world.ContainerHelper.saveAllItems(tag,items,registries);}tag.merge(itemData());tag.putLong("Energy",energy);
         if(!battery.isEmpty())tag.put("Battery",battery.save(registries));
         if(!product.isEmpty())tag.put("Product",product.save(registries));
+        if(!emptyBuckets.isEmpty())tag.put("EmptyBuckets",emptyBuckets.save(registries));
         tag.putBoolean("OutputPaused",outputPaused);tag.putBoolean("LoaderEnabled",loaderEnabled);
         if(resonanceParent!=null)tag.putLong("ResonanceParent",resonanceParent.asLong());
         if(resonanceParentIdentity!=null)tag.putUUID("ResonanceParentIdentity",resonanceParentIdentity);
@@ -338,6 +356,7 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
         if(kind()==EnergyContent.Kind.ENCHANTER){var items=net.minecraft.core.NonNullList.withSize(28,ItemStack.EMPTY);net.minecraft.world.ContainerHelper.loadAllItems(tag,items,registries);for(int i=0;i<28;i++)enchantInventory.setItem(i,items.get(i));}
         battery=tag.contains("Battery")?ItemStack.parseOptional(registries,tag.getCompound("Battery")):ItemStack.EMPTY;
         product=tag.contains("Product")?ItemStack.parseOptional(registries,tag.getCompound("Product")):ItemStack.EMPTY;
+        emptyBuckets=tag.contains("EmptyBuckets")?ItemStack.parseOptional(registries,tag.getCompound("EmptyBuckets")):ItemStack.EMPTY;
         outputPaused=tag.getBoolean("OutputPaused");loaderEnabled=tag.getBoolean("LoaderEnabled");
         resonanceParent=tag.contains("ResonanceParent")?BlockPos.of(tag.getLong("ResonanceParent")):null;
         resonanceParentIdentity=tag.hasUUID("ResonanceParentIdentity")?tag.getUUID("ResonanceParentIdentity"):null;
@@ -348,15 +367,22 @@ public final class EnergyBlockEntity extends BlockEntity implements WorldlyConta
     }
     @Override public CompoundTag getUpdateTag(HolderLookup.Provider registries) { return saveWithoutMetadata(registries); }
     @Override public ClientboundBlockEntityDataPacket getUpdatePacket() { return ClientboundBlockEntityDataPacket.create(this); }
-    @Override public int getContainerSize() { return 2; }
-    @Override public boolean isEmpty() { return battery.isEmpty()&&product.isEmpty(); }
-    @Override public ItemStack getItem(int slot) { return slot==0?battery:slot==1?product:ItemStack.EMPTY; }
+    @Override public int getContainerSize() { return kind()==EnergyContent.Kind.MATERIALIZER?3:2; }
+    @Override public boolean isEmpty() { return battery.isEmpty()&&product.isEmpty()&&emptyBuckets.isEmpty(); }
+    @Override public ItemStack getItem(int slot) { return slot==0?battery:slot==1?product:slot==2?emptyBuckets:ItemStack.EMPTY; }
     @Override public ItemStack removeItem(int slot,int amount) { var result=getItem(slot).split(amount);if(!result.isEmpty())changed();return result; }
-    @Override public ItemStack removeItemNoUpdate(int slot) {var item=getItem(slot);if(slot==0)battery=ItemStack.EMPTY;else if(slot==1)product=ItemStack.EMPTY;changed();return item;}
-    @Override public void setItem(int slot,ItemStack stack) {if(slot==0)battery=stack;else if(slot==1)product=stack;changed();}
+    @Override public ItemStack removeItemNoUpdate(int slot) {var item=getItem(slot);setItem(slot,ItemStack.EMPTY);return item;}
+    @Override public void setItem(int slot,ItemStack stack) {if(slot==0)battery=stack;else if(slot==1)product=stack;else if(slot==2)emptyBuckets=stack;changed();}
     @Override public boolean stillValid(Player player) {return !isRemoved()&&player.distanceToSqr(worldPosition.getX()+.5,worldPosition.getY()+.5,worldPosition.getZ()+.5)<=64;}
-    @Override public void clearContent() {battery=product=ItemStack.EMPTY;changed();}
-    @Override public int[] getSlotsForFace(Direction side) {return kind()==EnergyContent.Kind.CRYSTAL_CHAMBER?new int[]{1}:new int[0];}
-    @Override public boolean canPlaceItemThroughFace(int slot,ItemStack stack,Direction side) {return false;}
-    @Override public boolean canTakeItemThroughFace(int slot,ItemStack stack,Direction side) {return kind()==EnergyContent.Kind.CRYSTAL_CHAMBER&&slot==1;}
+    @Override public void clearContent() {battery=product=emptyBuckets=ItemStack.EMPTY;changed();}
+    @Override public int[] getSlotsForFace(Direction side) {
+        if(kind()==EnergyContent.Kind.MATERIALIZER)return new int[]{side==Direction.DOWN?1:2};
+        return kind()==EnergyContent.Kind.CRYSTAL_CHAMBER?new int[]{1}:new int[0];
+    }
+    @Override public boolean canPlaceItemThroughFace(int slot,ItemStack stack,Direction side) {
+        return kind()==EnergyContent.Kind.MATERIALIZER&&slot==2&&side!=Direction.DOWN&&stack.is(Items.BUCKET);
+    }
+    @Override public boolean canTakeItemThroughFace(int slot,ItemStack stack,Direction side) {
+        return slot==1&&(kind()==EnergyContent.Kind.CRYSTAL_CHAMBER||kind()==EnergyContent.Kind.MATERIALIZER&&side==Direction.DOWN);
+    }
 }

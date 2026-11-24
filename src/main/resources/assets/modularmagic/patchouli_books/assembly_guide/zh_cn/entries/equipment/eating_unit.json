@@ -1,0 +1,17 @@
+{
+  "name": "简易施法单元：进食",
+  "icon": "modularmagic:eating_unit",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:eating_unit",
+      "link_recipe": true,
+      "text": "潜行右键装入食物样板。按住右键吃完后恢复对应食物的饥饿值与饱和度，食物效果也照常生效。中断进食不会扣除以太。$(br2)可在以太储槽中补充单元的缓存。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:eating_unit"
+    }
+  ]
+}

@@ -44,7 +44,8 @@
       "K00"
     ],
     "nodes": [
-      "action/remove_block"
+      "action/remove_block",
+      "action/remove_liquid"
     ],
     "sources": [
       "minecraft:fire"
@@ -61,7 +62,8 @@
     ],
     "nodes": [
       "action/set_block",
-      "action/set_block_facing"
+      "action/set_block_facing",
+      "action/temporary_block"
     ],
     "sources": [
       "minecraft:water"
@@ -136,7 +138,8 @@
       "root/charge",
       "action/delay",
       "effect/delay",
-      "action/schedule_tick"
+      "action/schedule_tick",
+      "action/melt_block"
     ],
     "sources": [
       "minecraft:repeater"
@@ -410,7 +413,12 @@
       "filter/effect",
       "filter/and",
       "filter/or",
-      "filter/not"
+      "filter/not",
+      "effect/procreation",
+      "effect/heal_interval",
+      "effect/stacking_status",
+      "filter/invulnerability_frame",
+      "action/potion_cloud"
     ],
     "sources": [
       "minecraft:brewing_stand"
@@ -446,7 +454,8 @@
       "K15"
     ],
     "nodes": [
-      "action/knock_block"
+      "action/knock_block",
+      "action/thunder"
     ],
     "sources": [
       "minecraft:sand",

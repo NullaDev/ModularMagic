@@ -7,8 +7,7 @@
       "type": "patchouli:spotlight",
       "item": "modularmagic:portable_tnt_cannon",
       "link_recipe": true,
-      "title": "把爆炸留给旅途",
-      "text": "水幕兜住爆炸，将冲击收束成向前的一推。便携的炮身里，也能留下同样的纹样。$(br2)朝想去的方向看，再右键点火。视线越向上，升得越高。$(l)这次爆炸不会伤害自己，落地仍会受伤。$()先看好落点，再借下一次冲击赶路。"
+      "text": "用发射单元和 TNT 样板合成，保留发射单元的以太缓存。朝想去的方向右键，冲击会把你推出去。爆炸冲击本身无伤，落地仍会受到正常摔落伤害。"
     },
     {
       "type": "patchouli:crafting",

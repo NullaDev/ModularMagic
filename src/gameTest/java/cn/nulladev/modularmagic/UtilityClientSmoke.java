@@ -21,7 +21,7 @@ import java.util.*;
 @EventBusSubscriber(modid=ModularMagic.MOD_ID,value=Dist.CLIENT)
 public final class UtilityClientSmoke {
     private static int ticks,stage,changed;private static boolean savedPause;
-    private static final List<String> IDS=List.of("endless_fuel","endless_fertilizer","endless_food","portable_tnt_cannon","auto_crafter","advanced_wand");
+    private static final List<String> IDS=List.of("placement_unit","eating_unit","launch_unit","burning_unit","tool_unit","handheld_aether_crafting_table","aether_materializer","portable_tnt_cannon","auto_crafter","advanced_wand");
     @SubscribeEvent public static void tick(ClientTickEvent.Post event){
         if(!Boolean.getBoolean("modularmagic.utilitiesSmoke"))return;var mc=Minecraft.getInstance();
         if(++ticks>2400){ModularMagic.LOGGER.error("UTILITIES_SMOKE_TIMEOUT stage={}",stage);mc.stop();return;}
@@ -40,8 +40,8 @@ public final class UtilityClientSmoke {
             case 10->{var runtime=ArtificeJeiPlugin.runtime;if(runtime==null)return;var recipes=runtime.getRecipeManager().createRecipeLookup(mezz.jei.api.constants.RecipeTypes.CRAFTING).get().map(h->h.id().toString()).collect(java.util.stream.Collectors.toSet());for(String id:IDS)require(recipes.contains("modularmagic:"+id),"Missing utility recipe in JEI: "+id);
                 var book=book();var contents=book.getClass().getMethod("getContents").invoke(book);require(!(boolean)contents.getClass().getMethod("isErrored").invoke(contents),"The handbook failed to load");var entries=(Map<?,?>)contents.getClass().getField("entries").get(contents);
                 String name=(String)book.getClass().getField("name").get(book),landing=(String)book.getClass().getField("landingText").get(book);require(!net.minecraft.network.chat.Component.translatable(name).getString().equals(name)&&!net.minecraft.network.chat.Component.translatable(landing).getString().equals(landing),"The guide's name or landing text is untranslated");require(book.getClass().getMethod("getOwnerName").invoke(book).equals("Modular Magic"),"The mod display name is missing its space");
-                for(String id:IDS){require(entries.containsKey(ModularMagic.id("equipment/"+id)),"Missing utility chapter: "+id);var item=net.minecraft.core.registries.BuiltInRegistries.ITEM.get(ModularMagic.id(id));require(mc.getItemRenderer().getModel(new ItemStack(item),mc.level,mc.player,0)!=mc.getModelManager().getMissingModel(),"Missing utility model: "+id);require(!new ItemStack(item).getHoverName().getString().startsWith("item.modularmagic."),"Untranslated utility: "+id);}show("equipment/endless_fuel");next();}
-            case 11->{screenshot(mc,"utilities-endless-fuel-guide.png");show("equipment/auto_crafter");next();}
+                for(String id:IDS){require(entries.containsKey(ModularMagic.id("equipment/"+id)),"Missing utility chapter: "+id);var item=net.minecraft.core.registries.BuiltInRegistries.ITEM.get(ModularMagic.id(id));require(mc.getItemRenderer().getModel(new ItemStack(item),mc.level,mc.player,0)!=mc.getModelManager().getMissingModel(),"Missing utility model: "+id);require(!new ItemStack(item).getHoverName().getString().startsWith("item.modularmagic."),"Untranslated utility: "+id);}show("equipment/launch_unit");next();}
+            case 11->{screenshot(mc,"utilities-launch-unit-guide.png");show("equipment/auto_crafter");next();}
             case 12->{screenshot(mc,"utilities-auto-crafter-guide.png");var book=book();mc.setScreen((net.minecraft.client.gui.screens.Screen)Class.forName("vazkii.patchouli.client.book.gui.GuiBookLanding").getConstructor(book.getClass()).newInstance(book));next();}
             case 13->{screenshot(mc,"dev-guide-landing.png");show("equipment/unformed");next();}
             case 14->{screenshot(mc,"dev-dark-matter-guide.png");show("equipment/advanced_wand");next();}

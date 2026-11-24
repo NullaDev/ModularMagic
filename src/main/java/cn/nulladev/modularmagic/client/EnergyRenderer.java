@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.blockentity.*;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.InventoryMenu;
@@ -15,6 +16,7 @@ import net.minecraft.world.phys.Vec3;
 
 /** Liquid reservoirs immerse their charging item; the separate chamber holds the Nether Star nucleus. */
 public final class EnergyRenderer implements BlockEntityRenderer<EnergyBlockEntity> {
+    private static final int[] RESONATOR_CRYSTAL_ORDER = {0, 4, 2, 6, 1, 5, 3, 7};
     public EnergyRenderer(BlockEntityRendererProvider.Context context) {}
     public static float liquidHeight(float fraction) { return 2.1F/16 + Math.clamp(fraction,0,1)*11.7F/16; }
     @Override public boolean shouldRenderOffScreen(EnergyBlockEntity be) { return be.kind().emitter(); }
@@ -28,7 +30,8 @@ public final class EnergyRenderer implements BlockEntityRenderer<EnergyBlockEnti
                     sprite.getU0(),sprite.getV0(),sprite.getU1(),sprite.getV1(),100,223,244,205);
         }
         if(be.kind().tank()&&!be.battery.isEmpty())renderItem(be,be.battery,.23F+.38F*be.displayedFill,.48F,pose,buffers,light,overlay);
-        if(be.kind()==EnergyContent.Kind.RESONATOR&&be.resonanceEnabled())renderItem(be,new ItemStack(net.minecraft.world.item.Items.AMETHYST_SHARD),.73F,.60F,pose,buffers,light,overlay);
+        if(be.kind()==EnergyContent.Kind.RESONATOR&&be.resonanceEnabled())renderResonatorCrystals(be.resonanceLevel(),pose,buffers);
+        if(be.kind()==EnergyContent.Kind.ANCHOR&&be.crossDimension)renderItem(be,EnergyContent.CROSS_LENS.toStack(),1.06F,.6F,pose,buffers,light,overlay);
         if(be.kind()==EnergyContent.Kind.GENERATOR&&be.generator.rule()!=null)renderItem(be,be.generator.rule().icon(),1.1F,.55F,pose,buffers,light,overlay);
         if(be.kind().emitter())renderHead(be,pose,buffers);
         if(be.pulseAmount>0&&be.pulseStart!=null&&be.pulseEnd!=null) {
@@ -62,6 +65,29 @@ public final class EnergyRenderer implements BlockEntityRenderer<EnergyBlockEnti
         var sprite=Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(cn.nulladev.modularmagic.ModularMagic.id("block/"+texture));
         cube(pose,buffers.getBuffer(RenderType.entitySolid(InventoryMenu.BLOCK_ATLAS)),x,y,z,X,Y,Z,sprite.getU0(),sprite.getV0(),sprite.getU1(),sprite.getV1(),255,255,255,255);
     }
+    private static void renderResonatorCrystals(int shards, PoseStack pose, MultiBufferSource buffers) {
+        var sprite = Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS)
+                .apply(ResourceLocation.withDefaultNamespace("block/amethyst_block"));
+        // Stretch a four-pixel patch across each facet to match the scale of the small crystals.
+        float u0 = Mth.lerp(.375F, sprite.getU0(), sprite.getU1());
+        float v0 = Mth.lerp(.375F, sprite.getV0(), sprite.getV1());
+        float u1 = Mth.lerp(.625F, sprite.getU0(), sprite.getU1());
+        float v1 = Mth.lerp(.625F, sprite.getV0(), sprite.getV1());
+        var out = buffers.getBuffer(RenderType.entitySolid(InventoryMenu.BLOCK_ATLAS));
+        int count = Math.min((shards + 7) / 8, RESONATOR_CRYSTAL_ORDER.length);
+        for (int i = 0; i < count; i++) {
+            int slot = RESONATOR_CRYSTAL_ORDER[i];
+            float height = slot % 2 == 0 ? .37F : .27F;
+            pose.pushPose();
+            pose.translate(.5, .47, .5);
+            pose.mulPose(Axis.YP.rotationDegrees(22.5F + slot * 45));
+            pose.translate(.107, 0, 0);
+            pose.mulPose(Axis.ZP.rotationDegrees(-40));
+            pose.translate(0, height * .5F, 0);
+            crystal(pose, out, height, .049F, u0, v0, u1, v1, 0xcab0fa);
+            pose.popPose();
+        }
+    }
     private static void renderCrystals(float fill,PoseStack pose,MultiBufferSource buffers) {
         var sprite=Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(cn.nulladev.modularmagic.ModularMagic.id("block/aether_crystal"));
         var out=buffers.getBuffer(RenderType.entitySolid(InventoryMenu.BLOCK_ATLAS));
@@ -79,11 +105,11 @@ public final class EnergyRenderer implements BlockEntityRenderer<EnergyBlockEnti
             pose.translate(.5+crystal[0]*growth,.5+crystal[1]*growth,.5+crystal[2]*growth);
             pose.scale(growth,growth,growth);
             pose.mulPose(Axis.XP.rotationDegrees(crystal[5]));pose.mulPose(Axis.ZP.rotationDegrees(crystal[6]));
-            crystal(pose,out,crystal[3],crystal[4],sprite.getU0(),sprite.getV0(),sprite.getU1(),sprite.getV1());
+            crystal(pose,out,crystal[3],crystal[4],sprite.getU0(),sprite.getV0(),sprite.getU1(),sprite.getV1(),0x82cde1);
             pose.popPose();
         }
     }
-    private static void crystal(PoseStack pose,VertexConsumer out,float height,float radius,float u,float v,float U,float V) {
+    private static void crystal(PoseStack pose,VertexConsumer out,float height,float radius,float u,float v,float U,float V,int color) {
         float bottom=-height*.5F,lower=-height*.29F,upper=height*.22F,top=height*.5F;
         for(int side=0;side<6;side++) {
             double a=side*Math.PI/3,b=(side+1)*Math.PI/3;
@@ -91,10 +117,12 @@ public final class EnergyRenderer implements BlockEntityRenderer<EnergyBlockEnti
             float X=(float)Math.cos(b)*radius,Z=(float)Math.sin(b)*radius;
             float nx=(float)Math.cos((a+b)/2),nz=(float)Math.sin((a+b)/2);
             int shade=side%3;
-            int r=130+shade*22,g=205+shade*14,blue=225+shade*10;
+            int r=Math.min(255,(color>>16&255)+shade*22);
+            int g=Math.min(255,(color>>8&255)+shade*14);
+            int blue=Math.min(255,(color&255)+shade*10);
             face(pose,out,new float[]{x,lower,z,x,upper,z,X,upper,Z,X,lower,Z},u,v,U,V,r,g,blue,255,nx,0,nz);
             // A repeated tip vertex forms a triangle in Minecraft's quad buffer.
-            face(pose,out,new float[]{x,upper,z,0,top,0,0,top,0,X,upper,Z},u,v,U,V,r+12,Math.min(255,g+8),Math.min(255,blue+6),255,nx*.7F,.7F,nz*.7F);
+            face(pose,out,new float[]{x,upper,z,0,top,0,0,top,0,X,upper,Z},u,v,U,V,Math.min(255,r+12),Math.min(255,g+8),Math.min(255,blue+6),255,nx*.7F,.7F,nz*.7F);
             face(pose,out,new float[]{X,lower,Z,0,bottom,0,0,bottom,0,x,lower,z},u,v,U,V,r-18,g-18,blue-18,255,nx*.7F,-.7F,nz*.7F);
         }
     }

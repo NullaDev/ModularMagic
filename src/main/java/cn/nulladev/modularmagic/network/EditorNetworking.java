@@ -47,6 +47,8 @@ public final class EditorNetworking {
         var registrar = event.registrar("1");
         registrar.playToClient(cn.nulladev.modularmagic.research.ResearchNetworking.Knowledge.TYPE,cn.nulladev.modularmagic.research.ResearchNetworking.Knowledge.CODEC,(packet,context)->context.enqueueWork(()->context.player().setData(cn.nulladev.modularmagic.research.ResearchKnowledge.DATA,packet.data())));
         registrar.playToClient(NodeVisual.TYPE, NodeVisual.CODEC, (packet, context) -> context.enqueueWork(() -> packet.handle(context.player().level())));
+        registrar.playToClient(EnergyVisual.TYPE, EnergyVisual.CODEC,
+                (packet, context) -> context.enqueueWork(() -> packet.show(context.player().level())));
         registrar.playToClient(FocusSnapshot.TYPE, FocusSnapshot.CODEC, (packet, context) -> context.enqueueWork(() -> {
             context.player().setData(cn.nulladev.modularmagic.mana.PlayerFocus.CLIENT_MAX, packet.maximum());
             context.player().setData(cn.nulladev.modularmagic.mana.PlayerFocus.VALUE, packet.value());

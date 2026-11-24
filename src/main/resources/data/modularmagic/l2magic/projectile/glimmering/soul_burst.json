@@ -1,0 +1,48 @@
+{
+  "filter": "ENEMY_NO_FAMILY",
+  "hit": [
+    {
+      "type": "l2magic:projectile_hit"
+    },
+    {
+      "type": "l2magic:filtered",
+      "action": [
+        {
+          "type": "l2magic:damage",
+          "damage": "6",
+          "damage_type": "modularmagic:glimmering/soul_burst",
+          "indirect": true,
+          "positioned": true
+        }
+      ],
+      "fallback": [],
+      "filter": {
+        "type": "modularmagic:glimmering/invulnerability_frame",
+        "frame": "5"
+      }
+    },
+    {
+      "type": "l2magic:effect",
+      "duration": "100",
+      "ambient": false,
+      "amplifier": "1",
+      "effect": "minecraft:wither",
+      "visible": false
+    }
+  ],
+  "motion": {
+    "type": "l2magic:simple",
+    "friction": "0.01",
+    "gravity": "0"
+  },
+  "params": [],
+  "size": {
+    "fullBlockCollision": false,
+    "size": "0.25"
+  },
+  "tick": {
+    "type": "l2magic:particle",
+    "particle": "minecraft:soul_fire_flame",
+    "speed": "0"
+  }
+}

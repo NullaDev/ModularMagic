@@ -92,5 +92,5 @@ replay_pid*
 Thumbs.db
 [Dd]esktop.ini
 
-# Local design notes for the new magic mod
-/private-design/
+# Local private files
+/privatefiles/

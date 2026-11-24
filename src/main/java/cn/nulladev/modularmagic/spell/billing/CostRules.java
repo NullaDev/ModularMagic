@@ -55,7 +55,14 @@ public final class CostRules {
             case "effect/property"->"0.02*duration";
             case "effect/ignite"->"0.02*burnTicks";
             case "effect/projectile_hit"->"0.5125";
+            case "effect/procreation"->"0.25";
+            case "effect/heal_interval"->"0.05+0.5*max(0,heal)";
+            case "effect/stacking_status"->"0.02*max(0,duration)";
             case "action/set_block","action/set_block_facing"->"0.2";
+            case "action/temporary_block","action/melt_block"->"0.2";
+            case "action/potion_cloud"->"0.5+0.1*radius^2";
+            case "action/thunder"->"0.5+0.5*max(0,damage)";
+            case "action/remove_liquid"->"0.1+0.02*max(0,limit)";
             case "action/remove_block"->"0.5";case "action/knock_block"->"2+speed^2+0.5*maxDamage+0.0125*maxDamage^2";
             case "action/schedule_tick"->"0.1";
             case "action/arrow","action/trident","action/custom_projectile"->"0.5+0.1*speed^2";

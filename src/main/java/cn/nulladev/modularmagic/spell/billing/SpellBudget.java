@@ -25,7 +25,7 @@ public final class SpellBudget {
         return new Plan(p.mana,p.charged(),p.visual?Math.min(root,ResourceBalance.cosmeticStartup()):root);
     }
     private static Part walk(SpellDocument.Node node,Map<String,Range> vars,int depth){
-        if(depth>32)throw new IllegalArgumentException("Spell recursion limit");
+        if(depth>SpellDocument.MAX_DEPTH)throw new IllegalArgumentException("Spell recursion limit");
         String id=node.template;var local=new HashMap<>(vars);var p=CostRules.defaults();
         var bound=new HashMap<String,Range>();
         for(var f:node.schema().fields())if(f.kind().equals("expression")||f.kind().equals("integer")){
@@ -35,7 +35,14 @@ public final class SpellBudget {
         }
         double n=1,ticks=0;boolean loop=id.startsWith("action/iterate")||id.startsWith("action/random_pos")||id.equals("action/while_delayed");
         if(loop){n=(long)Math.max(0,bound.getOrDefault(node.parameters.containsKey("count")?"count":"step",Range.at(0)).hi());if(id.equals("action/while_delayed")&&n<1)throw new IllegalArgumentException("While loop needs positive bound");
-            String index=node.parameters.getOrDefault("index","");if(!index.isBlank())local.put(index,new Range(0,Math.max(0,n-1)));
+            String index=node.parameters.getOrDefault("index","");
+            if(!index.isBlank()){
+                local.put(index,new Range(0,Math.max(0,n-1)));
+                if(id.equals("action/random_pos_fan")){
+                    local.put(index+"_radius",union(bound.getOrDefault("minRadius",Range.at(0)),bound.get("maxRadius")));
+                    local.put(index+"_angle",union(bound.getOrDefault("minAngle",Range.at(-180)),bound.getOrDefault("maxAngle",Range.at(180))));
+                }
+            }
             ticks=Math.max(0,n-1)*p.getOrDefault("delay",0D);
         }
         if(id.equals("action/variable"))local.put(node.parameters.get("name"),bound.getOrDefault("variable",Range.at(0)));
@@ -63,7 +70,7 @@ public final class SpellBudget {
         boolean root=node.schema().category().equals("root");
         double childMana=0,childFocus=0;for(var child:children.values()){childMana+=child.mana;childFocus+=visual&&!root?child.focus:child.charged();}
         long spawns=0,emissions=0;for(var child:children.values()){spawns=addWork(spawns,child.spawns);emissions=addWork(emissions,child.emissions);}
-        if(Set.of("action/arrow","action/trident","action/custom_projectile","action/knock_block").contains(id))spawns++;
+        if(Set.of("action/arrow","action/trident","action/custom_projectile","action/knock_block","action/potion_cloud","action/thunder").contains(id))spawns++;
         if(id.contains("particle")||id.equals("action/sound"))emissions++;
         Parameters.normalize(node,p);p.put("distance",CostRules.RADIUS.get()*4);p.put("n",n);p.put("ticks",ticks);p.put("q",p.getOrDefault("count",0D));
         p.put("children",childFocus);p.put("C",children.getOrDefault("child",new Part(0,0,0,true,false)).focus);
@@ -117,7 +124,9 @@ public final class SpellBudget {
     }
     private static Part add(Part a,Part b){boolean pure=a.visual&&b.visual;return new Part(a.mana+b.mana,pure?a.focus+b.focus:a.charged()+b.charged(),addWork(a.work,b.work),pure,pure&&(a.discountable||b.discountable),addWork(a.spawns,b.spawns),addWork(a.emissions,b.emissions));}
     private static long addWork(long a,long b){return Math.min(Long.MAX_VALUE/2,a+b);}
+    private static Range union(Range a,Range b){return new Range(Math.min(a.lo(),b.lo()),Math.max(a.hi(),b.hi()));}
     private static boolean visual(SpellDocument.Node n){String id=n.template,c=n.schema().category();if(c.equals("effect"))return false;
-        return !Set.of("action/set_block","action/set_block_facing","action/remove_block","action/knock_block","action/schedule_tick","action/arrow","action/trident","action/custom_projectile").contains(id);}
+        return !Set.of("action/set_block","action/set_block_facing","action/remove_block","action/knock_block","action/schedule_tick","action/arrow","action/trident","action/custom_projectile",
+                "action/temporary_block","action/melt_block","action/potion_cloud","action/thunder","action/remove_liquid").contains(id);}
     private static void check(String key,Range r){double max=switch(key){case "damage","maxDamage","damagePerBlock"->CostRules.DAMAGE.get();case "speed","knockback"->CostRules.SPEED.get();case "r","radius","range","height","size","minRadius","maxRadius"->CostRules.RADIUS.get();case "life","tick","time","delay","delayPerBlock"->(double)CostRules.TICKS.get();case "duration","burnTicks"->CostRules.DURATION.get();case "amplifier"->32D;case "step","count","max_depth"->(double)CostRules.STEPS.get();default->3e7;};if(r.magnitude()>max)throw new IllegalArgumentException("Spell parameter exceeds bound: "+key);}
 }

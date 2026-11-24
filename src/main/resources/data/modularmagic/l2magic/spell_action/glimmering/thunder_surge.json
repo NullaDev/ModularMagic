@@ -1,0 +1,116 @@
+{
+  "action": {
+    "type": "l2magic:list",
+    "children": [
+      {
+        "type": "l2magic:if",
+        "action": {
+          "type": "l2magic:iterate_arc",
+          "child": {
+            "type": "l2magic:particle",
+            "particle": "minecraft:end_rod",
+            "speed": "0"
+          },
+          "count": "40",
+          "maxAngle": "180",
+          "maxInclusive": false,
+          "minAngle": "-180",
+          "radius": "6"
+        },
+        "predicate": "MobCastDelay>0"
+      },
+      {
+        "type": "l2magic:delay",
+        "child": {
+          "type": "l2magic:list",
+          "children": [
+            {
+              "type": "l2magic:sound",
+              "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
+              "sound": "minecraft:item.trident.thunder",
+              "volume": "1"
+            },
+            {
+              "type": "l2magic:block_in_range",
+              "child": {
+                "type": "l2magic:if",
+                "action": {
+                  "type": "modularmagic:glimmering/thunder",
+                  "damage": "5"
+                },
+                "predicate": {
+                  "type": "l2magic:and",
+                  "list": [
+                    {
+                      "type": "l2magic:not",
+                      "child": {
+                        "type": "l2magic:block_test",
+                        "test": "BLOCKS_MOTION"
+                      }
+                    },
+                    {
+                      "type": "l2magic:move",
+                      "child": {
+                        "type": "l2magic:block_test",
+                        "test": "BLOCKS_MOTION"
+                      },
+                      "modifiers": [
+                        {
+                          "type": "l2magic:offset",
+                          "x": "0",
+                          "y": "-1",
+                          "z": "0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "delayPerBlock": "7",
+              "height": "2",
+              "range": "3"
+            }
+          ]
+        },
+        "tick": "MobCastDelay"
+      }
+    ]
+  },
+  "cast_type": "INSTANT",
+  "condition": {
+    "type": "l2magic:ranged_test",
+    "child": {
+      "type": "l2magic:and",
+      "list": [
+        {
+          "type": "l2magic:not",
+          "child": {
+            "type": "l2magic:block_test",
+            "test": "BLOCKS_MOTION"
+          }
+        },
+        {
+          "type": "l2magic:move",
+          "child": {
+            "type": "l2magic:block_test",
+            "test": "BLOCKS_MOTION"
+          },
+          "modifiers": [
+            {
+              "type": "l2magic:offset",
+              "x": "0",
+              "y": "-1",
+              "z": "0"
+            }
+          ]
+        }
+      ]
+    },
+    "height": "2",
+    "min_count": "3",
+    "range": "3"
+  },
+  "icon": "minecraft:copper_ingot",
+  "order": 1040,
+  "trigger_type": "TARGET_POS"
+}

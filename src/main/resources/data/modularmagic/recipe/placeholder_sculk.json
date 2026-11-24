@@ -6,7 +6,10 @@
       "item": "minecraft:sculk_catalyst"
     },
     {
-      "item": "minecraft:experience_bottle"
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "minecraft:wheat_seeds"
     },
     {
       "item": "modularmagic:rune_plate_k03"

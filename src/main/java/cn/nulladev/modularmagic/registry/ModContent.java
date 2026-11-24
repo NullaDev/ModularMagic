@@ -76,7 +76,8 @@ public final class ModContent {
                     output.accept(cn.nulladev.modularmagic.research.ResearchContent.LENS.get());
                     output.accept(cn.nulladev.modularmagic.research.PlaceholderContent.ITEM.get());
                     for(var family:cn.nulladev.modularmagic.research.MimicFamily.values())output.accept(family.template());
-                    for(String id:java.util.List.of("water","lava","cobblestone","stone","basalt","snow","ice","fire","tnt","powder_snow","obsidian","amethyst_cluster","pointed_dripstone","sculk"))output.accept(cn.nulladev.modularmagic.research.PlaceholderItem.create(net.minecraft.resources.ResourceLocation.withDefaultNamespace(id)));
+                    output.accept(cn.nulladev.modularmagic.research.PlaceholderContent.CREATIVE.get());
+                    for (var sample : cn.nulladev.modularmagic.research.PlaceholderContent.physicalSamples()) output.accept(sample);
                     output.accept(cn.nulladev.modularmagic.research.ResearchContent.TABLE_ITEM.get());
                     output.accept(cn.nulladev.modularmagic.research.ResearchContent.CARVER_ITEM.get());
                     output.accept(cn.nulladev.modularmagic.research.ResearchContent.BLANK.get());
@@ -87,10 +88,13 @@ public final class ModContent {
                     cn.nulladev.modularmagic.crafting.ArtificeContent.PLATES.values().forEach(i->output.accept(i.get()));
                     cn.nulladev.modularmagic.crafting.ArtificeContent.GEAR.values().forEach(i->output.accept(i.get()));
                     output.accept(cn.nulladev.modularmagic.research.ResearchContent.INK.get());
-                    cn.nulladev.modularmagic.research.ResearchCatalog.all().forEach(t->output.accept(cn.nulladev.modularmagic.research.ResearchNoteItem.create(t.id(),true)));
-                    output.accept(cn.nulladev.modularmagic.utility.UtilityContent.FUEL.get());
-                    output.accept(cn.nulladev.modularmagic.utility.UtilityContent.FERTILIZER.get());
+                    output.accept(cn.nulladev.modularmagic.research.ResearchContent.KNOWLEDGE_FRAGMENT.get());
+                    output.accept(cn.nulladev.modularmagic.utility.UtilityContent.PLACE.get());
+                    output.accept(cn.nulladev.modularmagic.utility.UtilityContent.LAUNCH.get());
+                    output.accept(cn.nulladev.modularmagic.utility.UtilityContent.BURN.get());
+                    output.accept(cn.nulladev.modularmagic.utility.UtilityContent.TOOL.get());
                     output.accept(cn.nulladev.modularmagic.utility.UtilityContent.FOOD.get());
+                    output.accept(cn.nulladev.modularmagic.utility.UtilityContent.HANDHELD.get());
                     output.accept(cn.nulladev.modularmagic.utility.UtilityContent.CANNON.get());
                     output.accept(cn.nulladev.modularmagic.utility.UtilityContent.CRAFTER.get());
                     output.accept(CORE_WAND.get());

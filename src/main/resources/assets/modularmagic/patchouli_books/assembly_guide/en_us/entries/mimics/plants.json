@@ -1,5 +1,5 @@
 {
-  "name": "Aether Mimic: Plants",
+  "name": "Universal Base Sample: Plants",
   "icon": "modularmagic:plant_placeholder",
   "category": "modularmagic:mimics",
   "sortnum": 10,
@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "modularmagic:plant_placeholder",
       "link_recipe": true,
-      "text": "Melons form, cane grows another whole segment, and trunks and leaves unfold. Small mushrooms spread on their own.$(br2)These plant materials share one mimic. Huge mushroom blocks, which require bonemeal to grow, follow a different pattern."
+      "text": "Melons, sugar cane, logs, and small mushrooms share a universal sample for plants that grow or spread on their own."
     },
     {
       "type": "patchouli:text",
@@ -18,7 +18,12 @@
     {
       "type": "patchouli:text",
       "title": "Choose a Material",
-      "text": "Use any material in this family as the reference when shaping the common mimic.$(br2)Craft that mimic together with a matching block, in either order, to select what it generates.$(br2)Craft the bound mimic alone to recover both the common mimic and the original material."
+      "text": "Use a naturally growing plant as the shaping reference. Craft the empty sample together with a matching plant to load it. Craft the bound sample alone to recover the plant."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:advanced_plant_placeholder",
+      "text": "Craft an empty Universal Base Sample for Plants with a bone meal sample to upgrade it. Load plants that require bone meal to spread, such as tall flowers and moss. Each generated plant costs one extra bone meal use.$(br2)Unload the plant, then craft the empty advanced sample alone. The original bone meal sample stays in its crafting slot."
     }
   ]
 }

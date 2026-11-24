@@ -2549,6 +2549,198 @@
           "optional": true
         }
       ]
+    },
+    {
+      "id": "action/temporary_block",
+      "category": "action",
+      "nativeType": "modularmagic:glimmering/temporary_block",
+      "item": "gem_action_temporary_block",
+      "name": "临时方块",
+      "fields": [
+        {
+          "key": "material",
+          "kind": "string",
+          "optional": false,
+          "initial": "stone"
+        },
+        {
+          "key": "tick",
+          "kind": "expression",
+          "optional": false,
+          "initial": "200"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/melt_block",
+      "category": "action",
+      "nativeType": "modularmagic:glimmering/melt_block",
+      "item": "gem_action_melt_block",
+      "name": "熔化岩石",
+      "fields": [
+        {
+          "key": "tick",
+          "kind": "expression",
+          "optional": false,
+          "initial": "200"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/potion_cloud",
+      "category": "action",
+      "nativeType": "modularmagic:glimmering/effect_cloud",
+      "item": "gem_action_potion_cloud",
+      "name": "药效云",
+      "fields": [
+        {
+          "key": "effect",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:healing"
+        },
+        {
+          "key": "radius",
+          "kind": "expression",
+          "optional": false,
+          "initial": "3"
+        },
+        {
+          "key": "duration",
+          "kind": "expression",
+          "optional": false,
+          "initial": "10"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/thunder",
+      "category": "action",
+      "nativeType": "modularmagic:glimmering/thunder",
+      "item": "gem_action_thunder",
+      "name": "落雷",
+      "fields": [
+        {
+          "key": "damage",
+          "kind": "expression",
+          "optional": false,
+          "initial": "5"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "action/remove_liquid",
+      "category": "action",
+      "nativeType": "modularmagic:glimmering/remove_liquid",
+      "item": "gem_action_remove_liquid",
+      "name": "吸除流体",
+      "fields": [
+        {
+          "key": "depth",
+          "kind": "expression",
+          "optional": false,
+          "initial": "6"
+        },
+        {
+          "key": "limit",
+          "kind": "expression",
+          "optional": false,
+          "initial": "65"
+        },
+        {
+          "key": "fluid",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:water"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "effect/procreation",
+      "category": "effect",
+      "nativeType": "modularmagic:glimmering/procreation",
+      "item": "gem_effect_procreation",
+      "name": "催育",
+      "fields": [
+        {
+          "key": "num",
+          "kind": "expression",
+          "optional": false,
+          "initial": "4"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "effect/heal_interval",
+      "category": "effect",
+      "nativeType": "modularmagic:glimmering/heal_interval",
+      "item": "gem_effect_heal_interval",
+      "name": "间歇治疗",
+      "fields": [
+        {
+          "key": "interval",
+          "kind": "expression",
+          "optional": false,
+          "initial": "10"
+        },
+        {
+          "key": "heal",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "effect/stacking_status",
+      "category": "effect",
+      "nativeType": "modularmagic:glimmering/stacking_status",
+      "item": "gem_effect_stacking_status",
+      "name": "叠加状态",
+      "fields": [
+        {
+          "key": "effect",
+          "kind": "string",
+          "optional": false,
+          "initial": "minecraft:poison"
+        },
+        {
+          "key": "duration",
+          "kind": "expression",
+          "optional": false,
+          "initial": "100"
+        },
+        {
+          "key": "max",
+          "kind": "expression",
+          "optional": false,
+          "initial": "1"
+        }
+      ],
+      "slots": []
+    },
+    {
+      "id": "filter/invulnerability_frame",
+      "category": "filter",
+      "nativeType": "modularmagic:glimmering/invulnerability_frame",
+      "item": "gem_filter_invulnerability_frame",
+      "name": "受击间隔",
+      "fields": [
+        {
+          "key": "frame",
+          "kind": "expression",
+          "optional": false,
+          "initial": "5"
+        }
+      ],
+      "slots": []
     }
   ]
 }

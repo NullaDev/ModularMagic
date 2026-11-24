@@ -149,9 +149,8 @@ public final class PaidCastingGameTests {
     public static void builtinSpellBudgetsAreFinite(GameTestHelper h){
         var p=player(h);var errors=new ArrayList<String>();
         for(String id:BuiltinSpells.ids()){
-            var doc=SpellCoreItem.read(BuiltinSpells.create(id,h.getLevel().registryAccess()));
             var context=new dev.xkmc.l2magic.content.engine.context.SpellContext(p,p.position(),dev.xkmc.l2magic.content.engine.helper.Orientation.of(p.getLookAngle(),new net.minecraft.world.phys.Vec3(0,1,0)),0,20,1,0);
-            try{var plan=cn.nulladev.modularmagic.spell.billing.SpellBudget.plan(doc,context);h.assertTrue(Double.isFinite(plan.mana())&&Double.isFinite(plan.focus()),"Invalid budget: "+id);}
+            try{var doc=SpellCoreItem.read(BuiltinSpells.create(id,h.getLevel().registryAccess()));var plan=cn.nulladev.modularmagic.spell.billing.SpellBudget.plan(doc,context);h.assertTrue(Double.isFinite(plan.mana())&&Double.isFinite(plan.focus()),"Invalid budget: "+id);}
             catch(RuntimeException e){errors.add(id+": "+e.getMessage());}
         }
         h.assertTrue(errors.isEmpty(),String.join("; ",errors));h.succeed();
@@ -167,7 +166,7 @@ public final class PaidCastingGameTests {
             var context=new dev.xkmc.l2magic.content.engine.context.SpellContext(p,p.position(),dev.xkmc.l2magic.content.engine.helper.Orientation.of(p.getLookAngle(),new net.minecraft.world.phys.Vec3(0,1,0)),0,20,1,0);
             try{boolean allowed=runtime.action().test(anchor,context);boolean cast=cn.nulladev.modularmagic.spell.billing.PaidCasting.execute(p,w,json,context,runtime);
                 h.assertTrue(cast==allowed,"Survival core must obey its casting condition: "+id);
-            }catch(RuntimeException e){throw new IllegalStateException("Cannot cast builtin in survival: "+id,e);}
+            }catch(RuntimeException e){h.fail("Cannot cast example in survival: "+id+": "+e.getMessage());}
             finally{cn.nulladev.modularmagic.spell.billing.BillingRuntime.cancel(p);}
         }h.succeed();
     }

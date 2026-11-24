@@ -1,0 +1,16 @@
+{
+  "name": "以太凝形器",
+  "icon": "modularmagic:aether_materializer",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:aether_materializer",
+      "text": "接入以太网络，装入定型样板，即可按件生成相应实物。生成桶装材料时还需从桶槽供应空桶。下方漏斗可取走产物。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:aether_materializer"
+    }
+  ]
+}

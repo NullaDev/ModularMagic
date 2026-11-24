@@ -9,9 +9,9 @@ final class SpellDocumentTest {
     private SpellDocument document() { return SpellDocument.create("root/instant"); }
 
     @Test void catalogCoversEveryRegisteredKindAndAuxiliaryTemplate() {
-        assertEquals(100, NodeCatalog.all().size());
+        assertEquals(109, NodeCatalog.all().size());
         assertEquals(88, NodeCatalog.all().stream().filter(t -> t.nativeType().startsWith("l2magic:")).count());
-        assertEquals(100, NodeCatalog.all().stream().map(NodeTemplate::item).distinct().count());
+        assertEquals(NodeCatalog.all().size(), NodeCatalog.all().stream().map(NodeTemplate::item).distinct().count());
         for (var template : NodeCatalog.all()) for (var slot : template.slots()) {
             assertNotNull(NodeCatalog.category(slot.category()));
             assertTrue(NodeCatalog.all().stream().anyMatch(t -> t.category().equals(slot.category())));

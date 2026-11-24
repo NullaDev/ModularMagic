@@ -1,5 +1,5 @@
 {
-  "name": "以太拟材：积雪",
+  "name": "以太样板：雪",
   "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:snow\"}]",
   "category": "modularmagic:mimics",
   "sortnum": 6,

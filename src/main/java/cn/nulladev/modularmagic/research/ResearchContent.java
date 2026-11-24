@@ -27,6 +27,7 @@ public final class ResearchContent {
     public static final DeferredItem<LensItem> LENS=ITEMS.register("void_lens",LensItem::new);
     public static final DeferredItem<ResearchNoteItem> NOTE=ITEMS.register("research_note",()->new ResearchNoteItem(false));
     public static final DeferredItem<ResearchNoteItem> DIRECT_NOTE=ITEMS.register("deciphered_note",()->new ResearchNoteItem(true));
+    public static final DeferredItem<KnowledgeFragmentItem> KNOWLEDGE_FRAGMENT=ITEMS.register("knowledge_fragment",KnowledgeFragmentItem::new);
     public static final DeferredBlock<Block> TABLE=BLOCKS.register("rune_research_table",()->new ResearchBlock(false));
     public static final DeferredBlock<Block> CARVER=BLOCKS.register("rune_carving_table",()->new ResearchBlock(true));
     public static final DeferredItem<BlockItem> TABLE_ITEM=ITEMS.registerSimpleBlockItem(TABLE),CARVER_ITEM=ITEMS.registerSimpleBlockItem(CARVER);

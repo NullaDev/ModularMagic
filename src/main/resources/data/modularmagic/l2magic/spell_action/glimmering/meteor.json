@@ -1,0 +1,50 @@
+{
+  "action": {
+    "type": "l2magic:list",
+    "children": [
+      {
+        "type": "l2magic:random_pos_fan",
+        "child": {
+          "type": "l2magic:dust_particle",
+          "color": "0",
+          "life": "55",
+          "scale": "1",
+          "speed": "0"
+        },
+        "count": "100",
+        "maxAngle": "180",
+        "maxRadius": "1.5",
+        "minAngle": "-180",
+        "minRadius": "0"
+      },
+      {
+        "type": "l2magic:move",
+        "child": {
+          "type": "l2magic:custom_projectile",
+          "bypassEntity": false,
+          "bypassWall": false,
+          "config": "modularmagic:glimmering/meteor",
+          "life": "200",
+          "params": {},
+          "speed": "0.4"
+        },
+        "modifiers": [
+          {
+            "type": "l2magic:direction",
+            "x": "0",
+            "y": "-1",
+            "z": "0"
+          },
+          {
+            "type": "l2magic:forward",
+            "distance": "-8"
+          }
+        ]
+      }
+    ]
+  },
+  "cast_type": "INSTANT",
+  "icon": "minecraft:magma_cream",
+  "order": 1026,
+  "trigger_type": "TARGET_POS"
+}

@@ -7,8 +7,7 @@
       "type": "patchouli:spotlight",
       "item": "modularmagic:portable_tnt_cannon",
       "link_recipe": true,
-      "title": "An Explosion for the Road",
-      "text": "A curtain of water contains the blast and directs its force forward. The same pattern fits inside a portable barrel.$(br2)Look toward your destination and use it to fire. Aim upward for more height. $(l)The blast will not hurt you; landing still can.$() Choose your landing before you launch."
+      "text": "Craft it from a Launch Unit and a TNT sample. The cannon keeps the unit's aether cache. Aim and use to propel yourself. The blast is harmless, and ordinary fall damage still applies."
     },
     {
       "type": "patchouli:crafting",

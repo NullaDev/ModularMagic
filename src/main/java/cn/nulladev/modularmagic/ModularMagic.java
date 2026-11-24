@@ -27,7 +27,9 @@ public final class ModularMagic {
         cn.nulladev.modularmagic.utility.UtilityContent.register(modBus);
         container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER,cn.nulladev.modularmagic.utility.UtilityConfig.SPEC,"modularmagic-utilities.toml");
         ModContent.register(modBus);
+        cn.nulladev.modularmagic.spell.GlimmeringNodes.register(modBus);
         cn.nulladev.modularmagic.research.ResearchContent.register(modBus);
+        cn.nulladev.modularmagic.research.ExampleSpellLoot.register(modBus);
         cn.nulladev.modularmagic.research.PlaceholderContent.register(modBus);
         container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER,cn.nulladev.modularmagic.research.PlaceholderContent.SPEC,"modularmagic-placeholders.toml");
         container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER,cn.nulladev.modularmagic.research.ResearchContent.SPEC,"modularmagic-research.toml");

@@ -1,0 +1,53 @@
+{
+  "action": {
+    "type": "l2magic:move",
+    "child": {
+      "type": "l2magic:block_in_range",
+      "child": {
+        "type": "l2magic:if",
+        "action": {
+          "type": "l2magic:list",
+          "children": [
+            {
+              "type": "l2magic:sound",
+              "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
+              "sound": "minecraft:block.glass.place",
+              "volume": "1"
+            },
+            {
+              "type": "modularmagic:glimmering/temporary_block",
+              "material": "glass",
+              "tick": "rand(180,220)"
+            }
+          ]
+        },
+        "predicate": {
+          "type": "l2magic:and",
+          "list": [
+            "abs(i_r-3)<0.5",
+            {
+              "type": "l2magic:block_test",
+              "test": "REPLACEABLE"
+            }
+          ]
+        }
+      },
+      "delayPerBlock": "0",
+      "height": "4",
+      "range": "4",
+      "variable": "i"
+    },
+    "modifiers": [
+      {
+        "type": "l2magic:offset",
+        "x": "0",
+        "y": "1",
+        "z": "0"
+      }
+    ]
+  },
+  "cast_type": "INSTANT",
+  "icon": "minecraft:quartz",
+  "order": 1002,
+  "trigger_type": "TARGET_POS"
+}

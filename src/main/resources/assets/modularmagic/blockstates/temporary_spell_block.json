@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "material=bamboo": {
+      "model": "modularmagic:block/temporary_spell_bamboo"
+    },
+    "material=clay": {
+      "model": "minecraft:block/light_gray_carpet"
+    },
+    "material=glass": {
+      "model": "modularmagic:block/temporary_spell_glass"
+    },
+    "material=stone": {
+      "model": "minecraft:block/stone"
+    },
+    "material=hot_stone": {
+      "model": "minecraft:block/magma_block"
+    },
+    "material=hot_deepslate": {
+      "model": "minecraft:block/magma_block"
+    },
+    "material=hot_netherrack": {
+      "model": "minecraft:block/magma_block"
+    }
+  }
+}

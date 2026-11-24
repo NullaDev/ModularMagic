@@ -1047,6 +1047,24 @@
         "modularmagic:material": 174
       },
       "model": "modularmagic:item/mimic_black_carpet"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 175
+      },
+      "model": "modularmagic:item/mimic_egg"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 176
+      },
+      "model": "modularmagic:item/mimic_iron_ingot"
+    },
+    {
+      "predicate": {
+        "modularmagic:material": 177
+      },
+      "model": "modularmagic:item/mimic_bone_meal"
     }
   ]
 }

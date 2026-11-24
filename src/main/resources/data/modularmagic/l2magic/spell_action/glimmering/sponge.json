@@ -1,0 +1,23 @@
+{
+  "action": {
+    "type": "l2magic:list",
+    "children": [
+      {
+        "type": "l2magic:sound",
+        "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
+        "sound": "minecraft:block.sponge.absorb",
+        "volume": "1"
+      },
+      {
+        "type": "modularmagic:glimmering/remove_liquid",
+        "depth": "6",
+        "fluid": "minecraft:water",
+        "limit": "65"
+      }
+    ]
+  },
+  "cast_type": "INSTANT",
+  "icon": "minecraft:sponge",
+  "order": 1021,
+  "trigger_type": "TARGET_POS"
+}

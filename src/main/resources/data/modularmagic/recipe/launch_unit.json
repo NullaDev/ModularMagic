@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:dispenser"
+    },
+    {
+      "item": "modularmagic:aether_gem"
+    },
+    {
+      "item": "modularmagic:rune_plate_k18"
+    }
+  ],
+  "result": {
+    "id": "modularmagic:launch_unit",
+    "count": 1
+  }
+}

@@ -11,7 +11,8 @@
       "item": "modularmagic:unformed_matter"
     },
     "S": {
-      "item": "minecraft:stick"
+      "type": "modularmagic:sample",
+      "target": "minecraft:stick"
     }
   },
   "result": {

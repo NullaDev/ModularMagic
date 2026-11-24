@@ -1,0 +1,63 @@
+{
+  "action": {
+    "type": "l2magic:block_in_range",
+    "child": {
+      "type": "l2magic:if",
+      "action": {
+        "type": "l2magic:list",
+        "children": [
+          {
+            "type": "l2magic:sound",
+            "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
+            "sound": "minecraft:block.gravel.hit",
+            "volume": "0.5"
+          },
+          {
+            "type": "modularmagic:glimmering/temporary_block",
+            "material": "clay",
+            "tick": "rand(80,120)"
+          }
+        ]
+      },
+      "predicate": {
+        "type": "l2magic:and",
+        "list": [
+          {
+            "type": "l2magic:surface_below",
+            "face": "FULL"
+          },
+          {
+            "type": "l2magic:block_test",
+            "test": "REPLACEABLE"
+          }
+        ]
+      }
+    },
+    "delayPerBlock": "2",
+    "height": "2",
+    "range": "4"
+  },
+  "cast_type": "INSTANT",
+  "condition": {
+    "type": "l2magic:ranged_test",
+    "child": {
+      "type": "l2magic:and",
+      "list": [
+        {
+          "type": "l2magic:surface_below",
+          "face": "FULL"
+        },
+        {
+          "type": "l2magic:block_test",
+          "test": "REPLACEABLE"
+        }
+      ]
+    },
+    "height": "2",
+    "min_count": "8",
+    "range": "4"
+  },
+  "icon": "minecraft:clay_ball",
+  "order": 1003,
+  "trigger_type": "TARGET_POS"
+}

@@ -1,23 +1,23 @@
 {
-  "name": "空白以太拟材",
-  "icon": "modularmagic:item_placeholder",
-  "category": "modularmagic:mimics",
-  "sortnum": 0,
-  "pages": [
-    {
-      "type": "patchouli:spotlight",
-      "item": "modularmagic:item_placeholder",
-      "link_recipe": true,
-      "text": "空白拟材能留下物质成形时的纹样。$(l)右键打开$()，中心放参考物，四周放入定型所需的材料。中心只取样；周围的材料则会用于定型。$(br2)这一分类收录了每种拟材的线索，具体组合也可在 JEI 中查看。"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "借以太成形",
-      "text": "把定型后的拟材带在背包里。法术会先使用实物材料；缺少材料时，才借对应拟材额外消耗以太来生成。$(br2)也可以手持拟材，右键直接放出对应方块。$(l)消耗的是以太，拟材本身会留下。$()"
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "modularmagic:item_placeholder"
-    }
-  ]
+    "name":  "空白以太样板",
+    "icon":  "modularmagic:item_placeholder",
+    "category":  "modularmagic:mimics",
+    "sortnum":  0,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "modularmagic:item_placeholder",
+                      "link_recipe":  true,
+                      "text":  "右键打开空白样板，中央取样，周围放入定型材料。成功定型会消耗空白样板和外围的整件材料，包括桶。"
+                  },
+                  {
+                      "type":  "patchouli:text",
+                      "title":  "借以太成形",
+                      "text":  "定型样板可装入简易施法单元、放入以太凝形器，或在手持以太合成台中继续衍生。装入通用基础样板的实物可以取回。"
+                  },
+                  {
+                      "type":  "patchouli:crafting",
+                      "recipe":  "modularmagic:item_placeholder"
+                  }
+              ]
 }

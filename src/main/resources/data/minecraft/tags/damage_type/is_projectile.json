@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "modularmagic:glimmering/amethyst",
+    "modularmagic:glimmering/dripstone",
+    "modularmagic:glimmering/sand",
+    "modularmagic:glimmering/gravel",
+    "modularmagic:glimmering/cactus",
+    "modularmagic:glimmering/amethyst_penetration"
+  ]
+}

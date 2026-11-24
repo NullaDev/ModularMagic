@@ -1,0 +1,17 @@
+{
+  "name": "简易施法单元：使用",
+  "icon": "modularmagic:tool_unit",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:tool_unit",
+      "link_recipe": true,
+      "text": "潜行右键装入工具或武器样板。挖掘、攻击和右键交互按对应器具的规则执行，成功使用时以太承担损耗。$(br2)可在以太储槽中补充单元的缓存。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:tool_unit"
+    }
+  ]
+}

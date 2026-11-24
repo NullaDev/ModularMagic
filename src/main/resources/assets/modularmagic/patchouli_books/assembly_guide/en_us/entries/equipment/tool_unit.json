@@ -1,0 +1,17 @@
+{
+  "name": "Simple Casting Unit: Use",
+  "icon": "modularmagic:tool_unit",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:tool_unit",
+      "link_recipe": true,
+      "text": "Sneak and use to load a tool or weapon sample. Mining, attacks, and right-click interactions follow the sampled item's rules. The unit spends aether on successful actions.$(br2)Charge the unit in an Aether Tank."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:tool_unit"
+    }
+  ]
+}

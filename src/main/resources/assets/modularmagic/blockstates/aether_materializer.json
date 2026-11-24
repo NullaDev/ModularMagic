@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "modularmagic:block/aether_materializer"
+    }
+  }
+}

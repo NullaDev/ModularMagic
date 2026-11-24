@@ -17,7 +17,7 @@ public final class ResearchNoteItem extends Item{
         if(p.level().isClientSide)return InteractionResult.SUCCESS;
         try{var t=ResearchCatalog.get(EnergyLinkItem.data(stack).getString("Research"));if(!ResearchKnowledge.ready(p,t)){p.displayClientMessage(Component.translatable("research.modularmagic.prerequisite"),true);return InteractionResult.FAIL;}
             if(ResearchKnowledge.completed(p,t)){p.displayClientMessage(Component.translatable("research.modularmagic.complete"),true);return InteractionResult.FAIL;}
-            if(direct||t.id().equals("K00")||t.nodes().isEmpty()){t.nodes().forEach(n->ResearchKnowledge.learn(p,n));ResearchKnowledge.learn(p,t.id());p.displayClientMessage(Component.translatable("research.modularmagic.learned",Component.translatable(t.key())),false);}
+            if(direct||t.id().equals("K00")||t.nodes().isEmpty()){ResearchKnowledge.learn(p,t);p.displayClientMessage(Component.translatable("research.modularmagic.learned",Component.translatable(t.key())),false);}
             else{ResearchKnowledge.save(p,"observed:"+t.id(),"yes");ResearchKnowledge.save(p,"active",t.id());}
             if(!p.isCreative()&&(direct||t.id().equals("K00")||t.nodes().isEmpty()))stack.shrink(1);return InteractionResult.SUCCESS;
         }catch(RuntimeException e){return InteractionResult.FAIL;}

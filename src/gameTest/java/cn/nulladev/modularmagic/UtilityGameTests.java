@@ -33,35 +33,196 @@ public final class UtilityGameTests {
     private static int count(ServerPlayer p,Item item){return p.getInventory().items.stream().filter(s->s.is(item)).mapToInt(ItemStack::getCount).sum();}
     private static UseOnContext context(ServerPlayer p,BlockPos pos){return new UseOnContext(p,InteractionHand.MAIN_HAND,new BlockHitResult(pos.getCenter(),Direction.UP,pos,false));}
 
-    @GameTest(template="empty",batch="utilities") public static void endlessFuelActuallySmeltsWithoutBeingConsumed(GameTestHelper h){
-        var pos=h.absolutePos(new BlockPos(1,1,1));h.getLevel().setBlockAndUpdate(pos,Blocks.FURNACE.defaultBlockState());var f=(FurnaceBlockEntity)h.getLevel().getBlockEntity(pos);var fuel=UtilityContent.FUEL.toStack();fuel.set(DataComponents.CUSTOM_NAME,Component.literal("Never Out"));f.setItem(0,new ItemStack(Items.RAW_IRON,3));f.setItem(1,fuel);
-        h.assertTrue(fuel.getBurnTime(RecipeType.SMELTING)==new ItemStack(Items.WHITE_CARPET).getBurnTime(RecipeType.SMELTING),"The fuel must have the carpet's exact burn duration");
-        for(int tick=0;tick<610;tick++)AbstractFurnaceBlockEntity.serverTick(h.getLevel(),pos,h.getLevel().getBlockState(pos),f);
-        h.assertTrue(f.getItem(2).is(Items.IRON_INGOT)&&f.getItem(2).getCount()==3,"One endless fuel must keep the real furnace smelting through multiple burn cycles");
-        h.assertTrue(f.getItem(1).is(UtilityContent.FUEL.get())&&f.getItem(1).getCount()==1&&f.getItem(1).getHoverName().getString().equals("Never Out"),"Burning returns the same kind of fuel with its name");h.succeed();
+    private static ItemStack unit(cn.nulladev.modularmagic.utility.AetherUtilityItem item,ItemStack sample,long energy){
+        var stack=new ItemStack(item);
+        AetherUtilityItem.setSample(stack,sample);
+        item.receive(stack,energy,false);
+        return stack;
     }
-    @GameTest(template="empty",batch="utilities") public static void fertilizerPaysOnlyForValidNativeBonemealUses(GameTestHelper h){
-        var p=player(h);battery(p,10000);p.setItemInHand(InteractionHand.MAIN_HAND,UtilityContent.FERTILIZER.toStack());var pos=h.absolutePos(new BlockPos(1,1,1));h.getLevel().setBlockAndUpdate(pos,Blocks.STONE.defaultBlockState());var item=UtilityContent.FERTILIZER.get();item.useOn(context(p,pos));h.assertTrue(mana(p)==10000,"Invalid fertilization must not cost aether");
-        h.getLevel().setBlockAndUpdate(pos.below(),Blocks.FARMLAND.defaultBlockState());h.getLevel().setBlockAndUpdate(pos,Blocks.WHEAT.defaultBlockState());item.useOn(context(p,pos));h.assertTrue(h.getLevel().getBlockState(pos).getValue(net.minecraft.world.level.block.CropBlock.AGE)>0&&mana(p)==10000-UtilityConfig.FERTILIZER.get()&&p.getMainHandItem().getCount()==1,"Native crop growth costs aether without consuming the tool");
-        p.getInventory().setItem(0,ItemStack.EMPTY);h.getLevel().setBlockAndUpdate(pos,Blocks.WHEAT.defaultBlockState());item.useOn(context(p,pos));h.assertTrue(h.getLevel().getBlockState(pos).getValue(net.minecraft.world.level.block.CropBlock.AGE)==0,"No aether means no growth");h.succeed();
+    @GameTest(template="empty",batch="utilities") public static void burningUnitPaysForActualFurnaceIgnitions(GameTestHelper h){
+        var pos=h.absolutePos(new BlockPos(1,1,1));h.getLevel().setBlockAndUpdate(pos,Blocks.FURNACE.defaultBlockState());
+        var furnace=(FurnaceBlockEntity)h.getLevel().getBlockEntity(pos);
+        var fuel=unit(UtilityContent.BURN.get(),PlaceholderItem.bind(MimicFamily.CARPETS,new ItemStack(Items.WHITE_CARPET)),2_000);
+        int burn=fuel.getBurnTime(RecipeType.SMELTING);
+        h.assertTrue(burn==new ItemStack(Items.WHITE_CARPET).getBurnTime(RecipeType.SMELTING),"The sample determines burn duration");
+        furnace.setItem(0,new ItemStack(Items.RAW_IRON,3));furnace.setItem(1,fuel);
+        for(int tick=0;tick<610;tick++)AbstractFurnaceBlockEntity.serverTick(h.getLevel(),pos,h.getLevel().getBlockState(pos),furnace);
+        h.assertTrue(furnace.getItem(2).is(Items.IRON_INGOT)&&furnace.getItem(2).getCount()==3,"Furnace keeps smelting while its unit has aether");
+        h.assertTrue(furnace.getItem(1).is(UtilityContent.BURN.get())&&UtilityContent.BURN.get().stored(fuel)<2_000,"The furnace drains the unit and retains its sample");
+        var player=player(h);
+        var target=pos.east();
+        h.getLevel().setBlockAndUpdate(target,Blocks.COBBLESTONE.defaultBlockState());
+        var charcoal=PlaceholderItem.derived(new ItemStack(Items.CHARCOAL),800);
+        var handheld=unit(UtilityContent.BURN.get(),charcoal,2_000);
+        player.setItemInHand(InteractionHand.MAIN_HAND,handheld);
+        UtilityContent.BURN.get().useOn(context(player,target));
+        h.assertTrue(h.getLevel().getBlockState(target).is(Blocks.STONE)&&UtilityContent.BURN.get().stored(handheld)==1_900,
+                "World smelting replaces the block and pays the fraction of fuel used");
+        h.succeed();
     }
-    @GameTest(template="empty",batch="utilities") public static void endlessFoodIsOneCarrotAndKeepsItsItem(GameTestHelper h){
-        var p=player(h);battery(p,10000);var food=UtilityContent.FOOD.toStack();p.setItemInHand(InteractionHand.MAIN_HAND,food);p.getFoodData().setFoodLevel(10);p.getFoodData().setSaturation(0);var returned=food.finishUsingItem(h.getLevel(),p);
-        h.assertTrue(returned==food&&food.getCount()==1&&p.getFoodData().getFoodLevel()==13&&Math.abs(p.getFoodData().getSaturationLevel()-3.6f)<.001,"One use must match carrot hunger and saturation and retain the tool");
-        h.assertTrue(mana(p)==10000-UtilityConfig.FOOD.get(),"Food must charge its configured fee");p.getInventory().setItem(0,ItemStack.EMPTY);p.getFoodData().setFoodLevel(10);food.finishUsingItem(h.getLevel(),p);h.assertTrue(p.getFoodData().getFoodLevel()==10,"Unpaid food cannot restore hunger");
-        p.setGameMode(GameType.CREATIVE);food.finishUsingItem(h.getLevel(),p);h.assertTrue(p.getFoodData().getFoodLevel()==13,"Creative food costs no aether");h.succeed();
+    @GameTest(template="empty",batch="utilities") public static void launchUnitFertilizesValidTargetsWithoutConsumingItsSample(GameTestHelper h){
+        var p=player(h);
+        var item=UtilityContent.LAUNCH.get();
+        var sample=mimic("bone_meal");
+        var stack=unit(item,sample,5_000);
+        p.setItemInHand(InteractionHand.MAIN_HAND,stack);
+        var pos=h.absolutePos(new BlockPos(1,1,1));
+        h.getLevel().setBlockAndUpdate(pos,Blocks.STONE.defaultBlockState());
+        item.useOn(context(p,pos));
+        h.assertTrue(item.stored(stack)==5_000,"Invalid fertilization leaves the cache alone");
+        h.getLevel().setBlockAndUpdate(pos.below(),Blocks.FARMLAND.defaultBlockState());
+        h.getLevel().setBlockAndUpdate(pos,Blocks.WHEAT.defaultBlockState());
+        item.useOn(context(p,pos));
+        h.assertTrue(h.getLevel().getBlockState(pos).getValue(net.minecraft.world.level.block.CropBlock.AGE)>0
+                &&item.stored(stack)==5_000-PlaceholderItem.price(sample),"Valid fertilization consumes the sample's fee from the cache");
+        h.assertTrue(PlaceholderItem.material(AetherUtilityItem.sample(stack)).is(Items.BONE_MEAL),"The sample remains fitted");
+        h.succeed();
     }
-    @GameTest(template="empty",batch="utilities") public static void cannonOnlyProvidesMotionAndPreservesFallDamage(GameTestHelper h){
-        var p=player(h);battery(p,10000);p.setItemInHand(InteractionHand.MAIN_HAND,UtilityContent.CANNON.toStack());p.setDeltaMovement(Vec3.ZERO);p.fallDistance=12;p.setXRot(0);float health=p.getHealth();var item=UtilityContent.CANNON.get();item.use(h.getLevel(),p,InteractionHand.MAIN_HAND);
-        h.assertTrue(p.getHealth()==health&&p.getDeltaMovement().y>=UtilityConfig.CANNON_LIFT.get()&&p.getDeltaMovement().horizontalDistance()>0,"The cannon launches the player without explosion damage");
-        h.assertTrue(p.fallDistance==12&&mana(p)==10000-UtilityConfig.CANNON.get(),"The cannon does not remove accumulated fall distance");var motion=p.getDeltaMovement();item.use(h.getLevel(),p,InteractionHand.MAIN_HAND);h.assertTrue(motion.equals(p.getDeltaMovement())&&mana(p)==10000-UtilityConfig.CANNON.get(),"Cooldown blocks repeated propulsion and payment");
-        p.getCooldowns().removeCooldown(item);p.getInventory().setItem(0,ItemStack.EMPTY);item.use(h.getLevel(),p,InteractionHand.MAIN_HAND);h.assertTrue(motion.equals(p.getDeltaMovement()),"Insufficient aether must not launch");h.succeed();
+    @GameTest(template="empty",batch="utilities") public static void eatingUnitUsesItsBoundFoodAndCache(GameTestHelper h){
+        var p=player(h);
+        var item=UtilityContent.FOOD.get();
+        var sample=PlaceholderItem.bind(MimicFamily.PLANTS,new ItemStack(Items.CARROT));
+        var food=unit(item,sample,5_000);
+        p.setItemInHand(InteractionHand.MAIN_HAND,food);p.getFoodData().setFoodLevel(10);p.getFoodData().setSaturation(0);
+        h.assertTrue(food.getUseDuration(p)>0,"The sampled food defines the use duration");
+        var returned=food.finishUsingItem(h.getLevel(),p);
+        h.assertTrue(returned==food&&p.getFoodData().getFoodLevel()==13&&Math.abs(p.getFoodData().getSaturationLevel()-3.6f)<.001,"Sampled carrot reproduces vanilla nutrition");
+        h.assertTrue(item.stored(food)==5_000-PlaceholderItem.price(sample),"Food charges the unit cache");
+        h.succeed();
     }
-    @GameTest(template="empty",batch="utilities") public static void utilityRecipesLoadAndMimicIngredientsKeepTheirTarget(GameTestHelper h){
-        for(String name:List.of("endless_fuel","endless_fertilizer","endless_food","portable_tnt_cannon","auto_crafter")){
-            var r=(CraftingRecipe)h.getLevel().getRecipeManager().byKey(ModularMagic.id(name)).orElseThrow().value();var samples=r.getIngredients().stream().map(i->i.getItems()[0].copy()).toList();var input=CraftingInput.of(3,3,pad(samples));h.assertTrue(r.matches(input,h.getLevel())&&!r.assemble(input,h.getLevel().registryAccess()).isEmpty(),"JEI-visible recipe must match its displayed ingredients: "+name);
-            if(name.equals("endless_fertilizer")||name.equals("portable_tnt_cannon")){var first=r.getIngredients().getFirst();h.assertTrue(!first.test(mimic("dirt"))&&!first.test(PlaceholderContent.ITEM.toStack()),"A different or blank mimic cannot substitute for the required target");}
-        }h.succeed();
+    @GameTest(template="empty",batch="utilities") public static void cannonPropelsPlayerWithoutDamageAndChargesOnce(GameTestHelper h){
+        var p=player(h);var sample=mimic("tnt");
+        var item=UtilityContent.CANNON.get();
+        var cannon=unit(item,sample,50_000);
+        p.setItemInHand(InteractionHand.MAIN_HAND,cannon);
+        var bounds=new AABB(p.blockPosition()).inflate(6);
+        p.setDeltaMovement(Vec3.ZERO);p.setXRot(0);p.fallDistance=12;
+        float health=p.getHealth();
+        item.use(h.getLevel(),p,InteractionHand.MAIN_HAND);
+        var motion=p.getDeltaMovement();
+        item.use(h.getLevel(),p,InteractionHand.MAIN_HAND);
+        h.assertTrue(motion.y>=UtilityConfig.CANNON_LIFT.get()&&motion.horizontalDistance()>0&&p.getDeltaMovement().equals(motion),"One use propels the wearer and cooldown stops another boost");
+        h.assertTrue(p.getHealth()==health&&p.fallDistance==12,"The impulse does no damage and preserves ordinary fall damage");
+        h.assertTrue(h.getLevel().getEntitiesOfClass(net.minecraft.world.entity.item.PrimedTnt.class,bounds).isEmpty(),"Propulsion does not spawn a TNT entity");
+        h.assertTrue(item.stored(cannon)==50_000-PlaceholderItem.price(sample),"The cannon charges for the successful boost");
+        var egg=mimic("egg");
+        var launcher=unit(UtilityContent.LAUNCH.get(),egg,2_000);
+        p.setItemInHand(InteractionHand.MAIN_HAND,launcher);
+        UtilityContent.LAUNCH.get().use(h.getLevel(),p,InteractionHand.MAIN_HAND);
+        h.assertTrue(h.getLevel().getEntitiesOfClass(net.minecraft.world.entity.projectile.ThrownEgg.class,bounds).size()==1
+                &&UtilityContent.LAUNCH.get().stored(launcher)==2_000-PlaceholderItem.price(egg),"The survival launch unit throws an egg and retains its sample");
+        h.succeed();
+    }
+    @GameTest(template="empty",batch="utilities") public static void utilityRecipesLoadAndSampleIngredientsKeepTheirTarget(GameTestHelper h){
+        for(String name:List.of("placement_unit","eating_unit","launch_unit","burning_unit","tool_unit","portable_tnt_cannon","bone_meal_sample","handheld_aether_crafting_table","aether_materializer","auto_crafter")){
+            var r=(CraftingRecipe)h.getLevel().getRecipeManager().byKey(ModularMagic.id(name)).orElseThrow().value();
+            var displayed=r.getIngredients().stream().map(i->i.getItems()[0].copy()).toList();
+            var input=CraftingInput.of(3,3,pad(displayed));
+            h.assertTrue(r.matches(input,h.getLevel())&&!r.assemble(input,h.getLevel().registryAccess()).isEmpty(),"JEI-visible recipe must match displayed ingredients: "+name);
+            if(name.equals("bone_meal_sample")||name.equals("portable_tnt_cannon")){
+                var sample=r.getIngredients().stream().filter(i->i.getCustomIngredient() instanceof SampleIngredient).findFirst().orElseThrow();
+                h.assertTrue(!sample.test(mimic("dirt"))&&!sample.test(PlaceholderContent.ITEM.toStack()),"The ingredient must match the exact material target");
+            }
+        }
+        h.succeed();
+    }
+    @GameTest(template="empty",batch="utilities") public static void handheldDerivesWoodAndStoneWithOneBlankEach(GameTestHelper h){
+        var p=player(h);var energy=battery(p,10_000);
+        p.setItemInHand(InteractionHand.MAIN_HAND,UtilityContent.HANDHELD.toStack());
+        var menu=new HandheldCraftingMenu(8,p.getInventory(),InteractionHand.MAIN_HAND);
+        var original=mimic("oak_log");
+        menu.getSlot(1).set(original);
+        menu.clicked(0,0,ClickType.PICKUP,p);
+        h.assertTrue(menu.getCarried().isEmpty(),"A preview cannot be taken without its blank");
+        menu.getSlot(46).set(PlaceholderContent.ITEM.toStack());
+        menu.clicked(0,0,ClickType.PICKUP,p);
+        var planks=menu.getCarried();
+        long price=PlaceholderItem.price(planks);
+        h.assertTrue(PlaceholderItem.material(planks).is(Items.OAK_PLANKS)&&price==300,"One log has the one-quarter plank generation price");
+        h.assertTrue(menu.getSlot(1).getItem().isEmpty()&&menu.getSlot(46).getItem().isEmpty()&&((ManaStorage)energy.getItem()).stored(energy)==10_000-price,"Taking a derivation pays once and incorporates the source sample and blank");
+        menu.setCarried(ItemStack.EMPTY);
+        menu.getSlot(1).set(planks.copy());
+        menu.clicked(1,1,ClickType.PICKUP,p);
+        menu.clicked(4,1,ClickType.PICKUP,p);
+        menu.getSlot(46).set(PlaceholderContent.ITEM.toStack());
+        menu.clicked(0,0,ClickType.PICKUP,p);
+        h.assertTrue(PlaceholderItem.material(menu.getCarried()).is(Items.STICK)&&PlaceholderItem.price(menu.getCarried())==150,
+                "One plank sample can fill two ingredient positions");
+        h.assertTrue(menu.getSlot(1).getItem().isEmpty()&&menu.reference(3).isEmpty(),"A repeated reference consumes its single physical sample and clears the reference");
+        menu.setCarried(ItemStack.EMPTY);
+        menu.getSlot(1).set(mimic("stone"));
+        menu.getSlot(2).set(new ItemStack(Items.STONE_SLAB));
+        menu.getSlot(46).set(PlaceholderContent.ITEM.toStack());
+        menu.clicked(0,0,ClickType.PICKUP,p);
+        h.assertTrue(PlaceholderItem.material(menu.getCarried()).is(Items.STONE_SLAB)&&PlaceholderItem.price(menu.getCarried())==240,"A real slab selects the two-slab cutting recipe");
+        h.assertTrue(menu.getSlot(2).getItem().is(Items.STONE_SLAB),"The cutting selector remains in the grid");
+        h.assertTrue(menu.getSlot(1).getItem().isEmpty(),"The stone sample becomes part of its result");
+        menu.setCarried(ItemStack.EMPTY);
+        menu.getSlot(1).set(ItemStack.EMPTY);
+        menu.getSlot(2).set(ItemStack.EMPTY);
+        menu.getSlot(4).set(mimic("oak_log"));
+        menu.getSlot(5).set(new ItemStack(Items.FURNACE));
+        menu.getSlot(6).set(planks);
+        menu.getSlot(46).set(PlaceholderContent.ITEM.toStack());
+        menu.clicked(0,0,ClickType.PICKUP,p);
+        h.assertTrue(PlaceholderItem.material(menu.getCarried()).is(Items.CHARCOAL)&&PlaceholderItem.price(menu.getCarried())==1_400,
+                "The furnace derivation adds the proportional fuel cost");
+        h.assertTrue(menu.getSlot(5).getItem().is(Items.FURNACE)&&menu.getSlot(4).getItem().isEmpty()
+                &&menu.getSlot(6).getItem().isEmpty(),"The furnace remains while both samples become part of the result");
+        menu.setCarried(ItemStack.EMPTY);
+        menu.getSlot(4).set(ItemStack.EMPTY);
+        menu.getSlot(5).set(ItemStack.EMPTY);
+        menu.getSlot(6).set(ItemStack.EMPTY);
+        menu.getSlot(1).set(new ItemStack(Items.OAK_LOG));
+        long balance=((ManaStorage)energy.getItem()).stored(energy);
+        menu.clicked(0,0,ClickType.PICKUP,p);
+        h.assertTrue(menu.getCarried().is(Items.OAK_PLANKS)&&menu.getCarried().getCount()==4
+                        && ((ManaStorage)energy.getItem()).stored(energy)==balance,
+                "Physical materials fall back to ordinary crafting without an aether charge");
+        h.succeed();
+    }
+    @GameTest(template="empty",batch="utilities") public static void unformedToolsUseStickSamplesAndCreativeShowsPhysicalSamples(GameTestHelper h){
+        var level=h.getLevel();
+        var stick=PlaceholderItem.derived(new ItemStack(Items.STICK),150);
+        for(String tool:List.of("sword","pickaxe","axe","shovel","hoe")){
+            var recipe=(ShapedRecipe)level.getRecipeManager().byKey(ModularMagic.id("unformed_"+tool)).orElseThrow().value();
+            var samples=recipe.getIngredients().stream().map(ingredient->{
+                if(ingredient.isEmpty())return ItemStack.EMPTY;
+                return ingredient.getCustomIngredient() instanceof SampleIngredient?stick.copy():ingredient.getItems()[0].copy();
+            }).toList();
+            h.assertTrue(samples.stream().anyMatch(stack->PlaceholderItem.material(stack).is(Items.STICK))
+                    &&recipe.matches(CraftingInput.of(recipe.getWidth(),recipe.getHeight(),samples),level),"Derived sticks assemble the unformed "+tool);
+            var physical=samples.stream().map(stack->PlaceholderItem.target(stack)==null?stack:new ItemStack(Items.STICK)).toList();
+            h.assertTrue(!recipe.matches(CraftingInput.of(recipe.getWidth(),recipe.getHeight(),physical),level),"Physical sticks cannot replace samples");
+        }
+        var shown=PlaceholderContent.physicalSamples();
+        h.assertTrue(builtinSamplesAreUnbound()
+                &&shown.stream().anyMatch(stack->PlaceholderItem.material(stack).is(Items.BONE_MEAL))
+                &&shown.stream().noneMatch(MimicBindingRecipe::bound)
+                &&shown.stream().noneMatch(stack->PlaceholderItem.material(stack).is(Items.STICK)),
+                "Creative uses one blank for each family and lists only directly shaped material samples");
+        h.succeed();
+    }
+    private static boolean builtinSamplesAreUnbound(){
+        return Arrays.stream(MimicFamily.values()).allMatch(family->PlaceholderItem.target(family.template())==null);
+    }
+    @GameTest(template="empty",batch="utilities") public static void materializerNeedsBucketsAndPaysPerOutput(GameTestHelper h){
+        var pos=h.absolutePos(new BlockPos(1,1,1));
+        var block=cn.nulladev.modularmagic.energy.EnergyContent.BLOCKS.get(cn.nulladev.modularmagic.energy.EnergyContent.Kind.MATERIALIZER).get();
+        h.getLevel().setBlockAndUpdate(pos,block.defaultBlockState());
+        var device=(cn.nulladev.modularmagic.energy.EnergyBlockEntity)h.getLevel().getBlockEntity(pos);
+        device.setItem(0,mimic("water"));
+        device.energy=600*ManaStorage.SCALE;
+        int interval=UtilityConfig.MATERIALIZER_INTERVAL.get();
+        h.runAfterDelay(interval+1,()->{
+            h.assertTrue(device.product.isEmpty()&&device.energy==600*ManaStorage.SCALE,"No bucket means no output or payment");
+            device.setItem(2,new ItemStack(Items.BUCKET));
+        });
+        h.runAfterDelay(interval*2+3,()->{
+            h.assertTrue(device.product.is(Items.WATER_BUCKET)&&device.emptyBuckets.isEmpty()&&device.energy==100*ManaStorage.SCALE,"Materialization consumes one real bucket and one material fee");
+            h.assertTrue(PlaceholderItem.target(device.getItem(0)).equals(ResourceLocation.withDefaultNamespace("water")),"The machine retains its sample");
+            h.succeed();
+        });
     }
     private static List<ItemStack> pad(List<ItemStack> samples){var g=NonNullList.withSize(9,ItemStack.EMPTY);for(int i=0;i<samples.size();i++)g.set(i,samples.get(i));return g;}
     @GameTest(template="empty",batch="utilities") public static void autoCrafterPrefersRealInputsThenPaysForMimicGeneration(GameTestHelper h){

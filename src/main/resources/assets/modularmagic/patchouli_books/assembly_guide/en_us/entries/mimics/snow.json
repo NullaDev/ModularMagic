@@ -1,5 +1,5 @@
 {
-  "name": "Aether Mimic: Snow",
+  "name": "Aether Sample: Snow",
   "icon": "modularmagic:item_placeholder[minecraft:custom_data={MaterialTarget:\"minecraft:snow\"}]",
   "category": "modularmagic:mimics",
   "sortnum": 6,

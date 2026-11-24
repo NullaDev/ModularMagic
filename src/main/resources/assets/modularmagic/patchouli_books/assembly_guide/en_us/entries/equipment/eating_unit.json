@@ -1,0 +1,17 @@
+{
+  "name": "Simple Casting Unit: Eat",
+  "icon": "modularmagic:eating_unit",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:eating_unit",
+      "link_recipe": true,
+      "text": "Sneak and use to load a food sample. Hold use to gain the food's nutrition, saturation, and effects. Releasing early leaves the cache untouched.$(br2)Charge the unit in an Aether Tank."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:eating_unit"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "手持以太合成台",
+  "icon": "modularmagic:handheld_aether_crafting_table",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:handheld_aether_crafting_table",
+      "text": "以太样板可以参与工作台、切石和冶炼配方。在箭头上方装入空白以太样板。取出结果时，消耗空白及参与的原样板。切石时用实物产物指定配方。冶炼时把炉子摆在中央，原料样板和燃料样板分别在左、右。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:handheld_aether_crafting_table"
+    }
+  ]
+}

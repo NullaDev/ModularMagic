@@ -28,7 +28,7 @@ public final class CuringGenerator {
                 if(level.getGameTime()%10==0){var p=be.getBlockPos();level.sendParticles(ParticleTypes.WITCH,p.getX()+.5,p.getY()+1.1,p.getZ()+.5,3,.25,.12,.25,.02);}
                 if(state.cureRemaining==0){
                     if(be.energy>be.capacity()-state.reserved){state.state("full",15);be.changed();return;}
-                    be.energy+=state.reserved;release(state);state.progress=1;
+                    be.energy+=state.reserved;state.showInput(zombie.getBoundingBox().getCenter());release(state);state.progress=1;
                     state.cooldown=state.rule().period.get();state.state(state.cooldown>0?"cooldown":"weakness",state.cooldown>0?3:2);
                 }else state.state("curing",4+(int)(state.progress*9));
                 be.changed();return;
@@ -52,6 +52,7 @@ public final class CuringGenerator {
             var tag=new CompoundTag();tag.putLong("Machine",be.getBlockPos().asLong());tag.putUUID("Device",be.identity);
             zombie.getPersistentData().put(KEY,tag);
             state.actor=zombie.getUUID();state.actorPosition=zombie.blockPosition();state.cureRemaining=state.cureTotal=time;state.progress=0;state.reserved=yield;
+            state.showInput(apple.position());
             apple.getItem().shrink(1);if(apple.getItem().isEmpty())apple.discard();else apple.setItem(apple.getItem().copy());
             zombie.removeEffect(MobEffects.WEAKNESS);state.state("curing",4);be.changed();return;
         }

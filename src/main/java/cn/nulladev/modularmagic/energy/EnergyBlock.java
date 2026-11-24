@@ -51,6 +51,7 @@ public final class EnergyBlock extends Block implements EntityBlock {
     @Override protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if(kind==EnergyContent.Kind.ENCHANTER&&!(stack.getItem() instanceof EnergyLinkItem)){cn.nulladev.modularmagic.crafting.EnchantingMenu.open(player,pos);return ItemInteractionResult.SUCCESS;}
         if (stack.getItem() instanceof EnergyLinkItem) return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
+        if(kind==EnergyContent.Kind.MATERIALIZER){cn.nulladev.modularmagic.utility.MaterializerMenu.open(player,pos);return ItemInteractionResult.SUCCESS;}
         if (!(level.getBlockEntity(pos) instanceof EnergyBlockEntity be)) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         if (!level.isClientSide && be.interact(player, hand)) return ItemInteractionResult.SUCCESS;
         if (level.isClientSide && (stack.getItem() instanceof cn.nulladev.modularmagic.mana.ManaStorage || stack.getItem() instanceof AetherShardItem || stack.is(EnergyContent.CROSS_LENS.get()) || stack.is(Items.AMETHYST_SHARD)&&kind==EnergyContent.Kind.RESONATOR)) return ItemInteractionResult.SUCCESS;
@@ -58,6 +59,7 @@ public final class EnergyBlock extends Block implements EntityBlock {
     }
     @Override protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
         if(kind==EnergyContent.Kind.ENCHANTER){cn.nulladev.modularmagic.crafting.EnchantingMenu.open(player,pos);return InteractionResult.sidedSuccess(level.isClientSide);}
+        if(kind==EnergyContent.Kind.MATERIALIZER){cn.nulladev.modularmagic.utility.MaterializerMenu.open(player,pos);return InteractionResult.sidedSuccess(level.isClientSide);}
         if (!level.isClientSide && level.getBlockEntity(pos) instanceof EnergyBlockEntity be) be.interact(player, InteractionHand.MAIN_HAND);
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
@@ -78,6 +80,8 @@ public final class EnergyBlock extends Block implements EntityBlock {
             be.battery = ItemStack.EMPTY;
             if(!be.product.isEmpty())Containers.dropItemStack(level,pos.getX()+.5,pos.getY()+.8,pos.getZ()+.5,be.product);
             be.product=ItemStack.EMPTY;
+            if(!be.emptyBuckets.isEmpty())Containers.dropItemStack(level,pos.getX()+.5,pos.getY()+.8,pos.getZ()+.5,be.emptyBuckets);
+            be.emptyBuckets=ItemStack.EMPTY;
         }
         super.onRemove(state, level, pos, replacement, moving);
     }

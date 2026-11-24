@@ -9,7 +9,7 @@ import java.util.*;
 /** Owns one physical item per node, including the root, while it is inside a core. */
 public final class SpellDocument {
     public static final int MAX_NODES = 256;
-    public static final int MAX_DEPTH = 24;
+    public static final int MAX_DEPTH = 32;
     public static final int MAX_LIST = 64;
     public static final int MAX_FIELD = 2048;
     public static final int MAX_JSON = 131072;

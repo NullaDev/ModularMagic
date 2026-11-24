@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:dropper"
+    },
+    {
+      "item": "modularmagic:aether_tank"
+    },
+    {
+      "item": "modularmagic:rune_plate_k03"
+    },
+    {
+      "item": "modularmagic:rune_plate_k31"
+    }
+  ],
+  "result": {
+    "id": "modularmagic:aether_materializer",
+    "count": 1
+  }
+}

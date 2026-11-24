@@ -1,0 +1,16 @@
+{
+  "name": "Aether Former",
+  "icon": "modularmagic:aether_materializer",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:aether_materializer",
+      "text": "Link an aether supply and insert a filled sample to make one real item per cycle. Supply empty buckets for bucketed materials. A hopper below can take products."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:aether_materializer"
+    }
+  ]
+}

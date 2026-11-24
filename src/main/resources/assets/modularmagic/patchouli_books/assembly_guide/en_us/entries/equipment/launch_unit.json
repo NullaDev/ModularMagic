@@ -1,0 +1,17 @@
+{
+  "name": "Simple Casting Unit: Launch",
+  "icon": "modularmagic:launch_unit",
+  "category": "modularmagic:equipment",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modularmagic:launch_unit",
+      "link_recipe": true,
+      "text": "Sneak and use to load a throwable sample. Use an egg sample to throw an egg. Use a bone meal sample on a block to fertilize it.$(br2)Charge the unit in an Aether Tank."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "modularmagic:launch_unit"
+    }
+  ]
+}

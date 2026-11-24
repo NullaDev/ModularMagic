@@ -1,9 +1,7 @@
 package cn.nulladev.modularmagic.research;
 
 import cn.nulladev.modularmagic.ModularMagic;
-import com.mojang.serialization.Codec;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.attachment.AttachmentType;
@@ -18,6 +16,12 @@ public final class ResearchKnowledge {
     public static boolean completed(Player p,ResearchCatalog.Topic t){return t.nodes().isEmpty()?knows(p,t.id()):t.nodes().stream().allMatch(n->knows(p,n));}
     public static boolean ready(Player p,ResearchCatalog.Topic t){return t.requires().stream().allMatch(id->completed(p,ResearchCatalog.get(id)));}
     public static void learn(Player p,String id){var copy=p.getData(DATA).copy();copy.putBoolean("known:"+id,true);p.setData(DATA,copy);}
+    public static void learn(Player player, ResearchCatalog.Topic topic) {
+        var knowledge = state(player).copy();
+        knowledge.putBoolean("known:" + topic.id(), true);
+        for (String node : topic.nodes()) knowledge.putBoolean("known:" + node, true);
+        player.setData(DATA, knowledge);
+    }
     public static double bonus(Player p){double sum=0;for(var t:ResearchCatalog.all()){
         if(t.nodes().isEmpty()){if(p.getData(DATA).getBoolean("known:"+t.id()))sum+=ResearchContent.KNOWLEDGE_FOCUS.get();}
         else if(!t.id().equals("K00"))for(String n:t.nodes())if(p.getData(DATA).getBoolean("known:"+n))sum+=ResearchContent.KNOWLEDGE_FOCUS.get()/t.nodes().size();

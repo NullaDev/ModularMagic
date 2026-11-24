@@ -95,7 +95,7 @@ public final class ResearchMenu extends AbstractContainerMenu {
         if(owner.level().isClientSide||!stillValid(owner)||expected!=revision)return;
         changingSupplies=true;
         try{if(command.length()>32768)return;var j=JsonParser.parseString(command).getAsJsonObject();String op=j.get("op").getAsString();notice="";
-            if(op.equals("start")&&!carving&&reading){var t=note();if(t!=null&&ResearchKnowledge.ready(owner,t)){t.nodes().forEach(n->ResearchKnowledge.learn(owner,n));ResearchKnowledge.learn(owner,t.id());if(!owner.isCreative())supplies.removeItem(0,1);notice="success";load();}}
+            if(op.equals("start")&&!carving&&reading){var t=note();if(t!=null&&ResearchKnowledge.ready(owner,t)){ResearchKnowledge.learn(owner,t);if(!owner.isCreative())supplies.removeItem(0,1);notice="success";load();}}
             else if(op.equals("carve")&&carving){carve(j.get("id").getAsString());}
             else if(!carving&&document!=null){
                 if(op.equals("start")){if(!paid){if(!useInk(inkCost,false)){notice="ink";}else{paid=true;ResearchKnowledge.save(owner,"paid:"+target,"yes");}}}

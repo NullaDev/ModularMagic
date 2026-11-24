@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "modularmagic:glimmering/soul_sand",
+    "modularmagic:glimmering/coral_reef",
+    "modularmagic:glimmering/soul_burst",
+    "modularmagic:glimmering/ocean_shelter",
+    "modularmagic:glimmering/illusory_field",
+    "modularmagic:glimmering/dark_rain"
+  ]
+}

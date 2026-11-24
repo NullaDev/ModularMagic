@@ -1,0 +1,7 @@
+{
+    "parent":  "minecraft:item/generated",
+    "textures":  {
+                     "layer0":  "modularmagic:item/casting_unit_shell",
+                     "layer1":  "modularmagic:item/burning_unit_symbol"
+                 }
+}

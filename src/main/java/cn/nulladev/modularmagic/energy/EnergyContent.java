@@ -2,6 +2,8 @@ package cn.nulladev.modularmagic.energy;
 
 import cn.nulladev.modularmagic.ModularMagic;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.SoundType;
@@ -12,7 +14,7 @@ import java.util.*;
 
 public final class EnergyContent {
     public enum Kind {
-        ENCHANTER("aether_enchanter"), GENERATOR("aether_generator"), DISRUPTOR("aether_disruptor"), TANK("aether_tank"), EXPANDED_TANK("expanded_aether_tank"),
+        ENCHANTER("aether_enchanter"), MATERIALIZER("aether_materializer"), GENERATOR("aether_generator"), DISRUPTOR("aether_disruptor"), TANK("aether_tank"), EXPANDED_TANK("expanded_aether_tank"),
         ULTIMATE_TANK("ultimate_aether_tank"), CREATIVE_TANK("creative_aether_tank"),
         CONDENSER("aether_condenser"), CRYSTAL_CHAMBER("aether_crystallization_chamber"),
         EMITTER("aether_emitter"), EXPANDED_EMITTER("expanded_aether_emitter"), ULTIMATE_EMITTER("ultimate_aether_emitter"), CREATIVE_EMITTER("creative_aether_emitter"), CREATIVE("creative_aether_generator"),
@@ -33,6 +35,9 @@ public final class EnergyContent {
     private static final DeferredRegister.Blocks BLOCK_REG = DeferredRegister.createBlocks(ModularMagic.MOD_ID);
     private static final DeferredRegister.Items ITEM_REG = DeferredRegister.createItems(ModularMagic.MOD_ID);
     private static final DeferredRegister<BlockEntityType<?>> BE_REG = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, ModularMagic.MOD_ID);
+    private static final DeferredRegister<ParticleType<?>> PARTICLES = DeferredRegister.create(Registries.PARTICLE_TYPE, ModularMagic.MOD_ID);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> RESONANCE_GLOW =
+            PARTICLES.register("resonance_glow", () -> new SimpleParticleType(false));
     public static final Map<Kind, DeferredBlock<EnergyBlock>> BLOCKS = new EnumMap<>(Kind.class);
     public static final Map<Kind, DeferredItem<BlockItem>> ITEMS = new EnumMap<>(Kind.class);
     public static final DeferredItem<AetherShardItem> SHARD = ITEM_REG.register("aether_shard", () -> new AetherShardItem(false));
@@ -50,6 +55,6 @@ public final class EnergyContent {
     }
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<EnergyBlockEntity>> ENTITY = BE_REG.register("aether_device",
             () -> BlockEntityType.Builder.of(EnergyBlockEntity::new, BLOCKS.values().stream().map(DeferredBlock::get).toArray(net.minecraft.world.level.block.Block[]::new)).build(null));
-    public static void register(IEventBus bus) { BLOCK_REG.register(bus); ITEM_REG.register(bus); BE_REG.register(bus); }
+    public static void register(IEventBus bus) { BLOCK_REG.register(bus); ITEM_REG.register(bus); BE_REG.register(bus); PARTICLES.register(bus); }
     private EnergyContent() {}
 }

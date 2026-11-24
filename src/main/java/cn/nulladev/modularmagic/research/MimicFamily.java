@@ -12,6 +12,7 @@ public enum MimicFamily {
     GRAVITY("gravity","gravityGenerationCost","2560",Items.SAND),
     RAILS("rails","railGenerationCost","16",Items.RAIL),
     PLANTS("plants","plantGenerationCost","1200",Items.OAK_LOG),
+    ADVANCED_PLANTS("advanced_plants","plantGenerationCost","1200",Items.MOSS_BLOCK),
     CARPETS("carpets","carpetGenerationCost","16",Items.WHITE_CARPET);
 
     public final String id,configKey,defaultCost;
@@ -19,18 +20,20 @@ public enum MimicFamily {
     private final TagKey<Block> tag;
     MimicFamily(String id,String key,String cost,Item example){this.id=id;configKey=key;defaultCost=cost;this.example=example;tag=TagKey.create(Registries.BLOCK,ModularMagic.id("mimic/"+id));}
     public ResourceLocation target(){return ModularMagic.id(id);}
-    public ItemStack template(){return switch(this){case GRAVITY->PlaceholderContent.GRAVITY.toStack();case RAILS->PlaceholderContent.RAILS.toStack();case PLANTS->PlaceholderContent.PLANTS.toStack();case CARPETS->PlaceholderContent.CARPETS.toStack();};}
+    public ItemStack template(){return switch(this){case GRAVITY->PlaceholderContent.GRAVITY.toStack();case RAILS->PlaceholderContent.RAILS.toStack();case PLANTS->PlaceholderContent.PLANTS.toStack();case CARPETS->PlaceholderContent.CARPETS.toStack();
+        case ADVANCED_PLANTS->PlantTemplateRecipe.withBoneMeal(PlaceholderItem.create(ResourceLocation.withDefaultNamespace("bone_meal")));};}
     public boolean matches(Block b){
-        if(this==PLANTS&&(b instanceof HugeMushroomBlock||b instanceof FungusBlock))return false;
+        if(this==PLANTS&&ADVANCED_PLANTS.matches(b))return false;
+        if(this==PLANTS&&(b instanceof HugeMushroomBlock||b instanceof FungusBlock||b==Blocks.DEAD_BUSH))return false;
         if(b.builtInRegistryHolder().is(tag))return true;
         return switch(this){
-            case GRAVITY->b instanceof FallingBlock||b instanceof BrushableBlock;
+            case GRAVITY,ADVANCED_PLANTS->false;
             case RAILS->b instanceof BaseRailBlock;
             case CARPETS->b.builtInRegistryHolder().is(BlockTags.WOOL_CARPETS);
             case PLANTS->b.builtInRegistryHolder().is(BlockTags.LOGS_THAT_BURN)||b.builtInRegistryHolder().is(BlockTags.LEAVES)
                 ||b instanceof BushBlock||b instanceof GrowingPlantBlock||b instanceof SugarCaneBlock||b instanceof CactusBlock
                 ||b instanceof BambooStalkBlock||b instanceof VineBlock||b instanceof CocoaBlock
-                ||b instanceof ChorusFlowerBlock||b instanceof ChorusPlantBlock||b==Blocks.MELON||b==Blocks.PUMPKIN;
+                ||b instanceof ChorusFlowerBlock||b instanceof ChorusPlantBlock||b==Blocks.MELON||b==Blocks.PUMPKIN||b==Blocks.MOSS_BLOCK;
         };
     }
     public static MimicFamily fromTarget(ResourceLocation id){for(var f:values())if(f.target().equals(id))return f;return null;}
